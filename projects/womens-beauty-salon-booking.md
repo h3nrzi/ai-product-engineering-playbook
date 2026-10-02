@@ -2,11 +2,21 @@
 
 ## Project
 
-- Selected opportunity: [`01 — Barbershop / Salon Booking`](../opportunities/service-products.md#01--barbershop--salon-booking)
+- Product family: `BEAUTY-SALON` — Barbershop / Beauty Salon Booking ([catalog](../opportunities/service-products.md))
+- Selected model / variant: **Women’s single-salon**
+- Target market / geography: Persian-language product for the Iranian market
 - Documentation root: [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/)
-- Product type: Single-salon women’s beauty service discovery, booking, and appointment-management product
+- Implementation repository: not yet needed
+- Product type: Single-location women’s beauty service discovery, booking, and appointment-management product
 - Current phase: 01
 - Current status: in progress
+
+## Model boundary
+
+- **Selected:** one physical women’s beauty salon, multiple services, multiple specialists, salon-controlled schedules and appointment operations.
+- **Explicitly not:** men’s barbershop, unisex salon, independent-specialist marketplace, multi-salon marketplace, multi-branch salon network, or beauty-at-home/mobile workforce product.
+
+A deliberate future model change must update the Selected Opportunity Brief, this tracker, and any affected approved artifacts before the workflow continues.
 
 ## Workflow
 
@@ -43,4 +53,4 @@ No current blocker. Project documentation is stored in this playbook repository 
 
 ## Guide entrypoint
 
-Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and the project artifacts under [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/) before making status claims or continuing the workflow.
+Read [`MASTER.md`](../MASTER.md), this tracker, confirm the selected Product Family + Model, read the active phase guide, and then inspect the project artifacts under [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/) before making status claims or continuing the workflow.

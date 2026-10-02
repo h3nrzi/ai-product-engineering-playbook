@@ -1,20 +1,17 @@
 # Project Trackers
 
-Each project that follows this playbook gets one tracker in this directory.
+Each product using this playbook gets one lightweight tracker here.
 
-The tracker is the navigation layer between the global workflow and the project's own repository/artifacts.
+Track the project through the five authoritative phases:
 
-A guide LLM should read:
+1. Product Discovery & Product Design
+2. Base44 Prototype
+3. React Frontend Completion
+4. React → Next.js Refactor
+5. Full-Stack Next.js Completion
 
-1. [`../MASTER.md`](../MASTER.md)
-2. the relevant tracker in this directory
-3. the active phase guide under [`../phases/`](../phases/README.md)
-4. linked product-repository artifacts as needed
+The tracker is navigation/context for Guide LLMs, not a duplicate of the product repository's implementation logs.
 
-## Trackers
+Current projects:
 
-- [`The Gentleman`](the-gentleman.md)
-
-## New projects
-
-Copy [`../templates/project-tracker.md`](../templates/project-tracker.md), rename it to the project slug, and fill in the current project state.
+- [`the-gentleman.md`](the-gentleman.md)

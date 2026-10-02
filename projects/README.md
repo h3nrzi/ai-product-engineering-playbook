@@ -14,7 +14,7 @@ The tracker is navigation/context for Guide LLMs, not a duplicate of the product
 
 ## Current projects
 
-No active projects are currently tracked.
+- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Phase 01 in progress; product repository pending.
 
 ## Add or remove a tracker
 

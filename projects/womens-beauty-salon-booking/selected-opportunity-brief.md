@@ -1,8 +1,27 @@
 # Selected Opportunity Brief — Women’s Beauty Salon Booking
 
-## Opportunity
+## Product family
 
-A single-location women’s beauty salon booking product based on Opportunity 01 — Barbershop / Salon Booking.
+- **Stable ID:** `BEAUTY-SALON`
+- **Family:** Barbershop / Beauty Salon Booking
+- **Iran demand:** D5 — very high / mass-market in the current opportunity-library snapshot
+- **Selected model / variant:** **Women’s single-salon**
+- **Target market:** Persian-language product for the Iranian market
+
+## Model boundary
+
+This project represents **one physical women’s beauty salon** with multiple services and multiple specialists.
+
+It is explicitly **not**:
+
+- a men’s barbershop;
+- a unisex salon;
+- an independent-specialist marketplace;
+- a multi-salon marketplace;
+- a multi-branch salon network;
+- a beauty-at-home / mobile-workforce service.
+
+These adjacent variants remain valid models under the same product family, but they are different products with different operational and UX implications.
 
 ## Target users
 
@@ -28,5 +47,6 @@ The product has meaningful workflow depth beyond a marketing website: service di
 - Multiple services.
 - Multiple specialists.
 - Online appointment booking and management.
-- Not a multi-salon marketplace.
-- Not a beauty-at-home service.
+- Fixed-location service fulfillment.
+- No marketplace mechanics.
+- No at-home travel/service-area logistics.

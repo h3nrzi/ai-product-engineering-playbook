@@ -2,6 +2,11 @@
 
 Each product using this playbook gets one lightweight tracker here plus a project documentation directory under `projects/<project-slug>/`.
 
+Before Phase 01, every project must identify both:
+
+- a stable **Product Family** from [`../opportunities/service-products.md`](../opportunities/service-products.md);
+- a specific **Product Model / Variant** within that family.
+
 Track the project through the five authoritative phases:
 
 1. Product Discovery & Product Design
@@ -14,7 +19,7 @@ The tracker is navigation/context for Guide LLMs. The project directory is the a
 
 ## Current projects
 
-- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Phase 01 in progress; Stages 01–03 persisted.
+- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — `BEAUTY-SALON` / **Women’s single-salon** — Phase 01 in progress; Stages 01–03 persisted.
 
 ## Project structure
 
@@ -36,6 +41,6 @@ Only create subdirectories when the active workflow actually needs them.
 
 ## Add or remove a tracker
 
-Copy [`../templates/project-tracker.md`](../templates/project-tracker.md) to `<project-slug>.md`, create the sibling `projects/<project-slug>/` documentation root, fill in the available context, and add the tracker under Current projects.
+Copy [`../templates/project-tracker.md`](../templates/project-tracker.md) to `<project-slug>.md`, create the sibling `projects/<project-slug>/` documentation root, fill in the Product Family + selected Model, and add the tracker under Current projects.
 
-When a project is deleted, remove its tracker and project documentation directory, then update its opportunity status and any selection notes in the [service-product library](../opportunities/service-products.md). An opportunity can remain a candidate even when a particular implementation has been deleted.
+When a project is deleted, remove its tracker and project documentation directory, then update its product-family status and any selection notes in the [service-product library](../opportunities/service-products.md). A family can remain a candidate even when a particular model implementation has been deleted.

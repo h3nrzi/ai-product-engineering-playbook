@@ -28,7 +28,9 @@ Engineering phases use a lightweight Matt Pocock-style pattern where appropriate
 
 - [`MASTER.md`](MASTER.md) — role and authoritative workflow for Guide LLMs
 - [`phases/`](phases/README.md) — phase-by-phase procedure
-- [`opportunities/service-products.md`](opportunities/service-products.md) — comprehensive service-product family catalog, Iran demand ordering, and model variants
+- [`opportunities/`](opportunities/README.md) — entrypoint for choosing a service-product opportunity
+- [`opportunities/service-products.md`](opportunities/service-products.md) — broad service-product family catalog ordered by directional Iran demand
+- [`opportunities/service-models.md`](opportunities/service-models.md) — normalized reusable service-delivery/product-model taxonomy with English web references
 - [`opportunities/iran-demand-methodology.md`](opportunities/iran-demand-methodology.md) — demand/digital-maturity methodology and research snapshot
 - [`projects/`](projects/README.md) — project trackers plus authoritative project-specific documentation/artifacts
 - [`templates/project-tracker.md`](templates/project-tracker.md) — tracker template
@@ -36,12 +38,13 @@ Engineering phases use a lightweight Matt Pocock-style pattern where appropriate
 ## Start a project
 
 1. Read [`MASTER.md`](MASTER.md) for the guide role and workflow authority.
-2. Select a **Product Family** from the [service-product library](opportunities/service-products.md).
-3. Select a specific **Product Model / Variant** from that family. Do not begin Phase 01 while materially different models remain unresolved.
-4. Prepare the Selected Opportunity Brief described in [Phase 01](phases/01-product-discovery.md), recording the stable product-family ID, selected model, target market when relevant, and explicit boundaries against adjacent variants.
-5. Copy the [tracker template](templates/project-tracker.md) to `projects/<project-slug>.md`, create `projects/<project-slug>/`, persist the selected opportunity brief there, and add the tracker to the [project index](projects/README.md). Mark the family `selected`; use `in-progress` once project work begins.
-6. Follow Phase 01 and persist each approved stage artifact under the project directory before considering that stage complete.
-7. Advance through later phases only when the active phase guide's exit criteria are met and the tracker reflects the current state.
+2. Open the [`opportunities/`](opportunities/README.md) index.
+3. Select a **Product Family** from [`service-products.md`](opportunities/service-products.md).
+4. Select one or more **Product Model IDs** from [`service-models.md`](opportunities/service-models.md), plus any vertical-specific variant that materially changes the product.
+5. Prepare the Selected Opportunity Brief described in [Phase 01](phases/01-product-discovery.md), recording the stable family ID, model ID(s), target market when relevant, and explicit boundaries against adjacent variants.
+6. Copy the [tracker template](templates/project-tracker.md) to `projects/<project-slug>.md`, create `projects/<project-slug>/`, persist the selected opportunity brief there, and add the tracker to the [project index](projects/README.md).
+7. Follow Phase 01 and persist each approved stage artifact under the project directory before considering that stage complete.
+8. Advance through later phases only when the active phase guide's exit criteria are met and the tracker reflects the current state.
 
 ## Project documentation policy
 
@@ -55,19 +58,37 @@ Application implementation code may live in a separate product repository later 
 
 ## Opportunity-library principle
 
-A broad service category is not automatically a project definition. For example, `BEAUTY-SALON` can become a men's single barbershop, women's single salon, multi-branch salon, marketplace, independent-specialist product, or at-home service. Those models can have materially different actors, workflows, trust boundaries, logistics, and monetization.
+A broad service category is not automatically a project definition. The same family can produce fundamentally different products depending on the delivery model.
+
+For example:
+
+```text
+BEAUTY-SALON + A01
+= direct single-salon appointment product
+
+BEAUTY-SALON + M01
+= open salon/specialist marketplace
+
+BEAUTY-SALON + D03
+= scheduled at-home beauty service
+
+BEAUTY-SALON + A01 + S02
+= direct salon booking with a credit/membership model
+```
 
 The library therefore separates:
 
 ```text
 Stable Product Family
         +
-Selected Product Model / Variant
+Service Model ID(s)
+        +
+Vertical Variant
         ↓
 Actual project entering Phase 01
 ```
 
-Iran demand tier and digital maturity are research metadata for prioritization, not substitutes for product discovery.
+The English reference sites in the model taxonomy are for studying established UX and service-delivery patterns, not for copying product scope. Iran demand tier and digital maturity are research metadata for prioritization, not substitutes for product discovery.
 
 ## Principle
 

@@ -1,623 +1,283 @@
 # Service Product Opportunity Library
 
-This is the shared portfolio-level library of service-product opportunities.
+This is the portfolio-level catalog of **service-product families and their viable product models**.
 
-Its purpose is to capture **problems worth solving**, not just website ideas. A project enters Phase 01 only after one opportunity is deliberately selected from this library.
+The catalog is designed to be archetype-complete rather than limited to a short backlog. A very narrow niche should normally map to one of these product families as a model/vertical variant; genuinely new service archetypes can still be added later.
 
-The library is intentionally broad. It is not a fixed backlog and it does not imply that every idea should be built. We choose projects that solve a clear service problem and add a meaningfully different workflow to the portfolio.
+Before Phase 01 starts, select **two things**:
 
-## Opportunity template
+1. a **Product Family** from this library;
+2. a **Product Model / Variant** for that family.
 
-### <Service / Product Name>
+Example:
 
-- **Service category:**
-- **Target user:**
-- **Primary problem:**
-- **Current workaround / alternative:**
-- **Why the current approach is weak:**
-- **Proposed digital solution direction:**
-- **Core value:**
-- **Interesting product/workflow depth:**
-- **Portfolio differentiation:**
-- **Status:** candidate | selected | in-progress | completed | deferred
+```text
+Product Family: BEAUTY-SALON — Barbershop / Beauty Salon Booking
+Selected Model: Women’s single-salon
+```
 
-## Selection guidance
+Do not enter Phase 01 with only a broad family such as “salon”, “healthcare”, or “home services” when materially different models still exist.
 
-Prefer opportunities with:
+## Iran demand ordering
 
-- a clear and meaningful user problem
-- enough product depth to support a real service workflow
-- a journey such as booking, requesting, scheduling, quoting, tracking, coordinating, matching, or managing a service
-- meaningful differentiation from projects already in the portfolio
+The catalog is sorted by estimated demand for the **underlying service in Iran**, from `D5` to `D0`.
 
-Do not add detailed feature scope here. Keep each entry focused on the problem, current friction, and proposed solution direction. Detailed product discovery begins only after selection in Phase 01.
+- `D5` — very high / mass-market
+- `D4` — high
+- `D3` — medium / established
+- `D2` — low / niche
+- `D1` — very low / emerging
+- `D0` — no meaningful Iranian demand validated in the current research snapshot
 
----
+Digital maturity is tracked separately:
 
-# Opportunity Index
+- `M5` — mainstream digital market
+- `M4` — strong digital market
+- `M3` — emerging/credible digital market
+- `M2` — limited digital market
+- `M1` — mostly offline
+- `M0` — no meaningful local digital model validated
 
-| # | Opportunity | Core workflow | Status |
-| --- | --- | --- | --- |
-| 01 | Barbershop / Salon Booking | discover → schedule → manage appointment | in-progress |
-| 02 | Home Cleaning Service | configure → quote → schedule → recurring service | candidate |
-| 03 | Home Repair / Handyman Dispatch | describe problem → triage → assign → track | candidate |
-| 04 | Appliance Repair Service | diagnose request → quote → visit → repair status | candidate |
-| 05 | Plumbing / Emergency Service | urgent request → availability → dispatch → resolution | candidate |
-| 06 | Moving Service | inventory → quote → schedule → move coordination | candidate |
-| 07 | Auto Repair Workshop | issue intake → inspection → approval → repair tracking | candidate |
-| 08 | Mobile Car Wash / Detailing | package → vehicle → location → schedule | candidate |
-| 09 | Tire / Roadside Assistance | incident → location → dispatch → arrival tracking | candidate |
-| 10 | Pet Grooming | pet profile → service → schedule → visit history | candidate |
-| 11 | Veterinary Appointment | pet context → appointment → preparation → follow-up | candidate |
-| 12 | Personal Trainer / Fitness Coaching | goal → coach/session → plan → progress | candidate |
-| 13 | Physiotherapy / Rehabilitation Booking | need → practitioner → sessions → follow-up | candidate |
-| 14 | Dental Clinic Appointment | treatment need → provider → slot → visit preparation | candidate |
-| 15 | Mental Wellness Session Booking | practitioner discovery → fit → schedule → session management | candidate |
-| 16 | Tutor / Private Lesson Booking | subject → tutor → availability → recurring lessons | candidate |
-| 17 | Language School / Class Enrollment | level → course → schedule → enrollment | candidate |
-| 18 | Driving School | package → instructor → lesson schedule → progress | candidate |
-| 19 | Photography Service | occasion → package → availability → booking → delivery | candidate |
-| 20 | Event Planner / Wedding Service | brief → consultation → proposal → milestone tracking | candidate |
-| 21 | Catering Service | event details → menu → quote → confirmation | candidate |
-| 22 | Venue / Studio Rental | requirements → availability → booking → access details | candidate |
-| 23 | Legal Consultation | matter type → lawyer fit → consultation → case intake | candidate |
-| 24 | Accounting / Tax Service | service need → document intake → appointment → status | candidate |
-| 25 | Design / Creative Agency Client Portal | brief → estimate → project → review / approval | candidate |
-| 26 | IT Support / Managed Service Desk | issue → priority → assignment → resolution | candidate |
-| 27 | Home Internet Installer | address → eligibility → appointment → installation | candidate |
-| 28 | Property Viewing / Rental Agent | property discovery → viewing → application coordination | candidate |
-| 29 | Property Maintenance Service | tenant issue → triage → vendor → resolution tracking | candidate |
-| 30 | Laundry / Dry Cleaning Pickup | order → pickup → processing → delivery | candidate |
-| 31 | Tailor / Alteration Service | garment need → fitting → estimate → pickup | candidate |
-| 32 | Beauty-at-Home Service | service → professional → location → booking | candidate |
-| 33 | Babysitting / Childcare Booking | care need → caregiver → schedule → handoff | candidate |
-| 34 | Elderly Home-Care Coordination | care request → caregiver → schedule → family visibility | candidate |
-| 35 | Dog Walking / Pet Sitting | pet → schedule → sitter → visit updates | candidate |
-| 36 | Travel Consultant | trip brief → consultation → itinerary proposal → revisions | candidate |
-| 37 | Visa / Immigration Document Service | case type → eligibility intake → documents → status | candidate |
-| 38 | Translation / Interpretation Service | request → scope → quote → assignment → delivery | candidate |
-| 39 | Courier / Local Delivery Service | pickup → quote → dispatch → tracking → proof | candidate |
-| 40 | Equipment Rental Service | equipment → availability → reservation → return | candidate |
+See [`iran-demand-methodology.md`](iran-demand-methodology.md) for the methodology, evidence signals, sources, and caveats.
+
+> Demand tiers are directional portfolio-research labels, not audited market-size estimates. Ordering inside the same tier is approximate.
+
+## Opportunity status
+
+`candidate | selected | in-progress | completed | deferred`
+
+Status belongs to the **product family in the portfolio**. The project tracker records the exact model selected for a real implementation.
 
 ---
 
-# Detailed Opportunities
-
-## 01 — Barbershop / Salon Booking
-
-- **Service category:** Personal care / appointment-based service
-- **Target user:** Customers who want grooming or beauty services and staff who manage appointments.
-- **Primary problem:** Booking and changing appointments often requires calls, messages, or manual coordination with the business.
-- **Current workaround / alternative:** Phone calls, Instagram/WhatsApp messages, walk-ins, paper or simple calendars.
-- **Why the current approach is weak:** Availability is unclear, coordination is slow, service/specialist information is fragmented, and staff repeatedly answer the same booking questions.
-- **Proposed digital solution direction:** A self-service service-discovery and appointment-management experience connecting customers with bookable services, specialists, and valid time slots.
-- **Core value:** Move from service need to a confirmed appointment with minimal manual coordination.
-- **Interesting product/workflow depth:** Multi-service booking, specialist eligibility, availability, customer identity, appointment lifecycle, staff operations.
-- **Portfolio differentiation:** Provider eligibility, time-slot availability, and appointment lifecycle in a fixed-location service.
-- **Status:** in-progress
-
-## 02 — Home Cleaning Service
-
-- **Service category:** Home services / recurring service
-- **Target user:** Households that need one-time or recurring cleaning.
-- **Primary problem:** Customers struggle to understand price, scope, cleaner availability, and what is included before committing.
-- **Current workaround / alternative:** Calling local cleaners, messaging freelancers, informal referrals.
-- **Why the current approach is weak:** Pricing is inconsistent, requirements are repeatedly explained, recurring preferences are lost, and rescheduling is cumbersome.
-- **Proposed digital solution direction:** A guided service configuration experience that converts home details and cleaning needs into a clear service request and schedulable visit.
-- **Core value:** Make home cleaning predictable and easy to schedule repeatedly.
-- **Interesting product/workflow depth:** Service configuration, estimate, recurring schedule, address context, preferences, rescheduling.
-- **Portfolio differentiation:** Recurring-service workflow rather than appointment-only booking.
-- **Status:** candidate
-
-## 03 — Home Repair / Handyman Dispatch
-
-- **Service category:** Home maintenance / field service
-- **Target user:** Homeowners or tenants with repair tasks.
-- **Primary problem:** Customers often do not know which professional they need, how urgent the issue is, or when someone can come.
-- **Current workaround / alternative:** Search, phone calls, local groups, sending photos over messaging apps.
-- **Why the current approach is weak:** Problem descriptions are incomplete, technicians receive poor context, estimates are uncertain, and scheduling requires back-and-forth.
-- **Proposed digital solution direction:** A guided repair request that captures the problem, relevant media/context, urgency, and location before routing it to an appropriate service workflow.
-- **Core value:** Turn an unclear home problem into an actionable service request.
-- **Interesting product/workflow depth:** Intake/triage, attachments, urgency, technician assignment, status tracking.
-- **Portfolio differentiation:** Request/dispatch workflow instead of classic booking.
-- **Status:** candidate
-
-## 04 — Appliance Repair Service
-
-- **Service category:** Repair / field service
-- **Target user:** People with broken household appliances.
-- **Primary problem:** Customers cannot easily determine whether a repair visit is worthwhile, what information the technician needs, or what happens after diagnosis.
-- **Current workaround / alternative:** Phone description, technician visit arranged manually, paper estimate.
-- **Why the current approach is weak:** Model/problem context is lost, expectations about callout fees and repair approval are unclear, and status is difficult to follow.
-- **Proposed digital solution direction:** Structured appliance/problem intake followed by visit scheduling, diagnosis outcome, estimate approval, and repair status visibility.
-- **Core value:** Make the repair lifecycle understandable before and after the technician visit.
-- **Interesting product/workflow depth:** Asset profile, diagnosis, estimate approval, parts/waiting state, repair lifecycle.
-- **Portfolio differentiation:** Approval-driven repair lifecycle.
-- **Status:** candidate
-
-## 05 — Plumbing / Emergency Service
-
-- **Service category:** Emergency home service
-- **Target user:** Customers facing urgent plumbing problems.
-- **Primary problem:** In urgent situations users need to know quickly whether help is available, when it will arrive, and what to do meanwhile.
-- **Current workaround / alternative:** Calling multiple plumbers until someone answers.
-- **Why the current approach is weak:** High stress, poor availability visibility, repeated explanation of the incident, uncertain arrival.
-- **Proposed digital solution direction:** An urgency-aware request and dispatch experience that captures the issue quickly and communicates response status clearly.
-- **Core value:** Reduce uncertainty during an urgent service request.
-- **Interesting product/workflow depth:** Urgency classification, location, dispatch, ETA/status, emergency guidance boundaries.
-- **Portfolio differentiation:** Time-critical UX and dispatch rather than ordinary scheduling.
-- **Status:** candidate
-
-## 06 — Moving Service
-
-- **Service category:** Logistics / household service
-- **Target user:** People planning a residential or small-office move.
-- **Primary problem:** Getting an accurate moving estimate requires describing inventory, locations, stairs, timing, and special items repeatedly.
-- **Current workaround / alternative:** Calls, in-person estimates, chat messages, spreadsheets.
-- **Why the current approach is weak:** Quotes are slow, requirements are easily missed, scope changes create confusion, and move-day expectations are unclear.
-- **Proposed digital solution direction:** A guided move brief that captures the move scope and turns it into a quoteable, schedulable service request.
-- **Core value:** Make a complex move easier to estimate and coordinate.
-- **Interesting product/workflow depth:** Inventory/requirements, quote revision, scheduling, milestones, add-ons.
-- **Portfolio differentiation:** Quote-first logistics workflow.
-- **Status:** candidate
-
-## 07 — Auto Repair Workshop
-
-- **Service category:** Automotive service / repair
-- **Target user:** Vehicle owners and repair-shop staff.
-- **Primary problem:** After leaving a vehicle at a workshop, customers often have little visibility into diagnosis, recommended work, cost changes, and completion timing.
-- **Current workaround / alternative:** Phone calls, messaging, handwritten job cards.
-- **Why the current approach is weak:** Repair decisions are hard to audit, approvals are verbal, updates interrupt staff, and unexpected costs reduce trust.
-- **Proposed digital solution direction:** A service intake and repair-tracking experience where diagnosis and recommended work can be reviewed before approval.
-- **Core value:** Give customers transparency and shops a structured approval workflow.
-- **Interesting product/workflow depth:** Vehicle profile, work order, inspection findings, quote approval, repair status, service history.
-- **Portfolio differentiation:** Asset-centered lifecycle with approvals.
-- **Status:** candidate
-
-## 08 — Mobile Car Wash / Detailing
-
-- **Service category:** Automotive / mobile service
-- **Target user:** Vehicle owners who want service at home or work.
-- **Primary problem:** Customers need to match vehicle type, service package, location, and available mobile crew without lengthy coordination.
-- **Current workaround / alternative:** Messaging or phone booking.
-- **Why the current approach is weak:** Package scope is unclear, travel/service area restrictions appear late, and appointment coordination is manual.
-- **Proposed digital solution direction:** A location-aware mobile-service booking experience based on vehicle and selected detailing package.
-- **Core value:** Make an on-location vehicle service as easy to book as a normal appointment.
-- **Interesting product/workflow depth:** Vehicle context, service zones, mobile crew availability, packages, location booking.
-- **Portfolio differentiation:** Location-constrained mobile workforce scheduling.
-- **Status:** candidate
-
-## 09 — Tire / Roadside Assistance
-
-- **Service category:** Automotive emergency / dispatch
-- **Target user:** Drivers stranded with tire, battery, lockout, or minor roadside problems.
-- **Primary problem:** A stranded driver needs the correct service and trustworthy arrival information immediately.
-- **Current workaround / alternative:** Calling roadside numbers, towing companies, friends, or insurers.
-- **Why the current approach is weak:** Users may not know what service to request, location communication is error-prone, and arrival status is opaque.
-- **Proposed digital solution direction:** A rapid incident intake and dispatch experience centered on problem type, vehicle, and current location.
-- **Core value:** Reduce uncertainty between breakdown and assistance arrival.
-- **Interesting product/workflow depth:** Geolocation, incident triage, dispatch, tracking, service completion.
-- **Portfolio differentiation:** Real-time field-service dispatch UX.
-- **Status:** candidate
-
-## 10 — Pet Grooming
-
-- **Service category:** Pet services / appointment-based
-- **Target user:** Pet owners who repeatedly book grooming services.
-- **Primary problem:** Grooming needs depend on the pet, breed/coat, history, temperament, and recurring preferences that are repeatedly re-explained.
-- **Current workaround / alternative:** Phone/messages and staff memory.
-- **Why the current approach is weak:** Important pet-specific context is lost and repeat bookings still require manual explanation.
-- **Proposed digital solution direction:** Pet-profile-driven grooming booking that carries relevant preferences and service history into future appointments.
-- **Core value:** Make repeat pet grooming personalized without repeated coordination.
-- **Interesting product/workflow depth:** Pet profiles, service eligibility, repeat preferences, recurring appointments, history.
-- **Portfolio differentiation:** Booking tied to a non-human service subject/profile.
-- **Status:** candidate
-
-## 11 — Veterinary Appointment
-
-- **Service category:** Pet healthcare / scheduling
-- **Target user:** Pet owners seeking routine veterinary services.
-- **Primary problem:** Owners need to choose the right appointment type and provide relevant pet context before the visit.
-- **Current workaround / alternative:** Phone triage and receptionist scheduling.
-- **Why the current approach is weak:** Visit context is repeatedly collected, preparation instructions can be missed, and pet history is fragmented.
-- **Proposed digital solution direction:** A pet-centered appointment workflow for non-emergency visit types with clear preparation and follow-up information.
-- **Core value:** Improve appointment preparation and continuity for routine veterinary care.
-- **Interesting product/workflow depth:** Pet records context, visit reason, provider scheduling, instructions, follow-up.
-- **Portfolio differentiation:** Context-rich appointment scheduling rather than generic booking.
-- **Status:** candidate
-
-## 12 — Personal Trainer / Fitness Coaching
-
-- **Service category:** Fitness / coaching
-- **Target user:** People seeking structured individual fitness coaching.
-- **Primary problem:** Clients struggle to evaluate coach fit and maintain continuity between individual sessions.
-- **Current workaround / alternative:** Social media discovery, messaging, spreadsheets, generic workout apps.
-- **Why the current approach is weak:** Goals, sessions, plans, and progress are separated across tools.
-- **Proposed digital solution direction:** A coaching experience connecting goal intake, trainer selection, session scheduling, and lightweight progress continuity.
-- **Core value:** Turn isolated training sessions into an understandable coaching journey.
-- **Interesting product/workflow depth:** Goal onboarding, trainer matching, sessions, plan/progress, recurring engagement.
-- **Portfolio differentiation:** Service relationship continues between appointments.
-- **Status:** candidate
-
-## 13 — Physiotherapy / Rehabilitation Booking
-
-- **Service category:** Wellness / recurring clinical service
-- **Target user:** Clients who need a sequence of rehabilitation sessions.
-- **Primary problem:** Rehabilitation is usually a multi-session journey, but appointment systems often treat every visit as an unrelated booking.
-- **Current workaround / alternative:** Reception booking, paper plans, messages.
-- **Why the current approach is weak:** Treatment cadence, assigned practitioner, preparation, and session continuity are hard to understand.
-- **Proposed digital solution direction:** A session-based rehabilitation scheduling and continuity experience for non-diagnostic service coordination.
-- **Core value:** Make a recurring course of appointments easier to understand and manage.
-- **Interesting product/workflow depth:** Session series, practitioner continuity, rescheduling, plan milestones.
-- **Portfolio differentiation:** Multi-session care journey rather than single booking.
-- **Status:** candidate
-
-## 14 — Dental Clinic Appointment
-
-- **Service category:** Clinic / appointment-based service
-- **Target user:** Patients booking routine dental consultations or known treatment categories.
-- **Primary problem:** Patients often do not know which appointment category to choose or what preparation, duration, and next steps to expect.
-- **Current workaround / alternative:** Phone receptionist triage.
-- **Why the current approach is weak:** Simple scheduling depends heavily on staff, and expectations before the appointment are inconsistent.
-- **Proposed digital solution direction:** A guided appointment request for clearly bounded dental service categories with provider/time selection and preparation information.
-- **Core value:** Reduce routine scheduling friction while keeping clinical decisions outside the booking product.
-- **Interesting product/workflow depth:** Service categorization, provider eligibility, appointment instructions, multi-visit treatment context.
-- **Portfolio differentiation:** Strong boundary between service scheduling and clinical decision-making.
-- **Status:** candidate
-
-## 15 — Mental Wellness Session Booking
-
-- **Service category:** Wellness / professional sessions
-- **Target user:** People looking for a suitable counseling or wellness professional.
-- **Primary problem:** Choosing a suitable professional requires understanding specialty, format, language, availability, and personal fit before scheduling.
-- **Current workaround / alternative:** Directories, referrals, messaging individual practitioners.
-- **Why the current approach is weak:** Comparison is difficult and users repeat the same discovery work across providers.
-- **Proposed digital solution direction:** A practitioner-discovery and session-booking experience focused on transparent fit criteria and scheduling, not diagnosis.
-- **Core value:** Help users move from uncertainty about provider fit to a clearly scheduled session.
-- **Interesting product/workflow depth:** Filters/fit, practitioner profiles, session format, scheduling, privacy-sensitive UX.
-- **Portfolio differentiation:** Trust- and privacy-heavy professional discovery.
-- **Status:** candidate
-
-## 16 — Tutor / Private Lesson Booking
-
-- **Service category:** Education / recurring service
-- **Target user:** Students or parents seeking private instruction.
-- **Primary problem:** Finding a tutor who fits the subject, level, teaching style, schedule, and budget requires extensive manual comparison.
-- **Current workaround / alternative:** Referrals, social media, classified listings, direct messaging.
-- **Why the current approach is weak:** Availability and fit are unclear and recurring lesson coordination happens manually.
-- **Proposed digital solution direction:** Tutor discovery followed by trial/lesson scheduling and recurring lesson management.
-- **Core value:** Make tutor fit and recurring scheduling easier to evaluate and maintain.
-- **Interesting product/workflow depth:** Subject/level matching, recurring schedule, student context, lesson history.
-- **Portfolio differentiation:** Matching plus recurring service relationship.
-- **Status:** candidate
-
-## 17 — Language School / Class Enrollment
-
-- **Service category:** Education / cohort service
-- **Target user:** Learners choosing a course and class schedule.
-- **Primary problem:** Users need to understand level, course format, start date, timetable, and capacity before enrolling.
-- **Current workaround / alternative:** Brochures, messaging admissions, forms, phone calls.
-- **Why the current approach is weak:** Course information and real class availability are often disconnected.
-- **Proposed digital solution direction:** A guided course-discovery and class-enrollment experience connecting level and schedule to actual available cohorts.
-- **Core value:** Reduce uncertainty between learning goal and class enrollment.
-- **Interesting product/workflow depth:** Level selection, cohorts, capacity, schedules, enrollment states.
-- **Portfolio differentiation:** Capacity-based cohort workflow rather than one-to-one appointments.
-- **Status:** candidate
-
-## 18 — Driving School
-
-- **Service category:** Education / regulated lesson service
-- **Target user:** Learner drivers managing a sequence of lessons.
-- **Primary problem:** Students need to coordinate instructor, vehicle, lesson time, package usage, and progress across many sessions.
-- **Current workaround / alternative:** Office scheduling, calls, paper records.
-- **Why the current approach is weak:** Recurring scheduling is time-consuming and learners have poor visibility into remaining lessons or progress.
-- **Proposed digital solution direction:** A lesson-package and instructor scheduling experience with lightweight progress visibility.
-- **Core value:** Make the journey from enrollment to completed lessons easier to manage.
-- **Interesting product/workflow depth:** Packages/credits, instructor/resource scheduling, recurring lessons, progress milestones.
-- **Portfolio differentiation:** Multi-resource scheduling with consumable service credits.
-- **Status:** candidate
-
-## 19 — Photography Service
-
-- **Service category:** Creative professional service
-- **Target user:** Individuals or businesses hiring a photographer for a defined occasion.
-- **Primary problem:** Clients struggle to compare style, package scope, availability, deliverables, and pricing before making contact.
-- **Current workaround / alternative:** Instagram/portfolio browsing followed by long message threads.
-- **Why the current approach is weak:** Package expectations and deliverables are repeatedly clarified and project communication becomes fragmented.
-- **Proposed digital solution direction:** A portfolio-led inquiry and booking journey that turns event/session requirements into a clear package request.
-- **Core value:** Connect creative fit with practical booking expectations.
-- **Interesting product/workflow depth:** Portfolio discovery, packages, availability, project brief, delivery milestone.
-- **Portfolio differentiation:** Creative-service sales journey rather than commodity scheduling.
-- **Status:** candidate
-
-## 20 — Event Planner / Wedding Service
-
-- **Service category:** Event / project-based service
-- **Target user:** Clients planning a complex event.
-- **Primary problem:** Initial requirements, budget, vendor needs, consultation, proposal, and milestones are scattered across calls and documents.
-- **Current workaround / alternative:** Messaging, spreadsheets, email, shared docs.
-- **Why the current approach is weak:** Scope changes are difficult to track and clients lack a single understanding of project progress.
-- **Proposed digital solution direction:** A structured event brief that transitions into consultation, proposal, and milestone visibility.
-- **Core value:** Turn a vague event idea into a coordinated service engagement.
-- **Interesting product/workflow depth:** Brief/intake, proposal, revisions, milestones, multiple service categories.
-- **Portfolio differentiation:** Long-running project service rather than transactional booking.
-- **Status:** candidate
-
-## 21 — Catering Service
-
-- **Service category:** Event / quote-based service
-- **Target user:** People or organizations arranging food service for an event.
-- **Primary problem:** Pricing depends on guest count, menu, dietary needs, service style, date, and venue details.
-- **Current workaround / alternative:** Calls, PDFs, menu screenshots, spreadsheets.
-- **Why the current approach is weak:** Quotes are slow and key requirements are frequently missed or revised informally.
-- **Proposed digital solution direction:** Guided event/menu configuration that produces a structured catering request and quote workflow.
-- **Core value:** Make catering requirements explicit before quotation and confirmation.
-- **Interesting product/workflow depth:** Configurable request, guest count, menu choices, quote revisions, event logistics.
-- **Portfolio differentiation:** Configuration-to-quote service workflow.
-- **Status:** candidate
-
-## 22 — Venue / Studio Rental
-
-- **Service category:** Rental / reservation service
-- **Target user:** Creators, teams, instructors, or event hosts needing a physical space.
-- **Primary problem:** Customers need to match capacity, equipment, rules, duration, and availability to their use case.
-- **Current workaround / alternative:** Inquiry forms, calls, calendar screenshots.
-- **Why the current approach is weak:** Availability and restrictions are unclear and unsuitable inquiries consume staff time.
-- **Proposed digital solution direction:** Requirement-aware space discovery followed by availability-based reservation.
-- **Core value:** Help users determine whether a space fits before requesting or booking it.
-- **Interesting product/workflow depth:** Resource availability, duration, add-ons, capacity, rules, deposits later if needed.
-- **Portfolio differentiation:** Resource reservation rather than provider appointment.
-- **Status:** candidate
-
-## 23 — Legal Consultation
-
-- **Service category:** Professional service / consultation
-- **Target user:** Individuals or small businesses seeking an initial legal consultation.
-- **Primary problem:** Users often do not know which lawyer or consultation type matches their matter and repeatedly explain sensitive context before getting an appointment.
-- **Current workaround / alternative:** Phone receptionist intake, referrals, generic contact forms.
-- **Why the current approach is weak:** Intake is unstructured, fit is unclear, and sensitive details may be shared through inappropriate channels.
-- **Proposed digital solution direction:** A matter-category and consultation intake experience that routes users toward an appropriate professional and session type.
-- **Core value:** Make the first step toward professional advice clearer without pretending to provide legal advice itself.
-- **Interesting product/workflow depth:** Matter intake, professional matching, conflict/privacy boundaries, consultation scheduling.
-- **Portfolio differentiation:** Sensitive professional intake and routing.
-- **Status:** candidate
-
-## 24 — Accounting / Tax Service
-
-- **Service category:** Professional service / document workflow
-- **Target user:** Individuals or small businesses hiring an accountant or tax preparer.
-- **Primary problem:** Service delivery depends on collecting many documents and repeatedly clarifying what is missing.
-- **Current workaround / alternative:** Email attachments, messaging, shared folders, phone reminders.
-- **Why the current approach is weak:** Document completeness is unclear, clients do not know status, and staff spend time chasing missing inputs.
-- **Proposed digital solution direction:** A service-intake and document-readiness workflow connected to appointments and progress status.
-- **Core value:** Make client readiness and service status visible to both sides.
-- **Interesting product/workflow depth:** Intake checklist, secure document concepts, missing-item state, appointment/status lifecycle.
-- **Portfolio differentiation:** Document-driven professional service workflow.
-- **Status:** candidate
-
-## 25 — Design / Creative Agency Client Portal
-
-- **Service category:** B2B creative service / project workflow
-- **Target user:** Clients commissioning design, branding, content, or web work.
-- **Primary problem:** Briefs, estimates, feedback, approvals, files, and project status are fragmented across email and chat.
-- **Current workaround / alternative:** Email, Slack/WhatsApp, Notion, Drive, spreadsheets.
-- **Why the current approach is weak:** Decisions are hard to trace, feedback arrives in multiple places, and clients repeatedly ask for status.
-- **Proposed digital solution direction:** A lightweight client-service portal connecting project brief, proposal, milestones, review, and approval.
-- **Core value:** Create one understandable service journey from brief to approved delivery.
-- **Interesting product/workflow depth:** Project lifecycle, approvals, revisions, deliverables, client/staff roles.
-- **Portfolio differentiation:** B2B asynchronous project service.
-- **Status:** candidate
-
-## 26 — IT Support / Managed Service Desk
-
-- **Service category:** B2B support service
-- **Target user:** Employees/customers who need technical support and support staff handling requests.
-- **Primary problem:** Requests arrive through many channels with missing context and unclear priority or ownership.
-- **Current workaround / alternative:** Email, calls, chat messages, informal spreadsheets.
-- **Why the current approach is weak:** Issues are duplicated, ownership is unclear, and users repeatedly ask for status.
-- **Proposed digital solution direction:** Structured support request intake with categorization, assignment, status, and resolution communication.
-- **Core value:** Turn ad-hoc support conversations into a traceable service process.
-- **Interesting product/workflow depth:** Ticket intake, priority, assignment, SLA concepts, status, comments, resolution.
-- **Portfolio differentiation:** Queue/work-management workflow rather than consumer booking.
-- **Status:** candidate
-
-## 27 — Home Internet Installer
-
-- **Service category:** Utility / installation service
-- **Target user:** Households requesting a new internet installation or service visit.
-- **Primary problem:** Customers need to know whether service is available at their address and when installation can happen.
-- **Current workaround / alternative:** Sales calls, coverage checks by staff, separate installation scheduling.
-- **Why the current approach is weak:** Eligibility and scheduling are disconnected and customers repeat address/account information.
-- **Proposed digital solution direction:** Address-first eligibility followed by package/service selection and installation scheduling.
-- **Core value:** Connect service eligibility directly to the installation journey.
-- **Interesting product/workflow depth:** Address eligibility, plan context, appointment, installation status.
-- **Portfolio differentiation:** Eligibility-gated service workflow.
-- **Status:** candidate
-
-## 28 — Property Viewing / Rental Agent
-
-- **Service category:** Property service / appointment + application
-- **Target user:** Renters searching for a property and agents coordinating viewings.
-- **Primary problem:** Users repeatedly message agents to ask whether listings are still available and to coordinate viewing times.
-- **Current workaround / alternative:** Property portals plus calls/messages to agents.
-- **Why the current approach is weak:** Discovery and actual viewing availability are disconnected and applicant context is repeatedly collected.
-- **Proposed digital solution direction:** Property discovery tied to real viewing-request availability and a structured application handoff.
-- **Core value:** Reduce friction from interesting listing to completed viewing/application step.
-- **Interesting product/workflow depth:** Listings, viewing slots, agent schedules, applicant context, status.
-- **Portfolio differentiation:** Discovery-to-appointment-to-application funnel.
-- **Status:** candidate
-
-## 29 — Property Maintenance Service
-
-- **Service category:** Property operations / field service
-- **Target user:** Tenants, property managers, and maintenance vendors.
-- **Primary problem:** Maintenance issues are reported incompletely and tenants lack visibility after submitting them.
-- **Current workaround / alternative:** Calls, email, messaging property managers.
-- **Why the current approach is weak:** Duplicate reports, unclear urgency, poor vendor coordination, and status uncertainty.
-- **Proposed digital solution direction:** Structured maintenance request intake routed through property management to assigned service providers with status visibility.
-- **Core value:** Make property repair responsibility and progress visible across multiple actors.
-- **Interesting product/workflow depth:** Tenant intake, property/unit context, triage, vendor assignment, status, completion evidence.
-- **Portfolio differentiation:** Three-sided service coordination.
-- **Status:** candidate
-
-## 30 — Laundry / Dry Cleaning Pickup
-
-- **Service category:** Local logistics / recurring consumer service
-- **Target user:** Customers who want garments collected, cleaned, and returned.
-- **Primary problem:** Customers need to coordinate pickup/drop-off windows and understand order status after garments leave their possession.
-- **Current workaround / alternative:** Phone/message orders or physical drop-off.
-- **Why the current approach is weak:** Pickup coordination is manual and customers have little status visibility.
-- **Proposed digital solution direction:** Pickup-based service ordering with address/time selection and order-status progression through cleaning and return.
-- **Core value:** Turn a physical local service into a predictable door-to-door workflow.
-- **Interesting product/workflow depth:** Pickup windows, order lifecycle, item/service adjustments, delivery coordination.
-- **Portfolio differentiation:** Two-way local logistics lifecycle.
-- **Status:** candidate
-
-## 31 — Tailor / Alteration Service
-
-- **Service category:** Personal service / fitting + job workflow
-- **Target user:** Customers who need clothing altered or tailored.
-- **Primary problem:** Requirements, fitting appointments, estimates, completion dates, and pickup status are usually managed informally.
-- **Current workaround / alternative:** Walk-ins, paper tickets, phone calls.
-- **Why the current approach is weak:** Customers forget promised dates or scope and shops answer frequent status calls.
-- **Proposed digital solution direction:** A fitting/request workflow that records garment work, estimate/approval, target date, and pickup readiness.
-- **Core value:** Make an offline craft-service job trackable from fitting to collection.
-- **Interesting product/workflow depth:** Appointment + work order + estimate + completion status.
-- **Portfolio differentiation:** Hybrid appointment and job-ticket lifecycle.
-- **Status:** candidate
-
-## 32 — Beauty-at-Home Service
-
-- **Service category:** Personal care / mobile workforce
-- **Target user:** Customers who want beauty services delivered at home.
-- **Primary problem:** Booking depends simultaneously on service, professional eligibility, travel area, customer location, and time.
-- **Current workaround / alternative:** Instagram/WhatsApp coordination with individual professionals.
-- **Why the current approach is weak:** Travel constraints appear late, pricing may depend on location, and matching is manual.
-- **Proposed digital solution direction:** Location-aware service booking that matches service requirements with professionals who can travel to the customer.
-- **Core value:** Make at-home service availability understandable before booking.
-- **Interesting product/workflow depth:** Geographical service area, professional matching, travel availability, address context.
-- **Portfolio differentiation:** Mobile professional scheduling distinct from fixed-location salon booking.
-- **Status:** candidate
-
-## 33 — Babysitting / Childcare Booking
-
-- **Service category:** Care service / matching + scheduling
-- **Target user:** Parents who need temporary childcare.
-- **Primary problem:** Parents need strong trust signals and schedule fit before leaving a child with a caregiver.
-- **Current workaround / alternative:** Family referrals, messaging local caregivers, agencies by phone.
-- **Why the current approach is weak:** Availability, experience, household expectations, and trust information are fragmented.
-- **Proposed digital solution direction:** A trust-first childcare request and caregiver-matching experience with clear schedule and household context.
-- **Core value:** Reduce uncertainty before arranging temporary childcare.
-- **Interesting product/workflow depth:** Family/child context, caregiver fit, trust credentials, scheduling, handoff information.
-- **Portfolio differentiation:** Trust-critical matching workflow.
-- **Status:** candidate
-
-## 34 — Elderly Home-Care Coordination
-
-- **Service category:** Home care / recurring multi-actor service
-- **Target user:** Families coordinating non-emergency support for an elderly relative.
-- **Primary problem:** Care schedules, caregiver assignments, household instructions, and family visibility are difficult to coordinate across people.
-- **Current workaround / alternative:** Calls, messaging groups, paper schedules.
-- **Why the current approach is weak:** Schedule changes are easily missed and family members have limited shared visibility.
-- **Proposed digital solution direction:** A recurring care-service coordination experience connecting care requests, caregiver schedules, and family-facing visit status.
-- **Core value:** Make recurring home-care coordination understandable across family and service staff.
-- **Interesting product/workflow depth:** Recurring schedule, care recipient context, caregiver assignment, family visibility, visit status.
-- **Portfolio differentiation:** Multi-actor recurring care coordination.
-- **Status:** candidate
-
-## 35 — Dog Walking / Pet Sitting
-
-- **Service category:** Pet care / recurring mobile service
-- **Target user:** Pet owners who need routine or occasional care.
-- **Primary problem:** Owners repeatedly coordinate schedule, access instructions, pet needs, and confirmation that the visit happened.
-- **Current workaround / alternative:** Direct messages with individual walkers/sitters.
-- **Why the current approach is weak:** Pet/context information is scattered and visit trust depends on manual updates.
-- **Proposed digital solution direction:** Pet-profile-based recurring service booking with visit status and lightweight completion updates.
-- **Core value:** Make repeat pet-care visits reliable without repeated instruction.
-- **Interesting product/workflow depth:** Pet profile, recurring schedule, access notes, provider assignment, visit completion.
-- **Portfolio differentiation:** Recurring field service with trust/visit proof.
-- **Status:** candidate
-
-## 36 — Travel Consultant
-
-- **Service category:** Professional planning service
-- **Target user:** Travelers who want a human-planned trip rather than self-booking everything.
-- **Primary problem:** Clients start with vague goals and spend long message threads refining destination, budget, dates, and preferences.
-- **Current workaround / alternative:** Calls, email, messaging, shared documents.
-- **Why the current approach is weak:** Requirements change over time and itinerary revisions become difficult to compare.
-- **Proposed digital solution direction:** A structured trip brief followed by consultation, itinerary proposal, and revision/approval workflow.
-- **Core value:** Turn an ambiguous travel idea into an agreed plan through a clear professional-service process.
-- **Interesting product/workflow depth:** Brief, consultation, proposal, revisions, approval, document handoff.
-- **Portfolio differentiation:** Advisory/project workflow rather than booking marketplace.
-- **Status:** candidate
-
-## 37 — Visa / Immigration Document Service
-
-- **Service category:** Document assistance / professional service
-- **Target user:** Applicants who need help organizing a defined administrative process.
-- **Primary problem:** Applicants struggle to understand which documents have been supplied, which are missing, and what stage their service request is in.
-- **Current workaround / alternative:** Messaging, email attachments, manual checklists.
-- **Why the current approach is weak:** Document status is opaque and repeated follow-up consumes both client and staff time.
-- **Proposed digital solution direction:** A case-intake and document-readiness workflow with clear boundaries that it coordinates service work rather than making official eligibility decisions.
-- **Core value:** Make a document-heavy service process visible and organized.
-- **Interesting product/workflow depth:** Intake, checklist, document states, appointments, case milestones.
-- **Portfolio differentiation:** Case/document workflow with strong scope/disclaimer boundaries.
-- **Status:** candidate
-
-## 38 — Translation / Interpretation Service
-
-- **Service category:** Language professional service
-- **Target user:** Individuals/businesses requesting document translation or scheduled interpretation.
-- **Primary problem:** Customers struggle to communicate language pair, document size, certification need, deadline, and service type before getting a quote.
-- **Current workaround / alternative:** Email attachments and back-and-forth messages.
-- **Why the current approach is weak:** Quotes require repeated clarification and users do not know whether their request is accepted or in progress.
-- **Proposed digital solution direction:** Structured service intake that captures translation/interpretation requirements and moves through quote, assignment, and delivery status.
-- **Core value:** Make a custom language-service request easy to scope and track.
-- **Interesting product/workflow depth:** File/request intake, quote, deadline, professional assignment, delivery.
-- **Portfolio differentiation:** Custom quote plus digital-delivery workflow.
-- **Status:** candidate
-
-## 39 — Courier / Local Delivery Service
-
-- **Service category:** Logistics / dispatch
-- **Target user:** Individuals or small businesses sending local items.
-- **Primary problem:** Senders need price/eligibility, pickup timing, courier status, and delivery confirmation without repeatedly contacting the operator.
-- **Current workaround / alternative:** Phone dispatch, messaging couriers, local delivery apps.
-- **Why the current approach is weak:** Address/item details are repeatedly communicated and proof/status is fragmented.
-- **Proposed digital solution direction:** Structured pickup/delivery request followed by assignment, tracking, and proof of completion.
-- **Core value:** Make a local delivery request traceable end to end.
-- **Interesting product/workflow depth:** Address pair, package constraints, quote, courier assignment, tracking, proof.
-- **Portfolio differentiation:** Real-time logistics and two-location workflow.
-- **Status:** candidate
-
-## 40 — Equipment Rental Service
-
-- **Service category:** Rental / service operations
-- **Target user:** Individuals or businesses needing tools, event equipment, cameras, or other rentable assets.
-- **Primary problem:** Customers need to know whether a specific asset is available for the full required period and what rules apply to pickup/return.
-- **Current workaround / alternative:** Calls, spreadsheets, manual calendars.
-- **Why the current approach is weak:** Availability can be double-booked, alternatives are hard to compare, and return expectations are unclear.
-- **Proposed digital solution direction:** Inventory-aware rental discovery and reservation centered on date range, quantity, and pickup/return requirements.
-- **Core value:** Make time-bounded physical-resource availability clear before reservation.
-- **Interesting product/workflow depth:** Asset inventory, date-range availability, quantity, reservation lifecycle, return state.
-- **Portfolio differentiation:** Resource/inventory scheduling rather than people scheduling.
-- **Status:** candidate
+# Service Product Catalog
+
+| Stable ID | Product family | Category | Iran demand | Digital maturity | Common product models / variants | Core workflow | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MOBILITY-RIDE | Ride-hailing / Taxi | Mobility | D5 | M5 | open driver marketplace; managed drivers; women-only ride; corporate rides; intercity ride; fixed fleet | request → match → pickup → trip → payment | candidate |
+| FOOD-DELIVERY | Restaurant Ordering & Food Delivery | Food / local commerce | D5 | M5 | restaurant-direct; multi-restaurant marketplace; pickup-only; cloud-kitchen marketplace; corporate meals; scheduled delivery | discover → order → dispatch → delivery | candidate |
+| HEALTH-DOCTOR | Doctor Appointment & Telemedicine | Healthcare | D5 | M5 | single clinic; hospital scheduling; multi-clinic network; doctor marketplace; telemedicine-only; hybrid | need → provider → slot → consultation | candidate |
+| HOME-MARKETPLACE | Home Services Marketplace | Home services | D5 | M4 | lead marketplace; managed marketplace; instant fixed-price; quote-first; subscription home-care; B2B facilities | request → match/quote → service → completion | candidate |
+| HOME-PLUMBING | Plumbing & Emergency Home Service | Home services | D5 | M4 | single company; technician marketplace; emergency dispatch; scheduled service; maintenance subscription | issue → urgency → dispatch/schedule → resolution | candidate |
+| HOME-ELECTRICAL | Electrician / Building Electrical Service | Home services | D5 | M4 | single contractor; technician marketplace; emergency callout; project quote; building contract | issue → triage → quote/schedule → service | candidate |
+| HOME-HVAC | Cooling / Heating / HVAC Service | Home services | D5 | M4 | AC repair; evaporative-cooler service; boiler/package service; seasonal maintenance; technician marketplace; B2B contract | asset → issue/maintenance → technician → resolution | candidate |
+| HOME-APPLIANCE | Appliance Repair | Repair | D5 | M4 | brand-authorized; independent technician; marketplace; in-home repair; pickup/workshop repair; warranty service | appliance → diagnose request → visit/quote → repair | candidate |
+| HOME-CLEANING | Home & Office Cleaning | Home services | D5 | M4 | one-time home cleaning; recurring subscription; office contract; deep cleaning; move-in/out; managed cleaner marketplace | scope → quote → schedule → repeat/manage | candidate |
+| LOGISTICS-MOVING | Moving / Household Relocation | Logistics | D5 | M4 | truck-only; full-service moving; labor-only; quote marketplace; managed mover; office relocation | inventory → quote → schedule → coordinate move | candidate |
+| AUTO-REPAIR | Auto Repair Workshop | Automotive | D5 | M4 | single workshop; workshop chain; repair marketplace; pickup/drop-off; specialist shop; fleet workshop | issue → intake → inspection → approval → repair tracking | candidate |
+| AUTO-QUICK | Tire / Battery / Quick Auto Service | Automotive | D5 | M4 | shop appointment; mobile battery; mobile tire; roadside dispatch; chain marketplace; fleet plan | vehicle → need → fit/availability → service | candidate |
+| TRAVEL-TICKETS | Travel Ticket Booking | Travel | D5 | M5 | flight OTA; train booking; bus booking; multimodal aggregator; corporate travel; charter/deal marketplace | search → compare → book → manage/refund | candidate |
+| TRAVEL-STAY | Hotel & Accommodation Booking | Travel | D5 | M5 | hotel OTA; villa marketplace; eco-lodge marketplace; hotel-direct; corporate stays; long-stay | destination → availability → booking → stay management | candidate |
+| EDU-TUTOR | Private Tutoring | Education | D5 | M4 | tutor marketplace; managed matching; online-only; in-person; subject specialist; package/subscription | subject/goal → tutor fit → schedule → recurring lessons | candidate |
+| HEALTH-DENTAL | Dental Clinic Appointment | Healthcare | D5 | M4 | single clinic; multi-branch; dentist marketplace; emergency dental; cosmetic dental; treatment-plan follow-up | need → provider → slot → visit/treatment plan | candidate |
+| TECH-DEVICE-REPAIR | Mobile / Computer Repair | Technology services | D5 | M4 | walk-in shop; pickup/delivery; technician marketplace; on-site repair; brand-authorized; B2B fleet | device → issue → quote → repair → return | candidate |
+| PROPERTY-AGENT | Real Estate Agent / Property Brokerage | Property | D5 | M4 | single agency; multi-agency marketplace; owner-direct; rental-focused; sales-focused; managed broker | discover → inquire → viewing → negotiation/application | candidate |
+| LOGISTICS-FREIGHT | Freight / Cargo Transport | Logistics / B2B | D5 | M4 | truck marketplace; broker/forwarder; scheduled route; city freight; B2B contract; partial-load | shipment → quote/match → pickup → track → proof | candidate |
+| HEALTH-PHARMACY | Pharmacy & Prescription Fulfillment | Healthcare / delivery | D5 | M4 | pharmacy-direct; pharmacy marketplace; prescription upload; recurring medication; same-day delivery; pickup | prescription/need → pharmacy → fulfill → delivery/pickup | candidate |
+| BEAUTY-SALON | Barbershop / Beauty Salon Booking | Beauty / personal care | D5 | M3 | men’s single barbershop; women’s single salon; unisex salon; specialist studio; multi-branch salon; salon marketplace; at-home beauty | discover → service/specialist → schedule → manage appointment | in-progress |
+| AUTO-WASH | Car Wash & Detailing | Automotive | D4 | M3 | fixed car wash; mobile wash; detailing studio; wash subscription; marketplace; fleet washing | vehicle/package → location → schedule → service | candidate |
+| AUTO-ROADSIDE | Roadside Assistance & Towing | Automotive emergency | D4 | M4 | towing dispatch; roadside membership; insurer-connected; marketplace dispatch; battery/tire-only; heavy vehicle | incident → location → dispatch → arrival → resolution | candidate |
+| HOME-RENOVATION | Renovation / General Contractor | Home / construction | D4 | M3 | general contractor; contractor marketplace; room-specific renovation; design-build; managed project; B2B fit-out | brief → site visit → quote → project → milestones | candidate |
+| HOME-PAINT | Painting / Wall Finishing | Home services | D4 | M3 | painter marketplace; fixed package; quote-first; commercial contract; decorative specialist | scope → estimate → schedule → completion | candidate |
+| HOME-CARPENTRY | Carpentry / Cabinets / Furniture Build | Home services | D4 | M3 | custom cabinet; carpenter marketplace; repair-only; design-build; modular install; B2B shopfit | measure → design/quote → build → install | candidate |
+| HOME-LOCKSMITH | Locksmith / Door Service | Home emergency | D4 | M3 | emergency dispatch; scheduled lock change; smart-lock install; automotive locksmith; B2B access | issue → location → dispatch → service | candidate |
+| HOME-PEST | Pest Control | Home services | D4 | M3 | one-time treatment; subscription; residential; commercial; specialist pest; marketplace | problem → assessment → treatment → follow-up | candidate |
+| HOME-CCTV | Security / CCTV / Smart-Home Installation | Home services | D4 | M3 | CCTV install; alarm install; smart-home setup; maintenance contract; marketplace; B2B systems | site need → survey → quote → install → support | candidate |
+| HOME-ELEVATOR | Elevator Maintenance & Repair | Building services | D4 | M3 | building contract; emergency repair; inspection/maintenance; installer; parts/service company | asset → maintenance/issue → technician → report | candidate |
+| LOGISTICS-COURIER | Courier / Local Delivery | Logistics | D4 | M5 | on-demand bike courier; car courier; scheduled delivery; business API; document courier; same-day marketplace | pickup → quote → dispatch → track → proof | candidate |
+| LAUNDRY | Laundry / Dry Cleaning | Local services | D4 | M3 | walk-in; pickup/delivery; subscription; B2B laundry; specialty garment; marketplace | order → pickup/drop-off → process → return | candidate |
+| EVENT-WEDDING | Wedding / Event Planning | Events | D4 | M3 | full-service planner; day-of coordinator; vendor marketplace; package planner; corporate event; wedding-only | brief → consultation → proposal → milestones | candidate |
+| EVENT-CATERING | Catering Service | Events / food | D4 | M3 | event catering; corporate meals; wedding catering; chef marketplace; menu configurator; drop-off catering | event details → menu → quote → confirm → fulfill | candidate |
+| EVENT-VENUE | Venue / Hall / Studio Rental | Events / resource booking | D4 | M4 | wedding hall; meeting room; photo studio; event-space marketplace; hourly rental; package venue | requirements → availability → book → access | candidate |
+| CREATIVE-PHOTO | Photography / Videography Service | Creative services | D4 | M3 | wedding studio; portrait studio; freelancer marketplace; commercial; event; package booking | occasion/brief → portfolio → package → availability → delivery | candidate |
+| EDU-LANGUAGE | Language School / Private Language Lessons | Education | D4 | M4 | school cohorts; private tutor; online; hybrid; exam prep; conversation subscription | level → course/tutor → schedule → enrollment | candidate |
+| EDU-TESTPREP | Exam / Entrance-Test Preparation | Education | D4 | M4 | 1:1 tutor; cohort course; online subscription; mock-test service; counseling+plan; hybrid institute | goal → assessment → plan/course → progress | candidate |
+| EDU-DRIVING | Driving School | Education | D4 | M3 | school package; instructor marketplace; women-only instructor option; theory+practice; lesson credits; resource scheduling | package → instructor/car → lessons → progress | candidate |
+| EDU-VOCATIONAL | Vocational / Skills Training | Education | D4 | M3 | institute cohorts; instructor marketplace; workshop booking; apprenticeship matching; online/hybrid; certification prep | skill goal → course → schedule → completion | candidate |
+| CARE-ELDER | Elderly Home Care | Care services | D4 | M3 | hourly caregiver; live-in caregiver; managed agency; recurring schedule; family dashboard; nurse+care hybrid | care need → caregiver → schedule → family visibility | candidate |
+| HEALTH-HOME | Doctor / Nurse / Clinical Service at Home | Healthcare | D4 | M4 | doctor visit; nursing procedures; injection/IV; lab sampling; physiotherapy; managed home-care network | need → clinical service → schedule/dispatch → follow-up | candidate |
+| HEALTH-PHYSIO | Physiotherapy / Rehabilitation | Healthcare | D4 | M4 | clinic booking; home physiotherapy; practitioner marketplace; multi-session plan; sports rehab; package | need → practitioner → session series → follow-up | candidate |
+| HEALTH-AESTHETIC | Aesthetic / Dermatology Clinic Booking | Healthcare / beauty | D4 | M3 | single clinic; multi-branch; doctor marketplace; treatment consultation; packages; follow-up | concern → treatment/provider → consultation → sessions | candidate |
+| BEAUTY-BRIDAL | Bridal Beauty Services | Beauty | D4 | M3 | single-salon package; specialist marketplace; freelance makeup artist; at-home; trial+event; team booking | event → style/provider → trial → booking → event | candidate |
+| PRO-LEGAL | Legal Consultation / Lawyer Service | Professional services | D4 | M3 | law-firm booking; lawyer marketplace; paid call/chat; case intake; document review; SME subscription | matter → intake → lawyer fit → consultation/case | candidate |
+| PRO-ACCOUNTING | Accounting / Tax Service | Professional services | D4 | M3 | individual tax; SME bookkeeping; accountant marketplace; monthly subscription; document workflow; payroll add-on | need → document intake → service → status/filing | candidate |
+| PRO-IMMIGRATION | Visa / Immigration Service | Professional services | D4 | M3 | consultancy firm; consultant marketplace; case workflow; document-only; study migration; work migration | case type → intake → documents → milestones | candidate |
+| B2B-RECRUIT | Recruitment / Staffing Service | B2B / HR | D4 | M4 | job marketplace; recruitment agency; temporary staffing; executive search; blue-collar staffing; managed hiring | role/need → candidates → screening → placement | candidate |
+| PROPERTY-MAINT | Property / Building Maintenance | Property operations | D4 | M3 | residential building; commercial facility; tenant portal; vendor marketplace; subscription; managed service | issue → triage → vendor → track → completion | candidate |
+| PROPERTY-MGMT | Property Management | Property | D4 | M3 | rental management; condominium management; landlord portal; short-term rental management; commercial property | property/tenant → requests/payments → maintenance → reporting | candidate |
+| TRAVEL-TOUR | Tour / Package Travel Booking | Travel | D4 | M4 | domestic; outbound; pilgrimage; adventure; group; customized package | destination/theme → dates → package → booking | candidate |
+| TRAVEL-VISA | Travel Visa / Document Assistance | Travel / professional | D4 | M3 | agency-managed; document checklist; appointment support; multi-country marketplace; corporate visa; concierge | destination/case → requirements → documents → status | candidate |
+| TRAVEL-CAR | Car Rental | Mobility / rental | D4 | M4 | rental company; multi-company marketplace; chauffeur-driven; airport rental; monthly; luxury | vehicle/date → availability → reserve → pickup/return | candidate |
+| TRAVEL-PILGRIMAGE | Pilgrimage Travel Service | Travel | D4 | M3 | group pilgrimage; hotel+transport package; guide-led; organization-managed; family package | destination/date → package → registration → trip | candidate |
+| AUTO-BODY | Body Shop / Paint / Collision Repair | Automotive | D4 | M3 | single shop; insurer referral; quote marketplace; pickup/drop-off; cosmetic repair; fleet service | damage → estimate → approval → repair → handoff | candidate |
+| AUTO-INSPECT | Vehicle Inspection / Pre-Purchase Check | Automotive | D4 | M3 | inspection center; mobile inspector; marketplace; dealership B2B; report-only; premium diagnostic | vehicle → schedule/location → inspection → report | candidate |
+| AUTO-MOBILE-MECH | Mobile Mechanic | Automotive | D4 | M3 | on-demand dispatch; scheduled mobile service; mechanic marketplace; fleet mobile service; emergency-only | issue → location → mechanic → diagnose/fix | candidate |
+| HOME-FURNITURE | Furniture Repair / Upholstery | Home services | D4 | M3 | pickup workshop; on-site; marketplace; custom restoration; B2B furniture maintenance | item → assessment → quote → repair → return | candidate |
+| B2B-WAREHOUSE | Warehousing / Fulfillment Service | Logistics / B2B | D4 | M4 | 3PL; storage-only; ecommerce fulfillment; cold chain; cross-dock; shared warehouse | inventory → inbound → store/pick-pack → dispatch | candidate |
+| B2B-CUSTOMS | Customs / Freight Forwarding Service | Logistics / B2B | D4 | M3 | customs broker; freight forwarder; import concierge; export documentation; multimodal forwarder | shipment → documents/quote → clearance → delivery | candidate |
+| FITNESS-GYM | Gym / Fitness Class Booking | Fitness | D3 | M4 | single gym; multi-branch; class booking; trainer marketplace; pay-per-class; corporate fitness | membership/goal → class/trainer → schedule → attendance | candidate |
+| FITNESS-TRAINER | Personal Trainer / Fitness Coaching | Fitness | D3 | M3 | in-gym trainer; marketplace; online coach; home trainer; session packages; hybrid plan+sessions | goal → coach fit → plan/sessions → progress | candidate |
+| HEALTH-MENTAL | Mental Wellness / Counseling Booking | Healthcare / wellness | D3 | M4 | clinic; therapist marketplace; online-only; in-person; couples/family; employer program | need → therapist fit → schedule → session continuity | candidate |
+| HEALTH-NUTRITION | Nutritionist / Dietitian Service | Healthcare / wellness | D3 | M3 | clinic; online consult; diet-plan subscription; sports nutrition; condition-specific; marketplace | goal/context → practitioner → consultation → follow-up | candidate |
+| HEALTH-DIAGNOSTIC | Lab / Imaging Appointment | Healthcare | D3 | M3 | lab booking; home sampling; imaging center; multi-center marketplace; corporate screening; checkup package | test/order → center/time → preparation → result | candidate |
+| HEALTH-OPTICAL | Optometry / Optical Service | Healthcare / retail service | D3 | M3 | optometrist appointment; optical-shop exam; home eye test; marketplace; contact-lens follow-up | need → exam/provider → appointment → prescription | candidate |
+| HEALTH-THERAPY | Speech / Occupational Therapy | Healthcare | D3 | M3 | clinic; home visit; therapist marketplace; child-focused; multi-session; teletherapy | need → therapist → assessment → session series | candidate |
+| CARE-CHILD | Babysitting / Nanny Service | Care services | D3 | M2 | hourly sitter; nanny placement; managed agency; recurring after-school; event babysitting; live-in nanny | care need → caregiver trust/fit → schedule → handoff | candidate |
+| CARE-DISABILITY | Disability Support / Personal Assistance | Care services | D3 | M2 | hourly support; recurring caregiver; transport assistance; respite care; agency-managed; family dashboard | support need → caregiver → schedule → visit reporting | candidate |
+| PET-VET | Veterinary Appointment | Pet services | D3 | M3 | clinic; vet marketplace; emergency discovery; mobile vet; vaccination plan; tele-vet triage | pet context → provider → appointment → follow-up | candidate |
+| PET-BOARD | Pet Boarding / Daycare | Pet services | D3 | M2 | kennel; home-boarding marketplace; daycare; cat-only; dog-only; long-stay | pet profile → facility/provider → dates → handoff | candidate |
+| PET-GROOM | Pet Grooming | Pet services | D3 | M2 | grooming salon; mobile groomer; vet-clinic grooming; marketplace; recurring package | pet profile → service → schedule → history | candidate |
+| PROPERTY-VIEW | Property Viewing Scheduling | Property | D3 | M3 | single agency; listing portal; open-house; agent calendar; self-guided viewing; new-build sales center | listing → viewing slot → visit → application/offer | candidate |
+| PROPERTY-SHORTSTAY | Short-Term Rental Management | Property / travel | D3 | M3 | host-direct operations; managed host service; multi-property operator; corporate stays; turnover service | property → availability → guest → turnover/operations | candidate |
+| PRO-TRANSLATION | Translation / Interpretation Service | Professional services | D3 | M3 | document translation; certified translation; interpreter booking; remote interpretation; marketplace; B2B localization | request → scope/quote → assignment → delivery | candidate |
+| PRO-NOTARY | Notary / Official Document Appointment | Professional / administrative | D3 | M2 | office appointment; document precheck; queue booking; corporate bulk; document-status flow | document need → requirements → appointment → completion | candidate |
+| PRO-INSURANCE | Insurance Broker / Claims Assistance | Financial services | D3 | M4 | comparison; broker advisory; corporate insurance; claims concierge; renewal subscription | need → compare/advice → purchase/renew → claim support | candidate |
+| PRO-FREELANCE | Freelancer / Expert Marketplace | Professional services | D3 | M4 | open bidding; curated experts; fixed-price gigs; hourly talent; managed project; local-only | brief → proposals/match → contract → delivery | candidate |
+| B2B-AGENCY | Creative / Design Agency Client Portal | B2B creative | D3 | M2 | single-agency portal; managed marketplace; retainer; project-based; review/approval workspace | brief → estimate → project → review/approval | candidate |
+| B2B-MARKETING | Marketing / Advertising Service | B2B | D3 | M3 | agency retainer; campaign project; freelancer marketplace; performance marketing; content studio; local-business marketing | goal → brief → proposal → campaign → reporting | candidate |
+| B2B-IT | IT Support / Managed Service Desk | B2B technology | D3 | M4 | MSP contract; on-demand technician; remote support; field dispatch; device fleet; internal service desk | issue → priority → assignment → resolution | candidate |
+| TECH-DATA | Data Recovery Service | Technology services | D3 | M2 | walk-in lab; pickup courier; enterprise incident; phone recovery; disk recovery; quote-first | device/media → diagnose → quote → recover → return | candidate |
+| TECH-INTERNET | Home Internet Installation / Field Support | Utilities / technology | D3 | M3 | ISP-direct; installer network; address eligibility; appointment scheduling; field repair; business internet | address → eligibility → service → appointment → install | candidate |
+| LOCAL-TAILOR | Tailor / Alteration Service | Local personal services | D3 | M2 | tailor shop; fitting appointment; pickup/delivery; custom tailoring; marketplace; bridal alterations | garment need → fitting → estimate → pickup | candidate |
+| LOCAL-MEALPREP | Meal Prep / Subscription Cooking | Food services | D3 | M3 | weekly subscription; diet meals; family meals; corporate meals; chef-prepared; pickup/delivery | preferences → plan → recurring order → delivery | candidate |
+| LOCAL-FLORIST | Florist / Event Flower Service | Local services | D3 | M4 | flower delivery; subscription; wedding florist; funeral flowers; corporate flowers; marketplace | occasion → design/product → schedule → delivery/setup | candidate |
+| LOCAL-FUNERAL | Funeral / Memorial Service Coordination | Local / care | D3 | M1 | funeral coordinator; cemetery service portal; transport+ceremony package; memorial service; document concierge | need → arrangements → vendors/schedule → ceremony | candidate |
+| EVENT-RENTAL | Party / Event Equipment Rental | Events / rental | D3 | M3 | furniture; sound/light; tent; decor; full package; marketplace | event/date → equipment → availability → delivery/return | candidate |
+| EVENT-DJ | DJ / Music / Entertainment Booking | Events | D3 | M2 | DJ marketplace; band booking; wedding entertainment; corporate event; package agency | event → style/provider → quote → booking | candidate |
+| EDU-MUSIC | Music Lessons | Education | D3 | M2 | private teacher; music school; online; home lessons; instrument-specific; group class | instrument/level → teacher → schedule → recurring lessons | candidate |
+| EDU-CODING | Coding / Digital Skills Training | Education | D3 | M4 | bootcamp; cohort; private mentor; online course+mentor; corporate; kids coding | goal → course/mentor → cohort/sessions → project | candidate |
+| EDU-ADMISSION | University / Study-Abroad Counseling | Education / professional | D3 | M3 | admission consultant; document editing; university matching; full application; country specialist | profile/goal → strategy → documents → applications | candidate |
+| EDU-AFTERSCHOOL | Daycare / After-School Program | Education / care | D3 | M2 | daycare center; after-school club; activity classes; school transport add-on; hourly care | child/profile → program → schedule/enroll → attendance | candidate |
+| TRAVEL-GUIDE | Local Tour Guide / Experience Booking | Travel | D3 | M3 | guide marketplace; city tour; private guide; food tour; heritage tour; custom itinerary | destination → experience/guide → date → booking | candidate |
+| TRAVEL-TRANSFER | Airport Transfer / Chauffeur Service | Travel / mobility | D3 | M4 | airport taxi; chauffeur; hotel transfer; corporate driver; luxury car; intercity transfer | pickup/dropoff → vehicle → schedule → trip | candidate |
+| AUTO-CLAIM | Auto Insurance Claim Assistance | Automotive / insurance | D3 | M2 | claims concierge; repair-network integration; inspection booking; document workflow; fleet claims | incident → documents/inspection → approval → repair/payment | candidate |
+| AUTO-FLEET | Fleet Maintenance Service | Automotive / B2B | D3 | M3 | scheduled maintenance; mobile fleet service; workshop network; tire/battery plan; telematics-triggered | fleet → maintenance plan → work order → reporting | candidate |
+| B2B-PRINT | Printing / Signage / Promotional Production | B2B / local | D3 | M3 | digital print; signage project; packaging; corporate portal; design+print; marketplace | spec/file → quote → proof → production → delivery | candidate |
+| B2B-SECURITY | Security Guard / Building Security Service | B2B / property | D3 | M2 | guard staffing; event security; residential building; corporate contract; patrol | site need → staffing plan → schedule → reporting | candidate |
+| B2B-FACILITY | Facility Management | B2B / property | D3 | M2 | commercial FM; residential complex; hospital/office; outsourced maintenance; integrated cleaning/security | site/assets → tasks → vendors → SLA/reporting | candidate |
+| B2B-EQUIP | Equipment Maintenance / Field Service | Industrial / B2B | D3 | M2 | OEM service; independent technicians; preventive contract; emergency repair; multi-vendor | asset → issue/maintenance → dispatch → work order | candidate |
+| RENT-EQUIPMENT | Equipment / Tool Rental | Rental | D3 | M3 | construction tools; event gear; camera gear; industrial equipment; marketplace; B2B long-term | asset/date → availability → reserve → pickup/return | candidate |
+| SPACE-COWORK | Coworking / Desk / Meeting-Room Booking | Workspace | D3 | M4 | membership; day pass; desk booking; meeting room; marketplace; corporate access | location/resource → availability → book/access | candidate |
+| SPACE-SPORT | Sports Court / Facility Booking | Sports / resource booking | D3 | M3 | futsal/football; tennis; padel; pool lane; multi-venue marketplace; league blocks | sport/location → slot → reserve → play | candidate |
+| HOME-GARDEN | Gardening / Landscaping | Home services | D2 | M2 | garden maintenance; landscaping project; gardener marketplace; villa subscription; commercial grounds | site → scope → quote/schedule → recurring/project | candidate |
+| HOME-POOL | Pool Maintenance | Home services | D2 | M1 | villa pool; commercial pool; seasonal opening; repair; subscription | pool → service plan/issue → visit → log | candidate |
+| HOME-ORGANIZE | Home Organization / Decluttering | Home services | D2 | M1 | organizer booking; move organization; wardrobe; kitchen; premium concierge | space/goal → consultant → session/project | candidate |
+| HOME-INSPECT | Home / Property Inspection | Property services | D2 | M1 | pre-purchase; handover; rental; defect report; commercial inspection | property → inspector → visit → report | candidate |
+| LOCAL-SHOE | Shoe / Leather Repair | Local services | D2 | M1 | walk-in; pickup/delivery; premium restoration; bag/leather repair | item → quote → repair → return | candidate |
+| LOCAL-PERSONAL-CHEF | Personal Chef | Food services | D2 | M1 | home dinner; weekly prep; event chef; diet chef; chef marketplace | occasion/preferences → chef → menu/quote → service | candidate |
+| LOCAL-STYLIST | Personal Stylist / Wardrobe Consultant | Personal services | D2 | M1 | in-person; online styling; shopping concierge; bridal styling; subscription | goal/profile → stylist → session → recommendations | candidate |
+| BEAUTY-SPA | Spa / Massage Booking | Wellness / beauty | D2 | M2 | spa center; therapist; hotel spa; at-home where lawful; membership; marketplace | service → provider/location → schedule → visit | candidate |
+| BEAUTY-TATTOO | Tattoo / Piercing Studio Booking | Personal services | D2 | M1 | studio; artist marketplace; consultation-first; custom design; piercing-only | style/idea → artist → consultation → appointment | candidate |
+| PET-TRAIN | Pet Training | Pet services | D2 | M1 | trainer marketplace; home trainer; group class; board-and-train; online consult | pet/behavior → trainer/program → sessions → progress | candidate |
+| PET-WALK | Dog Walking / Pet Sitting | Pet services | D2 | M1 | walker marketplace; sitter marketplace; recurring walk; home visit; overnight sitting | pet → schedule → sitter/walker → visit updates | candidate |
+| PET-TRANSPORT | Pet Taxi / Transport | Pet services | D2 | M1 | vet transfer; airport transfer; scheduled pet taxi; rescue transport | pet/location → vehicle → schedule → transport | candidate |
+| CARE-POSTPARTUM | Postpartum / Newborn Support | Care services | D2 | M1 | newborn caregiver; lactation consultant; postpartum helper; night nurse; package | family need → specialist → schedule → support | candidate |
+| CARE-RESPITE | Respite / Temporary Care | Care services | D2 | M1 | elder respite; disability respite; hourly backup; managed agency | care context → caregiver → short-term schedule | candidate |
+| HEALTH-ADDICTION | Addiction Treatment Service Intake | Healthcare | D2 | M1 | center discovery; confidential intake; appointment; family consultation; follow-up program | need → center/program → confidential intake → appointment | candidate |
+| HEALTH-SLEEP | Sleep Clinic / Sleep Coaching | Healthcare / wellness | D2 | M1 | clinic; sleep test; remote coaching; device follow-up | problem → assessment/test → plan → follow-up | candidate |
+| FITNESS-SPORTCOACH | Sports Coach / Lesson Booking | Sports | D2 | M2 | swim coach; tennis coach; martial arts; ski coach; kids coach; marketplace | sport/level → coach → facility/time → lessons | candidate |
+| EDU-CAREER | Career Coaching / Mentoring | Professional development | D2 | M2 | 1:1 coach; mentor marketplace; interview prep; CV service; package | goal → mentor/coach → sessions → action plan | candidate |
+| EDU-CORPORATE | Corporate Training Service | B2B education | D2 | M2 | trainer marketplace; custom workshop; LMS+live; leadership coaching; technical training | company need → proposal → schedule → delivery | candidate |
+| PRO-FINANCE | Personal Financial Advisory | Financial services | D2 | M1 | advisor booking; goal-based planning; investment education; family finance; SME-owner advisory | goal → advisor → plan → follow-up | candidate |
+| PRO-BUSINESS | Business / Management Consulting | Professional services | D2 | M2 | independent consultant; boutique firm; expert marketplace; project; retainer | problem → expert → diagnosis/proposal → project | candidate |
+| PRO-DEBT | Debt Collection / Receivables Service | Professional / B2B | D2 | M1 | agency; legal escalation; invoice collection; subscription; success-fee | debt case → intake → outreach/escalation → status | candidate |
+| B2B-CYBER | Cybersecurity Consulting / Incident Response | B2B technology | D2 | M2 | assessment; pentest; incident response; managed security; compliance consulting | risk/incident → scope → engagement → remediation | candidate |
+| B2B-CLOUD | Cloud / DevOps Managed Service | B2B technology | D2 | M2 | managed hosting; DevOps retainer; migration; on-call support; cost optimization | system need → assessment → project/retainer → operations | candidate |
+| B2B-PROCURE | Procurement / Sourcing Service | B2B | D2 | M1 | supplier sourcing; RFQ marketplace; import sourcing; managed procurement; category specialist | need/spec → suppliers/quotes → select → procure | candidate |
+| B2B-INSPECT | Inspection / Certification Service | Industrial / B2B | D2 | M2 | building; equipment; quality audit; safety certification; third-party inspection | asset/site → standard → schedule → inspect → report | candidate |
+| B2B-CALIBRATE | Calibration / Metrology Service | Industrial | D2 | M1 | lab calibration; on-site; recurring compliance; equipment pickup | instrument → schedule → calibrate → certificate | candidate |
+| AGRI-MACH | Agricultural Machinery Service | Agriculture | D2 | M1 | mobile mechanic; dealer service; seasonal maintenance; parts+service; farm fleet | machine → issue/maintenance → technician → repair | candidate |
+| AGRI-IRRIGATION | Irrigation / Greenhouse Service | Agriculture | D2 | M1 | design/install; maintenance; greenhouse climate; pump service; farm contract | farm need → survey → quote → install/maintain | candidate |
+| AGRI-CONSULT | Agricultural Consulting | Agriculture | D2 | M1 | crop consultant; soil expert; greenhouse advisor; farm management; remote advisory | farm/context → expert → assessment → plan | candidate |
+| SPACE-STUDIO | Recording / Rehearsal / Podcast Studio Booking | Creative / resource booking | D2 | M2 | recording studio; rehearsal room; podcast studio; marketplace; engineer-included | resource/service → slot → book → session | candidate |
+| SPACE-STORAGE | Self-Storage / Storage Unit Rental | Property / rental | D2 | M2 | personal storage; business storage; pickup+storage; student storage; marketplace | space need → unit → dates → access | candidate |
+| LOCAL-QUEUE | Appointment / Virtual Queue for Local Businesses | Horizontal local services | D2 | M2 | single-business booking; multi-business directory; ticketed queue; appointment-only; virtual queue | business/service → slot/queue → check-in → serve | candidate |
+| GOV-ADMIN | Administrative / Government-Service Concierge | Administrative services | D2 | M1 | document checklist; appointment help; form filing; expat admin; business licensing help | need → requirements → documents → submission/status | candidate |
+| RELIGIOUS-SERVICE | Religious Ceremony / Service Coordination | Community services | D2 | M1 | ceremony venue; speaker/officiant; catering bundle; memorial/religious event; pilgrimage support | occasion → providers/package → schedule → event | candidate |
+| TRAVEL-LUGGAGE | Luggage Storage Service | Travel | D1 | M1 | city lockers; partner-shop network; hotel storage; airport storage | location/time → storage spot → reserve → drop/pickup | candidate |
+| TRAVEL-CAMP | Camping / Campsite Booking | Travel / outdoor | D1 | M1 | campsite; eco-camp; glamping; guided camping; equipment bundle | destination/date → site/package → reserve | candidate |
+| TRAVEL-RV | RV / Campervan Rental | Travel / rental | D1 | M0 | rental operator; peer-to-peer; driver+RV; camping package | vehicle/date → reserve → pickup/return | candidate |
+| TRAVEL-BOAT | Boat / Yacht Rental | Travel / leisure | D1 | M1 | hourly boat; yacht charter; fishing boat; captain-included; marketplace | location/date → vessel → quote/book → trip | candidate |
+| TRAVEL-ADVENTURE | Adventure Activity Booking | Travel / leisure | D1 | M2 | paragliding; rafting; diving; climbing guide; multi-activity marketplace | activity/location → provider/date → book → experience | candidate |
+| LOCAL-HOUSESIT | House Sitting | Home / trust marketplace | D1 | M0 | traveler sitter; paid sitter; pet+house sitting; long-stay | home/dates → sitter trust → handoff → updates | candidate |
+| LOCAL-CONCIERGE | Personal Concierge / Errand Service | Personal services | D1 | M1 | hourly errands; premium concierge; senior errands; corporate concierge; subscription | request → assign → execute → proof | candidate |
+| LOCAL-LINE | Line-Waiting / Queue Proxy Service | Personal services | D1 | M0 | government queue; event/ticket line; lawful appointment proxy | request/location → runner → wait → handoff | candidate |
+| LOCAL-MATCHMAKER | Matchmaking / Marriage Introduction Service | Personal / social service | D1 | M1 | traditional agency digitization; counselor-led; premium curated; community-specific | profile → screening → match → introduction | candidate |
+| CARE-DOULA | Doula / Birth-Coach Service | Care / wellness | D1 | M0 | birth doula; prenatal coach; postpartum package; remote education | pregnancy stage → doula fit → package → support | candidate |
+| PET-DAYCARE | Pet Daycare / Activity Club | Pet services | D1 | M1 | dog daycare; training daycare; pickup/drop-off; membership | pet → facility → day/package → attendance | candidate |
+| PET-MEMORIAL | Pet Memorial / Aftercare Service | Pet services | D1 | M0 | cremation coordination; burial support; keepsake; pickup | loss → service choice → logistics → memorial | candidate |
+| SPACE-PARK | Parking Reservation | Mobility / resource booking | D1 | M2 | airport parking; city lot; private-space marketplace; monthly; event parking | location/time → space → reserve → access | candidate |
+| SPACE-MARINA | Marina / Berth Booking | Marine resource booking | D1 | M0 | daily berth; seasonal berth; service+berth; transient boat | vessel/date → berth → reserve | candidate |
+| SPACE-OFFICE | Private Office / Flexible Workspace Marketplace | Workspace | D1 | M2 | office-by-day; monthly private office; team room; multi-operator marketplace | location/team → space → tour/book → access | candidate |
+| B2B-VA | Virtual Assistant Service | B2B / remote | D1 | M1 | hourly VA; dedicated assistant; task marketplace; executive assistant; bilingual | tasks → assistant match → recurring work | candidate |
+| B2B-AI | AI Consulting / Automation Service | B2B technology | D1 | M2 | AI strategy; workflow automation; chatbot agency; model integration; retainer support | process → assessment → prototype/project → support | candidate |
+| AGRI-DRONE | Agricultural Drone Service | Agriculture | D1 | M1 | spraying; mapping; crop monitoring; operator marketplace; seasonal contract | farm/area → mission → schedule → flight/report | candidate |
+| AGRI-HARVEST | Harvest Labor / Seasonal Farm Staffing | Agriculture | D1 | M0 | labor crew marketplace; contractor; transport+crew; seasonal contract | crop/date → crew → schedule → completion | candidate |
+| INDUSTRIAL-WASTE | Industrial Waste / Recycling Service | Industrial | D1 | M1 | scheduled pickup; hazardous specialist; recycling broker; compliance reporting | waste type → quote → pickup → certificate | candidate |
+| CLIMATE-SNOW | Snow Removal Service | Climate / property | D0 | M0 | residential; commercial contract; on-demand dispatch; seasonal subscription | weather/event → route/request → clear → proof | candidate |
+| HOME-LAWN | Lawn-Care Subscription | Home services | D0 | M0 | mowing subscription; landscaping maintenance; on-demand; neighborhood route | property → plan → recurring visits | candidate |
+| TRAVEL-SKI-CONCIERGE | Ski Resort Concierge / Lesson + Equipment Bundle | Travel / leisure | D0 | M0 | lesson+equipment; resort transfer; pass bundle; family package | resort/date → package → booking | candidate |
+| MARINE-BOATCARE | Boat Maintenance Service | Marine | D0 | M0 | mobile mechanic; marina contract; detailing; seasonal maintenance | vessel → maintenance/issue → technician → report | candidate |
+| HOME-CHIMNEY | Chimney Sweep Service | Home services | D0 | M0 | inspection; cleaning; recurring safety; fireplace repair | home → schedule → inspect/clean | candidate |
+| HOME-SEPTIC | Septic Tank Service | Home / utility | D0 | M0 | pump-out; inspection; emergency; recurring rural service | property → tank/service → dispatch → completion | candidate |
+| PET-WEDDING | Wedding Pet Attendant Service | Pet / events | D0 | M0 | event pet handler; transport; photo support; overnight care | event/pet → package → schedule | candidate |
+| LOCAL-MOBILE-NOTARY | Mobile Notary Marketplace | Administrative services | D0 | M0 | on-demand notary; scheduled mobile notary; business bulk | document/location → notary → visit → completion | candidate |
+| SPACE-BOAT-COWORK | Floating / Boat Coworking Space | Workspace / novelty | D0 | M0 | day pass; event workspace; tourism+work package | date → space → reserve | candidate |
+| LOCAL-LUXURY-CONCIERGE | Luxury Lifestyle Concierge | Personal services | D0 | M0 | membership; travel/reservation concierge; personal shopping; VIP errands | member request → concierge → fulfillment | candidate |
 
 ---
 
-# Selection Notes
+# Model-selection guidance
 
-Opportunity 01 is currently in progress as the Women’s Beauty Salon Booking project. Compare future selections against active and completed projects in the [project index](../projects/README.md); prefer a materially different workflow when similar mechanics are already represented in the portfolio.
+A product family is **not sufficiently selected** while materially different models remain unresolved.
 
-Useful dimensions for portfolio diversity include:
+For example, `BEAUTY-SALON` can produce products with very different actors and workflows:
 
-- **appointment** — scheduled provider/customer meeting
-- **recurring service** — repeated visits/preferences
-- **dispatch** — urgent or location-based provider assignment
-- **quote-first** — requirements collected before price/commitment
-- **project service** — multi-stage work over days/weeks
-- **document workflow** — client inputs/readiness drive service progress
-- **resource reservation** — rooms/equipment rather than people
-- **matching** — fit between customer needs and service provider
-- **approval workflow** — estimate/work must be accepted before execution
-- **multi-actor coordination** — customer, business, provider/vendor/family/etc.
+```text
+Men’s single barbershop
+Women’s single salon
+Unisex salon
+Independent specialist/studio
+Multi-branch salon
+Multi-salon marketplace
+At-home beauty service
+```
+
+A marketplace must not be treated as merely a larger version of a single-provider product. It introduces provider acquisition, listing/discovery, trust, marketplace supply/demand, potentially commissions/payouts, cross-provider availability, moderation, and different operational boundaries.
+
+Likewise, fixed-location and at-home models may share a service category while requiring very different scheduling and logistics.
+
+## Selection criteria
+
+When choosing the next portfolio project, consider:
+
+- **Iran demand:** how prevalent the underlying service currently is;
+- **digital maturity:** whether the market is already productized or still manually coordinated;
+- **problem strength:** whether the pain is clear and meaningful;
+- **workflow depth:** whether the service supports real product behavior beyond a landing page;
+- **portfolio differentiation:** whether its workflow differs from projects already built;
+- **model differentiation:** whether another variant of the same family would create a genuinely different product.
+
+Do not use a mechanical score unless comparison genuinely benefits from one.
+
+## Selected model rule
+
+The Selected Opportunity Brief must record:
+
+- stable product-family ID;
+- product-family name;
+- selected model / variant;
+- target market / geography when relevant;
+- target user;
+- primary problem;
+- proposed solution direction;
+- why the project is worth exploring;
+- explicit boundaries against adjacent variants.
+
+Detailed feature scope still begins in Phase 01; the model selection step defines **what kind of product is being discovered**, not its full feature list.
+
+---
+
+# Current portfolio selection
+
+- `BEAUTY-SALON` — **Women’s single-salon** model — `in-progress` via [`projects/womens-beauty-salon-booking.md`](../projects/womens-beauty-salon-booking.md).

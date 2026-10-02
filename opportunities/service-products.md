@@ -38,7 +38,7 @@ Do not add detailed feature scope here. Keep each entry focused on the problem, 
 
 | # | Opportunity | Core workflow | Status |
 | --- | --- | --- | --- |
-| 01 | Barbershop / Salon Booking | discover → schedule → manage appointment | candidate |
+| 01 | Barbershop / Salon Booking | discover → schedule → manage appointment | in-progress |
 | 02 | Home Cleaning Service | configure → quote → schedule → recurring service | candidate |
 | 03 | Home Repair / Handyman Dispatch | describe problem → triage → assign → track | candidate |
 | 04 | Appliance Repair Service | diagnose request → quote → visit → repair status | candidate |
@@ -94,7 +94,7 @@ Do not add detailed feature scope here. Keep each entry focused on the problem, 
 - **Core value:** Move from service need to a confirmed appointment with minimal manual coordination.
 - **Interesting product/workflow depth:** Multi-service booking, specialist eligibility, availability, customer identity, appointment lifecycle, staff operations.
 - **Portfolio differentiation:** Provider eligibility, time-slot availability, and appointment lifecycle in a fixed-location service.
-- **Status:** candidate
+- **Status:** in-progress
 
 ## 02 — Home Cleaning Service
 
@@ -607,7 +607,7 @@ Do not add detailed feature scope here. Keep each entry focused on the problem, 
 
 # Selection Notes
 
-No opportunity is currently selected or in progress. Compare future selections against active and completed projects in the [project index](../projects/README.md); prefer a materially different workflow when similar mechanics are already represented in the portfolio.
+Opportunity 01 is currently in progress as the Women’s Beauty Salon Booking project. Compare future selections against active and completed projects in the [project index](../projects/README.md); prefer a materially different workflow when similar mechanics are already represented in the portfolio.
 
 Useful dimensions for portfolio diversity include:
 

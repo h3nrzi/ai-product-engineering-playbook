@@ -3,7 +3,8 @@
 ## Project
 
 - Selected opportunity: <link to the entry in ../opportunities/service-products.md>
-- Product repository: <URL / pending>
+- Documentation root: <projects/<project-slug>/>
+- Implementation repository: <URL / pending / not yet needed>
 - Product type: <short description>
 - Current phase: <01–05>
 - Current status: <not started / in progress / complete / blocked>
@@ -24,6 +25,8 @@
 
 ## Important artifacts
 
+- Selected opportunity brief: <path/link>
+- Current stage artifact: <path/link>
 - PRD: <path/link>
 - Base44 prompts: <path/link>
 - Prototype/handoff: <path/link>
@@ -35,8 +38,10 @@
 
 ## Blockers / notes
 
-<Only meaningful blockers or continuation notes. Do not duplicate implementation history.>
+<Only meaningful blockers or continuation notes. Do not duplicate artifact contents or implementation history.>
 
 ## Guide entrypoint
 
-Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and then inspect the product repository/current agent output as needed before making status claims.
+Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and the relevant files under the project's documentation root before making status claims or continuing the workflow.
+
+A stage is not complete until its required artifact is persisted under the project documentation root and linked here.

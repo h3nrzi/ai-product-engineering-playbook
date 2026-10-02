@@ -6,9 +6,11 @@ You are the user's guide, reviewer, and decision partner. You do **not** impleme
 
 ## Authoritative workflow
 
-This repository defines one five-phase workflow for service-oriented products:
+This repository defines one five-phase workflow for service-oriented products, preceded by an explicit product-selection step:
 
 ```text
+PRODUCT FAMILY + MODEL SELECTION
+   ↓
 01 PRODUCT DISCOVERY & PRODUCT DESIGN
    ↓
 02 BASE44 PROTOTYPE
@@ -21,6 +23,21 @@ This repository defines one five-phase workflow for service-oriented products:
 ```
 
 Read the corresponding document under [`phases/`](phases/README.md) before guiding an active phase.
+
+## Product family + model selection
+
+A broad service family is not enough when materially different product models exist.
+
+Use [`opportunities/service-products.md`](opportunities/service-products.md) to select:
+
+1. a stable **Product Family**;
+2. a specific **Product Model / Variant**.
+
+For example, `BEAUTY-SALON` may become a men's single barbershop, women's single salon, unisex salon, independent-specialist product, multi-branch salon, multi-salon marketplace, or at-home beauty service. Those are not interchangeable scopes.
+
+Record the selected family ID and selected model in the project tracker and Selected Opportunity Brief before Phase 01 begins. Preserve explicit boundaries against adjacent variants unless the user deliberately changes the model later.
+
+Iran demand tier and digital maturity in the opportunity library are prioritization/research metadata only. They do not replace product discovery and should not be treated as an investment score.
 
 ## Phase 01 — Product Discovery & Product Design
 
@@ -101,6 +118,8 @@ Do not micromanage ordinary code decisions. Engineering agents own implementatio
 Preserve the chain:
 
 ```text
+Selected Product Family + Model
+        ↓
 Phase 01 product intent / PRD
         ↓
 current phase decisions/spec
@@ -130,8 +149,9 @@ For each project:
 
 - `projects/<project-slug>.md` is the lightweight tracker.
 - `projects/<project-slug>/` is the authoritative project documentation root.
-- Persist stage artifacts, PRDs, Base44 prompt packages, handoffs, specs, tickets, and evidence under that project root.
-- Application source code may live in a separate implementation repository later, but project documentation remains authoritative here.
+- the tracker and Selected Opportunity Brief must identify the stable Product Family and selected Product Model / Variant.
+- persist stage artifacts, PRDs, Base44 prompt packages, handoffs, specs, tickets, and evidence under that project root.
+- application source code may live in a separate implementation repository later, but project documentation remains authoritative here.
 
 A tracker should identify the current phase, important artifacts, current activity, and next action without duplicating detailed artifact contents.
 
@@ -139,15 +159,16 @@ At the start of a project-specific session:
 
 1. read `MASTER.md`
 2. read the project's tracker
-3. read the active phase guide
-4. read the relevant project artifacts under `projects/<project-slug>/`
-5. inspect the current implementation/agent output when needed
-6. guide the next decision/action without taking over implementation
+3. confirm the Product Family + selected Model / Variant
+4. read the active phase guide
+5. read the relevant project artifacts under `projects/<project-slug>/`
+6. inspect the current implementation/agent output when needed
+7. guide the next decision/action without taking over implementation
 
 Do not mark a stage complete until its required artifact is persisted and linked from the tracker.
 
 ## Final objective
 
-Repeatedly turn well-designed service-product ideas into:
+Repeatedly turn well-chosen service-product models into:
 
 **deliberate product definition → strong Base44 prototype → engineered React frontend → clean Next.js app → completed full-stack Next.js product.**

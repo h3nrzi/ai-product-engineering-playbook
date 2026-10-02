@@ -30,6 +30,8 @@ The key outputs include an approved **PRD** and a **Base44 Prompt Package**. Bas
 
 Do not write application code or prematurely design technical architecture.
 
+Every approved Phase 01 stage artifact must be persisted under the active project's documentation root before that stage is considered complete.
+
 ## Phase 02 — Base44 Prototype
 
 Use the Phase 01 artifacts to guide Base44 in generating the prototype. Evaluate the output against the PRD, identify meaningful gaps, help write targeted refinement prompts, and decide when the prototype is strong enough to leave Base44.
@@ -118,19 +120,31 @@ Prefer the smallest sufficient process. Add extra review/recovery work only when
 
 > **The workflow should reduce uncertainty, not manufacture ceremony.**
 
-## Project trackers
+## Project trackers and documentation
 
 Select new projects from the [service-product opportunity library](opportunities/service-products.md); follow the [start-a-project steps](README.md#start-a-project) before Phase 01.
 
-Use [`projects/`](projects/README.md) to track each real product through the five phases. A tracker should identify the product repository, current phase, important artifacts, current activity, and next action without duplicating the product repository's detailed implementation history.
+Use [`projects/`](projects/README.md) to track each real product through the five phases and to store the project documentation produced by the workflow.
+
+For each project:
+
+- `projects/<project-slug>.md` is the lightweight tracker.
+- `projects/<project-slug>/` is the authoritative project documentation root.
+- Persist stage artifacts, PRDs, Base44 prompt packages, handoffs, specs, tickets, and evidence under that project root.
+- Application source code may live in a separate implementation repository later, but project documentation remains authoritative here.
+
+A tracker should identify the current phase, important artifacts, current activity, and next action without duplicating detailed artifact contents.
 
 At the start of a project-specific session:
 
 1. read `MASTER.md`
 2. read the project's tracker
 3. read the active phase guide
-4. inspect the product repository/current agent output when needed
-5. guide the next decision/action without taking over implementation
+4. read the relevant project artifacts under `projects/<project-slug>/`
+5. inspect the current implementation/agent output when needed
+6. guide the next decision/action without taking over implementation
+
+Do not mark a stage complete until its required artifact is persisted and linked from the tracker.
 
 ## Final objective
 

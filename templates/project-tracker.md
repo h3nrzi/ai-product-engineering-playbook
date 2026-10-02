@@ -2,7 +2,8 @@
 
 ## Project
 
-- Product repository: <URL>
+- Selected opportunity: <link to the entry in ../opportunities/service-products.md>
+- Product repository: <URL / pending>
 - Product type: <short description>
 - Current phase: <01–05>
 - Current status: <not started / in progress / complete / blocked>
@@ -38,4 +39,4 @@
 
 ## Guide entrypoint
 
-Read `MASTER.md`, this tracker, the active phase guide, and then inspect the product repository/current agent output as needed before making status claims.
+Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and then inspect the product repository/current agent output as needed before making status claims.

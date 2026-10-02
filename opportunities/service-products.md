@@ -38,7 +38,7 @@ Do not add detailed feature scope here. Keep each entry focused on the problem, 
 
 | # | Opportunity | Core workflow | Status |
 | --- | --- | --- | --- |
-| 01 | Barbershop / Salon Booking | discover → schedule → manage appointment | in-progress |
+| 01 | Barbershop / Salon Booking | discover → schedule → manage appointment | candidate |
 | 02 | Home Cleaning Service | configure → quote → schedule → recurring service | candidate |
 | 03 | Home Repair / Handyman Dispatch | describe problem → triage → assign → track | candidate |
 | 04 | Appliance Repair Service | diagnose request → quote → visit → repair status | candidate |
@@ -93,8 +93,8 @@ Do not add detailed feature scope here. Keep each entry focused on the problem, 
 - **Proposed digital solution direction:** A self-service service-discovery and appointment-management experience connecting customers with bookable services, specialists, and valid time slots.
 - **Core value:** Move from service need to a confirmed appointment with minimal manual coordination.
 - **Interesting product/workflow depth:** Multi-service booking, specialist eligibility, availability, customer identity, appointment lifecycle, staff operations.
-- **Portfolio differentiation:** Strong scheduling/reference project; should not be repeated as the next portfolio project.
-- **Status:** in-progress
+- **Portfolio differentiation:** Provider eligibility, time-slot availability, and appointment lifecycle in a fixed-location service.
+- **Status:** candidate
 
 ## 02 — Home Cleaning Service
 
@@ -607,7 +607,7 @@ Do not add detailed feature scope here. Keep each entry focused on the problem, 
 
 # Selection Notes
 
-The next project should generally avoid repeating the same core mechanics as the current barbershop/salon project unless the new problem creates a materially different workflow.
+No opportunity is currently selected or in progress. Compare future selections against active and completed projects in the [project index](../projects/README.md); prefer a materially different workflow when similar mechanics are already represented in the portfolio.
 
 Useful dimensions for portfolio diversity include:
 

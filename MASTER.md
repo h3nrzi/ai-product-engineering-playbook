@@ -120,6 +120,8 @@ Prefer the smallest sufficient process. Add extra review/recovery work only when
 
 ## Project trackers
 
+Select new projects from the [service-product opportunity library](opportunities/service-products.md); follow the [start-a-project steps](README.md#start-a-project) before Phase 01.
+
 Use [`projects/`](projects/README.md) to track each real product through the five phases. A tracker should identify the product repository, current phase, important artifacts, current activity, and next action without duplicating the product repository's detailed implementation history.
 
 At the start of a project-specific session:

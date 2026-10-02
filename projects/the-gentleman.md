@@ -3,95 +3,55 @@
 ## Project
 
 - Product repository: https://github.com/h3nrzi/the-gentleman
-- Product type: service/salon booking product with public content, customer journeys, and staff/admin workflows
-- Origin: Base44 vibe-coded prototype, then structured frontend completion with Codex and Matt Pocock-style skills
-- Current workflow phase: **04 — Frontend Engineering**
+- Product type: salon/service booking product
+- Origin: Base44-generated React prototype followed by structured frontend engineering
+- Current phase: **03 — React Frontend Completion**
 - Current status: **in progress**
-- Long-term implementation direction: **integrated full-stack Next.js**
-- Separate dedicated NestJS/Express backend: **not currently planned**
 
-## Workflow status
+## Mapping to the new workflow
 
-```text
-Phase 01 — Product Discovery / Prototype        COMPLETE
-Phase 02 — Wayfinder / Product Definition       COMPLETE
-Phase 03 — to-spec + to-tickets                 COMPLETE
-Phase 04 — Implement frontend tickets           IN PROGRESS
-```
+The Gentleman began before the current playbook was finalized, so its early history does not perfectly match the new Phase 01 artifact standard. Do not fabricate missing historical artifacts merely to make the tracker look complete.
 
-The current playbook ends at **Frontend Accepted**. Later full-stack/server-side work will be designed just in time when this project is deliberately selected to continue beyond Phase 04.
+| Phase | Status | Notes |
+| --- | --- | --- |
+| 01 — Product Discovery & Product Design | legacy / completed before new standard | Product intent was developed during earlier sessions; the new PRD + Base44 prompt-package standard applies cleanly to future projects |
+| 02 — Base44 Prototype | complete | Initial product prototype was created with Base44 and moved into the repository |
+| 03 — React Frontend Completion | in progress | Current 25-ticket frontend-completion program using Matt-style structured engineering |
+| 04 — React → Next.js Refactor | not started | Begins only after the React frontend is accepted |
+| 05 — Full-Stack Next.js Completion | not started | Real server-side/persistence work after Next.js migration |
 
-## Frontend engineering
+## Current activity
 
-The approved implementation backlog contains 25 tickets under:
+Continue implementing the approved React frontend-completion tickets one by one in the product repository.
 
-`.scratch/frontend-completion-implementation/issues/`
+The detailed implementation truth lives in `h3nrzi/the-gentleman`; inspect the current ticket/backlog before making exact progress claims rather than relying on a stale count in this tracker.
 
-Tickets **01–07 have been implemented/closed in the product repository**. The user has continued sequential ticket execution beyond that point; when exact current-ticket status matters, inspect the product repository rather than relying on this tracker alone.
+## Existing artifacts
 
-The normal activity is intentionally simple:
+The product repository contains historical frontend decision/specification/ticket artifacts under `.scratch/`. These remain valid project history for The Gentleman even though the central playbook itself has been replaced by the new five-phase workflow.
 
-```text
-Pick next ready ticket
-→ implement with Codex/engineering agent
-→ verify relevant behavior
-→ close/accept
-→ next ticket
-```
+Do not delete or rewrite The Gentleman's working implementation artifacts merely because the central playbook changed.
 
-Do not add planning ceremony between tickets unless a real spec/decision gap or blocker appears.
+## Next transition
 
-## Important artifacts
-
-In the product repository:
-
-- Decision map: `.scratch/frontend-completion/map.md`
-- Frontend specification: `.scratch/frontend-completion/spec.md`
-- Acceptance material: `.scratch/frontend-completion/acceptance.md`
-- Existing server/backend behavioral notes: `.scratch/frontend-completion/backend-handoff.md`
-- Implementation backlog: `.scratch/frontend-completion-implementation/backlog.md`
-- Implementation tickets: `.scratch/frontend-completion-implementation/issues/`
-
-These existing artifacts remain useful historical/behavioral context. They do **not** imply that a separate backend application must be built.
-
-## Current implementation strategy
-
-The user has decided that The Gentleman should ultimately become a **full-stack Next.js application** rather than a frontend plus a separately developed dedicated backend.
-
-For future work, think in terms of one product containing the appropriate client and server boundaries:
+After the React frontend is complete:
 
 ```text
-Next.js
-├── public site
-├── customer area
-├── staff/admin area
-├── server-side/domain behavior
-├── auth/authz
-└── persistence/database
+Phase 03 complete
+→ Phase 04 Wayfinder for React → Next.js migration
+→ to-spec
+→ to-tickets
+→ implement migration
+→ Next.js frontend ready
+→ Phase 05 full-stack completion
 ```
 
-This does not remove engineering boundaries. Real server-side work will still need to handle authorization, validation, persistence, concurrency-sensitive scheduling, atomic mutations, revisions/idempotency/reconciliation, and other guarantees currently modeled by frontend mocks.
+The intended final product is an integrated full-stack Next.js application. A separate dedicated NestJS/Express backend is not currently planned.
 
-Do not prematurely choose the exact database/auth/ORM/infrastructure mechanisms during Phase 04.
-
-## Future transition rule
-
-Do **not** automatically start a separate backend after Ticket 25.
-
-First reach **Frontend Accepted**. When the user explicitly chooses to continue The Gentleman, use it to design the next playbook phase just in time.
-
-That future phase should be framed around making the product genuinely full-stack/server-backed—likely inside Next.js under the current strategy—rather than assuming a NestJS/Express service.
-
-Preserve established product semantics and useful frontend-facing contracts while replacing mock/demo guarantees with real server-side guarantees.
-
-## Guide LLM entrypoint
-
-When starting a new guidance session for The Gentleman:
+## Guide entrypoint
 
 1. Read `../MASTER.md`.
 2. Read this tracker.
-3. Read the active phase guide as needed.
-4. Inspect the product repository/current ticket before making exact progress claims.
-5. Keep guidance proportional: after discovery, the normal frontend-completion path is Wayfinder → to-spec → to-tickets → ticket implementation.
-6. Help with real decisions, blockers, reviews, and concise agent responses; do not manufacture extra process.
-7. Do not implement application code yourself unless explicitly asked for a small illustrative example.
+3. Read `../phases/03-react-frontend-completion.md` while Phase 03 is active.
+4. Inspect the product repository/current ticket before making progress claims.
+5. Help with agent questions, decisions, spec/ticket review, and implementation reports without taking over coding.

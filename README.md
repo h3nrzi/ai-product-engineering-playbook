@@ -1,51 +1,34 @@
 # AI Product Engineering Playbook
 
-Single source of truth for a reusable AI-assisted product-engineering workflow.
-
-This repository is designed so a guide LLM can quickly understand:
-
-- what role it should play,
-- where a project currently is in the workflow,
-- which phase guide governs the next work,
-- what tools/agents are responsible for execution,
-- how project progress is tracked across phases.
-
-## Read order for any guide LLM
-
-1. Read [`MASTER.md`](MASTER.md).
-2. Read the relevant project tracker under [`projects/`](projects/README.md).
-3. Read the phase document linked by that tracker.
-4. Help the user reason, review, prompt, and decide. Do not take over implementation work unless explicitly asked for a small illustrative example.
+Single source of truth for a reusable AI-assisted product engineering workflow focused on service-oriented products.
 
 ## Workflow
 
-1. Product Discovery & Rapid Prototype
-2. Frontend Product Definition
-3. Frontend Specification & Decomposition
-4. Frontend Engineering
-5. Frontend Acceptance & Backend Handoff
-6. Backend Product & Architecture Definition
-7. Backend Specification & Decomposition
-8. Backend Engineering
-9. Full-Stack Integration & Verification
-10. Production Hardening & Readiness
+```text
+Product Discovery & Product Design
+        ↓
+Base44 Prototype
+        ↓
+React Frontend Completion
+        ↓
+React → Next.js Refactor
+        ↓
+Full-Stack Next.js Completion
+```
 
-Detailed phase documents will live under [`phases/`](phases/README.md) and will be created/reviewed one at a time.
+The first phase deliberately invests in professional product discovery and produces the PRD plus the prompts used by Base44. Later phases progressively transform that intent into a prototype, an engineered React frontend, a Next.js application, and finally a real full-stack product.
 
-## Project tracking
+Engineering phases use a lightweight Matt Pocock-style pattern where appropriate:
 
-Each real project gets a tracker under [`projects/`](projects/README.md). The tracker records:
+`Wayfinder → to-spec → to-tickets → implementation`
 
-- product repository,
-- current workflow phase,
-- status of every phase,
-- current activity,
-- important artifacts,
-- next action,
-- blockers/notes.
+## Repository
 
-Use [`templates/project-tracker.md`](templates/project-tracker.md) when onboarding a new project.
+- [`MASTER.md`](MASTER.md) — role and authoritative workflow for Guide LLMs
+- [`phases/`](phases/README.md) — phase-by-phase procedure
+- [`projects/`](projects/README.md) — trackers for real projects using the playbook
+- [`templates/project-tracker.md`](templates/project-tracker.md) — tracker template
 
-## Current projects
+## Principle
 
-- [`The Gentleman`](projects/the-gentleman.md)
+Product discovery should be deep enough to design the right product. Engineering workflow should then remain structured but lightweight enough to keep building momentum.

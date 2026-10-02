@@ -3,8 +3,8 @@
 ## Project
 
 - Selected opportunity: [`01 — Barbershop / Salon Booking`](../opportunities/service-products.md#01--barbershop--salon-booking)
-- Product repository: pending
-- Product type: Single-salon women’s beauty service discovery, booking, and appointment management product
+- Documentation root: [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/)
+- Product type: Single-salon women’s beauty service discovery, booking, and appointment-management product
 - Current phase: 01
 - Current status: in progress
 
@@ -20,13 +20,14 @@
 
 ## Current activity
 
-Phase 01, Stage 03 completed in discussion. Stages 01–03 are approved and ready to be persisted as project artifacts once the product repository exists. Stage 04 has not started.
+Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor Definition — is next and has not started yet.
 
 ## Important artifacts
 
-- Problem Definition: pending product repository (`product-design/problem-definition.md`)
-- Solution Definition: pending product repository (`product-design/solution-definition.md`)
-- Product Scope: pending product repository (`product-design/product-scope.md`)
+- Selected Opportunity Brief: [`selected-opportunity-brief.md`](womens-beauty-salon-booking/selected-opportunity-brief.md)
+- Problem Definition: [`product-design/problem-definition.md`](womens-beauty-salon-booking/product-design/problem-definition.md)
+- Solution Definition: [`product-design/solution-definition.md`](womens-beauty-salon-booking/product-design/solution-definition.md)
+- Product Strategy & Scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -34,12 +35,12 @@ Phase 01, Stage 03 completed in discussion. Stages 01–03 are approved and read
 
 ## Next action
 
-Create or identify the product repository, persist the three approved Stage 01–03 artifacts there, update this tracker with their links, then begin Stage 04 — User & Actor Definition.
+Begin Phase 01 Stage 04 — User & Actor Definition. Persist `product-design/user-actors.md` before Stage 04 is considered complete.
 
 ## Blockers / notes
 
-The product repository has not been identified yet. Do not advance to Stage 04 until the approved Stage 01–03 artifacts are persisted in the product repository and linked here.
+No current blocker. Project documentation is stored in this playbook repository under the project documentation root. Application implementation code may live elsewhere later, but product documentation remains authoritative here.
 
 ## Guide entrypoint
 
-Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and then inspect the product repository/current agent output as needed before making status claims.
+Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and the project artifacts under [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/) before making status claims or continuing the workflow.

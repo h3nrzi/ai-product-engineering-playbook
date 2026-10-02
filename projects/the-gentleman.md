@@ -3,92 +3,95 @@
 ## Project
 
 - Product repository: https://github.com/h3nrzi/the-gentleman
-- Product type: salon/service booking product with public content, customer booking/account journeys, and staff/admin workflows
-- Workflow origin: initial Base44 vibe-coded frontend prototype, then structured frontend product definition and engineering with Codex and Matt Pocock-style skills
+- Product type: service/salon booking product with public content, customer journeys, and staff/admin workflows
+- Origin: Base44 vibe-coded prototype, then structured frontend completion with Codex and Matt Pocock-style skills
 - Current workflow phase: **04 — Frontend Engineering**
 - Current status: **in progress**
+- Long-term implementation direction: **integrated full-stack Next.js**
+- Separate dedicated NestJS/Express backend: **not currently planned**
 
 ## Workflow status
 
-| Phase | Status | Key artifact / evidence |
-| --- | --- | --- |
-| 01 — Product Discovery & Rapid Prototype | complete | Initial Base44 prototype brought into the product repository |
-| 02 — Frontend Product Definition | complete | `.scratch/frontend-completion/map.md` and eight resolved decision tickets |
-| 03 — Frontend Specification & Decomposition | complete | `.scratch/frontend-completion/spec.md`, acceptance/handoff artifacts, and approved 25-ticket implementation backlog |
-| 04 — Frontend Engineering | in progress | `.scratch/frontend-completion-implementation/issues/` |
-| 05 — Frontend Acceptance & Backend Handoff | not started as final phase | Partial acceptance evidence is collected ticket-by-ticket; final acceptance is Ticket 25 |
-| 06 — Backend Product & Architecture Definition | not started | Backend must get a separate planning/Wayfinder phase after frontend completion |
-| 07 — Backend Specification & Decomposition | not started | — |
-| 08 — Backend Engineering | not started | — |
-| 09 — Full-Stack Integration & Verification | not started | — |
-| 10 — Production Hardening & Readiness | not started | — |
+```text
+Phase 01 — Product Discovery / Prototype        COMPLETE
+Phase 02 — Wayfinder / Product Definition       COMPLETE
+Phase 03 — to-spec + to-tickets                 COMPLETE
+Phase 04 — Implement frontend tickets           IN PROGRESS
+```
 
-## Current frontend engineering progress
+The current playbook ends at **Frontend Accepted**. Later full-stack/server-side work will be designed just in time when this project is deliberately selected to continue beyond Phase 04.
 
-The approved implementation backlog contains 25 tickets.
+## Frontend engineering
 
-Current known progress:
+The approved implementation backlog contains 25 tickets under:
 
-- Ticket 01 — contracts/browser foundation: **closed**
-- Ticket 02 — guest booking/authoritative availability: **closed**
-- Ticket 03 — booking review/recovery: **closed**
-- Ticket 04 — uncertain booking creation/reconciliation: **implemented, ready-for-human**; automated criteria 04.1–04.5 are complete, while `04.Q` manual acceptance remains open
-- Ticket 05 onward: not yet treated as complete in this tracker
+`.scratch/frontend-completion-implementation/issues/`
 
-Ticket 04 currently has partial manual evidence only. Full keyboard/focus, labels/states, mobile/Persian/RTL and screen-reader checks remain unperformed; real-device checks are blocked by unavailable devices.
+Tickets **01–07 have been implemented/closed in the product repository**. The user has continued sequential ticket execution beyond that point; when exact current-ticket status matters, inspect the product repository rather than relying on this tracker alone.
 
-## Current activity
+The normal activity is intentionally simple:
 
-Finish Ticket 04 human acceptance, then continue the frontend implementation frontier.
+```text
+Pick next ready ticket
+→ implement with Codex/engineering agent
+→ verify relevant behavior
+→ close/accept
+→ next ticket
+```
 
-Ticket 04 covers stable create-attempt identity, safe replay, three-outcome reconciliation (`committed` / `not committed` / `unknown`), lost-response recovery, reload/persistence recovery, duplicate-submit prevention, and safe handling of unavailable/corrupt storage.
+Do not add planning ceremony between tickets unless a real spec/decision gap or blocker appears.
 
-## Current artifacts
+## Important artifacts
 
 In the product repository:
 
-- Frontend decision map: `.scratch/frontend-completion/map.md`
+- Decision map: `.scratch/frontend-completion/map.md`
 - Frontend specification: `.scratch/frontend-completion/spec.md`
-- Acceptance matrix: `.scratch/frontend-completion/acceptance.md`
-- Backend behavioral handoff: `.scratch/frontend-completion/backend-handoff.md`
+- Acceptance material: `.scratch/frontend-completion/acceptance.md`
+- Existing server/backend behavioral notes: `.scratch/frontend-completion/backend-handoff.md`
 - Implementation backlog: `.scratch/frontend-completion-implementation/backlog.md`
 - Implementation tickets: `.scratch/frontend-completion-implementation/issues/`
-- Per-ticket testing evidence: `docs/testing/`
 
-Important current ticket:
+These existing artifacts remain useful historical/behavioral context. They do **not** imply that a separate backend application must be built.
 
-- `.scratch/frontend-completion-implementation/issues/04-booking-attempt-reconciliation.md`
+## Current implementation strategy
 
-## Next action
+The user has decided that The Gentleman should ultimately become a **full-stack Next.js application** rather than a frontend plus a separately developed dedicated backend.
 
-Complete Ticket 04's outstanding manual acceptance (`04.Q`) and close it if the required human checks pass. Then inspect the backlog frontier and start the next eligible implementation ticket.
+For future work, think in terms of one product containing the appropriate client and server boundaries:
 
-## Blockers / manual checks
+```text
+Next.js
+├── public site
+├── customer area
+├── staff/admin area
+├── server-side/domain behavior
+├── auth/authz
+└── persistence/database
+```
 
-For Ticket 04:
+This does not remove engineering boundaries. Real server-side work will still need to handle authorization, validation, persistence, concurrency-sensitive scheduling, atomic mutations, revisions/idempotency/reconciliation, and other guarantees currently modeled by frontend mocks.
 
-- complete keyboard-only recovery flow and visible/logical focus checks
-- inspect labels, messages and recovery states manually
-- inspect mobile layout/touch behavior
-- inspect Persian/RTL presentation
-- perform a screen-reader spot check
-- real Android Chrome / iOS Safari checks remain blocked until devices are available unless an explicit accepted exception is recorded
+Do not prematurely choose the exact database/auth/ORM/infrastructure mechanisms during Phase 04.
 
-## Backend transition rule
+## Future transition rule
 
-Do **not** start implementing the production backend immediately after frontend tickets finish.
+Do **not** automatically start a separate backend after Ticket 25.
 
-After frontend acceptance, begin a separate backend definition phase. Preserve the settled product semantics and frontend-facing contracts, but independently decide production backend architecture, persistence, authentication/authorization, transactional boundaries, concurrency, idempotency, reconciliation, observability, infrastructure, and deployment.
+First reach **Frontend Accepted**. When the user explicitly chooses to continue The Gentleman, use it to design the next playbook phase just in time.
 
-Frontend mock behavior is evidence of intended semantics, not proof of production security, durability, atomicity, or distributed concurrency guarantees.
+That future phase should be framed around making the product genuinely full-stack/server-backed—likely inside Next.js under the current strategy—rather than assuming a NestJS/Express service.
+
+Preserve established product semantics and useful frontend-facing contracts while replacing mock/demo guarantees with real server-side guarantees.
 
 ## Guide LLM entrypoint
 
 When starting a new guidance session for The Gentleman:
 
-1. Read [`../MASTER.md`](../MASTER.md).
+1. Read `../MASTER.md`.
 2. Read this tracker.
-3. Read the active phase guide under [`../phases/`](../phases/README.md) once it exists.
-4. Inspect the product repository and current ticket/evidence before making status claims.
-5. Help the user understand the current work, review agent output, make decisions, and formulate concise prompts/responses.
-6. Do not implement application code yourself unless the user explicitly asks for a small illustrative example.
+3. Read the active phase guide as needed.
+4. Inspect the product repository/current ticket before making exact progress claims.
+5. Keep guidance proportional: after discovery, the normal frontend-completion path is Wayfinder → to-spec → to-tickets → ticket implementation.
+6. Help with real decisions, blockers, reviews, and concise agent responses; do not manufacture extra process.
+7. Do not implement application code yourself unless explicitly asked for a small illustrative example.

@@ -2,12 +2,21 @@
 
 ## Project
 
-- Selected opportunity: <link to the entry in ../opportunities/service-products.md>
+- Product family: <stable ID + family name + link to ../opportunities/service-products.md>
+- Selected model / variant: <specific model>
+- Target market / geography: <if relevant>
 - Documentation root: <projects/<project-slug>/>
 - Implementation repository: <URL / pending / not yet needed>
 - Product type: <short description>
 - Current phase: <01–05>
 - Current status: <not started / in progress / complete / blocked>
+
+## Model boundary
+
+- Selected: <what model this project is>
+- Explicitly not: <adjacent variants that are not this project>
+
+Do not silently change the selected model during later phases. A deliberate model change must update the Selected Opportunity Brief, tracker, and any affected approved artifacts.
 
 ## Workflow
 

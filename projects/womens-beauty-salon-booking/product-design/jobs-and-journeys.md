@@ -26,11 +26,17 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | Choose specialist | Select an eligible specialist or no preference | Expertise, supported service, preference meaning | Preferred specialist does not provide the service | Valid preference retained |
 | Choose time | Find a time that fits | Date, available start times, full duration, specialist context | No suitable time or a slot becomes unavailable | One valid selected time |
 | Sign in / provide details | Sign in if needed; reuse verified account details | Mobile number and SMS code for signed-out customers; any further required details remain to be decided | Missing/expired code, session expiry, or slot loss during login | Authenticated account; selections preserved and availability rechecked |
-| Review | Check appointment and payment terms | Service, actual specialist, date/time, duration, expected price, deposit percentage, price basis, calculated deposit, balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
+| Review | Check appointment and payment terms | Service, actual specialist, date/time, duration, fixed price or clearly labelled approximate usual-volume price, deposit percentage, calculated deposit, exact or estimated balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
 | Pay deposit | Secure the appointment within a temporary hold | Deposit amount, hold expiry, payment result | Abandoned/failed payment, expired hold, or uncertain result | Verified deposit allows confirmation; unresolved payment remains pending |
 | Confirm | Understand whether booking succeeded | Confirmed appointment details, recorded deposit, balance, and a route to My appointments | Payment result is uncertain or arrives after hold expiry | Confirmed appointment only after verified payment and valid slot ownership; otherwise clear recovery |
 
-Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. One shared percentage applies to all services and is configurable only by management; per-service rates are deferred. The percentage value, price basis for variable-price services, rounding, hold duration, and detailed exception handling remain open before final flows. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. One shared percentage applies to all services and is configurable only by management; per-service rates are deferred. For variable-price services, the approved deposit basis is the approximate price for usual volume, with the estimate and final in-salon settlement clearly disclosed before payment. The percentage value, rounding, hold duration, and detailed exception handling remain open before final flows. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+
+### Variable-price service journey
+
+Choose service → understand the approximate usual-volume price and why it can change → select eligible specialist/time → sign in if needed → review the estimate, deposit percentage, exact deposit payable now, estimated balance, and final-price disclosure → pay deposit → receive confirmed appointment with the same disclosed price basis → attend salon → settle final service price less deposit already paid.
+
+The final balance is calculated from the actual final price, not automatically fixed to the pre-booking estimate. A variable price does not itself turn the service into a consultation-only booking. Appointment duration may also vary with service volume; this scheduling decision remains open before final flows.
 
 ### Alternatives and recovery
 
@@ -90,9 +96,10 @@ Reception can identify an appointment or availability issue; management owns set
 
 - Staff authentication and how phone/walk-in appointments are linked to customer accounts; staff must not impersonate a customer session.
 - Customer mobile-number change/recovery policy; no cross-number appointment access is assumed.
-- Fixed, starting, or estimate-based service prices; any consultation prerequisite.
+- Service-specific approximate usual-volume prices, their descriptions and adjustment factors; any genuine consultation prerequisite. Variable pricing alone does not require consultation.
 - Value of the manager-controlled salon-wide deposit percentage and currency rounding. Per-service rates are deferred.
-- Explicit price basis for variable-price services and treatment of price adjustments after payment.
+- How the final price is agreed at the salon and how an excess deposit is handled if the final price is lower than the deposit paid.
+- Whether usual-volume service durations cover variable-volume bookings; any required intake, duration adjustment, or staff coordination to prevent appointment overlap.
 - Temporary hold duration.
 - Deposit collection and account linkage for phone/walk-in bookings.
 - Late/uncertain payment recovery and refund processing details.

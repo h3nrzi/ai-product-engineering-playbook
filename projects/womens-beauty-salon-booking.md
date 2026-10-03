@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — is researched and persisted; the user approved one service per MVP appointment. Stage 06 — Jobs & User Journeys — has a persisted draft; customer mobile-number/SMS-code login and account-linked online reservations are approved. Online deposit payment for confirmation, a short payment hold, and remaining payment at the salon are approved. One shared deposit percentage for all services, configurable only by management, is approved; per-service percentages are deferred. The percentage value, variable-price basis, cancellation/rescheduling details, staff authentication, and staff-created appointment linking remain open before final flows.
+Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — is researched and persisted; the user approved one service per MVP appointment. Stage 06 — Jobs & User Journeys — has a persisted draft; customer mobile-number/SMS-code login and account-linked online reservations are approved. Online deposit payment for confirmation, a short payment hold, and remaining payment at the salon are approved. One shared deposit percentage for all services, configurable only by management, is approved; per-service percentages are deferred. For variable-price services, the approximate usual-volume price is the approved deposit basis; the customer must see that the final price may vary and the paid deposit is deducted at the salon. Percentage value, variable-volume scheduling, cancellation/rescheduling details, staff authentication, and staff-created appointment linking remain open before final flows.
 
 ## Important artifacts
 
@@ -48,7 +48,7 @@ Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access 
 
 ## Next action
 
-Review Stage 06 jobs and journeys, beginning with the shared deposit percentage value and variable-price handling, hold duration, and the advance cancellation cutoff. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
+Review Stage 06 jobs and journeys, beginning with the shared deposit percentage value, scheduling for variable-volume services, hold duration, and the advance cancellation cutoff. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
 
 ## Blockers / notes
 

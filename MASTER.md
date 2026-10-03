@@ -30,14 +30,14 @@ A broad service family is not enough when materially different product models ex
 
 Use [`opportunities/service-products.md`](opportunities/service-products.md) to select:
 
-1. a stable **Product Family**;
+1. a **Product Family** (service name);
 2. a specific **Product Model / Variant**.
 
-For example, `BEAUTY-SALON` may become a men's single barbershop, women's single salon, unisex salon, independent-specialist product, multi-branch salon, multi-salon marketplace, or at-home beauty service. Those are not interchangeable scopes.
+For example, **Barbershop / Beauty Salon Booking** may become a men's single barbershop, women's single salon, unisex salon, independent-specialist product, multi-branch salon, multi-salon marketplace, or at-home beauty service. Those are not interchangeable scopes.
 
-Record the selected family ID and selected model in the project tracker and Selected Opportunity Brief before Phase 01 begins. Preserve explicit boundaries against adjacent variants unless the user deliberately changes the model later.
+Record the selected service name and selected model in the project tracker and Selected Opportunity Brief before Phase 01 begins. Preserve explicit boundaries against adjacent variants unless the user deliberately changes the model later.
 
-Iran demand tier and digital maturity in the opportunity library are prioritization/research metadata only. They do not replace product discovery and should not be treated as an investment score.
+The list is ordered roughly by demand in Iran. Use it as a starting point; project selection still depends on the problem and the chosen model.
 
 ## Phase 01 — Product Discovery & Product Design
 
@@ -149,7 +149,7 @@ For each project:
 
 - `projects/<project-slug>.md` is the lightweight tracker.
 - `projects/<project-slug>/` is the authoritative project documentation root.
-- the tracker and Selected Opportunity Brief must identify the stable Product Family and selected Product Model / Variant.
+- the tracker and Selected Opportunity Brief must identify the Product Family (service name) and selected Product Model / Variant.
 - persist stage artifacts, PRDs, Base44 prompt packages, handoffs, specs, tickets, and evidence under that project root.
 - application source code may live in a separate implementation repository later, but project documentation remains authoritative here.
 

@@ -2,9 +2,7 @@
 
 ## Product family
 
-- **Stable ID:** `BEAUTY-SALON`
 - **Family:** Barbershop / Beauty Salon Booking
-- **Iran demand:** D5 — very high / mass-market in the current opportunity-library snapshot
 - **Selected model / variant:** **Women’s single-salon**
 - **Target market:** Persian-language product for the Iranian market
 

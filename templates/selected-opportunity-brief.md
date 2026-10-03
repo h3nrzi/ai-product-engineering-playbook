@@ -2,10 +2,7 @@
 
 ## Product family
 
-- **Stable ID:** `<PRODUCT-ID>`
 - **Family:** <product-family name>
-- **Iran demand:** <D5–D0 from opportunity library snapshot>
-- **Digital maturity:** <M5–M0 from opportunity library snapshot>
 - **Selected model / variant:** **<specific model>**
 - **Target market / geography:** <if relevant>
 

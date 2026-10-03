@@ -4,7 +4,7 @@ Each product using this playbook gets one lightweight tracker here plus a projec
 
 Before Phase 01, every project must identify both:
 
-- a stable **Product Family** from [`../opportunities/service-products.md`](../opportunities/service-products.md);
+- a **Product Family** (service name) from [`../opportunities/service-products.md`](../opportunities/service-products.md);
 - a specific **Product Model / Variant** within that family.
 
 Track the project through the five authoritative phases:
@@ -19,7 +19,7 @@ The tracker is navigation/context for Guide LLMs. The project directory is the a
 
 ## Current projects
 
-- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — `BEAUTY-SALON` / **Women’s single-salon** — Phase 01 in progress; Stages 01–03 persisted.
+- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — Phase 01 in progress; Stages 01–03 persisted.
 
 ## Project structure
 
@@ -43,4 +43,4 @@ Only create subdirectories when the active workflow actually needs them.
 
 Copy [`../templates/project-tracker.md`](../templates/project-tracker.md) to `<project-slug>.md`, create the sibling `projects/<project-slug>/` documentation root, fill in the Product Family + selected Model, and add the tracker under Current projects.
 
-When a project is deleted, remove its tracker and project documentation directory, then update its product-family status and any selection notes in the [service-product library](../opportunities/service-products.md). A family can remain a candidate even when a particular model implementation has been deleted.
+When a project is deleted, remove its tracker and project documentation directory, then update this index. Keep the service and its models in the [service-product list](../opportunities/service-products.md) for future projects.

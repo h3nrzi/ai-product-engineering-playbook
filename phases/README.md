@@ -2,7 +2,7 @@
 
 The playbook has one explicit **pre-phase selection step** followed by five authoritative product/engineering phases.
 
-0. [`00-product-selection.md`](00-product-selection.md) — select the stable Product Family and a specific Product Model / Variant; persist the Selected Opportunity Brief and tracker boundary.
+0. [`00-product-selection.md`](00-product-selection.md) — select the Product Family (service name) and a specific Product Model / Variant; persist the Selected Opportunity Brief and tracker boundary.
 1. [`01-product-discovery.md`](01-product-discovery.md) — professional product discovery/design; produce the PRD and Base44 prompt package.
 2. [`02-base44-prototype.md`](02-base44-prototype.md) — generate and refine the product prototype in Base44 and export a usable React baseline.
 3. [`03-react-frontend-completion.md`](03-react-frontend-completion.md) — complete the Base44 React frontend with Matt Pocock-style Wayfinder → to-spec → to-tickets → implementation.

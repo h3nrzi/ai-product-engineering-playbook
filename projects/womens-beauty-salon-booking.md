@@ -2,7 +2,7 @@
 
 ## Project
 
-- Product family: `BEAUTY-SALON` — Barbershop / Beauty Salon Booking ([catalog](../opportunities/service-products.md))
+- Product family: Barbershop / Beauty Salon Booking ([catalog](../opportunities/service-products.md))
 - Selected model / variant: **Women’s single-salon**
 - Target market / geography: Persian-language product for the Iranian market
 - Documentation root: [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/)

@@ -9,7 +9,7 @@ This pre-phase exists because one broad service family can contain materially di
 Example:
 
 ```text
-BEAUTY-SALON
+Barbershop / Beauty Salon Booking
 ├── Men’s single barbershop
 ├── Women’s single salon
 ├── Unisex salon
@@ -24,23 +24,21 @@ A marketplace, fixed-location salon, and at-home service may share a domain whil
 ## Canonical sources
 
 - Product catalog: [`../opportunities/service-products.md`](../opportunities/service-products.md)
-- Iran demand methodology: [`../opportunities/iran-demand-methodology.md`](../opportunities/iran-demand-methodology.md)
 - Selected Opportunity Brief template: [`../templates/selected-opportunity-brief.md`](../templates/selected-opportunity-brief.md)
 
 ## Step 1 — Select Product Family
 
-Choose one stable product-family ID from the opportunity library.
+Choose one service by name from the opportunity list.
 
 Consider:
 
-- Iran demand tier;
-- digital maturity;
+- approximate demand in Iran;
 - problem strength;
 - workflow depth;
 - portfolio differentiation;
 - overlap with active/completed projects.
 
-Demand tier is research metadata, not a mechanical project score.
+The list gives an approximate order, not a project-selection score.
 
 ## Step 2 — Select Product Model / Variant
 
@@ -80,7 +78,6 @@ Create:
 
 It must record at least:
 
-- stable Product Family ID;
 - family name;
 - selected Model / Variant;
 - target market/geography when relevant;

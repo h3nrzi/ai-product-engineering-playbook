@@ -29,9 +29,7 @@ Engineering phases use a lightweight Matt Pocock-style pattern where appropriate
 - [`MASTER.md`](MASTER.md) — role and authoritative workflow for Guide LLMs
 - [`phases/`](phases/README.md) — phase-by-phase procedure
 - [`opportunities/`](opportunities/README.md) — entrypoint for choosing a service-product opportunity
-- [`opportunities/service-products.md`](opportunities/service-products.md) — broad service-product family catalog ordered by directional Iran demand
-- [`opportunities/service-models.md`](opportunities/service-models.md) — normalized reusable service-delivery/product-model taxonomy with English web references
-- [`opportunities/iran-demand-methodology.md`](opportunities/iran-demand-methodology.md) — demand/digital-maturity methodology and research snapshot
+- [`opportunities/service-products.md`](opportunities/service-products.md) — simple list of service projects and their models, ordered roughly by demand in Iran
 - [`projects/`](projects/README.md) — project trackers plus authoritative project-specific documentation/artifacts
 - [`templates/project-tracker.md`](templates/project-tracker.md) — tracker template
 
@@ -39,9 +37,9 @@ Engineering phases use a lightweight Matt Pocock-style pattern where appropriate
 
 1. Read [`MASTER.md`](MASTER.md) for the guide role and workflow authority.
 2. Open the [`opportunities/`](opportunities/README.md) index.
-3. Select a **Product Family** from [`service-products.md`](opportunities/service-products.md).
-4. Select one or more **Product Model IDs** from [`service-models.md`](opportunities/service-models.md), plus any vertical-specific variant that materially changes the product.
-5. Prepare the Selected Opportunity Brief described in [Phase 01](phases/01-product-discovery.md), recording the stable family ID, model ID(s), target market when relevant, and explicit boundaries against adjacent variants.
+3. Select a **Product Family** (service name) from [`service-products.md`](opportunities/service-products.md).
+4. Choose one specific **Product Model / Variant** listed under that service.
+5. Prepare the Selected Opportunity Brief described in [Phase 01](phases/01-product-discovery.md), recording the service name, selected model, target market when relevant, and boundaries against adjacent variants.
 6. Copy the [tracker template](templates/project-tracker.md) to `projects/<project-slug>.md`, create `projects/<project-slug>/`, persist the selected opportunity brief there, and add the tracker to the [project index](projects/README.md).
 7. Follow Phase 01 and persist each approved stage artifact under the project directory before considering that stage complete.
 8. Advance through later phases only when the active phase guide's exit criteria are met and the tracker reflects the current state.
@@ -60,35 +58,17 @@ Application implementation code may live in a separate product repository later 
 
 A broad service category is not automatically a project definition. The same family can produce fundamentally different products depending on the delivery model.
 
-For example:
+For example, **Barbershop / Beauty Salon Booking → Women’s single-salon** selects one physical women’s salon. A salon marketplace or at-home beauty service is a separate model with different users and operations.
 
 ```text
-BEAUTY-SALON + A01
-= direct single-salon appointment product
-
-BEAUTY-SALON + M01
-= open salon/specialist marketplace
-
-BEAUTY-SALON + D03
-= scheduled at-home beauty service
-
-BEAUTY-SALON + A01 + S02
-= direct salon booking with a credit/membership model
-```
-
-The library therefore separates:
-
-```text
-Stable Product Family
-        +
-Service Model ID(s)
-        +
-Vertical Variant
+Product Family (service name)
         ↓
-Actual project entering Phase 01
+Variant (selected model)
+        ↓
+Selected Opportunity Brief
+        ↓
+Phase 01
 ```
-
-The English reference sites in the model taxonomy are for studying established UX and service-delivery patterns, not for copying product scope. Iran demand tier and digital maturity are research metadata for prioritization, not substitutes for product discovery.
 
 ## Principle
 

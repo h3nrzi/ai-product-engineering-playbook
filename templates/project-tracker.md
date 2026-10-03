@@ -2,7 +2,7 @@
 
 ## Project
 
-- Product family: <stable ID + family name + link to ../opportunities/service-products.md>
+- Product family: <service name + link to ../opportunities/service-products.md>
 - Selected model / variant: <specific model>
 - Target market / geography: <if relevant>
 - Documentation root: <projects/<project-slug>/>

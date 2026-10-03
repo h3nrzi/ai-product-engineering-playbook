@@ -81,11 +81,15 @@ Approved by the user on 2026-10-03:
 
 - Standard online appointments become confirmed only after a successful online deposit payment is verified. The remaining service balance is paid at the salon; the deposit is credited toward the service price.
 - After the customer reviews the appointment and payment/cancellation terms, keep the selected time unavailable to other bookings for a short, explicitly displayed payment window. Merely browsing or signing in does not hold a time.
-- Deposit calculation is percentage-based, as approved by the user on 2026-10-03: deposit = booking service price × deposit percentage / 100. The remaining service balance is the agreed price less the deposit already paid.
+- Deposit calculation is percentage-based, as approved by the user on 2026-10-03: deposit = displayed booking price basis × deposit percentage / 100. The price basis is the fixed price for fixed-price services or the approximate usual-volume price for variable-price services. The remaining service balance is the final service price less the deposit already paid.
 - Show the applicable percentage, calculated deposit, price used for calculation, remaining balance where calculable, and hold expiry before payment.
 - Approved configuration: one salon-wide deposit percentage applies to all services in the MVP. Only management can set or change it; reception cannot edit it or override it for an appointment.
 - Per-service deposit percentages are deferred. The percentage value and currency rounding remain to be decided; no default percentage is approved.
-- For starting-price, ranged-price, or quote-based services, the price used for deposit calculation must be agreed explicitly before charging. Do not silently calculate against a minimum or estimate; treatment of later price adjustments remains open.
+- Approved variable-price model: management defines an approximate price for the usual service volume (for example, typical hair length/volume). The shared salon-wide percentage is applied to that approximate price to calculate the online deposit. Variable pricing alone does not require consultation before booking.
+- Label the price as approximate, describe what “usual volume” means for that service, and explain relevant price factors such as hair length, volume, or materials. Show this information in service discovery and again in the booking review before payment.
+- Clearly distinguish the exact deposit charged now from the approximate service price and estimated remaining balance. Explain that the final service price is determined at the salon and the balance is final price minus the deposit already paid. Do not present the estimate as a guaranteed total.
+- Display the estimated-price basis and the paid deposit in appointment details after booking. A later final-price adjustment does not recalculate or retroactively increase the deposit already charged.
+- Handling a final price below the paid deposit, and the procedure for agreeing the final price at the salon, remain to be defined. Services needing a genuine consultation prerequisite remain a separate decision; do not infer that requirement from variable pricing alone.
 - Record the price basis, percentage, and charged deposit for the booking. Later catalog-price or percentage changes must not silently recalculate an existing appointment’s paid deposit.
 - Hold duration remains to be decided.
 - Payment that is failed, abandoned, or not completed within the hold window does not confirm an appointment; release the time when the hold ends.

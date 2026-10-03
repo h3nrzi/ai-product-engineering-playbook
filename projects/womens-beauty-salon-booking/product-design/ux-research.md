@@ -2,7 +2,7 @@
 
 ## Status and method
 
-Research gathered on 2026-10-03. Stage 05 findings are persisted for discussion; proposed design directions are not yet user-approved requirements.
+Research gathered on 2026-10-03. Stage 05 research is complete and persisted. The user approved one service per MVP appointment. Other proposed design directions remain recommendations to refine in journeys and flows, not independently approved new scope.
 
 Scope: one women’s salon, customer self-service booking, a shared salon calendar, reception/management access levels, and no specialist dashboard in the MVP.
 
@@ -79,10 +79,10 @@ Evidence includes public official product documentation and direct browser inspe
 - One salon calendar supporting online, phone, and walk-in bookings within approved role boundaries.
 - Explain unavailable times and failed changes with actionable recovery.
 
-Keep standard booking centered on one service initially as a proposal. The inspected Fresha flow permits multiple services, but copying that expands duration, sequencing, and specialist-assignment decisions. One versus multiple services per booking requires user agreement before journeys are finalized.
+Approved booking boundary: one service per MVP appointment. Multi-service coordination remains deferred. This is not a restriction on how many separate appointments a customer may have; no daily limit has been approved.
 
 ## Limits and follow-up
 
 No production guarantees, live booking completion, customer identity, payment, or cancellation behavior were tested. Mobile inspection covers the service-selection and prerequisite views, not the complete journey. Iranian demand and user preferences were not inferred from competitor claims.
 
-Next: agree the booking-unit direction, then define Stage 06 jobs and journeys. Carry consultation-dependent services, identity, payment, cancellation windows, any-specialist assignment, and notification details as explicit open decisions. Later prototype checks should verify service clarity, slot recovery, confirmation understanding, and reception’s shared-calendar workflow.
+Next: define Stage 06 jobs and journeys using the approved one-service booking unit. Carry consultation-dependent services, identity, payment, cancellation windows, any-specialist assignment, and notification details as explicit open decisions. Later prototype checks should verify service clarity, slot recovery, confirmation understanding, and reception’s shared-calendar workflow.

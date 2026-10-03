@@ -61,6 +61,10 @@ The MVP does not attempt to manage the salon’s entire business operation.
 
 Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Reception manages appointments, including phone and walk-in bookings in the shared calendar. Management has all reception capabilities plus control of services, prices, specialists, eligibility, and working schedules.
 
+### Booking unit
+
+Approved by the user on 2026-10-03: each MVP appointment contains one service with one eligible specialist. Multi-service appointments, service bundles, and coordinated appointments across specialists are deferred. This does not impose a daily booking limit; any such limit requires a separate decision.
+
 ### Booking rules
 
 The product must prevent invalid combinations such as:

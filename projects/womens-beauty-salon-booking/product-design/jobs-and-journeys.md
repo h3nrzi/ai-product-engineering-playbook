@@ -1,0 +1,98 @@
+# Jobs & User Journeys — Women’s Beauty Salon Booking
+
+## Status and boundaries
+
+Stage 06 draft for discussion, prepared on 2026-10-03 from the approved product scope, actor definitions, and the Stage 05 research. Proposed journey details are design recommendations; they are not validated user behavior.
+
+Confirmed: one women’s salon, one service per appointment, eligible specialist and full-duration availability, customer appointment management, a shared calendar for all booking sources, reception/management access levels, and no independent specialist dashboard.
+
+## Jobs by actor
+
+- **Customer — critical:** understand a service, choose a suitable eligible specialist or any eligible specialist, and secure a valid appointment with clear details.
+- **Customer — important:** retrieve an upcoming appointment and change or cancel it when policy allows.
+- **Reception — critical:** see the salon’s appointments and create phone/walk-in bookings without conflicting with online bookings.
+- **Reception — important:** manage customer-requested and salon-originated appointment changes with a clear result.
+- **Manager — critical:** maintain service information, prices, specialist eligibility, and working schedules so customers see accurate booking options.
+- **Manager — important:** perform reception operations when necessary and handle availability changes affecting appointments.
+- **Specialist — supporting, without a product login:** receive the correct appointment context through salon coordination and communicate availability changes to reception/management. The communication channel remains undecided.
+
+## Primary journey — customer books one service
+
+Entry points: salon website/service list, a salon booking link, or a specialist profile. A social-link entry is a proposal informed by research, not an integration requirement.
+
+| Stage | Goal and action | Information and decision | Likely friction | Expected outcome |
+| --- | --- | --- | --- | --- |
+| Discover | Understand and choose one service | Description, price model, expected duration, conditions; is it suitable and directly bookable? | Similar names, uncertain final price, consultation prerequisite | One understood service; prerequisites visible |
+| Choose specialist | Select an eligible specialist or no preference | Expertise, supported service, preference meaning | Preferred specialist does not provide the service | Valid preference retained |
+| Choose time | Find a time that fits | Date, available start times, full duration, specialist context | No suitable time or a slot becomes unavailable | One valid selected time |
+| Provide details | Supply only information needed for booking | Required contact details and identity method, still to be decided | Excessive data entry or verification failure | Customer details ready; selections preserved |
+| Review | Check the complete appointment before submitting | Service, actual specialist, date/time, duration, expected price, and applicable policies | Assignment or price differs from expectations | Customer knowingly submits correct details |
+| Confirm | Understand whether booking succeeded | Unambiguous result and a route to appointment details | Network failure or the time is no longer available | Confirmed appointment, or a clear recovery route |
+
+The identity method and payment step remain open. They must be decided before the final screen flow is approved. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+
+### Alternatives and recovery
+
+- Specialist-first entry: select a service that specialist provides, then continue to availability.
+- No time available: offer another date or eligible specialist; never silently replace a named preference.
+- Service or specialist changes: re-evaluate dependent availability; do not retain an invalid time.
+- Interrupted input: preserve safe selections during navigation where practical; recheck availability before confirmation. Do not promise cross-device persistence.
+- Unknown submission result: direct the customer to check appointment status before retrying; avoid a second booking caused by blind resubmission.
+
+## Customer retrieves or changes an appointment
+
+Entry: the customer’s appointment area or a booking-result link, with ownership verification determined by the later identity decision.
+
+1. Find the appointment: show service, specialist, date/time, and state; distinguish upcoming and cancelled appointments.
+2. Review permitted actions: explain the applicable cancellation/rescheduling policy and whether self-service is available.
+3. Reschedule: choose a valid alternative, review the changed details, and confirm. Preserve the original appointment if the replacement fails. Changing the service is not silently included in rescheduling; that behavior remains a later decision.
+4. Cancel: show the exact appointment and consequences, request a deliberate cancellation action, then display the result. Release availability only after successful cancellation.
+5. If an action is unavailable: explain why and offer salon contact information; do not imply that contacting reception bypasses policy.
+
+Main friction: finding the right appointment, unknown rules, lost availability, and uncertainty after a failed change. Success means the customer understands the current confirmed state. Fees, refund behavior, deadlines, and communication channels remain undecided.
+
+## Reception creates a phone or walk-in appointment
+
+Entry: the shared salon calendar or appointment-creation action.
+
+1. Understand the request and capture the necessary customer/contact context; exact required fields remain open.
+2. Select one service and an eligible specialist or supported assignment option.
+3. Check a valid time that fits the full duration and existing schedule. A walk-in is not permission to overbook; if no valid time exists, explain alternatives.
+4. Review customer, service, specialist, and time, then create the appointment.
+5. See the confirmed appointment in the shared calendar; it constrains online availability immediately after successful creation.
+
+Decision factors: actual availability, service eligibility, time constraints, and customer preference. Friction: interruptions at reception and online bookings changing availability while staff enter details. Keep input when a conflict occurs and offer a valid alternative. Reception cannot modify service/price/specialist/schedule settings to force a booking.
+
+## Reception manages daily appointments
+
+Entry: today’s calendar, a date/specialist filter, or an appointment detail view.
+
+Review the customer, service, specialist, time, and current state; choose an allowed action; review its consequences; confirm and return to the updated calendar. Online, phone, and walk-in appointments use the same availability constraints. Exact appointment states and status-transition rules will be defined in later flows.
+
+Rescheduling should work from appointment details; dragging is optional. Failed changes leave the existing appointment intact. Salon-originated changes must be communicated to the customer through a channel still to be selected; this does not add a reminder system to scope.
+
+## Manager maintains bookable information
+
+Entry: service, specialist, or schedule settings in the salon operations area.
+
+Understand the information to update → inspect existing values and affected context → edit service descriptions/prices, specialist eligibility, or working schedules → validate → review → save → check the resulting customer booking options.
+
+The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. The exact conflict-resolution policy is open and must be specified before implementation.
+
+Reception can identify an appointment or availability issue; management owns settings changes. Specialists communicate absence or changes through salon coordination. Reception/management then resolve affected appointments, and customers receive the resulting appointment information. This crosses actors without requiring specialist access.
+
+## Outstanding decisions before final flows
+
+- Customer identity and how a customer securely retrieves appointments.
+- Fixed, starting, or estimate-based service prices; any consultation prerequisite.
+- Payment at the salon versus online payment/deposit.
+- Cancellation/rescheduling windows and salon-originated change handling.
+- Any-specialist assignment strategy and whether staff booking uses the same choice.
+- Required customer fields for online and staff-created appointments.
+- Appointment states, customer communication channel, and effects of schedule/eligibility edits on existing appointments.
+
+No daily booking limit, multi-service appointment, reminders, payment integration, or specialist dashboard is added by this draft.
+
+## Completion condition
+
+Agree the major jobs/journeys and resolve the decisions that materially change the booking path before treating Stage 06 as complete. Stage 07 then expands these journeys into screen-level flows, branches, states, and recovery.

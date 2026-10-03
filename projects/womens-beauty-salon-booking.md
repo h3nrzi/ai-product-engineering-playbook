@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — findings are persisted for discussion. Proposed UX directions and the one-service versus multi-service booking boundary remain to be agreed.
+Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — is researched and persisted; the user approved one service per MVP appointment. Stage 06 — Jobs & User Journeys — has a persisted draft; customer identity, payment, and booking policies remain open before final flows.
 
 ## Important artifacts
 
@@ -40,6 +40,7 @@ Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access 
 - Product Strategy & Scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
 - User & Actor Definition: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
 - UX / Competitive Research: [`product-design/ux-research.md`](womens-beauty-salon-booking/product-design/ux-research.md)
+- Jobs & User Journeys (draft): [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -47,7 +48,7 @@ Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access 
 
 ## Next action
 
-Review the Stage 05 findings and agree whether the initial booking journey supports one service or multiple services in one appointment. Then define Stage 06 — Jobs & User Journeys; do not treat proposed research directions as approved requirements.
+Review Stage 06 jobs and journeys, beginning with customer identity and appointment retrieval. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
 
 ## Blockers / notes
 

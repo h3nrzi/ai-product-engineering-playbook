@@ -79,7 +79,11 @@ Main friction: finding the right appointment, unknown rules, lost availability, 
 
 Entry: the shared salon calendar or appointment-creation action. Reception uses its own staff access, never the customer’s session.
 
-Common preparation: capture the customer mobile number and necessary details → select one service and its volume option when relevant → choose an eligible specialist → check a valid time that fits the full duration → review customer, service, duration, specialist, time, and price/policy context.
+Common preparation: capture the customer mobile number and necessary details → select one service and its volume option when relevant → choose a named eligible specialist or “any eligible specialist” → check a valid time that fits the full duration → assign the actual specialist for the any-eligible option → review customer, service, duration, actual specialist, time, and price/policy context.
+
+Approved by the user on 2026-10-03: reception-created telephone, future in-person, and immediate walk-in bookings support both named-specialist and any-eligible-specialist booking. The any-eligible path uses the same combined valid availability and manager-controlled assignment priority as customer bookings: select a time, then assign an eligible specialist available for the full selected duration using management’s priority order. A named choice remains explicit and is not replaced by that priority order.
+
+Show the final assigned specialist to reception before confirmation and communicate the name to the customer during telephone/in-person review; telephone customers also see it in the booking-review/payment link before payment. Confirm with that reviewed specialist. The same assignment-review and hold protections as the customer path apply: show any changed assignment before payment/confirmation, and do not silently substitute a specialist during an active hold. After confirmation, changing the specialist requires customer acceptance even when the initial choice was “any eligible specialist”.
 
 ### Telephone booking
 
@@ -142,7 +146,6 @@ Reception can identify an appointment or availability issue; management owns set
 - Booking-link delivery channel and precise payment-hold start/retry interaction for reception-created future bookings. Confirmation/deposit paths and customer SMS verification are approved.
 - Late/uncertain payment recovery and refund processing details.
 - Staff exception authority after the self-service rescheduling cutoff and handling unanswered salon replacement proposals. The approved default does not allow reception contact to bypass late-cancellation policy.
-- Whether reception-created bookings offer the same no-preference option. The customer no-preference path and manager-controlled priority assignment are approved.
 - Additional required fields, if justified, and staff-created appointment intake. Online booking name/contact default from the profile and are editable per booking; any missing data should be requested without repeating completed profile information.
 - Appointment states, customer communication channel, and effects of schedule/eligibility edits on existing appointments.
 

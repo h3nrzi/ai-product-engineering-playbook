@@ -2,7 +2,7 @@
 
 ## Status and evidence
 
-Stage 04 draft for discussion; not yet approved. This document derives from the approved problem, solution, and scope artifacts. Behavioral expectations below are design assumptions, not interview or usability-research findings.
+Stage 04 in progress. The user has approved the MVP access direction below; remaining operational decisions are still open. This document derives from the approved problem, solution, and scope artifacts. Behavioral expectations below are design assumptions, not interview or usability-research findings.
 
 Confirmed context: one physical women’s salon, multiple services and specialists, Persian/RTL customer experience, and salon-controlled booking operations.
 
@@ -58,7 +58,7 @@ Management and reception are distinct responsibilities. One person may perform b
 - Context assumption: specialists may be occupied during appointments, so the product should not depend on continuous specialist interaction for standard bookings.
 - Pain points: unsuitable assignments, insufficient time, overlapping work, and missed schedule changes.
 - Trust factors: appointments respect eligibility and availability; customer-facing expertise information is accurate.
-- Constraints: a specialist is a meaningful actor even if she has no product login. An independent specialist dashboard and self-managed availability are not approved requirements.
+- Constraints: a specialist is a meaningful actor even if she has no product login. The approved MVP has no independent specialist login or dashboard; reception/management maintain specialist schedules and appointments.
 
 ## Relationships
 
@@ -67,20 +67,24 @@ Management and reception are distinct responsibilities. One person may perform b
 - Specialist expertise, eligibility, and availability constrain customer booking options.
 - A booking or availability change affects customer expectations and salon coordination; later journeys must show who makes the change and how affected people learn about it.
 
-## Proposed MVP access direction — pending decision
+## Approved MVP access direction
 
-Customer-facing booking and appointment management plus one salon operations area are the initial proposal. Reception/management coordinate specialist schedules. Specialists remain represented in service discovery and scheduling, without requiring a separate dashboard in this proposal.
+Approved by the user on 2026-10-03:
 
-This is a proposed boundary, not an approved exclusion of specialist access.
+- Customer-facing booking and appointment management.
+- One salon operations area used by reception/management to coordinate appointments and specialist schedules.
+- Specialists retain customer-facing profiles, service eligibility, and working schedules, maintained by salon staff. They have no independent login or dashboard in the MVP.
+- Specialist-originated appointment changes and cancellations are handled by reception/management. Customer self-service changes remain available when salon policy allows.
+
+Possible later specialist access is deferred, not an MVP commitment. If justified later, it could cover viewing assigned appointments and reporting unavailability; it does not imply permission to change or cancel customer appointments.
 
 ## Open decisions
 
-1. Does a specialist need her own dashboard in the MVP, or does reception/management coordinate her schedule and appointments?
-2. Do reception and management need different permissions, or can one salon operator role cover the initial product?
-3. How are phone/walk-in appointments reflected in bookable availability?
+1. Do reception and management need different permissions, or can one salon operator role cover the initial product?
+2. How are phone/walk-in appointments reflected in bookable availability?
 
 Customer identity, consultation-dependent services, payment, and cancellation/rescheduling policies remain open from earlier discovery. Resolve them in the relevant journey and rules stages rather than inventing answers here.
 
 ## Completion condition
 
-Stage 04 remains in progress until the actor responsibilities and MVP access direction are agreed. Then update this document and the tracker before proceeding to Stage 05 — UX / Competitive Research.
+The MVP access direction is approved. Stage 04 remains in progress while reception/management permissions and operational booking responsibilities are clarified. Then update this document and the tracker before proceeding to Stage 05 — UX / Competitive Research.

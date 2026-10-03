@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor Definition — is in progress. A draft is persisted; actor responsibilities and specialist access are pending discussion.
+Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor Definition — is in progress. The user approved customer access plus one salon operations area, with no independent specialist dashboard in the MVP. Reception/management permissions and operational booking responsibilities remain open.
 
 ## Important artifacts
 
@@ -38,7 +38,7 @@ Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor De
 - Problem Definition: [`product-design/problem-definition.md`](womens-beauty-salon-booking/product-design/problem-definition.md)
 - Solution Definition: [`product-design/solution-definition.md`](womens-beauty-salon-booking/product-design/solution-definition.md)
 - Product Strategy & Scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
-- User & Actor Definition (draft): [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
+- User & Actor Definition (in progress): [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -46,7 +46,7 @@ Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor De
 
 ## Next action
 
-Review the Stage 04 draft and resolve whether specialists need independent MVP access or reception/management coordinate their schedules and appointments. Stage 04 is not yet approved.
+Resolve reception/management permissions and how phone/walk-in appointments are reflected in availability. The specialist-access decision is approved; Stage 04 remains in progress.
 
 ## Blockers / notes
 

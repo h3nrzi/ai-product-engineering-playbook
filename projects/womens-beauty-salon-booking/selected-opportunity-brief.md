@@ -46,7 +46,7 @@ The product has meaningful workflow depth beyond a marketing website: service di
 - Multiple specialists.
 - Online appointment booking and management.
 - One service per appointment in the MVP; multi-service appointments are deferred.
-- Online deposit payment, calculated as a percentage of the service price, confirms the appointment; the remaining service balance is paid at the salon.
+- Online deposit payment, calculated from one manager-controlled salon-wide percentage of the service price, confirms the appointment; the remaining service balance is paid at the salon.
 - Fixed-location service fulfillment.
 - No marketplace mechanics.
 - No at-home travel/service-area logistics.

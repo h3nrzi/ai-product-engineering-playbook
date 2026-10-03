@@ -12,7 +12,7 @@ Confirmed: one women’s salon, one service per appointment, eligible specialist
 - **Customer — important:** retrieve an upcoming appointment and change or cancel it when policy allows.
 - **Reception — critical:** see the salon’s appointments and create phone/walk-in bookings without conflicting with online bookings.
 - **Reception — important:** manage customer-requested and salon-originated appointment changes with a clear result.
-- **Manager — critical:** maintain service information, prices, specialist eligibility, and working schedules so customers see accurate booking options.
+- **Manager — critical:** maintain service information, prices, specialist eligibility, working schedules, and the shared deposit percentage so customers see accurate booking options.
 - **Manager — important:** perform reception operations when necessary and handle availability changes affecting appointments.
 - **Specialist — supporting, without a product login:** receive the correct appointment context through salon coordination and communicate availability changes to reception/management. The communication channel remains undecided.
 
@@ -30,7 +30,7 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | Pay deposit | Secure the appointment within a temporary hold | Deposit amount, hold expiry, payment result | Abandoned/failed payment, expired hold, or uncertain result | Verified deposit allows confirmation; unresolved payment remains pending |
 | Confirm | Understand whether booking succeeded | Confirmed appointment details, recorded deposit, balance, and a route to My appointments | Payment result is uncertain or arrives after hold expiry | Confirmed appointment only after verified payment and valid slot ownership; otherwise clear recovery |
 
-Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. The percentage value, salon-wide versus service-specific configuration, price basis for variable-price services, rounding, hold duration, and detailed exception handling remain open before final flows. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. One shared percentage applies to all services and is configurable only by management; per-service rates are deferred. The percentage value, price basis for variable-price services, rounding, hold duration, and detailed exception handling remain open before final flows. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
 
 ### Alternatives and recovery
 
@@ -78,9 +78,9 @@ Rescheduling should work from appointment details; dragging is optional. Failed 
 
 ## Manager maintains bookable information
 
-Entry: service, specialist, or schedule settings in the salon operations area.
+Entry: service, specialist, or schedule settings, or the shared deposit-percentage setting in the salon operations area.
 
-Understand the information to update → inspect existing values and affected context → edit service descriptions/prices, specialist eligibility, or working schedules → validate → review → save → check the resulting customer booking options.
+Understand the information to update → inspect existing values and affected context → edit service descriptions/prices, specialist eligibility, working schedules, or the shared deposit percentage → validate → review → save → check the resulting customer booking options.
 
 The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. The exact conflict-resolution policy is open and must be specified before implementation.
 
@@ -91,7 +91,7 @@ Reception can identify an appointment or availability issue; management owns set
 - Staff authentication and how phone/walk-in appointments are linked to customer accounts; staff must not impersonate a customer session.
 - Customer mobile-number change/recovery policy; no cross-number appointment access is assumed.
 - Fixed, starting, or estimate-based service prices; any consultation prerequisite.
-- Deposit percentage value, salon-wide versus service-specific configuration, configuration permissions, and currency rounding.
+- Value of the manager-controlled salon-wide deposit percentage and currency rounding. Per-service rates are deferred.
 - Explicit price basis for variable-price services and treatment of price adjustments after payment.
 - Temporary hold duration.
 - Deposit collection and account linkage for phone/walk-in bookings.

@@ -59,7 +59,7 @@ The MVP does not attempt to manage the salon’s entire business operation.
 
 ### MVP access boundary
 
-Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Reception manages appointments, including phone and walk-in bookings in the shared calendar. Management has all reception capabilities plus control of services, prices, specialists, eligibility, and working schedules.
+Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Reception manages appointments, including phone and walk-in bookings in the shared calendar. Management has all reception capabilities plus control of services, prices, specialists, eligibility, working schedules, and the shared deposit percentage.
 
 ### Customer authentication
 
@@ -83,7 +83,8 @@ Approved by the user on 2026-10-03:
 - After the customer reviews the appointment and payment/cancellation terms, keep the selected time unavailable to other bookings for a short, explicitly displayed payment window. Merely browsing or signing in does not hold a time.
 - Deposit calculation is percentage-based, as approved by the user on 2026-10-03: deposit = booking service price × deposit percentage / 100. The remaining service balance is the agreed price less the deposit already paid.
 - Show the applicable percentage, calculated deposit, price used for calculation, remaining balance where calculable, and hold expiry before payment.
-- The percentage value, whether it is salon-wide or service-specific, configuration permissions, and currency rounding remain to be decided; no default percentage is approved.
+- Approved configuration: one salon-wide deposit percentage applies to all services in the MVP. Only management can set or change it; reception cannot edit it or override it for an appointment.
+- Per-service deposit percentages are deferred. The percentage value and currency rounding remain to be decided; no default percentage is approved.
 - For starting-price, ranged-price, or quote-based services, the price used for deposit calculation must be agreed explicitly before charging. Do not silently calculate against a minimum or estimate; treatment of later price adjustments remains open.
 - Record the price basis, percentage, and charged deposit for the booking. Later catalog-price or percentage changes must not silently recalculate an existing appointment’s paid deposit.
 - Hold duration remains to be decided.

@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — is next and has not started yet.
+Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — findings are persisted for discussion. Proposed UX directions and the one-service versus multi-service booking boundary remain to be agreed.
 
 ## Important artifacts
 
@@ -39,6 +39,7 @@ Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access 
 - Solution Definition: [`product-design/solution-definition.md`](womens-beauty-salon-booking/product-design/solution-definition.md)
 - Product Strategy & Scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
 - User & Actor Definition: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
+- UX / Competitive Research: [`product-design/ux-research.md`](womens-beauty-salon-booking/product-design/ux-research.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -46,7 +47,7 @@ Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access 
 
 ## Next action
 
-Begin Phase 01 Stage 05 — UX / Competitive Research. Study service/specialist discovery, price and duration clarity, valid availability, booking confirmation, appointment changes, and the salon calendar. Persist `product-design/ux-research.md` before Stage 05 is considered complete.
+Review the Stage 05 findings and agree whether the initial booking journey supports one service or multiple services in one appointment. Then define Stage 06 — Jobs & User Journeys; do not treat proposed research directions as approved requirements.
 
 ## Blockers / notes
 

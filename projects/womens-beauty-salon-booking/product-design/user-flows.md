@@ -2,7 +2,7 @@
 
 ## Status and authority
 
-Stage 07 draft in progress, started on 2026-10-03 after the user approved and completed Stage 06. The online-booking step sequence, sequential selection steps, back-navigation preservation/revalidation, and payment-button hold trigger are approved on 2026-10-03; other screen/state details still require review. This document translates [approved jobs and journeys](jobs-and-journeys.md) into proposed screen-level flows. Approved business rules remain authoritative; screen grouping, exact states, recovery mechanics, and deferred operational details below require Stage 07 review. No application implementation is introduced.
+Stage 07 draft in progress, started on 2026-10-03 after the user approved and completed Stage 06. The online-booking step sequence, sequential selection steps, back-navigation preservation/revalidation, payment-button hold trigger, payment-result screen presentation, and account retrieval of payment/refund outcomes are approved on 2026-10-03; other screen/state details still require review. This document translates [approved jobs and journeys](jobs-and-journeys.md) into proposed screen-level flows. Approved business rules remain authoritative; screen grouping, exact states, recovery mechanics, and deferred operational details below require Stage 07 review. No application implementation is introduced.
 
 Scope: one physical women's salon; one service and one specialist per appointment; customer account and salon operations area; no specialist dashboard, multi-service booking, or scheduled reminders.
 
@@ -54,6 +54,20 @@ Scope: one physical women's salon; one service and one specialist per appointmen
 | Started in time, result unknown | Keep slot while checking until verification deadline | Awaiting payment result; check existing attempt before retry |
 | Still unknown at verification deadline | Release slot; payment remains under verification | Unconfirmed booking and pending payment outcome |
 | Success verified after slot release | Full deposit refund; no automatic confirmation even if slot is free | Payment/refund progress and optional new booking |
+
+### Approved payment-result presentation
+
+Approved by the user on 2026-10-03. Display the verified result and available actions without changing the hold/confirmation rules above:
+
+| Screen state | Customer message | Information and action |
+| --- | --- | --- |
+| Verified success while held | «نوبت شما تأیید شد» | Service, specialist, date/time, recorded deposit, and «مشاهده نوبت» |
+| Definitive failure | «پرداخت انجام نشد؛ نوبت تأیید نشده» | «بررسی زمان و پرداخت دوباره»; recheck availability and secure a valid hold before another attempt |
+| Payment result unknown while held | «در حال بررسی پرداخت هستیم» | Show whether the slot remains held and its verification deadline; allow checking status, without inviting a repeat payment |
+| Hold/verification deadline expired and slot released | «زمان رزرو آزاد شد» | Show the unconfirmed booking; if payment remains unknown, show its ongoing verification separately rather than calling it failed |
+| Success verified after slot release | «پرداخت دریافت شد، اما نوبت تأیید نشد؛ بیعانه کامل بازگردانده می‌شود» | Show actual refund progress separately and a route to a new booking from current availability |
+
+Closing the result screen does not lose the outcome. After signing in, the original customer account can retrieve the same current booking-attempt, payment, and refund status, including unconfirmed attempts. Customer-facing wording must reflect the current authoritative status; a promised refund is not a completed refund. An unknown existing payment must be checked before retrying, without encouraging duplicate payment or booking.
 
 At initial defaults, hold creation at 14:00 means 14:10 ordinary expiry and 14:15 maximum pending-result deadline. Success/failure acts immediately when definitive. Link reopening and status checks never restart deadlines.
 
@@ -145,7 +159,7 @@ These labels and transition details are draft screen semantics, not Stage 07 app
 
 ## Review work carried forward
 
-- Online-booking order, sequential selection steps, back-navigation preservation/revalidation, and payment-button hold trigger are approved. Refine the remaining screen grouping, exact state transitions, and operation failure recovery.
+- Online-booking order, sequential selection steps, back-navigation preservation/revalidation, payment-button hold trigger, and payment-result presentation/account retrieval are approved. Refine the remaining screen grouping, exact state transitions, and operation failure recovery.
 - Define verified ownership for matching, confirmed-number corrections/access transfer, and salon-coordinated account recovery.
 - Define SMS sending/retry and delivery failure without deadline resets.
 - Define validation/currency rounding, refund routing/timing, and detailed exception permission handling.

@@ -18,7 +18,7 @@ Do not merge the package into one mega-prompt. Execute prompts in order and revi
 | --- | --- | --- | --- |
 | 00 | [`00-project-foundation.md`](00-project-foundation.md) | Establish product boundaries, Persian/RTL baseline, shared demo fixtures and global implementation guardrails | ready |
 | 01 | [`01-design-system.md`](01-design-system.md) | Materialize the approved visual system and reusable components | ready |
-| 02 | `02-app-shell-navigation.md` | Build public, customer and staff/manager shells and navigation boundaries | pending |
+| 02 | [`02-app-shell-navigation.md`](02-app-shell-navigation.md) | Build public, customer and staff/manager shells and navigation boundaries | ready |
 | 03 | `03-public-discovery.md` | Build home, services, specialists and salon/contact discovery surfaces | pending |
 | 04 | `04-booking-payment-flow.md` | Build the primary booking, identity, hold, payment and result journey | pending |
 | 05 | `05-customer-area.md` | Build appointments/attempts, detail, permitted changes and account information | pending |

@@ -4,7 +4,7 @@
 
 Stage 06 draft for discussion, prepared on 2026-10-03 from the approved product scope, actor definitions, and the Stage 05 research. Proposed journey details are design recommendations; they are not validated user behavior.
 
-Confirmed: one women’s salon, one service per appointment, eligible specialist and full-duration availability, customer appointment management, a shared calendar for all booking sources, reception/management access levels, and no independent specialist dashboard.
+Confirmed: one women’s salon, one service per appointment, eligible specialist and full-duration availability, mobile-number/SMS-code customer authentication, account-linked online appointments, customer appointment management, a shared calendar for all booking sources, reception/management access levels, and no independent specialist dashboard.
 
 ## Jobs by actor
 
@@ -25,23 +25,25 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | Discover | Understand and choose one service | Description, price model, expected duration, conditions; is it suitable and directly bookable? | Similar names, uncertain final price, consultation prerequisite | One understood service; prerequisites visible |
 | Choose specialist | Select an eligible specialist or no preference | Expertise, supported service, preference meaning | Preferred specialist does not provide the service | Valid preference retained |
 | Choose time | Find a time that fits | Date, available start times, full duration, specialist context | No suitable time or a slot becomes unavailable | One valid selected time |
-| Provide details | Supply only information needed for booking | Required contact details and identity method, still to be decided | Excessive data entry or verification failure | Customer details ready; selections preserved |
+| Sign in / provide details | Sign in if needed; reuse verified account details | Mobile number and SMS code for signed-out customers; any further required details remain to be decided | Missing/expired code, session expiry, or slot loss during login | Authenticated account; selections preserved and availability rechecked |
 | Review | Check the complete appointment before submitting | Service, actual specialist, date/time, duration, expected price, and applicable policies | Assignment or price differs from expectations | Customer knowingly submits correct details |
 | Confirm | Understand whether booking succeeded | Unambiguous result and a route to appointment details | Network failure or the time is no longer available | Confirmed appointment, or a clear recovery route |
 
-The identity method and payment step remain open. They must be decided before the final screen flow is approved. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment remains open and must be decided before the final screen flow is approved. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
 
 ### Alternatives and recovery
 
 - Specialist-first entry: select a service that specialist provides, then continue to availability.
 - No time available: offer another date or eligible specialist; never silently replace a named preference.
 - Service or specialist changes: re-evaluate dependent availability; do not retain an invalid time.
-- Interrupted input: preserve safe selections during navigation where practical; recheck availability before confirmation. Do not promise cross-device persistence.
+- Interrupted input or login: preserve service, specialist preference, and date/time through login; recheck availability afterwards. A selected time is not held by authentication. Do not promise cross-device persistence.
+- Missing, invalid, or expired SMS code: explain the problem and offer correction/retry without discarding booking choices. Resend timing and attempt limits belong to later flow/security rules.
+- Existing valid session: skip repeated mobile-number entry and code verification. If the session expires, sign in again and recheck availability.
 - Unknown submission result: direct the customer to check appointment status before retrying; avoid a second booking caused by blind resubmission.
 
 ## Customer retrieves or changes an appointment
 
-Entry: the customer’s appointment area or a booking-result link, with ownership verification determined by the later identity decision.
+Entry: “My appointments” or a booking-result link. Require a valid mobile-number/SMS-code session and show only appointments belonging to that account. Signed-out customers sign in first; a link or booking reference does not bypass ownership checks.
 
 1. Find the appointment: show service, specialist, date/time, and state; distinguish upcoming and cancelled appointments.
 2. Review permitted actions: explain the applicable cancellation/rescheduling policy and whether self-service is available.
@@ -83,7 +85,8 @@ Reception can identify an appointment or availability issue; management owns set
 
 ## Outstanding decisions before final flows
 
-- Customer identity and how a customer securely retrieves appointments.
+- Staff authentication and how phone/walk-in appointments are linked to customer accounts; staff must not impersonate a customer session.
+- Customer mobile-number change/recovery policy; no cross-number appointment access is assumed.
 - Fixed, starting, or estimate-based service prices; any consultation prerequisite.
 - Payment at the salon versus online payment/deposit.
 - Cancellation/rescheduling windows and salon-originated change handling.

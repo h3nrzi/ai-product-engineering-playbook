@@ -61,6 +61,20 @@ The MVP does not attempt to manage the salon’s entire business operation.
 
 Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Reception manages appointments, including phone and walk-in bookings in the shared calendar. Management has all reception capabilities plus control of services, prices, specialists, eligibility, and working schedules.
 
+### Customer authentication
+
+Approved by the user on 2026-10-03:
+
+- Services, specialists, and available times can be browsed without login.
+- Customers sign in with their mobile number and a one-time SMS code. Successful verification establishes the customer account/session; no password is required.
+- A signed-out customer signs in before reviewing/submitting a booking. Preserve the selected service, specialist preference, and date/time across login, then recheck availability. Login does not reserve the selected time.
+- A signed-in customer skips repeated phone entry and verification while the session is valid.
+- Each online booking belongs to the authenticated customer account and uses that account’s verified mobile number. Do not ask for a separate booking phone number.
+- “My appointments” shows appointments belonging to the signed-in account; an appointment link or reference alone does not grant access.
+- SMS verification confirms control of the mobile number, not a government-verified personal identity.
+
+Staff login and linking phone/walk-in bookings to customer accounts remain separate decisions.
+
 ### Booking unit
 
 Approved by the user on 2026-10-03: each MVP appointment contains one service with one eligible specialist. Multi-service appointments, service bundles, and coordinated appointments across specialists are deferred. This does not impose a daily booking limit; any such limit requires a separate decision.

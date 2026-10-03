@@ -17,7 +17,7 @@ Confirmed context: one physical women’s salon, multiple services and specialis
 - Decision factors: service fit, specialist trust and style, price clarity, date/time fit, and salon location.
 - Pain points and objections: uncertainty about cost, choosing the wrong service or specialist, unreliable availability, and uncertainty about whether booking succeeded.
 - Trust factors: truthful service/specialist information, clear confirmation, and an understandable way to contact the salon when a need cannot be handled through standard booking.
-- Constraints: only eligible specialists and times that fit the full duration are bookable. Consultation-dependent services and account/guest requirements remain unresolved.
+- Constraints: only eligible specialists and times that fit the full duration are bookable. Customers authenticate with a mobile number and SMS code before online booking; booking uses the verified account number. Browsing remains public. Consultation-dependent services remain unresolved.
 - Accessibility direction: readable Persian content, clear form labels, understandable errors, and comfortable mobile controls; no assumed age or ability profile.
 
 First-time and returning customers are usage contexts within this role, not separate permission roles. Repeat-booking shortcuts remain deferred unless later justified.
@@ -83,7 +83,7 @@ Possible later specialist access is deferred, not an MVP commitment. If justifie
 
 ## Decisions for later stages
 
-Customer identity, consultation-dependent services, payment, and cancellation/rescheduling policies remain open from earlier discovery. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
+Customer mobile-number/SMS-code authentication and account-based appointment retrieval are approved. Staff authentication, linking staff-created appointments to customer accounts, consultation-dependent services, payment, and cancellation/rescheduling policies remain open. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
 
 ## Completion
 

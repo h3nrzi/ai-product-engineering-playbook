@@ -22,18 +22,7 @@ Canonical library:
 
 `opportunities/service-products.md`
 
-The library is portfolio-level, not project-specific. Each opportunity should capture enough information to explain why the project may be worth exploring:
-
-- service category
-- target user
-- primary problem
-- current workaround / alternative
-- why the current approach is weak
-- proposed digital solution direction
-- core value
-- interesting product/workflow depth
-- portfolio differentiation
-- status
+The library is portfolio-level, not project-specific. It is a simple list of services and their models, ordered roughly by demand in Iran. Choose a service (Product Family) and a specific model (Variant); capture the project problem and rationale in the Selected Opportunity Brief.
 
 The library is not a backlog of random website ideas. Start with a service problem worth solving.
 
@@ -50,7 +39,8 @@ Do not create a scoring system unless comparison genuinely benefits from one.
 
 Once an opportunity is selected, create a short brief containing:
 
-- opportunity
+- service name (Product Family)
+- selected model (Variant) and boundaries against adjacent models
 - target user
 - primary problem
 - proposed solution direction

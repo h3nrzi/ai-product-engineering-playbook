@@ -2,7 +2,7 @@
 
 ## Status and authority
 
-Stage 08 draft started on 2026-10-03 from [approved user flows](user-flows.md), [jobs and journeys](jobs-and-journeys.md), and [product scope](product-scope.md). This is a proposed information/navigation structure for review; Stage 08 is not yet approved. Page/surface inventory follows in Stage 09; the hierarchy below does not mandate separate routes for every step or state.
+Stage 08 approved and completed on 2026-10-03. The user accepted the proposed architecture after clarification of its place in the workflow. This information/navigation structure derives from [approved user flows](user-flows.md), [jobs and journeys](jobs-and-journeys.md), and [product scope](product-scope.md). Page/surface inventory follows in Stage 09; the hierarchy below does not mandate separate routes for every step or state.
 
 Scope: one physical women's salon, one service/specialist per appointment, Persian/RTL experience, customer account, and one salon operations area with reception/management permissions.
 
@@ -135,6 +135,6 @@ Keep private customer details out of public pages and unauthenticated SMS-link p
 
 Stage 09 should enumerate necessary page/templates, steps, dialogs/drawers and important states from this hierarchy, without counting every payment status or service instance as a new page. Responsive navigation treatment and detailed visual/content decisions follow in their respective stages.
 
-## Review decisions
+## Completion
 
-Review the three-area structure, public/account menu grouping, calendar-first staff experience, appointment-linked follow-up, and manager-only controls. Stage 08 remains a draft until that architecture is approved.
+Approved on 2026-10-03: the three-area structure, public/account navigation, the single booking journey, calendar-first salon operations, appointment-linked follow-up, and manager-only controls. Hierarchy, cross-links, access boundaries and the conceptual sitemap support the approved flows. Stage 08 is complete; proceed to Stage 09 — Page Inventory. These product-specific navigation choices are approved proposals, not generic requirements imposed by the workflow guide.

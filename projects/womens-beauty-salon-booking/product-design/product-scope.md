@@ -219,7 +219,7 @@ Availability uses the selected option’s full duration. Show that option and du
 
 Volume selection determines booking duration; for variable-price services the deposit still uses the disclosed approximate usual-volume price and the shared percentage. Changing volume does not automatically change the deposit basis or imply a guaranteed final price. Fixed-duration services do not require a volume-selection step.
 
-Actual option labels and duration values remain service configuration, not invented defaults. Handling an inaccurate customer selection at the salon remains an open operational rule; it must not silently overlap another appointment.
+Actual option labels and duration values remain service configuration, not invented defaults. Approved by the user on 2026-10-03: an inaccurate customer volume selection discovered at the salon does not change the booked start time or duration. Do not extend or move the appointment to accommodate the mismatch, even if later time is available. The specialist coordinates with the customer to resolve it within the reserved interval without delaying or overlapping the next appointment. For variable-price services, the final price still requires customer acceptance before service begins; a price change does not authorize more time. If the service cannot be delivered within the interval, the specialist must coordinate with the customer; cancellation, deposit treatment, and any separate new-booking route remain open. This does not remove the approved customer rescheduling path.
 
 ### Schedule-driven availability
 

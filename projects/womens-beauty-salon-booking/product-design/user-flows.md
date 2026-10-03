@@ -2,7 +2,7 @@
 
 ## Status and authority
 
-Stage 07 initial draft, started on 2026-10-03 after the user approved and completed Stage 06. This document translates [approved jobs and journeys](jobs-and-journeys.md) into proposed screen-level flows. Approved business rules remain authoritative; screen grouping, exact states, recovery mechanics, and deferred operational details below require Stage 07 review. No application implementation is introduced.
+Stage 07 draft in progress, started on 2026-10-03 after the user approved and completed Stage 06. The online-booking step sequence, sequential selection steps, back-navigation preservation/revalidation, and payment-button hold trigger are approved on 2026-10-03; other screen/state details still require review. This document translates [approved jobs and journeys](jobs-and-journeys.md) into proposed screen-level flows. Approved business rules remain authoritative; screen grouping, exact states, recovery mechanics, and deferred operational details below require Stage 07 review. No application implementation is introduced.
 
 Scope: one physical women's salon; one service and one specialist per appointment; customer account and salon operations area; no specialist dashboard, multi-service booking, or scheduled reminders.
 
@@ -21,6 +21,8 @@ Scope: one physical women's salon; one service and one specialist per appointmen
 
 ## 1. Customer books online
 
+**Approved on 2026-10-03:** service → volume when relevant → named/any-eligible specialist → time → sign in/review customer details → final review → pay deposit → result. Service, volume, specialist, and time are sequential steps in one booking journey. Customers may go back while retaining valid selections; changes affecting availability require the time to be rechecked. Step grouping does not mandate separate routes.
+
 **Actor/trigger:** customer chooses a service from discovery or a specialist profile.  
 **Preconditions:** directly bookable service with configured price, eligible staff, and duration options.
 
@@ -31,7 +33,7 @@ Scope: one physical women's salon; one service and one specialist per appointmen
 5. Time step: show full-duration valid times; for any eligible, assign the actual specialist by management priority after time selection.
 6. Sign-in/details step: mobile/SMS login if needed; preserve choices; prefill name/contact; verify a different contact separately.
 7. Review step: show service, volume/duration, actual specialist, time, price basis, exact deposit, balance/estimate, accepted policies, and payment deadlines.
-8. Continue to payment: recheck availability and secure a hold for the reviewed specialist/time; save accepted terms. This review-to-hold action is proposed screen behavior.
+8. Customer selects “Pay deposit” (پرداخت بیعانه) on final review: recheck availability and secure a hold for the reviewed specialist/time; save accepted terms and start the 10-minute payment window when the hold is successfully secured. If the slot cannot be secured, preserve input and return to valid time selection without presenting it as held. Browsing, login, or opening final review does not start this hold. The payment-button trigger is approved.
 9. Payment/status step: follow flow 2.
 10. Success: show confirmed details, deposit, remaining balance, and My appointments.
 
@@ -143,7 +145,7 @@ These labels and transition details are draft screen semantics, not Stage 07 app
 
 ## Review work carried forward
 
-- Confirm screen grouping, back/state-preservation rules, exact state transitions, and operation failure recovery.
+- Online-booking order, sequential selection steps, back-navigation preservation/revalidation, and payment-button hold trigger are approved. Refine the remaining screen grouping, exact state transitions, and operation failure recovery.
 - Define verified ownership for matching, confirmed-number corrections/access transfer, and salon-coordinated account recovery.
 - Define SMS sending/retry and delivery failure without deadline resets.
 - Define validation/currency rounding, refund routing/timing, and detailed exception permission handling.

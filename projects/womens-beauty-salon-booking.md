@@ -36,7 +36,7 @@ The approved journeys preserve one service/specialist per appointment, named/any
 
 Remaining decisions now approved: management-only late exceptions with reasons; SMS booking links and change/cancellation notices; reception holds starting at finalized initial booking/link-send request; staff SMS login with management-assigned access; salon-coordinated login-number change/recovery; name/contact minimum intake; manager-configured service/volume information and consultation contact paths; resolution of schedule conflicts before saving. Volume mismatches do not change booked time/duration; if no solution fits, cancel with a full refund and leave any new booking to the customer.
 
-Stage 07 is now in progress with an initial draft. Detailed states, identity correction/recovery, validation, rounding, notification failure, and provider/refund operations are carried forward, without changing approved product rules.
+Stage 07 is in progress. The customer online-booking order and sequential service/volume/specialist/time steps are approved, with valid selections preserved on back navigation and availability rechecked after relevant changes. Selecting “Pay deposit” on final review secures the reviewed slot and starts the payment hold; the 10-minute timer begins when that hold is successfully secured. Other flow/state details remain under review. Detailed states, identity correction/recovery, validation, rounding, notification failure, and provider/refund operations are carried forward, without changing approved product rules.
 
 ## Important artifacts
 
@@ -47,7 +47,7 @@ Stage 07 is now in progress with an initial draft. Detailed states, identity cor
 - User & Actor Definition: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
 - UX / Competitive Research: [`product-design/ux-research.md`](womens-beauty-salon-booking/product-design/ux-research.md)
 - Jobs & User Journeys (approved): [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
-- User Flows (initial draft): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
+- User Flows (draft in progress): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending

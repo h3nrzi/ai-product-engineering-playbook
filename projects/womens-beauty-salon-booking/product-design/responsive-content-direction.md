@@ -1,12 +1,12 @@
 # Responsive & Content Direction — Women’s Beauty Salon Booking
 
 - Stage: 13 — Responsive & Content Direction
-- Status: draft for user review
+- Status: approved and complete on 2026-10-03
 - Date: 2026-10-03
 - Model: one physical women’s salon, Persian-language product for the Iranian market
 - Basis: approved [information architecture](information-architecture.md), [page inventory](page-inventory.md), [UX states](ux-states.md) and [design system](design-system.md).
 
-This document proposes device adaptations and interface language for the approved product. Business rules and customer rights remain as defined in the approved journeys and flows.
+This document defines approved device adaptations and interface language for the product. Business rules and customer rights remain as defined in the approved journeys and flows.
 
 ## 1. Device priorities
 
@@ -68,7 +68,7 @@ Use “نوبت” for the appointment, and qualify temporary reservation explic
 | Assigned specialist | “متخصص نوبت شما” followed by the actual name before payment/confirmation |
 | Deposit | “بیعانه” (not the misspelling “بیانیه”) |
 | Fixed price | “قیمت نهایی” only for a genuinely fixed-price service |
-| Approximate-price basis | “قیمت تقریبی برای حجم انتخابی”; explain final price is accepted before service begins |
+| Approximate-price basis | “قیمت تقریبی مبنای بیعانه”; identify the disclosed usual-volume basis and explain final price is accepted before service begins. Volume selection changes booking duration, not automatically this basis |
 | Remaining in-person balance | “باقی‌مانده قابل پرداخت در سالن” after final price is known |
 | Temporary hold | “زمان موقتاً برای شما نگه داشته شده است” plus actual remaining deadline |
 | Confirmed appointment | “نوبت تأییدشده” |
@@ -135,4 +135,4 @@ Proposed product presentation:
 
 Review the draft for mobile booking clarity, readable salon operations, terminology, Solar Hijri/Tehran-time presentation and truthful payment/refund language. On the prototype, verify narrow/wide layouts, long Persian text, the mobile keyboard, sticky-action clearance, menu/focus behavior and coherent demo data.
 
-Stage 13 remains in progress until user approval. After approval, proceed to Stage 14 — PRD, consolidating approved decisions rather than reopening discovery. No application implementation is part of this stage.
+Approved on 2026-10-03: the user accepted the responsive adaptations, Persian copy/terminology, localization and demo-content rules. Stage 13 is complete. The approximate-price label is clarified to preserve the existing usual-volume deposit basis; volume does not automatically reprice it. Proceed to Stage 14 — PRD, consolidating approved decisions rather than reopening discovery. No application implementation is part of this stage.

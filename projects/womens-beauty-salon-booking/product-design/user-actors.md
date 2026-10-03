@@ -83,7 +83,7 @@ Possible later specialist access is deferred, not an MVP commitment. If justifie
 
 ## Decisions for later stages
 
-Customer mobile-number/SMS-code authentication and account-based appointment retrieval are approved. Staff authentication, linking staff-created appointments to customer accounts, consultation-dependent services, payment, and cancellation/rescheduling policies remain open. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
+Customer mobile-number/SMS-code authentication and account-based appointment retrieval are approved. Staff authentication, linking staff-created appointments to customer accounts, consultation-dependent services, deposit parameters, rescheduling treatment, and detailed cancellation/refund policies remain open. Online deposit payment for confirmation and remaining payment at the salon are approved. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
 
 ## Completion
 

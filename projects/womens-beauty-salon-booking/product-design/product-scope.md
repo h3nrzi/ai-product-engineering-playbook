@@ -16,7 +16,7 @@ Detailed actor definition belongs to Stage 04.
 
 ## North-star journey
 
-`Need beauty service → understand service options → evaluate relevant specialists → select service → choose specialist or any eligible specialist → see valid availability → select date/time → provide required details → review → confirm → receive confirmed appointment`
+`Need beauty service → understand service options → evaluate relevant specialists → select service → choose specialist or any eligible specialist → see valid availability → select date/time → sign in if needed → provide required details → review price and policies → temporary time hold → pay deposit → receive confirmed appointment`
 
 If this journey is weak, the product has not solved its primary problem.
 
@@ -42,7 +42,7 @@ The customer can:
 - understand relevant price/duration information
 - discover appropriate specialists
 - find valid availability
-- book a valid appointment
+- pay the online deposit to confirm a valid appointment
 - view upcoming appointment details
 - manage an appointment when policy allows
 
@@ -74,6 +74,20 @@ Approved by the user on 2026-10-03:
 - SMS verification confirms control of the mobile number, not a government-verified personal identity.
 
 Staff login and linking phone/walk-in bookings to customer accounts remain separate decisions.
+
+### Deposit and confirmation
+
+Approved by the user on 2026-10-03:
+
+- Standard online appointments become confirmed only after a successful online deposit payment is verified. The remaining service balance is paid at the salon; the deposit is credited toward the service price.
+- After the customer reviews the appointment and payment/cancellation terms, keep the selected time unavailable to other bookings for a short, explicitly displayed payment window. Merely browsing or signing in does not hold a time.
+- Display the deposit, expected total or pricing model, remaining amount where calculable, and hold expiry before payment. Deposit amount/calculation and hold duration remain to be decided.
+- Payment that is failed, abandoned, or not completed within the hold window does not confirm an appointment; release the time when the hold ends.
+- An uncertain payment result is shown as pending verification, not success or definite failure. Resolve it before encouraging another payment. A late verified payment after hold expiry must not silently claim an occupied slot; its recovery/refund policy remains open.
+- The approved cancellation direction is deposit refund for customer cancellation within the permitted advance window; late customer cancellation or no-show does not refund the deposit under the disclosed salon policy. The cutoff, processing details, rescheduling treatment, and salon-originated cancellation policy remain open.
+- Temporary payment holds and confirmed appointments both constrain the shared availability used by online booking and reception.
+
+This adds deposit collection and payment-result handling to the production MVP. Base44 may simulate the full journey and its payment/hold states without taking real payments. Deposit handling for phone and walk-in appointments remains a separate decision; no staff exemption is implied.
 
 ### Booking unit
 

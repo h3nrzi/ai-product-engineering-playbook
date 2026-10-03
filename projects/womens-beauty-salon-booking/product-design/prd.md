@@ -1,13 +1,14 @@
 # Product Requirements Document — Women’s Beauty Salon Booking
 
 - Stage: 14 — PRD
-- Status: draft for user review
+- Status: approved
 - Date: 2026-10-03
+- Approved: 2026-10-03
 - Product family: Barbershop / Beauty Salon Booking
 - Selected model: Women’s single-salon
 - Phase: 01 — Product Discovery & Product Design
 
-This PRD consolidates approved product decisions through Stage 13. It becomes the authoritative consolidated definition after approval; supporting artifacts provide detail. It introduces no new business policy. Historical discovery questions already resolved by later approved stages are not reopened.
+This PRD consolidates approved product decisions through Stage 13 and is the authoritative consolidated definition for the product; supporting artifacts provide detail. It introduces no new business policy. Historical discovery questions already resolved by later approved stages are not reopened.
 
 ## 1. Overview, problem and solution
 
@@ -267,7 +268,7 @@ These are review criteria, not measured conversion or workload claims.
 
 Behavioral assumptions remain unvalidated: willingness to self-book, benefits of visible availability, importance of specialist trust and reduced routine coordination. Actual staff device preference and service data need salon validation.
 
-No unresolved product question prevents building the intended prototype. This PRD itself awaits user approval.
+No unresolved product question prevents building the intended prototype. This PRD was approved by the user on 2026-10-03.
 
 Production/configuration handoff includes real salon identity/contact/content, prices/volume labels/durations, eligibility/priority/schedules; payment/SMS provider compatibility and real verification/refund operations; authoritative availability, durable outcomes, deduplication and access enforcement; secure sessions, independent identity-evidence procedures and audit records. Verify the approved hold timing with the selected provider. Any required change to customer rights/business behavior returns for approval.
 
@@ -290,4 +291,4 @@ Do not treat historical “later/open” notes superseded by approved Stage 06/0
 - [Design system](design-system.md)
 - [Responsive and content direction](responsive-content-direction.md)
 
-After approval, proceed to Stage 15 — Base44 Prompt Package. Prompts must preserve this PRD and link supporting details; Phase 01 remains in progress until Stage 16 review/handoff. No application implementation is authorized by this artifact.
+Stage 14 is approved and complete. Proceed to Stage 15 — Base44 Prompt Package. Prompts must preserve this PRD and link supporting details; Phase 01 remains in progress until Stage 16 review/handoff. No application implementation is authorized by this artifact.

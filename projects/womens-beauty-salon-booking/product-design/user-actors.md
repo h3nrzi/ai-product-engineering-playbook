@@ -2,7 +2,7 @@
 
 ## Status and evidence
 
-Stage 04 in progress. The user has approved the MVP access direction below; remaining operational decisions are still open. This document derives from the approved problem, solution, and scope artifacts. Behavioral expectations below are design assumptions, not interview or usability-research findings.
+Stage 04 approved. The user approved the MVP access direction and reception/management responsibilities on 2026-10-03. Detailed booking policies remain for later journey and rules stages. This document derives from the approved problem, solution, and scope artifacts. Behavioral expectations below are design assumptions, not interview or usability-research findings.
 
 Confirmed context: one physical women’s salon, multiple services and specialists, Persian/RTL customer experience, and salon-controlled booking operations.
 
@@ -27,12 +27,12 @@ First-time and returning customers are usage contexts within this role, not sepa
 **Role:** Coordinate daily appointments and keep the booking schedule usable.
 
 - Primary goal: maintain a reliable appointment calendar with minimal repeated calls and messages.
-- Secondary goal: handle appointment changes and reflect specialist availability changes accurately.
+- Secondary goal: handle appointment changes and communicate specialist availability changes to management.
 - Needs: appointment details, service/specialist/time context, clear appointment state, and visibility into booking conflicts and permitted actions.
 - Context assumption: work may be interrupted by in-person customers and calls; quick scanning and unambiguous action results matter.
 - Pain points: fragmented requests, repeated availability checks, overlapping bookings, and changes that are not reflected in the calendar.
 - Trust factors: the displayed schedule reflects accepted bookings and availability inputs; changes have clear outcomes.
-- Constraints: salon-side actions must respect booking rules. Handling phone or walk-in appointments inside the product needs an explicit later decision so external bookings do not silently undermine availability.
+- Constraints: appointment actions must respect eligibility, full service duration, working schedules, and existing bookings. Reception records phone and walk-in appointments in the same calendar used for online availability. Reception cannot change services, prices, specialist profiles/eligibility, or working schedules.
 - Device context: operational layouts should be usable on desktop/tablet and accessible on mobile; actual preferred device is unvalidated.
 
 ## Salon manager / owner
@@ -46,7 +46,7 @@ First-time and returning customers are usage contexts within this role, not sepa
 - Trust factors: predictable booking rules and understandable consequences when changing service or schedule information.
 - Constraints: payroll, accounting, inventory, full CRM, and advanced business reporting remain outside scope.
 
-Management and reception are distinct responsibilities. One person may perform both. Whether they require separate permissions is an open product decision, not an established requirement.
+Management and reception have separate access levels within the same salon operations area. Management has all reception capabilities plus service, price, specialist, and working-schedule controls. One person may perform both responsibilities using management access.
 
 ## Beauty specialist
 
@@ -72,19 +72,19 @@ Management and reception are distinct responsibilities. One person may perform b
 Approved by the user on 2026-10-03:
 
 - Customer-facing booking and appointment management.
-- One salon operations area used by reception/management to coordinate appointments and specialist schedules.
+- One salon operations area with two access levels.
+- Reception: view, create, reschedule, cancel, and manage appointments, including phone and walk-in bookings, subject to booking rules.
+- Management: all reception capabilities plus management of services, prices, specialists, service eligibility, and working schedules.
+- Phone, walk-in, and online appointments share the same calendar and constrain bookable availability.
 - Specialists retain customer-facing profiles, service eligibility, and working schedules, maintained by salon staff. They have no independent login or dashboard in the MVP.
 - Specialist-originated appointment changes and cancellations are handled by reception/management. Customer self-service changes remain available when salon policy allows.
 
 Possible later specialist access is deferred, not an MVP commitment. If justified later, it could cover viewing assigned appointments and reporting unavailability; it does not imply permission to change or cancel customer appointments.
 
-## Open decisions
+## Decisions for later stages
 
-1. Do reception and management need different permissions, or can one salon operator role cover the initial product?
-2. How are phone/walk-in appointments reflected in bookable availability?
+Customer identity, consultation-dependent services, payment, and cancellation/rescheduling policies remain open from earlier discovery. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
 
-Customer identity, consultation-dependent services, payment, and cancellation/rescheduling policies remain open from earlier discovery. Resolve them in the relevant journey and rules stages rather than inventing answers here.
+## Completion
 
-## Completion condition
-
-The MVP access direction is approved. Stage 04 remains in progress while reception/management permissions and operational booking responsibilities are clarified. Then update this document and the tracker before proceeding to Stage 05 — UX / Competitive Research.
+Meaningful actors, customer contexts, responsibilities, relationships, and MVP access boundaries are defined. Stage 04 is complete; proceed to Stage 05 — UX / Competitive Research.

@@ -19,7 +19,7 @@ The tracker is navigation/context for Guide LLMs. The project directory is the a
 
 ## Current projects
 
-- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — Phase 01 in progress; Stages 01–03 persisted.
+- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — Phase 01 in progress; Stages 01–04 persisted.
 
 ## Project structure
 

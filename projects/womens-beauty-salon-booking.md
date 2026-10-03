@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor Definition — is in progress. The user approved customer access plus one salon operations area, with no independent specialist dashboard in the MVP. Reception/management permissions and operational booking responsibilities remain open.
+Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — is next and has not started yet.
 
 ## Important artifacts
 
@@ -38,7 +38,7 @@ Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor De
 - Problem Definition: [`product-design/problem-definition.md`](womens-beauty-salon-booking/product-design/problem-definition.md)
 - Solution Definition: [`product-design/solution-definition.md`](womens-beauty-salon-booking/product-design/solution-definition.md)
 - Product Strategy & Scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
-- User & Actor Definition (in progress): [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
+- User & Actor Definition: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -46,7 +46,7 @@ Phase 01 Stages 01–03 are approved and persisted. Stage 04 — User & Actor De
 
 ## Next action
 
-Resolve reception/management permissions and how phone/walk-in appointments are reflected in availability. The specialist-access decision is approved; Stage 04 remains in progress.
+Begin Phase 01 Stage 05 — UX / Competitive Research. Study service/specialist discovery, price and duration clarity, valid availability, booking confirmation, appointment changes, and the salon calendar. Persist `product-design/ux-research.md` before Stage 05 is considered complete.
 
 ## Blockers / notes
 

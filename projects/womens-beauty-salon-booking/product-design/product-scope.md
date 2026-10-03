@@ -59,7 +59,7 @@ The MVP does not attempt to manage the salon’s entire business operation.
 
 ### MVP access boundary
 
-Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Separate reception/management permissions remain to be decided.
+Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Reception manages appointments, including phone and walk-in bookings in the shared calendar. Management has all reception capabilities plus control of services, prices, specialists, eligibility, and working schedules.
 
 ### Booking rules
 

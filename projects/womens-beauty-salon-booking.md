@@ -38,7 +38,7 @@ Remaining decisions now approved: management-only late exceptions with reasons; 
 
 Stage 07 — User Flows — is approved and complete on 2026-10-03 under the user's explicit delegation to finalize remaining recommendations. Customer/reception booking, payment results, account status retrieval, cancellation/rescheduling, salon replacements, manager exceptions, in-salon settlement, number correction/recovery, management edits, refund progress, and SMS failure recovery are defined. Appointment/payment/refund states remain distinct; identity transfer requires verified ownership, and failed operations preserve existing bookings/entitlements. Provider-specific operations, concrete manual identity-evidence procedures, security controls, and real service configuration are engineering/configuration handoff work.
 
-The active next stage is Stage 08 — Information Architecture, not yet started. Phase 01 remains in progress.
+Stage 08 — Information Architecture — is in progress with a persisted draft proposing public discovery/booking, a private customer account, and one salon operations area with reception/management permissions. Its hierarchy, navigation, cross-links, and access boundaries are ready for user review. Phase 01 remains in progress.
 
 ## Important artifacts
 
@@ -50,6 +50,7 @@ The active next stage is Stage 08 — Information Architecture, not yet started.
 - UX / Competitive Research: [`product-design/ux-research.md`](womens-beauty-salon-booking/product-design/ux-research.md)
 - Jobs & User Journeys (approved): [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
 - User Flows (approved): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
+- Information Architecture (draft): [`product-design/information-architecture.md`](womens-beauty-salon-booking/product-design/information-architecture.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -57,7 +58,7 @@ The active next stage is Stage 08 — Information Architecture, not yet started.
 
 ## Next action
 
-Start Stage 08 — Information Architecture using the approved user flows: define public/customer/salon areas, information grouping, navigation, authenticated boundaries, hierarchy, cross-links, and sitemap. Preserve a short booking path and reception/management permissions. Persist `product-design/information-architecture.md` and review it before marking Stage 08 complete.
+Review the Stage 08 Information Architecture draft: public/account navigation, the single booking journey, calendar-first salon operations, appointment-linked follow-up, and manager-only controls. Approve or revise its hierarchy and access boundaries before marking Stage 08 complete; Stage 09 then derives the page/surface inventory.
 
 ## Blockers / notes
 

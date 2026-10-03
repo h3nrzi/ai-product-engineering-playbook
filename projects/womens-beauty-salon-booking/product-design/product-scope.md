@@ -81,7 +81,12 @@ Approved by the user on 2026-10-03:
 
 - Standard online appointments become confirmed only after a successful online deposit payment is verified. The remaining service balance is paid at the salon; the deposit is credited toward the service price.
 - After the customer reviews the appointment and payment/cancellation terms, keep the selected time unavailable to other bookings for a short, explicitly displayed payment window. Merely browsing or signing in does not hold a time.
-- Display the deposit, expected total or pricing model, remaining amount where calculable, and hold expiry before payment. Deposit amount/calculation and hold duration remain to be decided.
+- Deposit calculation is percentage-based, as approved by the user on 2026-10-03: deposit = booking service price × deposit percentage / 100. The remaining service balance is the agreed price less the deposit already paid.
+- Show the applicable percentage, calculated deposit, price used for calculation, remaining balance where calculable, and hold expiry before payment.
+- The percentage value, whether it is salon-wide or service-specific, configuration permissions, and currency rounding remain to be decided; no default percentage is approved.
+- For starting-price, ranged-price, or quote-based services, the price used for deposit calculation must be agreed explicitly before charging. Do not silently calculate against a minimum or estimate; treatment of later price adjustments remains open.
+- Record the price basis, percentage, and charged deposit for the booking. Later catalog-price or percentage changes must not silently recalculate an existing appointment’s paid deposit.
+- Hold duration remains to be decided.
 - Payment that is failed, abandoned, or not completed within the hold window does not confirm an appointment; release the time when the hold ends.
 - An uncertain payment result is shown as pending verification, not success or definite failure. Resolve it before encouraging another payment. A late verified payment after hold expiry must not silently claim an occupied slot; its recovery/refund policy remains open.
 - The approved cancellation direction is deposit refund for customer cancellation within the permitted advance window; late customer cancellation or no-show does not refund the deposit under the disclosed salon policy. The cutoff, processing details, rescheduling treatment, and salon-originated cancellation policy remain open.

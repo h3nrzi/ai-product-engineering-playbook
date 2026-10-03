@@ -26,11 +26,11 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | Choose specialist | Select an eligible specialist or no preference | Expertise, supported service, preference meaning | Preferred specialist does not provide the service | Valid preference retained |
 | Choose time | Find a time that fits | Date, available start times, full duration, specialist context | No suitable time or a slot becomes unavailable | One valid selected time |
 | Sign in / provide details | Sign in if needed; reuse verified account details | Mobile number and SMS code for signed-out customers; any further required details remain to be decided | Missing/expired code, session expiry, or slot loss during login | Authenticated account; selections preserved and availability rechecked |
-| Review | Check appointment and payment terms | Service, actual specialist, date/time, duration, expected price, deposit, balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
+| Review | Check appointment and payment terms | Service, actual specialist, date/time, duration, expected price, deposit percentage, price basis, calculated deposit, balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
 | Pay deposit | Secure the appointment within a temporary hold | Deposit amount, hold expiry, payment result | Abandoned/failed payment, expired hold, or uncertain result | Verified deposit allows confirmation; unresolved payment remains pending |
 | Confirm | Understand whether booking succeeded | Confirmed appointment details, recorded deposit, balance, and a route to My appointments | Payment result is uncertain or arrives after hold expiry | Confirmed appointment only after verified payment and valid slot ownership; otherwise clear recovery |
 
-Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. Deposit amount/calculation, hold duration, and detailed exception handling remain open before final flows. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. The percentage value, salon-wide versus service-specific configuration, price basis for variable-price services, rounding, hold duration, and detailed exception handling remain open before final flows. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
 
 ### Alternatives and recovery
 
@@ -91,7 +91,9 @@ Reception can identify an appointment or availability issue; management owns set
 - Staff authentication and how phone/walk-in appointments are linked to customer accounts; staff must not impersonate a customer session.
 - Customer mobile-number change/recovery policy; no cross-number appointment access is assumed.
 - Fixed, starting, or estimate-based service prices; any consultation prerequisite.
-- Deposit amount/calculation, eligible service pricing models, and temporary hold duration.
+- Deposit percentage value, salon-wide versus service-specific configuration, configuration permissions, and currency rounding.
+- Explicit price basis for variable-price services and treatment of price adjustments after payment.
+- Temporary hold duration.
 - Deposit collection and account linkage for phone/walk-in bookings.
 - Late/uncertain payment recovery and refund processing details.
 - Advance cancellation cutoff, rescheduling treatment, and salon-originated cancellation/change handling. Customer no-show/late-cancellation deposit retention is approved as the disclosed policy direction.

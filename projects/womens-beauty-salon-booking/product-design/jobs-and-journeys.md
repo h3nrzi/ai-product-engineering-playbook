@@ -2,7 +2,7 @@
 
 ## Status and boundaries
 
-Stage 06 draft for discussion, prepared on 2026-10-03 from the approved product scope, actor definitions, and the Stage 05 research. Proposed journey details are design recommendations; they are not validated user behavior.
+Stage 06 approved and completed on 2026-10-03. The user accepted the remaining journey proposals, with the excess-deposit question withdrawn after clarification. These are approved product decisions derived from the scope, actor definitions, and Stage 05 research, not validated user behavior. Detailed states, recovery mechanics, and provider operations continue in Stage 07 and engineering.
 
 Confirmed: one women’s salon, one service per appointment, eligible specialist and full-duration availability, mobile-number/SMS-code customer authentication, account-linked online appointments confirmed after a verified deposit payment, customer appointment management, a shared calendar for all booking sources, reception/management access levels, and no independent specialist dashboard.
 
@@ -31,7 +31,7 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | Pay deposit | Secure the appointment within a temporary hold | Deposit amount, hold expiry, payment result | Abandoned/failed payment, expired hold, or uncertain result | Verified deposit allows confirmation; unresolved payment remains pending |
 | Confirm | Understand whether booking succeeded | Confirmed appointment details, recorded deposit, balance, and a route to My appointments | Payment result is uncertain or arrives after hold expiry | Confirmed appointment only after verified payment and valid slot ownership; otherwise clear recovery |
 
-Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers receive profile-prefilled name and contact details without repeated entry. They may edit these for the booking, including its contact number; this does not change the profile/login number or account ownership. If the chosen contact differs from the account’s verified mobile number, an SMS code verifies it before payment/confirmation; the original account still owns the appointment. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. One shared percentage applies to all services and is configurable only by management; per-service rates are deferred. For variable-price services, the approved deposit basis is the approximate price for usual volume, with the estimate and final in-salon settlement clearly disclosed before payment. Management configures the shared percentage, payment-hold duration, and advance cancellation window; they are disclosed before payment and saved with each booking. Later setting changes affect new bookings only. The approved initial payment-hold default is 10 minutes, with up to 5 additional minutes for an initiated payment whose result remains unknown. Approved by the user on 2026-10-03: the initial salon-wide deposit percentage is 20%, and the initial advance cancellation/rescheduling window is 24 hours before the appointment. Calculate the deposit from the fixed service price or the disclosed approximate usual-volume price. Within the permitted window, customer cancellation refunds the full deposit and rescheduling transfers it without a second deposit. Both settings remain configurable only by management; later changes apply to new bookings, while existing bookings retain their accepted terms. Currency rounding, setting validation, and detailed exception handling remain to be defined. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers receive profile-prefilled name and contact details without repeated entry. They may edit these for the booking, including its contact number; this does not change the profile/login number or account ownership. If the chosen contact differs from the account’s verified mobile number, an SMS code verifies it before payment/confirmation; the original account still owns the appointment. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. One shared percentage applies to all services and is configurable only by management; per-service rates are deferred. For variable-price services, the approved deposit basis is the approximate price for usual volume, with the estimate and final in-salon settlement clearly disclosed before payment. Management configures the shared percentage, payment-hold duration, and advance cancellation window; they are disclosed before payment and saved with each booking. Later setting changes affect new bookings only. The approved initial payment-hold default is 10 minutes, with up to 5 additional minutes for an initiated payment whose result remains unknown. Approved by the user on 2026-10-03: the initial salon-wide deposit percentage is 20%, and the initial advance cancellation/rescheduling window is 24 hours before the appointment. Calculate the deposit from the fixed service price or the disclosed approximate usual-volume price. Within the permitted window, customer cancellation refunds the full deposit and rescheduling transfers it without a second deposit. Both settings remain configurable only by management; later changes apply to new bookings, while existing bookings retain their accepted terms. Currency rounding, setting validation, and detailed exception handling remain to be defined. Management defines service prices, price factors, volume labels, and duration values. Services genuinely requiring consultation are not directly bookable; direct the customer to contact the salon. Variable pricing alone does not imply a consultation requirement.
 
 ### Profile defaults and booking contact edits
 
@@ -55,7 +55,7 @@ Approved by the user on 2026-10-03: for services with an approximate booking pri
 
 Approved by the user on 2026-10-03: if the customer selected an inaccurate service-volume option, the booked start time and duration remain unchanged. Do not extend or move the appointment to accommodate the mismatch, including when later availability exists. The specialist is responsible for coordinating with the customer and resolving the issue within the reserved interval without delaying or overlapping the next appointment. For variable-price services, the final price is still communicated and accepted before service begins; a price change does not authorize a longer booking.
 
-If the service cannot be delivered within that interval, the specialist must coordinate with the customer. Cancellation, deposit treatment, or a separate new-booking route for that exceptional case remain undecided; this approval does not grant a time extension or automatic rescheduling. This rule concerns a volume mismatch discovered at the salon and does not remove the separately approved customer rescheduling path.
+If the service cannot be delivered within that interval and the specialist and customer cannot agree a solution, cancel with a full deposit refund. A separate new booking requires the customer’s choice; do not extend or automatically reschedule the existing appointment. This rule concerns a volume mismatch discovered at the salon and does not remove the separately approved customer rescheduling path.
 
 ### Payment hold and pending payment result
 
@@ -93,7 +93,7 @@ Entry: “My appointments” or a booking-result link. Require a valid mobile-nu
 4. Cancel: show the exact appointment and refund consequences before a deliberate cancellation action. Under the approved policy direction, cancellation within the advance window returns the deposit; late cancellation/no-show does not. Display cancellation and refund status separately: cancellation is not proof that a refund has completed. Release availability only after successful cancellation.
 5. If an action is unavailable: explain why and offer salon contact information; do not imply that contacting reception bypasses policy.
 
-Main friction: finding the right appointment, unknown rules, lost availability, and uncertainty after a failed change. Success means the customer understands the current confirmed state. The manager-configured customer cancellation window, rescheduling/deposit-transfer rules, and full deposit refund for salon-originated cancellation are approved. Refund processing details, staff exception authority, and communication channels remain open.
+Main friction: finding the right appointment, unknown rules, lost availability, and uncertainty after a failed change. Success means the customer understands the current confirmed state. The manager-configured customer cancellation window, rescheduling/deposit-transfer rules, and full deposit refund for salon-originated cancellation are approved. Only management may authorize a late cancellation/rescheduling or refund exception, with a recorded reason; reception cannot grant an exception independently. Use SMS for booking links and change/cancellation notices, with details and payment state in the customer account. Refund execution remains a Stage 07/engineering detail.
 
 ## Reception creates a phone or walk-in appointment
 
@@ -107,8 +107,8 @@ Show the final assigned specialist to reception before confirmation and communic
 
 ### Telephone booking
 
-1. Create a booking awaiting deposit within the configured temporary payment hold. The time is unavailable to conflicting online or reception bookings while the hold is active.
-2. Provide the customer a booking-review/payment link with the hold expiry. Delivery channel remains to be defined.
+1. Start the configured temporary payment hold when reception finalizes the initial booking and requests link sending. Create a booking awaiting deposit within that hold. The time is unavailable to conflicting online or reception bookings while the hold is active.
+2. Send the customer a booking-review/payment link by SMS with the hold expiry. Opening or reopening the link does not extend the deadline.
 3. Customer signs in with an SMS code for the recorded mobile number, reviews service/volume, specialist/time, price basis, exact deposit, estimated/fixed balance, and cancellation rules, then pays.
 4. Confirm only after verified deposit payment within valid slot ownership. Show the result in the shared calendar and the customer’s account.
 5. If payment has not started by hold expiry, release the time; a definitively failed payment also releases the hold. If payment started in time but its result is unknown, retain the slot until the defined verification deadline while checking the result. Release it if unresolved at that deadline; success verified after release receives a full deposit refund without automatic confirmation. Use the same pending-result and recovery rules as customer online booking; opening a link does not restart either deadline.
@@ -123,7 +123,7 @@ Check valid immediate availability and record the appointment for the present vi
 
 ### Identity, conflicts, and recovery
 
-Recording a mobile number, sending a link, or recording an in-salon payment does not verify ownership. Customer appointment retrieval requires SMS-code authentication for the corresponding number. Exact account matching and correcting a mistyped number remain flow decisions; no cross-number access is assumed.
+Recording a mobile number, sending a link, or recording an in-salon payment does not verify ownership. Customer appointment retrieval requires SMS-code authentication for the corresponding number. A mistyped number can be corrected before confirmation. Corrections to a confirmed appointment’s number or access transfer to another account require a separate ownership-verification flow; number editing alone never transfers access. Detailed matching and correction steps continue in Stage 07.
 
 Reception may be interrupted while entering a booking and online availability may change meanwhile. Preserve input when a conflict occurs, explain it, and offer a valid alternative. Reception cannot modify service/price/specialist/schedule settings to force a booking, waive the required future-booking deposit, or assert that an uncertain online payment succeeded.
 
@@ -143,7 +143,7 @@ The salon’s cancellation is distinct from a late customer cancellation: refund
 
 Approved by the user on 2026-10-03: if a salon-proposed time or specialist replacement receives no response and the original appointment can still be delivered, preserve the original confirmed appointment; do not apply the replacement without explicit customer acceptance. If the salon can no longer deliver the original appointment, cancel it as a salon-originated cancellation and refund the entire deposit rather than leaving its status unresolved while waiting for a response. A replacement may be confirmed only after customer acceptance and a valid availability check. Silence is neither acceptance nor a customer-originated cancellation and does not forfeit the deposit. Clearly communicate the resulting appointment state and any refund progress.
 
-Show appointment state and refund progress separately. Refund routing, timing, and customer communication channel remain flow details; this does not add a reminder system to scope.
+Show appointment state and refund progress separately. Communicate change/cancellation outcomes by SMS and show details and payment/refund progress in the customer account. Refund routing and timing remain flow/engineering details; transactional notices do not add a scheduled reminder system to scope.
 
 ## Manager maintains bookable information
 
@@ -151,28 +151,34 @@ Entry: service, specialist, or schedule settings, or the shared deposit/payment/
 
 Understand the information to update → inspect existing values and affected context → edit service descriptions/prices and volume-specific durations, specialist eligibility/assignment priority, working schedules, or the shared deposit percentage, payment-hold duration, or advance cancellation window → validate → review → save → check the resulting customer booking options.
 
-The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. The exact conflict-resolution policy is open and must be specified before implementation.
+The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. Show conflicts to management and require affected appointments to be resolved under the accepted replacement or cancellation/full-refund rules before saving a schedule change that would invalidate them.
 
 The customer sees the applicable deposit and timing/cancellation rules before payment. Save these terms with the booking/payment attempt. Management changes apply to future bookings; existing appointment terms and active hold expiries stay unchanged. An accepted reschedule uses the original policy window and accepted terms; only the deadline is recalculated against the new appointment time. A settings edit itself never changes an existing deadline.
 
 Reception can identify an appointment or availability issue; management owns settings changes. Specialists communicate absence or changes through salon coordination. Reception/management then resolve affected appointments, and customers receive the resulting appointment information. This crosses actors without requiring specialist access.
 
-## Outstanding decisions before final flows
+## Approved closure decisions and flow handoff
 
-- Staff login mechanics and detailed matching/correction of staff-entered customer numbers. Customer account access requires SMS verification; staff must not impersonate a customer session.
-- Profile/account login-number change and recovery remain separate from the approved SMS verification of a different booking contact. Editing or verifying booking contact does not grant cross-account appointment access.
-- Service-specific approximate usual-volume prices, their descriptions and adjustment factors; any genuine consultation prerequisite. Variable pricing alone does not require consultation.
-- Validation for manager-controlled deposit, advance cancellation/rescheduling, and payment-hold settings, and currency rounding. Initial defaults of 20% deposit, a 24-hour advance cancellation/rescheduling window, and a 10-minute payment hold are approved; these are configurable settings, not fixed product constants. Per-service deposit rates are deferred.
-- How an excess deposit is handled if the final price is lower than the deposit paid. Communicating the final price and obtaining customer acceptance before starting a variable-price service is approved; no excess-deposit refund or credit rule is approved yet.
-- Service-specific volume labels and booking durations, and cancellation/deposit/new-booking handling if an inaccurate volume selection makes the service impossible within the reserved interval. The booked start time and duration stay unchanged; the specialist resolves the mismatch with the customer without delaying the next appointment.
-- Booking-link delivery channel and precise payment-hold start/retry interaction for reception-created future bookings. Confirmation/deposit paths and customer SMS verification are approved.
-- Detailed verification-deadline setup/disclosure, compatibility checks with the selected gateway, provider-result checks, payment retry mechanics, and refund processing details. Initial defaults of 10 minutes for payment plus up to 5 additional minutes for an initiated payment with an unknown result are approved, along with the bounded pending-result hold and full refund for success verified after slot release.
-- Staff exception authority after the self-service rescheduling cutoff. The approved default does not allow reception contact to bypass late-cancellation policy.
-- Additional required fields, if justified, and staff-created appointment intake. Online booking name/contact default from the profile and are editable per booking; any missing data should be requested without repeating completed profile information.
-- Appointment states, customer communication channel, and effects of schedule/eligibility edits on existing appointments.
+### Remaining journey decisions accepted on 2026-10-03
 
-Deposit collection is now approved for the production MVP; real provider selection remains for engineering. No daily booking limit, multi-service appointment, reminders, or specialist dashboard is added by this draft.
+- Minimum booking intake is name and contact number. Ask additional service-specific information only when justified by a real need; do not repeat completed profile information.
+- Staff sign in with their mobile number and an SMS code. Management assigns staff access; authentication alone does not grant a staff role.
+- Customer login-number changes and account recovery are coordinated with the salon in the MVP. Ownership verification is defined separately in the flows; editing an appointment contact does not change the account login or ownership.
+- Management alone may approve late-change/refund exceptions and must record a reason.
+- SMS delivers reception booking links and appointment change/cancellation notices. Account views show booking and payment details.
+- Reception booking holds start when initial booking is finalized and link sending is requested, with no extension from opening/reopening the link.
+- Management configures service prices, price factors, volume options, and durations. Genuine consultation prerequisites use salon contact instead of direct booking.
+- Conflicting schedule changes require management to resolve affected appointments before saving, using accepted customer-consent and full-refund rules.
+- If a volume mismatch cannot be resolved within the unchanged booked interval, cancel with a full deposit refund; a new booking is the customer's choice.
+- The excess-deposit question is withdrawn and is not a Stage 06 blocker. No excess-deposit refund/credit policy is added. Deposit remains a percentage of the fixed or disclosed approximate booking price basis; the salon balance is final price minus deposit paid.
+
+### Details carried into Stage 07 and engineering
+
+Define exact appointment/payment/refund states, validation and currency rounding, matching and confirmed-number correction/access transfer, recovery ownership checks, SMS delivery failure and retry, hold/result-deadline disclosure, refund route/timing, and selected-provider compatibility and payment verification. Internal specialist-to-salon coordination remains outside an independent specialist dashboard. Service-specific configuration values are supplied by management rather than invented product defaults.
+
+The user approved moving these implementation/flow details forward. Any decision that changes customer rights or approved product behavior must return for explicit approval. Deposit collection is in the production MVP; Base44 may simulate it. No daily booking limit, multi-service booking, scheduled reminders, or specialist dashboard is introduced.
 
 ## Completion condition
 
-Agree the major jobs/journeys and resolve the decisions that materially change the booking path before treating Stage 06 as complete. Stage 07 then expands these journeys into screen-level flows, branches, states, and recovery.
+Met on 2026-10-03: the user approved the major jobs/journeys and remaining proposals, with the excess-deposit item withdrawn, and authorized proceeding to Stage 07 — User Flows. Stage 07 expands these approved journeys into screens, branches, states, and recovery; its draft requires separate review.
+

@@ -2,7 +2,7 @@
 
 ## Status and basis
 
-Stage 09 draft started on 2026-10-03. Derived from [approved information architecture](information-architecture.md), [user flows](user-flows.md), and [scope](product-scope.md). Page grouping and surface choices below are proposals for review; Stage 09 is not yet approved. Detailed UI states follow in Stage 10, and responsive/content/visual decisions follow their own stages.
+Stage 09 approved and completed on 2026-10-03. The user accepted the page/template grouping and contextual surface boundaries. Derived from [approved information architecture](information-architecture.md), [user flows](user-flows.md), and [scope](product-scope.md). Detailed UI states follow in Stage 10, and responsive/content/visual decisions follow their own stages.
 
 Scope remains one physical women's salon. IDs identify design templates/surfaces, not mandated URL routes. One service-detail template serves all services; one specialist template serves all specialists; one appointment-detail template per audience serves their appointments and attempts. Booking steps, dialogs, and state variants do not inflate the page count.
 
@@ -122,6 +122,6 @@ The inventory contains 19 required page/template groups, with conditional bookin
 
 Separate About and Contact pages, general dashboard charts, wallet/loyalty, a notification inbox, a specialist dashboard, full accounting/POS, CRM, marketplace, and multi-service booking pages are not required. Creating them would add scope beyond approved needs. Optional decorative content surfaces are not necessary for completion.
 
-## Review/completion condition
+## Completion
 
-Review the page/template grouping and the contextual surface boundaries. Each retained surface has a user/operational purpose, entry, content, actions, access and related flow. Stage 09 can complete after user approval of this inventory; Stage 10 then defines its meaningful states and edge cases.
+Met on 2026-10-03: the user approved the required public/customer/salon template groups, conditional booking steps, and contextual operation surfaces. Each retained surface has a purpose, audience/access, entry, content, primary/secondary actions, priority and related flow. Payment states and catalog instances do not become separate pages by default. Stage 09 is complete; proceed to Stage 10 — UX States & Edge Cases.

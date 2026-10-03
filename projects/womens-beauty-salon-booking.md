@@ -38,7 +38,7 @@ Remaining decisions now approved: management-only late exceptions with reasons; 
 
 Stage 07 — User Flows — is approved and complete on 2026-10-03 under the user's explicit delegation to finalize remaining recommendations. Customer/reception booking, payment results, account status retrieval, cancellation/rescheduling, salon replacements, manager exceptions, in-salon settlement, number correction/recovery, management edits, refund progress, and SMS failure recovery are defined. Appointment/payment/refund states remain distinct; identity transfer requires verified ownership, and failed operations preserve existing bookings/entitlements. Provider-specific operations, concrete manual identity-evidence procedures, security controls, and real service configuration are engineering/configuration handoff work.
 
-Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is in progress with a persisted draft covering required public/customer/salon page templates, conditional booking steps, contextual operation surfaces, and state variants for Stage 10 review. Phase 01 remains in progress.
+Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is approved and complete on 2026-10-03. Required public/customer/salon page templates, conditional booking steps, and contextual operation surfaces are approved; state variants remain within these surfaces. The next active stage is Stage 10 — UX States & Edge Cases, not yet started. Phase 01 remains in progress.
 
 ## Important artifacts
 
@@ -51,7 +51,7 @@ Stage 08 — Information Architecture — is approved and complete on 2026-10-03
 - Jobs & User Journeys (approved): [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
 - User Flows (approved): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
 - Information Architecture (approved): [`product-design/information-architecture.md`](womens-beauty-salon-booking/product-design/information-architecture.md)
-- Page & Surface Inventory (draft): [`product-design/page-inventory.md`](womens-beauty-salon-booking/product-design/page-inventory.md)
+- Page & Surface Inventory (approved): [`product-design/page-inventory.md`](womens-beauty-salon-booking/product-design/page-inventory.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -59,7 +59,7 @@ Stage 08 — Information Architecture — is approved and complete on 2026-10-03
 
 ## Next action
 
-Review the Stage 09 Page & Surface Inventory draft. Confirm required public/customer/salon template groups and that booking steps, payment states and contextual operations do not require separate routes by default. After approval, mark Stage 09 complete and proceed to Stage 10 — UX States & Edge Cases.
+Start Stage 10 — UX States & Edge Cases from the approved flows and surface inventory. Define meaningful loading/empty/error, conflict/stale, payment/refund unknown outcomes, authentication/access, action confirmation and recovery states for critical surfaces. Preserve valid intent and approved business rules. Persist and review `product-design/ux-states.md` before marking Stage 10 complete.
 
 ## Blockers / notes
 

@@ -82,9 +82,13 @@ Approved by the user on 2026-10-03:
 - Customers sign in with their mobile number and a one-time SMS code. Successful verification establishes the customer account/session; no password is required.
 - A signed-out customer signs in before reviewing/submitting a booking. Preserve the selected service, specialist preference, and date/time across login, then recheck availability. Login does not reserve the selected time.
 - A signed-in customer skips repeated phone entry and verification while the session is valid.
-- Each online booking belongs to the authenticated customer account and uses that account’s verified mobile number. Do not ask for a separate booking phone number.
+- Each online booking belongs to the authenticated customer account. Prefill customer name and booking contact number from that account’s profile, using its verified mobile number by default. The customer may edit the booking information, including a different contact number, before confirming.
 - “My appointments” shows appointments belonging to the signed-in account; an appointment link or reference alone does not grant access.
 - SMS verification confirms control of the mobile number, not a government-verified personal identity.
+
+Booking edits apply to the appointment’s contact details. They do not automatically change the profile, login mobile number, authenticated account, or appointment ownership. Show the chosen booking name/contact in the review and appointment details; the salon uses these booking details for appointment contact. “My appointments” remains tied to the original account even when the contact number differs. A booking contact number alone does not grant appointment access.
+
+If the profile is incomplete, ask only for the missing booking information. Do not require retyping existing profile details. The verification method for a different booking contact number is an open decision: SMS verification of that contact is a recommendation awaiting approval, not an established requirement. Any such contact verification must remain separate from account login or ownership transfer.
 
 Staff use their own salon access when recording a customer mobile number; this does not verify that number or create an authenticated customer session. A customer must sign in with an SMS code for that number before accessing the corresponding appointment in My appointments or through a booking link. Detailed account matching, number correction/recovery, and staff login mechanics remain for later flows.
 

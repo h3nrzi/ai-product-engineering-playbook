@@ -48,6 +48,7 @@ The product has meaningful workflow depth beyond a marketing website: service di
 - One service per appointment in the MVP; multi-service appointments are deferred.
 - Online deposit payment, calculated from one manager-controlled salon-wide percentage of the service price, confirms the appointment; the remaining service balance is paid at the salon.
 - For variable-price services, the clearly disclosed approximate price for usual volume is the deposit basis; the final balance is settled at the salon after deducting the deposit.
+- For variable-duration services, the customer selects a relevant volume option; management sets each option’s duration. Availability uses that duration, while the approximate usual-volume deposit basis stays unchanged.
 - Fixed-location service fulfillment.
 - No marketplace mechanics.
 - No at-home travel/service-area logistics.

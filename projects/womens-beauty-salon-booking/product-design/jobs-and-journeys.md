@@ -23,10 +23,11 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | Stage | Goal and action | Information and decision | Likely friction | Expected outcome |
 | --- | --- | --- | --- | --- |
 | Discover | Understand and choose one service | Description, price model, expected duration, conditions; is it suitable and directly bookable? | Similar names, uncertain final price, consultation prerequisite | One understood service; prerequisites visible |
+| Select volume when relevant | Choose the service-relevant volume option | Clear option descriptions and manager-defined duration for each | Customer is unsure which option fits | One volume option and booking duration retained; fixed-duration services skip this step |
 | Choose specialist | Select an eligible specialist or no preference | Expertise, supported service, preference meaning | Preferred specialist does not provide the service | Valid preference retained |
 | Choose time | Find a time that fits | Date, available start times, full duration, specialist context | No suitable time or a slot becomes unavailable | One valid selected time |
 | Sign in / provide details | Sign in if needed; reuse verified account details | Mobile number and SMS code for signed-out customers; any further required details remain to be decided | Missing/expired code, session expiry, or slot loss during login | Authenticated account; selections preserved and availability rechecked |
-| Review | Check appointment and payment terms | Service, actual specialist, date/time, duration, fixed price or clearly labelled approximate usual-volume price, deposit percentage, calculated deposit, exact or estimated balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
+| Review | Check appointment and payment terms | Service, actual specialist, selected volume option where relevant, date/time, duration, fixed price or clearly labelled approximate usual-volume price, deposit percentage, calculated deposit, exact or estimated balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
 | Pay deposit | Secure the appointment within a temporary hold | Deposit amount, hold expiry, payment result | Abandoned/failed payment, expired hold, or uncertain result | Verified deposit allows confirmation; unresolved payment remains pending |
 | Confirm | Understand whether booking succeeded | Confirmed appointment details, recorded deposit, balance, and a route to My appointments | Payment result is uncertain or arrives after hold expiry | Confirmed appointment only after verified payment and valid slot ownership; otherwise clear recovery |
 
@@ -34,16 +35,16 @@ Customer authentication is approved: mobile-number login with an SMS code, accou
 
 ### Variable-price service journey
 
-Choose service → understand the approximate usual-volume price and why it can change → select eligible specialist/time → sign in if needed → review the estimate, deposit percentage, exact deposit payable now, estimated balance, and final-price disclosure → pay deposit → receive confirmed appointment with the same disclosed price basis → attend salon → settle final service price less deposit already paid.
+Choose service → understand the approximate usual-volume price and why it can change → select volume where duration varies → select eligible specialist/time → sign in if needed → review the estimate, deposit percentage, exact deposit payable now, estimated balance, and final-price disclosure → pay deposit → receive confirmed appointment with the same disclosed price basis → attend salon → settle final service price less deposit already paid.
 
-The final balance is calculated from the actual final price, not automatically fixed to the pre-booking estimate. A variable price does not itself turn the service into a consultation-only booking. Appointment duration may also vary with service volume; this scheduling decision remains open before final flows.
+The final balance is calculated from the actual final price, not automatically fixed to the pre-booking estimate. A variable price does not itself turn the service into a consultation-only booking. For variable-duration services, the approved volume choice determines the manager-configured booking duration before availability is shown. It does not alter the approximate usual-volume deposit basis.
 
 ### Alternatives and recovery
 
 - Specialist-first entry: select a service that specialist provides, then continue to availability.
 - No time available: offer another date or eligible specialist; never silently replace a named preference.
-- Service or specialist changes: re-evaluate dependent availability; do not retain an invalid time.
-- Interrupted input or login: preserve service, specialist preference, and date/time through login; recheck availability afterwards. A selected time is not held by authentication. Do not promise cross-device persistence.
+- Service, volume, or specialist changes: re-evaluate dependent availability using the selected duration; do not retain an invalid time.
+- Interrupted input or login: preserve service, volume option where relevant, specialist preference, and date/time through login; recheck availability afterwards. A selected time is not held by authentication. Do not promise cross-device persistence.
 - Missing, invalid, or expired SMS code: explain the problem and offer correction/retry without discarding booking choices. Resend timing and attempt limits belong to later flow/security rules.
 - Existing valid session: skip repeated mobile-number entry and code verification. If the session expires, sign in again and recheck availability.
 - Unknown booking/payment result: show pending verification and direct the customer to check status before retrying. Do not encourage duplicate deposits or bookings.
@@ -67,7 +68,7 @@ Main friction: finding the right appointment, unknown rules, lost availability, 
 Entry: the shared salon calendar or appointment-creation action.
 
 1. Understand the request and capture the necessary customer/contact context; exact required fields remain open.
-2. Select one service and an eligible specialist or supported assignment option.
+2. Select one service, its volume option when duration varies, and an eligible specialist or supported assignment option.
 3. Check a valid time that fits the full duration and existing schedule. A walk-in is not permission to overbook; if no valid time exists, explain alternatives.
 4. Review customer, service, specialist, and time, then create the appointment.
 5. Record the appointment in the shared calendar under the phone/walk-in deposit policy still to be decided. A staff-created booking is not an approved way to bypass deposit requirements. Show its appointment/payment state accurately; both active holds and confirmed appointments constrain online availability.
@@ -86,7 +87,7 @@ Rescheduling should work from appointment details; dragging is optional. Failed 
 
 Entry: service, specialist, or schedule settings, or the shared deposit-percentage setting in the salon operations area.
 
-Understand the information to update → inspect existing values and affected context → edit service descriptions/prices, specialist eligibility, working schedules, or the shared deposit percentage → validate → review → save → check the resulting customer booking options.
+Understand the information to update → inspect existing values and affected context → edit service descriptions/prices and volume-specific durations, specialist eligibility, working schedules, or the shared deposit percentage → validate → review → save → check the resulting customer booking options.
 
 The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. The exact conflict-resolution policy is open and must be specified before implementation.
 
@@ -99,7 +100,7 @@ Reception can identify an appointment or availability issue; management owns set
 - Service-specific approximate usual-volume prices, their descriptions and adjustment factors; any genuine consultation prerequisite. Variable pricing alone does not require consultation.
 - Value of the manager-controlled salon-wide deposit percentage and currency rounding. Per-service rates are deferred.
 - How the final price is agreed at the salon and how an excess deposit is handled if the final price is lower than the deposit paid.
-- Whether usual-volume service durations cover variable-volume bookings; any required intake, duration adjustment, or staff coordination to prevent appointment overlap.
+- Service-specific volume labels and booking durations; how reception/management handle an inaccurate customer volume selection at the salon without silently overlapping another appointment.
 - Temporary hold duration.
 - Deposit collection and account linkage for phone/walk-in bookings.
 - Late/uncertain payment recovery and refund processing details.

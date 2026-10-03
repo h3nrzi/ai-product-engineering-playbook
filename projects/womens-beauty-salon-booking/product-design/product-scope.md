@@ -16,7 +16,7 @@ Detailed actor definition belongs to Stage 04.
 
 ## North-star journey
 
-`Need beauty service → understand service options → evaluate relevant specialists → select service → choose specialist or any eligible specialist → see valid availability → select date/time → sign in if needed → provide required details → review price and policies → temporary time hold → pay deposit → receive confirmed appointment`
+`Need beauty service → understand service options → evaluate relevant specialists → select service and relevant volume option → choose specialist or any eligible specialist → see valid availability → select date/time → sign in if needed → provide required details → review price and policies → temporary time hold → pay deposit → receive confirmed appointment`
 
 If this journey is weak, the product has not solved its primary problem.
 
@@ -165,6 +165,14 @@ Not every specialist provides every service.
 ### Variable service duration
 
 Different services require different amounts of time.
+
+Approved by the user on 2026-10-03: for services whose duration varies with volume, the customer selects a service-relevant volume option before time selection. Short/medium/long hair are examples, not a required set for every service. Management defines the options and a booking duration for each; reception cannot edit these settings.
+
+Availability uses the selected option’s full duration. Show that option and duration in the booking review, appointment details, and salon calendar. If the option changes, recheck availability and require a new valid time when the original no longer fits. Preserve the selection through login.
+
+Volume selection determines booking duration; for variable-price services the deposit still uses the disclosed approximate usual-volume price and the shared percentage. Changing volume does not automatically change the deposit basis or imply a guaranteed final price. Fixed-duration services do not require a volume-selection step.
+
+Actual option labels and duration values remain service configuration, not invented defaults. Handling an inaccurate customer selection at the salon remains an open operational rule; it must not silently overlap another appointment.
 
 ### Schedule-driven availability
 

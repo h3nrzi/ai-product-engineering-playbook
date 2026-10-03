@@ -2,7 +2,7 @@
 
 ## Status and authority
 
-Stage 10 draft prepared on 2026-10-03 for review. Derived from [approved user flows](user-flows.md), [page/surface inventory](page-inventory.md), [information architecture](information-architecture.md), and [product scope](product-scope.md). State presentation and recovery proposals below preserve approved booking rights and rules; Stage 10 is not yet approved.
+Stage 10 approved and completed on 2026-10-03. The user accepted the state presentation and recovery rules as a whole. Derived from [approved user flows](user-flows.md), [page/surface inventory](page-inventory.md), [information architecture](information-architecture.md), and [product scope](product-scope.md). These approved states preserve existing booking rights and rules.
 
 P/B/C identifiers refer to the surface inventory. These are states of existing surfaces, not new pages/routes. Numeric service configuration, provider behavior, verification security controls, and brand/visual details are not invented here.
 
@@ -168,6 +168,6 @@ Base44 may simulate these conditions. The prototype should demonstrate meaningfu
 
 These are product/prototype acceptance scenarios, not a claim of implemented or tested server guarantees.
 
-## Completion condition
+## Completion
 
-State feedback, permitted actions, preserved context and recovery for critical surfaces are defined without adding pages or changing approved customer rights. Review this draft as a whole; Stage 10 remains in progress until user approval. Next is Stage 11 — Brand & Visual Direction.
+Met on 2026-10-03: the user approved the state feedback, permitted actions, preserved context and recovery for critical surfaces. Empty/error/unknown outcomes, payment and refund progress, conflicts, authentication/access, action confirmation and interruption recovery are defined without adding pages or changing approved customer rights. Stage 10 is complete. Proceed to Stage 11 — Brand & Visual Direction.

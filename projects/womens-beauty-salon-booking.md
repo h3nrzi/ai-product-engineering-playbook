@@ -38,7 +38,7 @@ Remaining decisions now approved: management-only late exceptions with reasons; 
 
 Stage 07 — User Flows — is approved and complete on 2026-10-03 under the user's explicit delegation to finalize remaining recommendations. Customer/reception booking, payment results, account status retrieval, cancellation/rescheduling, salon replacements, manager exceptions, in-salon settlement, number correction/recovery, management edits, refund progress, and SMS failure recovery are defined. Appointment/payment/refund states remain distinct; identity transfer requires verified ownership, and failed operations preserve existing bookings/entitlements. Provider-specific operations, concrete manual identity-evidence procedures, security controls, and real service configuration are engineering/configuration handoff work.
 
-Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is approved and complete on 2026-10-03. Required public/customer/salon page templates, conditional booking steps, and contextual operation surfaces are approved; state variants remain within these surfaces. Stage 10 — UX States & Edge Cases — is in progress with a persisted draft covering critical discovery/availability, identity/access, payment/hold, customer changes, salon operations, management/refund and responsive/content states. The draft preserves the approved business rules. Phase 01 remains in progress.
+Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is approved and complete on 2026-10-03. Required public/customer/salon page templates, conditional booking steps, and contextual operation surfaces are approved; state variants remain within these surfaces. Stage 10 — UX States & Edge Cases — is approved and complete on 2026-10-03. State presentation and recovery cover critical discovery/availability, identity/access, payment/hold, customer changes, salon operations, management/refund and responsive/content states while preserving approved business rules. The next active stage is Stage 11 — Brand & Visual Direction, not yet started. Phase 01 remains in progress.
 
 ## Important artifacts
 
@@ -52,7 +52,7 @@ Stage 08 — Information Architecture — is approved and complete on 2026-10-03
 - User Flows (approved): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
 - Information Architecture (approved): [`product-design/information-architecture.md`](womens-beauty-salon-booking/product-design/information-architecture.md)
 - Page & Surface Inventory (approved): [`product-design/page-inventory.md`](womens-beauty-salon-booking/product-design/page-inventory.md)
-- UX States & Edge Cases (draft): [`product-design/ux-states.md`](womens-beauty-salon-booking/product-design/ux-states.md)
+- UX States & Edge Cases (approved): [`product-design/ux-states.md`](womens-beauty-salon-booking/product-design/ux-states.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -60,7 +60,7 @@ Stage 08 — Information Architecture — is approved and complete on 2026-10-03
 
 ## Next action
 
-Review the Stage 10 UX States & Edge Cases draft as a whole: distinguish empty/error/unknown outcomes, preserve valid selections, show actual slot/payment/refund status, prevent blind duplicate actions, and retain ownership/permission constraints. After approval, mark Stage 10 complete and proceed to Stage 11 — Brand & Visual Direction.
+Start Stage 11 — Brand & Visual Direction: define product personality, intended perception, visual positioning, reference mood, color/typography/imagery direction, shape/motion, and patterns to avoid. Ground choices in this single-salon Persian/RTL booking product. Persist and review `product-design/visual-direction.md` before marking Stage 11 complete.
 
 ## Blockers / notes
 

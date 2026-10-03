@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–04 are approved and persisted; Stage 05 research is persisted. Stage 06 — Jobs & User Journeys — remains in progress. Approved decisions include one service per appointment, mobile-number/SMS-code customer login, volume-based durations, disclosed approximate-price deposits, manager-controlled deposit/payment/cancellation settings, and preservation of accepted booking terms. Telephone bookings use customer review/payment links; future in-person bookings also permit deposits received and recorded by reception; immediate walk-ins pay during the visit. All use the shared calendar, and a staff-entered customer number is not authenticated until the customer completes SMS verification. Rescheduling and salon-originated cancellation rules remain open before final flows.
+Phase 01 Stages 01–04 are approved and persisted; Stage 05 research is persisted. Stage 06 — Jobs & User Journeys — remains in progress. Approved decisions include one service per appointment, mobile-number/SMS-code customer login, volume-based durations, disclosed approximate-price deposits, manager-controlled deposit/payment/cancellation settings, and preservation of accepted booking terms. Telephone bookings use customer review/payment links; future in-person bookings also permit deposits received and recorded by reception; immediate walk-ins pay during the visit. All use the shared calendar, and a staff-entered customer number is not authenticated until the customer completes SMS verification. Customer rescheduling before the stored cutoff transfers the deposit and retains the original appointment until replacement confirms. Original terms remain, with the cutoff recalculated against the new time. Salon cancellation or rejection of a salon-proposed time/specialist replacement gives a full deposit refund; replacements require customer acceptance. Stage 06 remains a draft while outstanding journey/flow decisions are resolved.
 
 ## Important artifacts
 
@@ -48,7 +48,7 @@ Phase 01 Stages 01–04 are approved and persisted; Stage 05 research is persist
 
 ## Next action
 
-Review Stage 06 jobs and journeys, beginning with rescheduling and salon-originated cancellation rules. Phone/future in-person booking deposit paths and immediate walk-in payment are approved; refine link delivery, hold-start interactions, and account matching during flow definition. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
+Review remaining Stage 06 decisions, beginning with any-eligible-specialist assignment and required customer details. Rescheduling and salon-originated cancellation rules are approved; refine refund execution, late-change exceptions, unanswered proposals, link delivery, hold-start interactions, and account matching during flow definition. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
 
 ## Blockers / notes
 

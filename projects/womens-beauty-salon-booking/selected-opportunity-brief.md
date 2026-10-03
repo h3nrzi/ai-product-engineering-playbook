@@ -51,6 +51,7 @@ The product has meaningful workflow depth beyond a marketing website: service di
 - For variable-duration services, the customer selects a relevant volume option; management sets each option’s duration. Availability uses that duration, while the approximate usual-volume deposit basis stays unchanged.
 - Phone bookings use customer review/payment links; future in-person bookings may use the same flow or a deposit received and recorded by reception. Immediate walk-ins pay during the visit.
 - All booking sources share valid calendar availability; staff-entered customer numbers require customer SMS verification for account access.
+- Customer rescheduling before the accepted cutoff carries the deposit to the new time; salon cancellation or customer rejection of a salon-proposed replacement returns the full deposit.
 - Fixed-location service fulfillment.
 - No marketplace mechanics.
 - No at-home travel/service-area logistics.

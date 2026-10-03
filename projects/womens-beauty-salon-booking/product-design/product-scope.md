@@ -92,10 +92,10 @@ Approved by the user on 2026-10-03:
 - Handling a final price below the paid deposit, and the procedure for agreeing the final price at the salon, remain to be defined. Services needing a genuine consultation prerequisite remain a separate decision; do not infer that requirement from variable pricing alone.
 - Record the price basis, percentage, and charged deposit for the booking. Later catalog-price or percentage changes must not silently recalculate an existing appointment’s paid deposit.
 - Display the configured payment-hold duration and actual expiry before payment, plus the cancellation window and refund consequences. Record the effective price basis, deposit percentage, calculated deposit, hold duration/expiry, and cancellation/refund terms when the customer accepts the review and starts the hold/payment attempt. The confirmed appointment retains those terms.
-- Later changes to management settings apply only to new bookings. They must not rewrite existing appointment terms, move an active hold’s expiry, or change the cancellation deadline for an existing appointment. Rescheduling treatment remains a separate open decision.
+- Later changes to management settings apply only to new bookings. They must not rewrite existing appointment terms, move an active hold’s expiry, or change an existing appointment’s cancellation deadline. An accepted reschedule keeps the original policy window and recalculates the deadline relative to the new appointment time, as defined below.
 - Payment that is failed, abandoned, or not completed within the hold window does not confirm an appointment; release the time when the hold ends.
 - An uncertain payment result is shown as pending verification, not success or definite failure. Resolve it before encouraging another payment. A late verified payment after hold expiry must not silently claim an occupied slot; its recovery/refund policy remains open.
-- The approved cancellation direction is deposit refund for customer cancellation within the permitted advance window; late customer cancellation or no-show does not refund the deposit under the disclosed salon policy. Management configures the advance cancellation cutoff. Refund processing details, rescheduling treatment, and salon-originated cancellation policy remain open.
+- The approved cancellation direction is deposit refund for customer cancellation within the permitted advance window; late customer cancellation or no-show does not refund the deposit under the disclosed salon policy. Management configures the advance cancellation cutoff. Customer rescheduling and salon-originated cancellation follow the approved rules below; refund processing details remain open.
 - Temporary payment holds and confirmed appointments both constrain the shared availability used by online booking and reception.
 
 This adds deposit collection and payment-result handling to the production MVP. Base44 may simulate the full journey and its payment/hold states without taking real payments.
@@ -112,6 +112,19 @@ Approved by the user on 2026-10-03:
 - Staff-entered mobile numbers remain unverified until the customer completes SMS-code authentication. Sending a link or recording an in-salon payment does not authenticate the customer. A link alone does not grant appointment access.
 - Reception can record a deposit actually received at the salon and see the payment source/state. It cannot mark an unverified online payment as paid or alter deposit/payment/cancellation settings. This is appointment payment tracking, not a full accounting or POS system.
 
+### Rescheduling and salon-originated cancellation
+
+Approved by the user on 2026-10-03:
+
+- Before the current appointment’s advance cancellation cutoff, a customer may choose a valid new time. Transfer the existing deposit to the rescheduled appointment; do not collect it again.
+- Keep the original appointment and its time reserved until the replacement is confirmed. If the new time becomes unavailable or the change fails, leave the original appointment and deposit intact.
+- Keep the original accepted price/deposit and policy terms. Use the original advance cancellation window to calculate the new deadline from the new appointment time, and show that deadline before the customer confirms. A manager’s later setting changes do not supply new terms to the reschedule.
+- After the current cutoff, close customer online rescheduling and direct the customer to reception. Reception coordination is not an automatic exemption from the late-cancellation/no-show policy. Staff exception authority remains a separate decision; do not promise a free change.
+- If the salon cancels, the customer is entitled to a full refund of the deposit actually paid, irrespective of the customer-cancellation cutoff. This applies to online and in-salon deposits; the operational refund route remains to be specified.
+- The salon may propose another valid time or eligible specialist, but must obtain the customer’s acceptance before applying that alternative. Silence is not acceptance. If the customer declines, cancel with a full deposit refund. A proposed alternative must not silently release or replace a still-valid original appointment.
+- Track cancellation and refund progress separately. A cancelled appointment does not imply money has already been returned. Refund timing, customer communication channel, and handling an unanswered salon proposal remain open flow details.
+
+Changing the service or volume option during rescheduling is not included in this approval; its pricing/duration implications remain to be defined.
 
 ### Booking unit
 

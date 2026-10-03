@@ -57,11 +57,11 @@ Entry: “My appointments” or a booking-result link. Require a valid mobile-nu
 
 1. Find the appointment: show service, specialist, date/time, and state; distinguish upcoming and cancelled appointments.
 2. Review permitted actions: explain the applicable cancellation/rescheduling policy and whether self-service is available.
-3. Reschedule: choose a valid alternative, review the changed details, and confirm. Preserve the original appointment if the replacement fails. Changing the service is not silently included in rescheduling; that behavior remains a later decision.
+3. Reschedule before the current appointment’s stored advance cutoff: choose a valid new time, review the changed details and new deadline, and confirm. Transfer the paid deposit without a second charge. Keep the original appointment reserved until replacement succeeds; if it fails, preserve the original time and deposit. Retain accepted price/policy terms and calculate the new cancellation deadline from the new time using the original window. Changes to service or volume are not silently included. After the current cutoff, online rescheduling is unavailable; reception coordination does not bypass late-cancellation/no-show policy.
 4. Cancel: show the exact appointment and refund consequences before a deliberate cancellation action. Under the approved policy direction, cancellation within the advance window returns the deposit; late cancellation/no-show does not. Display cancellation and refund status separately: cancellation is not proof that a refund has completed. Release availability only after successful cancellation.
 5. If an action is unavailable: explain why and offer salon contact information; do not imply that contacting reception bypasses policy.
 
-Main friction: finding the right appointment, unknown rules, lost availability, and uncertainty after a failed change. Success means the customer understands the current confirmed state. Refund eligibility direction is approved; the cutoff, processing details, rescheduling treatment, salon-originated cancellation policy, and communication channels remain undecided.
+Main friction: finding the right appointment, unknown rules, lost availability, and uncertainty after a failed change. Success means the customer understands the current confirmed state. The manager-configured customer cancellation window, rescheduling/deposit-transfer rules, and full deposit refund for salon-originated cancellation are approved. Refund processing details, staff exception authority, and communication channels remain open.
 
 ## Reception creates a phone or walk-in appointment
 
@@ -97,7 +97,15 @@ Entry: today’s calendar, a date/specialist filter, or an appointment detail vi
 
 Review the customer, service, specialist, time, and current state; choose an allowed action; review its consequences; confirm and return to the updated calendar. Online, phone, and walk-in appointments use the same availability constraints. Exact appointment states and status-transition rules will be defined in later flows.
 
-Rescheduling should work from appointment details; dragging is optional. Failed changes leave the existing appointment intact. Salon-originated changes must be communicated to the customer through a channel still to be selected; this does not add a reminder system to scope.
+Rescheduling should work from appointment details; dragging is optional. Apply the stored policy window and eligibility constraints; failed changes leave the existing appointment and deposit intact. Reception contact after the cutoff does not automatically waive the late-cancellation rules.
+
+### Salon cancels or proposes a replacement
+
+Reception/management identifies an affected appointment → checks the original booking and paid deposit → offers a valid alternative time or eligible specialist when available → presents the proposed details to the customer → records explicit acceptance before applying the change, or cancels with full deposit refund if the customer declines or the salon cancels without a replacement.
+
+The salon’s cancellation is distinct from a late customer cancellation: refund the entire deposit paid regardless of the customer-cancellation cutoff. In-salon receipt of a deposit has the same refund entitlement as online payment. A still-valid original time remains reserved while merely proposing a replacement; if the salon has cancelled it, show that fact and refund eligibility rather than implying it still stands. No customer response is not approval; the unanswered-proposal handling remains to be defined.
+
+Show appointment state and refund progress separately. Refund routing, timing, and customer communication channel remain flow details; this does not add a reminder system to scope.
 
 ## Manager maintains bookable information
 
@@ -107,7 +115,7 @@ Understand the information to update → inspect existing values and affected co
 
 The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. The exact conflict-resolution policy is open and must be specified before implementation.
 
-The customer sees the applicable deposit and timing/cancellation rules before payment. Save these terms with the booking/payment attempt. Management changes apply to future bookings; existing appointment terms and active hold expiries stay unchanged. Rescheduling does not automatically adopt a new policy; that rule remains to be decided.
+The customer sees the applicable deposit and timing/cancellation rules before payment. Save these terms with the booking/payment attempt. Management changes apply to future bookings; existing appointment terms and active hold expiries stay unchanged. An accepted reschedule uses the original policy window and accepted terms; only the deadline is recalculated against the new appointment time. A settings edit itself never changes an existing deadline.
 
 Reception can identify an appointment or availability issue; management owns settings changes. Specialists communicate absence or changes through salon coordination. Reception/management then resolve affected appointments, and customers receive the resulting appointment information. This crosses actors without requiring specialist access.
 
@@ -121,7 +129,7 @@ Reception can identify an appointment or availability issue; management owns set
 - Service-specific volume labels and booking durations; how reception/management handle an inaccurate customer volume selection at the salon without silently overlapping another appointment.
 - Booking-link delivery channel and precise payment-hold start/retry interaction for reception-created future bookings. Confirmation/deposit paths and customer SMS verification are approved.
 - Late/uncertain payment recovery and refund processing details.
-- Rescheduling treatment and salon-originated cancellation/change handling. The advance cancellation cutoff is a manager-controlled setting. Customer no-show/late-cancellation deposit retention is approved as the disclosed policy direction.
+- Staff exception authority after the self-service rescheduling cutoff and handling unanswered salon replacement proposals. The approved default does not allow reception contact to bypass late-cancellation policy.
 - Any-specialist assignment strategy and whether staff booking uses the same choice.
 - Required customer fields for online and staff-created appointments.
 - Appointment states, customer communication channel, and effects of schedule/eligibility edits on existing appointments.

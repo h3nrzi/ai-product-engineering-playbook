@@ -61,6 +61,19 @@ The MVP does not attempt to manage the salon’s entire business operation.
 
 Approved during Stage 04: customers use the booking and appointment-management experience; reception/management use one salon operations area and manage specialist schedules and appointments. Specialists retain profiles and service eligibility but have no independent login or dashboard in the MVP. Reception manages appointments, including phone and walk-in bookings in the shared calendar. Management has all reception capabilities plus control of services, prices, specialists, eligibility, working schedules, and the shared deposit percentage.
 
+### Any eligible specialist
+
+Approved by the user on 2026-10-03:
+
+- If the customer selects “any eligible specialist”, show the combined set of valid times across specialists who offer the service and can accommodate the full selected duration, including any volume-specific duration. Working schedules, existing appointments, and active holds still apply.
+- After the customer chooses a time, assign the first available eligible specialist in management’s configured priority order. Priority never overrides eligibility or availability.
+- Show the assigned specialist’s name in the booking review before payment. If availability changes before a hold is secured and the assignment must change, present the new specialist for customer review before payment; do not hide the change.
+- Secure the payment hold for the actual assigned specialist and full duration. Confirm the same reviewed specialist; do not use another specialist merely to recover a conflicting or expired hold without customer review.
+- Once confirmed, “any eligible specialist” is not ongoing consent to substitute staff. Changes of specialist require customer acceptance under the salon replacement rules.
+- Management controls the priority order; reception cannot edit it. Later priority edits do not reassign active held or confirmed appointments. Named-specialist selection remains honored and shows only that specialist’s valid times.
+
+Whether reception-created bookings use the same no-preference option remains to be agreed in their detailed flow.
+
 ### Customer authentication
 
 Approved by the user on 2026-10-03:

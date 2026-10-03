@@ -46,7 +46,7 @@ First-time and returning customers are usage contexts within this role, not sepa
 - Trust factors: predictable booking rules and understandable consequences when changing service or schedule information.
 - Constraints: payroll, accounting, inventory, full CRM, and advanced business reporting remain outside scope.
 
-Management and reception have separate access levels within the same salon operations area. Management has all reception capabilities plus service, price, specialist, working-schedule, volume-option/duration, and shared deposit-percentage, payment-hold-duration, and cancellation-window controls. One person may perform both responsibilities using management access.
+Management and reception have separate access levels within the same salon operations area. Management has all reception capabilities plus service, price, specialist, working-schedule, specialist assignment-priority, volume-option/duration, and shared deposit-percentage, payment-hold-duration, and cancellation-window controls. One person may perform both responsibilities using management access.
 
 ## Beauty specialist
 
@@ -74,7 +74,7 @@ Approved by the user on 2026-10-03:
 - Customer-facing booking and appointment management.
 - One salon operations area with two access levels.
 - Reception: view, create, reschedule, cancel, and manage appointments, including phone and walk-in bookings, subject to booking rules. Provide review/payment links for telephone/future bookings and record deposits actually received at the salon for future in-person bookings. Immediate walk-ins pay during the visit. These capabilities do not include waiving future-booking deposits, asserting uncertain online payments succeeded, or changing deposit settings.
-- Management: all reception capabilities plus management of services, prices, specialists, service eligibility, working schedules, service volume options and their durations, and the salon-wide deposit percentage, payment-hold duration, and advance cancellation window. Reception cannot edit or override these settings; per-service percentages are deferred.
+- Management: all reception capabilities plus management of services, prices, specialists, service eligibility, assignment priority, working schedules, service volume options and their durations, and the salon-wide deposit percentage, payment-hold duration, and advance cancellation window. Reception cannot edit or override these settings; per-service percentages are deferred.
 - Phone, walk-in, and online appointments share the same calendar and constrain bookable availability.
 - Specialists retain customer-facing profiles, service eligibility, and working schedules, maintained by salon staff. They have no independent login or dashboard in the MVP.
 - Specialist-originated appointment changes and cancellations are handled by reception/management. Salon-proposed replacement times or specialists require customer acceptance; salon cancellation or rejection of its replacement gives a full deposit refund. Customer self-service rescheduling before the stored cutoff transfers the deposit and preserves the original appointment until replacement confirms.

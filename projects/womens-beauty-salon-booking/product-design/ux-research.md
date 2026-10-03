@@ -35,7 +35,7 @@ Evidence includes public official product documentation and direct browser inspe
 
 **ADOPT:** Preserve our existing service → eligible specialist or any eligible specialist → valid time direction. Named specialist selection must remain explicit.
 
-**ADAPT:** Explain “any eligible specialist” in Persian and show the assigned specialist before final confirmation. The assignment strategy remains a later rules decision; do not introduce ranking, reviews, or load-balancing settings automatically.
+**ADAPT:** Explain “any eligible specialist” in Persian and show the assigned specialist before final confirmation. The subsequently approved customer no-preference strategy is combined valid availability with assignment by management’s priority order, with the name visible before payment and customer acceptance required for post-confirmation substitution. Do not introduce ratings-based ranking or load balancing.
 
 **DIFFERENTIATE:** When no time is available, explain the scope of the result and offer another date or an eligible specialist alternative without silently replacing the customer’s selection. This is our proposed recovery pattern, not observed behavior in the inspected flow.
 
@@ -85,4 +85,4 @@ Approved booking boundary: one service per MVP appointment. Multi-service coordi
 
 No production guarantees, live booking completion, customer identity, payment, or cancellation behavior were tested. Mobile inspection covers the service-selection and prerequisite views, not the complete journey. Iranian demand and user preferences were not inferred from competitor claims.
 
-Next: define Stage 06 jobs and journeys using the approved one-service booking unit. Carry consultation-dependent services, staff login mechanics, account matching/number correction, numeric setup values, refund execution and late-change exception details, any-specialist assignment, and link-delivery/notification details as explicit open decisions. Staff-entered numbers and booking links do not grant customer account access without SMS verification. Later prototype checks should verify service clarity, slot recovery, confirmation understanding, and reception’s shared-calendar workflow.
+Next: define Stage 06 jobs and journeys using the approved one-service booking unit. Carry consultation-dependent services, staff login mechanics, account matching/number correction, numeric setup values, refund execution and late-change exception details, no-preference behavior for reception-created bookings, and link-delivery/notification details as explicit open decisions. Staff-entered numbers and booking links do not grant customer account access without SMS verification. Later prototype checks should verify service clarity, slot recovery, confirmation understanding, and reception’s shared-calendar workflow.

@@ -52,6 +52,7 @@ The product has meaningful workflow depth beyond a marketing website: service di
 - Phone bookings use customer review/payment links; future in-person bookings may use the same flow or a deposit received and recorded by reception. Immediate walk-ins pay during the visit.
 - All booking sources share valid calendar availability; staff-entered customer numbers require customer SMS verification for account access.
 - Customer rescheduling before the accepted cutoff carries the deposit to the new time; salon cancellation or customer rejection of a salon-proposed replacement returns the full deposit.
+- Customer no-preference bookings use combined eligible availability and management’s specialist priority order; the assigned name is shown before payment, and confirmed specialist changes require customer acceptance.
 - Fixed-location service fulfillment.
 - No marketplace mechanics.
 - No at-home travel/service-area logistics.

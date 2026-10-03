@@ -12,7 +12,7 @@ Confirmed: one women’s salon, one service per appointment, eligible specialist
 - **Customer — important:** retrieve an upcoming appointment and change or cancel it when policy allows.
 - **Reception — critical:** see the salon’s appointments and create phone/walk-in bookings without conflicting with online bookings.
 - **Reception — important:** manage customer-requested and salon-originated appointment changes with a clear result.
-- **Manager — critical:** maintain service information, prices, specialist eligibility, working schedules, and the shared deposit/payment/cancellation settings so customers see accurate booking options.
+- **Manager — critical:** maintain service information, prices, specialist eligibility, working schedules, specialist assignment priority, and the shared deposit/payment/cancellation settings so customers see accurate booking options.
 - **Manager — important:** perform reception operations when necessary and handle availability changes affecting appointments.
 - **Specialist — supporting, without a product login:** receive the correct appointment context through salon coordination and communicate availability changes to reception/management. The communication channel remains undecided.
 
@@ -24,14 +24,20 @@ Entry points: salon website/service list, a salon booking link, or a specialist 
 | --- | --- | --- | --- | --- |
 | Discover | Understand and choose one service | Description, price model, expected duration, conditions; is it suitable and directly bookable? | Similar names, uncertain final price, consultation prerequisite | One understood service; prerequisites visible |
 | Select volume when relevant | Choose the service-relevant volume option | Clear option descriptions and manager-defined duration for each | Customer is unsure which option fits | One volume option and booking duration retained; fixed-duration services skip this step |
-| Choose specialist | Select an eligible specialist or no preference | Expertise, supported service, preference meaning | Preferred specialist does not provide the service | Valid preference retained |
-| Choose time | Find a time that fits | Date, available start times, full duration, specialist context | No suitable time or a slot becomes unavailable | One valid selected time |
+| Choose specialist | Select a named eligible specialist or any eligible specialist | Expertise, supported service, explanation of no preference | Preferred specialist does not provide the service | Named preference honored or no-preference availability selected |
+| Choose time | Find a time that fits | Named specialist’s times or combined valid times across eligible specialists; full selected duration | No suitable time or a slot becomes unavailable | One valid time; for no preference, actual specialist assigned by manager priority |
 | Sign in / provide details | Sign in if needed; reuse verified account details | Mobile number and SMS code for signed-out customers; any further required details remain to be decided | Missing/expired code, session expiry, or slot loss during login | Authenticated account; selections preserved and availability rechecked |
 | Review | Check appointment and payment terms | Service, actual specialist, selected volume option where relevant, date/time, duration, fixed price or clearly labelled approximate usual-volume price, deposit percentage, calculated deposit, exact or estimated balance, and cancellation terms | Unclear price or deposit consequences | Customer knowingly proceeds to payment |
 | Pay deposit | Secure the appointment within a temporary hold | Deposit amount, hold expiry, payment result | Abandoned/failed payment, expired hold, or uncertain result | Verified deposit allows confirmation; unresolved payment remains pending |
 | Confirm | Understand whether booking succeeded | Confirmed appointment details, recorded deposit, balance, and a route to My appointments | Payment result is uncertain or arrives after hold expiry | Confirmed appointment only after verified payment and valid slot ownership; otherwise clear recovery |
 
 Customer authentication is approved: mobile-number login with an SMS code, account-linked online reservations, and account-based appointment retrieval. Signed-in customers reuse their verified number without repeated entry. Payment model is approved: online deposit for confirmation, with the remaining balance paid at the salon. The deposit is a percentage of the service price. One shared percentage applies to all services and is configurable only by management; per-service rates are deferred. For variable-price services, the approved deposit basis is the approximate price for usual volume, with the estimate and final in-salon settlement clearly disclosed before payment. Management configures the shared percentage, payment-hold duration, and advance cancellation window; they are disclosed before payment and saved with each booking. Later setting changes affect new bookings only. Numeric defaults, rounding, and detailed exception handling remain to be defined. Consultation-dependent services must not be represented as directly bookable without a defined pathway.
+
+### Any eligible specialist path
+
+Select one service and volume option when relevant → choose “any eligible specialist” → view combined valid times across eligible staff → choose a time → assign an available eligible specialist using management’s priority order → see the assigned name in review before payment → hold that specialist/time for the full duration → pay deposit → confirm with the reviewed specialist.
+
+A named specialist remains an explicit choice; priority order does not replace that choice. If a proposed no-preference assignment changes before payment, show the updated name for review. Once a hold is secured, priority edits do not silently substitute another specialist. After confirmation, any specialist replacement requires customer acceptance, even if the initial preference was “any eligible specialist”.
 
 ### Variable-price service journey
 
@@ -111,7 +117,7 @@ Show appointment state and refund progress separately. Refund routing, timing, a
 
 Entry: service, specialist, or schedule settings, or the shared deposit/payment/cancellation settings in the salon operations area.
 
-Understand the information to update → inspect existing values and affected context → edit service descriptions/prices and volume-specific durations, specialist eligibility, working schedules, or the shared deposit percentage, payment-hold duration, or advance cancellation window → validate → review → save → check the resulting customer booking options.
+Understand the information to update → inspect existing values and affected context → edit service descriptions/prices and volume-specific durations, specialist eligibility/assignment priority, working schedules, or the shared deposit percentage, payment-hold duration, or advance cancellation window → validate → review → save → check the resulting customer booking options.
 
 The manager needs to understand whether existing appointments are affected before saving a disruptive change. A new schedule or eligibility change must not silently cancel, move, or invalidate accepted appointments. The exact conflict-resolution policy is open and must be specified before implementation.
 
@@ -130,7 +136,7 @@ Reception can identify an appointment or availability issue; management owns set
 - Booking-link delivery channel and precise payment-hold start/retry interaction for reception-created future bookings. Confirmation/deposit paths and customer SMS verification are approved.
 - Late/uncertain payment recovery and refund processing details.
 - Staff exception authority after the self-service rescheduling cutoff and handling unanswered salon replacement proposals. The approved default does not allow reception contact to bypass late-cancellation policy.
-- Any-specialist assignment strategy and whether staff booking uses the same choice.
+- Whether reception-created bookings offer the same no-preference option. The customer no-preference path and manager-controlled priority assignment are approved.
 - Required customer fields for online and staff-created appointments.
 - Appointment states, customer communication channel, and effects of schedule/eligibility edits on existing appointments.
 

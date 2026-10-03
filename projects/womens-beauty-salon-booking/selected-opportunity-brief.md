@@ -53,7 +53,7 @@ The product has meaningful workflow depth beyond a marketing website: service di
 - All booking sources share valid calendar availability; staff-entered customer numbers require customer SMS verification for account access.
 - Customer rescheduling before the accepted cutoff carries the deposit to the new time; salon cancellation or customer rejection of a salon-proposed replacement returns the full deposit.
 - Customer no-preference bookings use combined eligible availability and management’s specialist priority order; the assigned name is shown before payment, and confirmed specialist changes require customer acceptance.
-- Booking information defaults from the customer profile and can be edited for the appointment, including its contact number; ownership remains with the signed-in account.
+- Booking information defaults from the customer profile and can be edited for the appointment, including its contact number; a different contact number requires SMS verification before payment/confirmation, while ownership remains with the signed-in account.
 - Fixed-location service fulfillment.
 - No marketplace mechanics.
 - No at-home travel/service-area logistics.

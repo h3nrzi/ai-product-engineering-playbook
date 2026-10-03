@@ -2,7 +2,9 @@
 
 ## Status and authority
 
-Stage 07 draft in progress, started on 2026-10-03 after the user approved and completed Stage 06. The online-booking step sequence, sequential selection steps, back-navigation preservation/revalidation, payment-button hold trigger, payment-result screen presentation, and account retrieval of payment/refund outcomes are approved on 2026-10-03; other screen/state details still require review. This document translates [approved jobs and journeys](jobs-and-journeys.md) into proposed screen-level flows. Approved business rules remain authoritative; screen grouping, exact states, recovery mechanics, and deferred operational details below require Stage 07 review. No application implementation is introduced.
+Stage 07 approved and completed on 2026-10-03. After individually approving the online-booking sequence and payment-result presentation, the user explicitly delegated the remaining proposals and stage closure to the guide. The guide finalized and reviewed the flows below under that authorization.
+
+This document turns [approved jobs and journeys](jobs-and-journeys.md) into screen-level product flows. Approved scope, customer rights, account ownership, accepted terms, specialist consent, and payment rules remain authoritative. Provider-specific operations and technical security controls belong to engineering, rather than unresolved screen-level product decisions.
 
 Scope: one physical women's salon; one service and one specialist per appointment; customer account and salon operations area; no specialist dashboard, multi-service booking, or scheduled reminders.
 
@@ -15,6 +17,7 @@ Scope: one physical women's salon; one service and one specialist per appointmen
 - Any-eligible selection combines valid availability, then assigns by management priority. Display the actual specialist before payment/confirmation; a named preference is honored.
 - Full-duration schedule, eligibility, appointments, and active holds constrain all booking sources.
 - Initial defaults: 20% deposit; 24-hour advance cancellation/rescheduling window; 10-minute payment hold; up to 5 additional minutes after hold expiry for a payment started in time whose result remains unknown.
+- Before a hold exists, back navigation preserves valid choices. After holding but before payment starts, explicitly abandon/release the unpaid hold before changing its service/time/specialist and securing a new reviewed hold. Once payment is initiated or unknown, do not switch that attempt to another slot; show its status until a definitive result or deadline release. Revisiting screens never restarts deadlines.
 - Accepted price/policy terms belong to the booking. Later management settings do not rewrite them.
 - Payment, appointment, and refund outcomes are displayed separately. Pending payment is not confirmation; cancellation is not proof of a completed refund.
 - SMS carries reception payment links and change/cancellation notices; details/payment status are also available in the customer account.
@@ -71,7 +74,7 @@ Closing the result screen does not lose the outcome. After signing in, the origi
 
 At initial defaults, hold creation at 14:00 means 14:10 ordinary expiry and 14:15 maximum pending-result deadline. Success/failure acts immediately when definitive. Link reopening and status checks never restart deadlines.
 
-**Recovery:** distinguish unavailable status-check service from definitive payment failure. Do not invite a duplicate deposit while the existing attempt remains uncertain. Exact checks, retry cadence, deadline configuration/disclosure, provider compatibility, and refund execution are deferred.
+**Recovery:** distinguish unavailable status-check service from definitive payment failure. Keep the last known outcome visible with «بررسی دوباره وضعیت» and salon contact if checking is unavailable. Do not invite a duplicate deposit while the existing attempt remains uncertain. Show the ordinary hold deadline and, when relevant, the final verification deadline in local date/time with remaining time. An unavailable gateway does not extend those deadlines. Technical checks/retry cadence and provider compatibility remain engineering tasks; refund behavior is defined in flow 9.
 
 ## 3. Reception creates a booking
 
@@ -85,7 +88,7 @@ At initial defaults, hold creation at 14:00 means 14:10 ordinary expiry and 14:1
 5. Immediate walk-in branch: check valid immediate availability, record the visit, and collect payment during the visit; no advance deposit.
 6. Result: update shared calendar; customer access still requires verified ownership.
 
-**Branches/recovery:** correct mistyped numbers before confirmation; confirmed-number correction/access transfer uses flow 7. Link opening does not extend holds. SMS delivery failure/retry is deferred and must not silently reset a deadline. Preserve intake on conflicts. Reception cannot waive future deposits, change settings, or assert that uncertain online payment succeeded.
+**Branches/recovery:** correct mistyped numbers before confirmation; confirmed-number correction/access transfer uses flow 7. Link opening does not extend holds. Show SMS sending/delivery status separately from booking/payment state; allow staff to retry the same link while its hold is valid without resetting expiry. If expiry passes, label the link expired and require fresh availability/review for a new attempt. Correcting the intake number does not bypass authentication. Preserve intake on conflicts. Reception cannot waive future deposits, change settings, or assert that uncertain online payment succeeded.
 
 ## 4. Customer retrieves, reschedules, or cancels
 
@@ -98,7 +101,9 @@ At initial defaults, hold creation at 14:00 means 14:10 ordinary expiry and 14:1
 4. Cancellation branch: show refund consequences → deliberate confirmation → cancel successfully → release availability → show separate refund progress.
 5. After cutoff: online rescheduling is unavailable; show salon contact and the applicable late/no-show policy. Contact alone does not waive it.
 
-**Exit:** preserved original appointment, successful replacement, or cancelled appointment with refund state. Exact cutoff-boundary behavior and action-state design continue in review.
+**Cutoff:** use the appointment’s stored deadline; a customer action completed at or before that deadline qualifies. Recheck the deadline when applying the action, not just when the screen opened. After it, disable online rescheduling; customer cancellation remains available with the disclosed no-refund consequence, or the customer can contact reception for a manager-reviewed exception. A replacement may be any valid future time; show its recalculated deadline before confirmation, including when that deadline has already passed. Keep original terms.
+
+**Recovery/exit:** while applying an action, show processing and prevent duplicate submission. A failure preserves the original appointment/deposit; an unknown outcome directs the customer to check current appointment status before retrying. Back or cancel before committing leaves the original untouched. Success displays the replacement or cancellation/refund state and updates salon availability; SMS change/cancellation notice failure does not undo the operation.
 
 ## 5. Salon replacement, cancellation, or late exception
 
@@ -110,7 +115,11 @@ At initial defaults, hold creation at 14:00 means 14:10 ordinary expiry and 14:1
 - No reply with undeliverable original: salon cancellation and full refund; do not leave appointment unresolved awaiting response.
 - Late customer exception: reception routes to management → manager reviews and records reason for any authorized late change/refund → applies permitted operation. Reception cannot grant the exception independently.
 
-Silence is not consent or customer cancellation. Show cancellation and refund progress separately. Exact acceptance capture, notification failures, exception controls, and refund route/timing continue in Stage 07.
+**Acceptance/recovery:** show the original and proposed details together in the customer account, with Accept/Decline actions. For telephone/in-person acceptance, staff explicitly records the customer's agreement, channel, time, and reviewed replacement details; do not infer agreement from SMS delivery. Recheck the alternative when applying it; a conflict returns to proposing another valid option without replacing the original. A proposal alone does not reserve alternative availability indefinitely. If the original cannot be delivered, its cancellation/refund entitlement must not wait for customer response.
+
+**Exception control:** only management sees an approval action; require a reason and a review of the exact booking, replacement/refund consequence, and affected availability. A failed exception action does not partially change the appointment or deposit. It does not authorize staff to fake an online payment or waive account ownership checks.
+
+**Exit/cross-actor effects:** show the final appointment and separate refund progress, update the calendar, and send SMS change/cancellation notices. If SMS fails, retain the actual appointment outcome and flag the communication for staff follow-up. Silence is not consent or customer cancellation. Refund processing follows flow 9.
 
 ## 6. At the salon: final price and volume mismatch
 
@@ -121,19 +130,31 @@ Silence is not consent or customer cancellation. Show cancellation and refund pr
 3. If selected volume was inaccurate, keep booked start time and duration unchanged; specialist resolves the mismatch with the customer within that interval without delaying/overlapping the next appointment.
 4. If no solution fits, cancel with full deposit refund. A separate new booking is the customer's choice, with current availability; never extend or automatically move the existing booking.
 
-No excess-deposit refund/credit flow is introduced; that question was withdrawn. Detailed receipt/refund operations continue in engineering.
+**Exit/recovery:** record the agreed final price, the deposit credited, and the actual remaining payment received. If the customer declines the final price, do not start work; route to specialist/reception coordination without automatically charging or changing booked time. Apply an existing cancellation/refund rule only when its conditions hold, or request a manager exception. If the volume mismatch cannot be resolved, use the already approved full-refund cancellation rather than treating it as a late customer cancellation. Customer and salon see the same final appointment/payment state; no specialist product login is needed.
+
+No excess-deposit refund/credit flow is introduced; that question was withdrawn. Technical receipt/refund operations continue in engineering.
 
 ## 7. Staff access, number correction, and customer recovery
 
-**Actor/trigger:** staff login, mistyped booking number, or customer login-number/recovery request.
+**Actors/entry:** staff sign-in; intake correction; manager-assisted number correction; customer salon-contact recovery request. Entry is the staff login or an appointment/account support action. A valid staff role is required for operational actions.
 
-- Staff mobile/SMS sign-in → verify number → check management-assigned access → open permitted salon operations. A valid mobile login alone does not create staff authorization.
-- Before confirmation: correct customer number in intake; require the applicable customer verification before account access/payment.
-- After confirmation or for account access transfer: use a separate correction/ownership-verification flow; editing a number alone cannot expose an appointment to another account.
-- Customer login-number change/recovery in MVP: coordinate with salon; ownership checks must precede any change.
-- Per-booking contact verification remains within the original customer account; it is not login to or ownership transfer toward that number's account.
+### Staff sign-in
 
-Exact ownership evidence, authorized correction controls, account matching, and recovery steps require Stage 07 review; no insecure recovery shortcut is defined here.
+Mobile → SMS code → verify → check management-assigned role → permitted operations. Wrong/expired code offers correction/retry. A verified number with no staff role receives no operations access. Session expiry returns to staff login; preserve non-sensitive work where practical and recheck permissions/availability before saving. Only management assigns or changes staff access; lack of authority ends the flow without a partial save.
+
+### Customer matching and contact correction
+
+- Match staff-created appointments through verified mobile ownership, not a name match. Until customer verification, staff-entered numbers are intake data, not proof of an authenticated account.
+- Before confirmation, correct intake details and require verification of the chosen number where applicable. For a held booking, a correction neither resets the deadline nor declares payment successful; any started/unknown payment must retain its existing ownership and be checked before replacement.
+- For a confirmed online booking, distinguish changing its contact from changing account ownership. The original owner can verify a new contact within their session; ownership stays unchanged.
+- Staff correcting a confirmed contact records the reason and obtains customer authorization plus SMS verification of the intended new contact before applying it. Where the original owner cannot be authenticated, route to manager-assisted recovery; do not grant another account access by editing the field.
+- For a staff-created appointment with an incorrectly recorded owner number, management handles a separate access-correction request. Verify the requesting customer, the intended mobile, and their entitlement to the specific appointment; record evidence and reason, notify affected verified channels, then correct access. A booking reference or SMS to the intended number alone is insufficient proof of entitlement.
+
+### Manager-assisted login-number change and recovery
+
+Customer contacts/visits salon → manager opens support request → authenticates existing owner and verifies intended new mobile → shows affected account/appointments → customer explicitly accepts → manager records reason and applies the change → customer signs in again and checks access. Verify the original number by SMS when available. If it is unavailable, the request remains in manual identity review until management independently verifies the existing owner using established salon records and independently confirmed customer identity; merely supplying a new number, name, booking reference, or payment reference is insufficient. If ownership cannot be established, deny access transfer and explain the next support step; do not merge accounts or expose appointments. Conflicting existing-account numbers require manual resolution rather than automatic account merging.
+
+**Back/recovery/exit:** cancel before applying leaves account/contact unchanged; failed verification preserves the request without granting access; an unknown change outcome requires checking current account status before retry. Success shows the verified contact or corrected account access, with the appropriate customer sign-in. Contact verification never signs into another account. Engineering must establish concrete independent identity-evidence procedures, security controls, and audit storage before enabling manual transfer; this product flow explicitly supports a denied/pending verification outcome.
 
 ## 8. Management maintains service and schedule information
 
@@ -145,25 +166,58 @@ Exact ownership evidence, authorized correction controls, account matching, and 
 4. If a schedule change would invalidate confirmed appointments, resolve affected appointments through flow 5 before saving the conflicting change.
 5. Review/save; verify resulting public availability. Existing accepted terms and active hold deadlines remain intact.
 
-Reception cannot change these settings. Numeric validation, rounding, actual service configuration values, and detailed conflict-screen behavior continue in Stage 07.
+**Conflict/recovery:** list affected appointments with customer/service/time and the conflicting change. Block that schedule save until affected bookings have valid accepted replacements or cancellations under flow 5. Include active holds in availability checks; edits must not invalidate or silently reassign them. Unsaved edits can be abandoned; failed validation/save preserves the prior published settings and keeps input for correction. Recheck conflicts at save time. Display success and current values after a successful save.
 
-## Proposed states for review
+**Validation:** require a positive price basis and duration, nonempty volume labels, a priority ordering without duplicate specialists, and coherent working intervals. Deposit percentage must be greater than 0 and at most 100; hold duration must be positive and the cancellation window nonnegative. Reception cannot change these settings. Configuration values are supplied by management; retain the approved initial defaults. Settings changes affect new bookings only.
 
-Use separate dimensions rather than treating every payment event as a booking state:
+**Money presentation:** use toman in customer-facing displays; calculate the percentage and round once to the nearest whole toman, with half-toman rounded upward, before displaying/charging the exact deposit. Keep that saved amount throughout payment. Conversion to a provider's required unit is an engineering operation and must preserve the displayed payable amount.
 
-- Appointment: awaiting deposit, confirmed, cancelled, completed; details for expired/unconfirmed attempts and immediate visits to be refined.
-- Payment: not started, in progress/unknown, verified success, definitive failure.
-- Refund: not applicable, pending, completed, failed/needs attention.
+**Exit/cross-actor effects:** successful saves update valid public availability and new-booking terms without modifying accepted appointment terms. Failed/abandoned edits do not change customer booking options.
 
-These labels and transition details are draft screen semantics, not Stage 07 approval. A pending replacement does not silently change the confirmed original booking.
+## Appointment, payment, and refund states
 
-## Review work carried forward
+Separate appointment, payment, and refund dimensions; show the same authoritative result to the owning customer and authorized salon staff.
 
-- Online-booking order, sequential selection steps, back-navigation preservation/revalidation, payment-button hold trigger, and payment-result presentation/account retrieval are approved. Refine the remaining screen grouping, exact state transitions, and operation failure recovery.
-- Define verified ownership for matching, confirmed-number corrections/access transfer, and salon-coordinated account recovery.
-- Define SMS sending/retry and delivery failure without deadline resets.
-- Define validation/currency rounding, refund routing/timing, and detailed exception permission handling.
-- Check selected payment provider compatibility and verification/recovery operations during engineering.
-- Supply real service prices/factors, volume labels/durations, and specialist schedules through manager configuration.
+| Appointment state | Availability and permitted transitions |
+| --- | --- |
+| Awaiting deposit | Valid hold blocks the reviewed interval; verified online deposit or actual eligible in-salon receipt confirms; definitive failure or deadline release expires the attempt |
+| Expired/unconfirmed attempt | No calendar reservation; payment may remain under verification; late success leads to refund, never confirmation |
+| Confirmed | Reserved interval; allowed reschedule replaces only on success; permitted cancellation releases it; staff may record service completion or no-show |
+| Cancelled | No booked interval; refund entitlement/progress shown separately; not restored by SMS retry or late payment |
+| Completed | Service and final settlement recorded; no customer booking changes |
+| No-show | Staff records missed visit after its time; default deposit policy applies, with management-only reasoned exceptions |
 
-Return changes to customer rights, accepted terms, consent, or other approved business rules for explicit user approval. Stage 07 remains a draft until reviewed and approved.
+Immediate walk-ins enter Confirmed after staff verifies immediate availability and records the visit, with payment due during the visit; this is not a future-booking deposit bypass. A pending replacement is shown as a proposal alongside the original confirmed booking.
+
+Payment states: not started, initiated/result unknown, verified success, definitive failure. Online payment status comes from authoritative verification; staff may only record money actually received at the salon as a distinct source.
+
+Refund states: not applicable, due/pending, completed, needs attention. Never label a refund completed merely because cancellation succeeded or a request was sent. A failure retains the entitlement and flags follow-up.
+
+## 9. Refund and transactional communication
+
+**Actors/entry:** system/authorized staff following an approved refund entitlement or a reasoned manager exception; customer views progress in account details.
+
+1. Successful qualifying cancellation or late payment creates a refund entitlement for the applicable amount; no second customer request is needed for already approved full refunds.
+2. Prefer return to the original payment source. Online refunds use the provider route when supported; if unavailable, flag authorized salon follow-up and independently verify the original payer/recipient before a documented manual return. An in-salon deposit follows a documented salon refund route.
+3. Show amount, source, pending/completed/needs-attention status, and any actual available timing information. No unsupported instant-refund promise or automatic credit substitution.
+4. Mark completed only after verified return or documented actual in-salon/manual refund receipt. Record reference, amount, and time; retry/follow-up must not refund the same entitlement twice.
+5. Customer sees progress after re-login; staff see outstanding refunds. If processing fails, preserve entitlement and offer salon contact rather than rewriting the cancellation result.
+
+**SMS:** send links and change/cancellation outcome notices to the appointment's approved contact. Do not include authentication codes or sensitive payment details in booking notices. Delivery status is independent of operation success. Retry the existing valid link/notice without recreating a booking, repeating a refund, or moving deadlines. If delivery fails, staff sees needs-follow-up and can coordinate with the customer; the authenticated account remains the route to current details. A delayed SMS must lead to current status, not imply an expired hold remains valid.
+
+## Completed review and engineering handoff
+
+### Product review completed
+
+The guide checked all core journeys for actors, entry points, preconditions, decisions, alternate/error paths, preservation/recovery, outcomes, permissions, and customer/salon effects. The flows preserve the approved specialist choice/consent, fixed booked time for volume mismatches, account ownership, payment deadlines, cancellation/refund entitlements, and existing accepted terms. No specialist dashboard or scheduled reminder system is added.
+
+### Engineering/configuration handoff
+
+Implement authoritative availability and operation outcomes, actual provider verification/refund support, deduplication, SMS delivery, session/security controls, concrete independent identity-evidence procedures for manual recovery, and audit records. Validate the 10+5-minute payment timing against the selected provider; any required change to customer rights or approved behavior returns for approval. Management supplies actual service prices, factors, volume labels/durations, specialist eligibility, schedules, and priority.
+
+These are implementation/configuration work, not unresolved Stage 07 flow decisions. Do not enable an unverified ownership-transfer path or label an unverified payment/refund successful.
+
+## Completion
+
+Stage 07 is complete on 2026-10-03 under the user's explicit authorization to finalize it using the guide's recommendations. Core flows and meaningful recovery are defined sufficiently to derive navigation and required surfaces. Proceed to Stage 08 — Information Architecture; do not mark that next stage complete without its artifact and review.
+

@@ -36,7 +36,9 @@ The approved journeys preserve one service/specialist per appointment, named/any
 
 Remaining decisions now approved: management-only late exceptions with reasons; SMS booking links and change/cancellation notices; reception holds starting at finalized initial booking/link-send request; staff SMS login with management-assigned access; salon-coordinated login-number change/recovery; name/contact minimum intake; manager-configured service/volume information and consultation contact paths; resolution of schedule conflicts before saving. Volume mismatches do not change booked time/duration; if no solution fits, cancel with a full refund and leave any new booking to the customer.
 
-Stage 07 is in progress. The customer online-booking order and sequential service/volume/specialist/time steps are approved, with valid selections preserved on back navigation and availability rechecked after relevant changes. Selecting “Pay deposit” on final review secures the reviewed slot and starts the payment hold; the 10-minute timer begins when that hold is successfully secured. Payment-result screens are approved for success, definitive failure, pending verification, expired/released slots, and late-success/full-refund outcomes. Customers can retrieve current booking-attempt/payment/refund status from their account after closing the screen, including unconfirmed attempts. Other flow/state details remain under review. Detailed states, identity correction/recovery, validation, rounding, notification failure, and provider/refund operations are carried forward, without changing approved product rules.
+Stage 07 — User Flows — is approved and complete on 2026-10-03 under the user's explicit delegation to finalize remaining recommendations. Customer/reception booking, payment results, account status retrieval, cancellation/rescheduling, salon replacements, manager exceptions, in-salon settlement, number correction/recovery, management edits, refund progress, and SMS failure recovery are defined. Appointment/payment/refund states remain distinct; identity transfer requires verified ownership, and failed operations preserve existing bookings/entitlements. Provider-specific operations, concrete manual identity-evidence procedures, security controls, and real service configuration are engineering/configuration handoff work.
+
+The active next stage is Stage 08 — Information Architecture, not yet started. Phase 01 remains in progress.
 
 ## Important artifacts
 
@@ -47,7 +49,7 @@ Stage 07 is in progress. The customer online-booking order and sequential servic
 - User & Actor Definition: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
 - UX / Competitive Research: [`product-design/ux-research.md`](womens-beauty-salon-booking/product-design/ux-research.md)
 - Jobs & User Journeys (approved): [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
-- User Flows (draft in progress): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
+- User Flows (approved): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -55,7 +57,7 @@ Stage 07 is in progress. The customer online-booking order and sequential servic
 
 ## Next action
 
-Review and refine the Stage 07 — User Flows draft against the approved journeys: screen-level steps, branches, states, permissions, preservation/recovery, and cross-actor effects. Define deferred identity, notification, validation, and payment/refund details at the appropriate level; return any change to customer rights or approved product behavior for explicit approval. Do not mark Stage 07 complete until its flows have been reviewed and approved.
+Start Stage 08 — Information Architecture using the approved user flows: define public/customer/salon areas, information grouping, navigation, authenticated boundaries, hierarchy, cross-links, and sitemap. Preserve a short booking path and reception/management permissions. Persist `product-design/information-architecture.md` and review it before marking Stage 08 complete.
 
 ## Blockers / notes
 

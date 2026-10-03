@@ -87,7 +87,7 @@ Stage 06 is approved and complete on 2026-10-03. Staff use mobile-number/SMS-cod
 
 Management resolves schedule conflicts before saving changes that invalidate confirmed appointments. Service prices, volume options and durations are manager configuration; genuine consultation prerequisites direct customers to contact the salon. Initial defaults are 20% deposit, a 24-hour cancellation/rescheduling window, and 10 minutes for payment with up to 5 additional minutes for an initiated payment with an unknown result.
 
-Detailed account matching, corrections to confirmed numbers/access transfer, salon-coordinated login-number recovery, ownership verification, appointment states, settings validation, currency rounding, SMS failure recovery, and refund/payment execution continue in Stage 07 and engineering. Approved customer consent, account ownership, and accepted-booking-term rules remain authoritative. These details do not reopen Stage 06 or change the approved actor responsibilities.
+Stage 07 completed the product flows for account matching, confirmed-number corrections/access transfer, salon-coordinated recovery with ownership review, appointment states, validation/rounding, SMS failure recovery, and refund/payment progress on 2026-10-03. See [user-flows.md](user-flows.md). Concrete security/identity-evidence procedures and provider execution remain engineering work. Approved customer consent, account ownership, and accepted-booking-term rules remain authoritative. These details do not reopen Stage 06 or change the approved actor responsibilities.
 
 ## Completion
 

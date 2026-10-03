@@ -2,7 +2,7 @@
 
 ## Status and inputs
 
-Stage 11 draft prepared on 2026-10-03. The user confirmed that no existing salon name/logo/colors need to be preserved and authorized inspiration from Dribbble. This direction is proposed for review; no new salon name or final logo is invented.
+Stage 11 approved and completed on 2026-10-03. The user confirmed that no existing salon name/logo/colors need to be preserved, authorized inspiration from Dribbble, and accepted the proposed calm, warm, refined and professional direction. No new salon name or final logo is invented.
 
 Basis: [approved information architecture](information-architecture.md), [page inventory](page-inventory.md), [UX states](ux-states.md), and [Stage 05 research](ux-research.md). Dribbble examples inform visual mood; they do not validate booking behavior or override approved product scope. Stage 12 turns an approved direction into semantic tokens and component rules.
 
@@ -103,8 +103,8 @@ Honor reduced-motion preferences. Timer updates remain readable without flashing
 - Competitor marketplace/filter/reward patterns that add unapproved features.
 - Using success styling for pending payment or implying cancellation means money has already returned.
 
-## Review and next stage
+## Approved direction and completion
 
-Proposed direction: warm, calm and professional; ivory/white surfaces, deep-plum primary, pale-rose accent, Vazirmatn and honest photography. Review this as the project's visual mood, not final screen design.
+Approved direction: warm, calm and professional; ivory/white surfaces, deep-plum primary, pale-rose accent, Vazirmatn and honest photography, with moderately rounded shapes, restrained shadows and purposeful short motion. This establishes the project's visual mood; final tokens/components follow in Stage 12.
 
-The salon name/logo and real media can be supplied later without being invented in this stage. Any later identity should be reconciled with the approved direction before changing the design system. Stage 11 remains a draft until approval; Stage 12 then defines semantic tokens, foundations, components, variants and interaction/accessibility states.
+The salon name/logo and real media can be supplied later without being invented in this stage. Any later identity should be reconciled with the approved direction before changing the design system. Stage 11 is complete; proceed to Stage 12 — Design System to define semantic tokens, foundations, components, variants and interaction/accessibility states.

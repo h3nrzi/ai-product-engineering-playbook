@@ -1,7 +1,7 @@
 # Design System — Women’s Beauty Salon Booking
 
 - Stage: 12 — Design System
-- Status: draft for user review
+- Status: approved and complete on 2026-10-03
 - Date: 2026-10-03
 - Model: one physical women’s salon, Persian-language product for the Iranian market
 - Basis: approved [visual direction](visual-direction.md), [UX states](ux-states.md), [page inventory](page-inventory.md), and [user flows](user-flows.md).
@@ -166,8 +166,6 @@ During prototype review:
 
 Prototype demonstration does not prove production accessibility, secure role enforcement, verified payments or concurrent slot locking.
 
-## 9. Review boundary
+## 9. Completion
 
-The proposed palette, type scale, dimensions and component rules await user approval. Brand direction and business rules remain approved. No separate token file is needed at this stage.
-
-After approval, proceed to Stage 13 — Responsive & Content Direction. Application implementation remains outside Phase 01.
+Approved on 2026-10-03: the user accepted the semantic colors, typography, spacing/layout, components, interaction states, booking/calendar presentation, RTL and accessibility baseline. Stage 12 is complete. No separate token file is needed. Proceed to Stage 13 — Responsive & Content Direction. Application implementation remains outside Phase 01.

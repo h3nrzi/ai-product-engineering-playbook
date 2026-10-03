@@ -65,15 +65,31 @@ Main friction: finding the right appointment, unknown rules, lost availability, 
 
 ## Reception creates a phone or walk-in appointment
 
-Entry: the shared salon calendar or appointment-creation action.
+Entry: the shared salon calendar or appointment-creation action. Reception uses its own staff access, never the customer’s session.
 
-1. Understand the request and capture the necessary customer/contact context; exact required fields remain open.
-2. Select one service, its volume option when duration varies, and an eligible specialist or supported assignment option.
-3. Check a valid time that fits the full duration and existing schedule. A walk-in is not permission to overbook; if no valid time exists, explain alternatives.
-4. Review customer, service, specialist, and time, then create the appointment.
-5. Record the appointment in the shared calendar under the phone/walk-in deposit policy still to be decided. A staff-created booking is not an approved way to bypass deposit requirements. Show its appointment/payment state accurately; both active holds and confirmed appointments constrain online availability.
+Common preparation: capture the customer mobile number and necessary details → select one service and its volume option when relevant → choose an eligible specialist → check a valid time that fits the full duration → review customer, service, duration, specialist, time, and price/policy context.
 
-Decision factors: actual availability, service eligibility, time constraints, and customer preference. Friction: interruptions at reception and online bookings changing availability while staff enter details. Keep input when a conflict occurs and offer a valid alternative. Reception cannot modify service/price/specialist/schedule settings to force a booking.
+### Telephone booking
+
+1. Create a booking awaiting deposit within the configured temporary payment hold. The time is unavailable to conflicting online or reception bookings while the hold is active.
+2. Provide the customer a booking-review/payment link with the hold expiry. Delivery channel remains to be defined.
+3. Customer signs in with an SMS code for the recorded mobile number, reviews service/volume, specialist/time, price basis, exact deposit, estimated/fixed balance, and cancellation rules, then pays.
+4. Confirm only after verified deposit payment within valid slot ownership. Show the result in the shared calendar and the customer’s account.
+5. If the hold expires without completed payment, release the time. Failed/uncertain/late payment follows the same recovery boundaries as online booking; opening a link does not restart an expired hold automatically.
+
+### In-person booking for a future visit
+
+Use the same link/payment route, or explain the price and cancellation terms to the customer, receive the calculated deposit at the salon, and record actual receipt before confirming. Reception records payment source and amount; the salon-wide percentage remains unchanged. Retain the accepted terms and deposit for the future appointment. Customer account access still requires SMS verification of the recorded number.
+
+### Immediate walk-in
+
+Check valid immediate availability and record the appointment for the present visit; payment occurs at the salon during the visit. This path has no advance online deposit. It is not an option for confirming unpaid future reservations or overbooking a specialist. If no time fits, offer a valid alternative; a later visit follows the future-booking deposit path.
+
+### Identity, conflicts, and recovery
+
+Recording a mobile number, sending a link, or recording an in-salon payment does not verify ownership. Customer appointment retrieval requires SMS-code authentication for the corresponding number. Exact account matching and correcting a mistyped number remain flow decisions; no cross-number access is assumed.
+
+Reception may be interrupted while entering a booking and online availability may change meanwhile. Preserve input when a conflict occurs, explain it, and offer a valid alternative. Reception cannot modify service/price/specialist/schedule settings to force a booking, waive the required future-booking deposit, or assert that an uncertain online payment succeeded.
 
 ## Reception manages daily appointments
 
@@ -97,13 +113,13 @@ Reception can identify an appointment or availability issue; management owns set
 
 ## Outstanding decisions before final flows
 
-- Staff authentication and how phone/walk-in appointments are linked to customer accounts; staff must not impersonate a customer session.
+- Staff login mechanics and detailed matching/correction of staff-entered customer numbers. Customer account access requires SMS verification; staff must not impersonate a customer session.
 - Customer mobile-number change/recovery policy; no cross-number appointment access is assumed.
 - Service-specific approximate usual-volume prices, their descriptions and adjustment factors; any genuine consultation prerequisite. Variable pricing alone does not require consultation.
 - Numeric setup values and validation for manager-controlled deposit percentage, payment-hold duration, and advance cancellation window; currency rounding. These are settings, not fixed product constants. Per-service rates are deferred.
 - How the final price is agreed at the salon and how an excess deposit is handled if the final price is lower than the deposit paid.
 - Service-specific volume labels and booking durations; how reception/management handle an inaccurate customer volume selection at the salon without silently overlapping another appointment.
-- Deposit collection and account linkage for phone/walk-in bookings.
+- Booking-link delivery channel and precise payment-hold start/retry interaction for reception-created future bookings. Confirmation/deposit paths and customer SMS verification are approved.
 - Late/uncertain payment recovery and refund processing details.
 - Rescheduling treatment and salon-originated cancellation/change handling. The advance cancellation cutoff is a manager-controlled setting. Customer no-show/late-cancellation deposit retention is approved as the disclosed policy direction.
 - Any-specialist assignment strategy and whether staff booking uses the same choice.

@@ -28,7 +28,7 @@ First-time and returning customers are usage contexts within this role, not sepa
 
 - Primary goal: maintain a reliable appointment calendar with minimal repeated calls and messages.
 - Secondary goal: handle appointment changes and communicate specialist availability changes to management.
-- Needs: appointment details, service/specialist/time context, clear appointment state, and visibility into booking conflicts and permitted actions.
+- Needs: appointment details, service/specialist/time context, appointment/payment state, payment-review links for future bookings, recording deposits actually received in the salon, and visibility into conflicts and permitted actions.
 - Context assumption: work may be interrupted by in-person customers and calls; quick scanning and unambiguous action results matter.
 - Pain points: fragmented requests, repeated availability checks, overlapping bookings, and changes that are not reflected in the calendar.
 - Trust factors: the displayed schedule reflects accepted bookings and availability inputs; changes have clear outcomes.
@@ -73,7 +73,7 @@ Approved by the user on 2026-10-03:
 
 - Customer-facing booking and appointment management.
 - One salon operations area with two access levels.
-- Reception: view, create, reschedule, cancel, and manage appointments, including phone and walk-in bookings, subject to booking rules.
+- Reception: view, create, reschedule, cancel, and manage appointments, including phone and walk-in bookings, subject to booking rules. Provide review/payment links for telephone/future bookings and record deposits actually received at the salon for future in-person bookings. Immediate walk-ins pay during the visit. These capabilities do not include waiving future-booking deposits, asserting uncertain online payments succeeded, or changing deposit settings.
 - Management: all reception capabilities plus management of services, prices, specialists, service eligibility, working schedules, service volume options and their durations, and the salon-wide deposit percentage, payment-hold duration, and advance cancellation window. Reception cannot edit or override these settings; per-service percentages are deferred.
 - Phone, walk-in, and online appointments share the same calendar and constrain bookable availability.
 - Specialists retain customer-facing profiles, service eligibility, and working schedules, maintained by salon staff. They have no independent login or dashboard in the MVP.
@@ -83,7 +83,7 @@ Possible later specialist access is deferred, not an MVP commitment. If justifie
 
 ## Decisions for later stages
 
-Customer mobile-number/SMS-code authentication and account-based appointment retrieval are approved. Staff authentication, linking staff-created appointments to customer accounts, consultation-dependent services, deposit parameters, rescheduling treatment, and detailed cancellation/refund policies remain open. Online deposit payment for confirmation and remaining payment at the salon are approved. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
+Customer mobile-number/SMS-code authentication and account-based appointment retrieval are approved. Staff login mechanics, detailed matching/correction of customer numbers, consultation-dependent services, deposit configuration values, rescheduling treatment, and detailed cancellation/refund policies remain open. Phone/future in-person booking payment paths and immediate walk-in payment at the salon are approved. Staff-recorded mobile numbers do not authenticate customers; customer account access requires SMS verification. Online deposit payment for confirmation and remaining payment at the salon are approved. Exact phone/walk-in intake details and appointment states will be defined with the salon journeys. These do not change the approved actor responsibilities.
 
 ## Completion
 

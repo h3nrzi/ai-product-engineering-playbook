@@ -73,7 +73,7 @@ Approved by the user on 2026-10-03:
 - “My appointments” shows appointments belonging to the signed-in account; an appointment link or reference alone does not grant access.
 - SMS verification confirms control of the mobile number, not a government-verified personal identity.
 
-Staff login and linking phone/walk-in bookings to customer accounts remain separate decisions.
+Staff use their own salon access when recording a customer mobile number; this does not verify that number or create an authenticated customer session. A customer must sign in with an SMS code for that number before accessing the corresponding appointment in My appointments or through a booking link. Detailed account matching, number correction/recovery, and staff login mechanics remain for later flows.
 
 ### Deposit and confirmation
 
@@ -98,7 +98,20 @@ Approved by the user on 2026-10-03:
 - The approved cancellation direction is deposit refund for customer cancellation within the permitted advance window; late customer cancellation or no-show does not refund the deposit under the disclosed salon policy. Management configures the advance cancellation cutoff. Refund processing details, rescheduling treatment, and salon-originated cancellation policy remain open.
 - Temporary payment holds and confirmed appointments both constrain the shared availability used by online booking and reception.
 
-This adds deposit collection and payment-result handling to the production MVP. Base44 may simulate the full journey and its payment/hold states without taking real payments. Deposit handling for phone and walk-in appointments remains a separate decision; no staff exemption is implied.
+This adds deposit collection and payment-result handling to the production MVP. Base44 may simulate the full journey and its payment/hold states without taking real payments.
+
+### Reception-created bookings
+
+Approved by the user on 2026-10-03:
+
+- **Telephone booking:** reception records one service, relevant volume option, eligible specialist, valid time, and customer mobile number. The customer receives a link to review the booking and its price/payment/cancellation terms, signs in with the mobile-number/SMS-code flow, and pays the deposit. Confirm only after verified payment while the time remains valid.
+- **In-person booking for a future visit:** use the same review/payment-link flow, or reception may receive and record the calculated deposit at the salon. Receipt of the deposit permits confirmation; the remaining balance is paid at the service visit. Recording receipt is not permission to waive the deposit or change the percentage.
+- **Immediate walk-in:** reception checks an eligible specialist and valid time for the full selected duration, records the appointment, and payment occurs during the visit. No advance online deposit is required for this immediate-visit path. A future appointment must not use this path to bypass deposit requirements.
+- All paths use the shared calendar. Future bookings awaiting deposit use the configured temporary payment hold; expiry releases the time if no payment has been verified or recorded. Do not create an indefinite reservation while waiting for the customer to open a link. The exact link-delivery channel and hold-start interaction will be specified in the flows.
+- Reception shows or explains the deposit and cancellation terms before accepting an in-salon deposit. Preserve the booking’s price basis, applicable percentage, recorded payment, and accepted terms just as for online booking.
+- Staff-entered mobile numbers remain unverified until the customer completes SMS-code authentication. Sending a link or recording an in-salon payment does not authenticate the customer. A link alone does not grant appointment access.
+- Reception can record a deposit actually received at the salon and see the payment source/state. It cannot mark an unverified online payment as paid or alter deposit/payment/cancellation settings. This is appointment payment tracking, not a full accounting or POS system.
+
 
 ### Booking unit
 

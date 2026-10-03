@@ -65,7 +65,7 @@ Evidence includes public official product documentation and direct browser inspe
 
 **ADOPT:** A clear result containing service, specialist, date/time, and next steps, plus an understandable route back to the appointment.
 
-**ADAPT:** Surface cancellation/rescheduling policy before confirmation and again beside management actions. At research time these were open. Customer mobile-number/SMS-code login has since been approved; exact booking policy, deposits, and communication channels remain open.
+**ADAPT:** Surface cancellation/rescheduling policy before confirmation and again beside management actions. At research time these were open. Customer mobile-number/SMS-code login, deposit-backed future bookings, and manager-configured payment/cancellation windows have since been approved. Telephone bookings use review/payment links; future in-person bookings also permit deposits received and recorded at the salon; immediate walk-ins pay during the visit. Numeric setup values, rescheduling/refund exceptions, and link-delivery channels remain open.
 
 **AVOID:** Copying daily limits, requiring app installation, or silently adding reminders, Telegram, payments, or cancellation fees.
 
@@ -85,4 +85,4 @@ Approved booking boundary: one service per MVP appointment. Multi-service coordi
 
 No production guarantees, live booking completion, customer identity, payment, or cancellation behavior were tested. Mobile inspection covers the service-selection and prerequisite views, not the complete journey. Iranian demand and user preferences were not inferred from competitor claims.
 
-Next: define Stage 06 jobs and journeys using the approved one-service booking unit. Carry consultation-dependent services, staff identity, staff-created appointment linking, deposit parameters, cancellation windows, any-specialist assignment, and notification details as explicit open decisions. Later prototype checks should verify service clarity, slot recovery, confirmation understanding, and reception’s shared-calendar workflow.
+Next: define Stage 06 jobs and journeys using the approved one-service booking unit. Carry consultation-dependent services, staff login mechanics, account matching/number correction, numeric setup values, rescheduling/refund exceptions, any-specialist assignment, and link-delivery/notification details as explicit open decisions. Staff-entered numbers and booking links do not grant customer account access without SMS verification. Later prototype checks should verify service clarity, slot recovery, confirmation understanding, and reception’s shared-calendar workflow.

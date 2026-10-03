@@ -30,7 +30,7 @@ A deliberate future model change must update the Selected Opportunity Brief, thi
 
 ## Current activity
 
-Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access and one salon operations area with separate reception/management permissions; specialists have no independent dashboard. Reception manages appointments, including phone/walk-in bookings; management also controls services, prices, specialists, eligibility, and working schedules. Stage 05 — UX / Competitive Research — is researched and persisted; the user approved one service per MVP appointment. Stage 06 — Jobs & User Journeys — has a persisted draft; customer mobile-number/SMS-code login and account-linked online reservations are approved. Online deposit payment for confirmation, a short payment hold, and remaining payment at the salon are approved. One shared deposit percentage for all services, configurable only by management, is approved; per-service percentages are deferred. For variable-price services, the approximate usual-volume price is the approved deposit basis; the customer must see that the final price may vary and the paid deposit is deducted at the salon. Customer volume selection with manager-defined durations is approved for variable-duration services; availability uses that duration while the deposit basis stays unchanged. Management configures the shared deposit percentage, payment-hold duration, and advance cancellation window; customers see the rules before payment and each booking retains its accepted terms when settings change. Rescheduling/refund exception details, staff authentication, and staff-created appointment linking remain open before final flows.
+Phase 01 Stages 01–04 are approved and persisted; Stage 05 research is persisted. Stage 06 — Jobs & User Journeys — remains in progress. Approved decisions include one service per appointment, mobile-number/SMS-code customer login, volume-based durations, disclosed approximate-price deposits, manager-controlled deposit/payment/cancellation settings, and preservation of accepted booking terms. Telephone bookings use customer review/payment links; future in-person bookings also permit deposits received and recorded by reception; immediate walk-ins pay during the visit. All use the shared calendar, and a staff-entered customer number is not authenticated until the customer completes SMS verification. Rescheduling and salon-originated cancellation rules remain open before final flows.
 
 ## Important artifacts
 
@@ -48,7 +48,7 @@ Phase 01 Stages 01–04 are approved and persisted. The MVP has customer access 
 
 ## Next action
 
-Review Stage 06 jobs and journeys, beginning with deposit collection/account linkage for phone and walk-in appointments, followed by rescheduling and salon-originated cancellation rules. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
+Review Stage 06 jobs and journeys, beginning with rescheduling and salon-originated cancellation rules. Phone/future in-person booking deposit paths and immediate walk-in payment are approved; refine link delivery, hold-start interactions, and account matching during flow definition. Resolve journey-changing decisions before marking Stage 06 complete and moving to Stage 07 — User Flows.
 
 ## Blockers / notes
 

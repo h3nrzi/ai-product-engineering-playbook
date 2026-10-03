@@ -51,6 +51,18 @@ Choose service → understand the approximate usual-volume price and why it can 
 
 The final balance is calculated from the actual final price, not automatically fixed to the pre-booking estimate. A variable price does not itself turn the service into a consultation-only booking. For variable-duration services, the approved volume choice determines the manager-configured booking duration before availability is shown. It does not alter the approximate usual-volume deposit basis.
 
+### Payment hold and pending payment result
+
+Approved by the user on 2026-10-03: temporarily lock the reviewed specialist/time for the full service duration while payment is in progress, and tie confirmation to the verified payment result. The slot is unavailable to conflicting customer or reception bookings while this hold remains active.
+
+- Verified successful payment while the booking still owns the slot confirms the appointment with the reviewed specialist/time.
+- A definitively failed payment releases the hold without confirming. If payment has not started by the payment-hold deadline, release the slot. Recheck availability and secure a valid hold before a new payment attempt.
+- If payment started within the active hold but its result remains unknown, retain the slot in “awaiting payment result” while the system checks the outcome, including when the ordinary payment-hold deadline passes. An unknown result is not a failed payment and is not confirmation.
+- Waiting for a result is bounded by a defined verification deadline; it cannot lock availability indefinitely. If the result is still unresolved at that deadline, release the slot and keep the payment outcome pending verification.
+- If success is verified after the slot has been released, do not automatically confirm the original booking, even if the slot is still available. Refund the entire deposit and let the customer make a new booking from current availability. Show payment and refund progress separately, and direct the customer to check the existing payment status before retrying.
+
+This applies to customer online payments and the online-payment route for reception-created future bookings. Exact verification-deadline values, how that deadline is set and disclosed, provider checks, retry mechanics, and refund execution remain for later flow/engineering definition. Opening a link or retrying a status check does not restart either deadline.
+
 ### Alternatives and recovery
 
 - Specialist-first entry: select a service that specialist provides, then continue to availability.
@@ -59,9 +71,9 @@ The final balance is calculated from the actual final price, not automatically f
 - Interrupted input or login: preserve service, volume option where relevant, specialist preference, and date/time through login; recheck availability afterwards. A selected time is not held by authentication. Do not promise cross-device persistence.
 - Missing, invalid, or expired SMS code: explain the problem and offer correction/retry without discarding booking choices. Resend timing and attempt limits belong to later flow/security rules.
 - Existing valid session: skip repeated mobile-number entry and code verification. If the session expires, sign in again and recheck availability.
-- Unknown booking/payment result: show pending verification and direct the customer to check status before retrying. Do not encourage duplicate deposits or bookings.
-- Failed or abandoned payment: do not show a confirmed appointment. Explain the remaining hold time and valid retry path; once expired, release the time and recheck availability before restarting.
-- Late verified payment after hold expiry: do not silently confirm over another appointment; offer the recovery/refund route once that policy is defined.
+- Unknown booking/payment result: show pending verification and direct the customer to check status before retrying. An initiated payment with an unknown result retains its slot until the defined verification deadline; do not encourage duplicate deposits or bookings.
+- Definitively failed payment: do not confirm; release the hold and recheck availability before a new attempt. If payment was not started before hold expiry, release the slot; if its result is unknown, use the bounded pending-result path above.
+- Success verified after slot release: do not confirm automatically; refund the full deposit and offer a new booking from current availability.
 
 ## Customer retrieves or changes an appointment
 
@@ -91,7 +103,7 @@ Show the final assigned specialist to reception before confirmation and communic
 2. Provide the customer a booking-review/payment link with the hold expiry. Delivery channel remains to be defined.
 3. Customer signs in with an SMS code for the recorded mobile number, reviews service/volume, specialist/time, price basis, exact deposit, estimated/fixed balance, and cancellation rules, then pays.
 4. Confirm only after verified deposit payment within valid slot ownership. Show the result in the shared calendar and the customer’s account.
-5. If the hold expires without completed payment, release the time. Failed/uncertain/late payment follows the same recovery boundaries as online booking; opening a link does not restart an expired hold automatically.
+5. If payment has not started by hold expiry, release the time; a definitively failed payment also releases the hold. If payment started in time but its result is unknown, retain the slot until the defined verification deadline while checking the result. Release it if unresolved at that deadline; success verified after release receives a full deposit refund without automatic confirmation. Use the same pending-result and recovery rules as customer online booking; opening a link does not restart either deadline.
 
 ### In-person booking for a future visit
 
@@ -144,7 +156,7 @@ Reception can identify an appointment or availability issue; management owns set
 - How the final price is agreed at the salon and how an excess deposit is handled if the final price is lower than the deposit paid.
 - Service-specific volume labels and booking durations; how reception/management handle an inaccurate customer volume selection at the salon without silently overlapping another appointment.
 - Booking-link delivery channel and precise payment-hold start/retry interaction for reception-created future bookings. Confirmation/deposit paths and customer SMS verification are approved.
-- Late/uncertain payment recovery and refund processing details.
+- Numeric verification deadline and its setup/disclosure, provider-result checks, payment retry mechanics, and refund processing details. The bounded pending-result hold and full refund for success verified after slot release are approved.
 - Staff exception authority after the self-service rescheduling cutoff and handling unanswered salon replacement proposals. The approved default does not allow reception contact to bypass late-cancellation policy.
 - Additional required fields, if justified, and staff-created appointment intake. Online booking name/contact default from the profile and are editable per booking; any missing data should be requested without repeating completed profile information.
 - Appointment states, customer communication channel, and effects of schedule/eligibility edits on existing appointments.

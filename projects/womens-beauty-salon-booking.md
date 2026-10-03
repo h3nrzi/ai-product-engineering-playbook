@@ -38,7 +38,7 @@ Remaining decisions now approved: management-only late exceptions with reasons; 
 
 Stage 07 — User Flows — is approved and complete on 2026-10-03 under the user's explicit delegation to finalize remaining recommendations. Customer/reception booking, payment results, account status retrieval, cancellation/rescheduling, salon replacements, manager exceptions, in-salon settlement, number correction/recovery, management edits, refund progress, and SMS failure recovery are defined. Appointment/payment/refund states remain distinct; identity transfer requires verified ownership, and failed operations preserve existing bookings/entitlements. Provider-specific operations, concrete manual identity-evidence procedures, security controls, and real service configuration are engineering/configuration handoff work.
 
-Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is approved and complete on 2026-10-03. Required public/customer/salon page templates, conditional booking steps, and contextual operation surfaces are approved; state variants remain within these surfaces. Stage 10 — UX States & Edge Cases — is approved and complete on 2026-10-03. State presentation and recovery cover critical discovery/availability, identity/access, payment/hold, customer changes, salon operations, management/refund and responsive/content states while preserving approved business rules. Stage 11 — Brand & Visual Direction — is approved and complete on 2026-10-03. The user confirmed no existing brand identity, authorized Dribbble inspiration, and accepted a calm, professional and warm direction: ivory/white surfaces, deep-plum primary, pale-rose accents, Vazirmatn typography, honest salon photography, moderately rounded shapes and restrained shadow/motion. No salon name or final logo is invented. The next active stage is Stage 12 — Design System, not yet started. Phase 01 remains in progress.
+Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is approved and complete on 2026-10-03. Required public/customer/salon page templates, conditional booking steps, and contextual operation surfaces are approved; state variants remain within these surfaces. Stage 10 — UX States & Edge Cases — is approved and complete on 2026-10-03. State presentation and recovery cover critical discovery/availability, identity/access, payment/hold, customer changes, salon operations, management/refund and responsive/content states while preserving approved business rules. Stage 11 — Brand & Visual Direction — is approved and complete on 2026-10-03. The user confirmed no existing brand identity, authorized Dribbble inspiration, and accepted a calm, professional and warm direction: ivory/white surfaces, deep-plum primary, pale-rose accents, Vazirmatn typography, honest salon photography, moderately rounded shapes and restrained shadow/motion. No salon name or final logo is invented. Stage 12 — Design System — is in progress. A draft defines semantic colors (with calculated contrast checks), typography, spacing/layout, component variants, booking/calendar presentation, RTL, interaction and accessibility rules. User review is pending; no application implementation has started. Phase 01 remains in progress.
 
 ## Important artifacts
 
@@ -54,6 +54,7 @@ Stage 08 — Information Architecture — is approved and complete on 2026-10-03
 - Page & Surface Inventory (approved): [`product-design/page-inventory.md`](womens-beauty-salon-booking/product-design/page-inventory.md)
 - UX States & Edge Cases (approved): [`product-design/ux-states.md`](womens-beauty-salon-booking/product-design/ux-states.md)
 - Brand & Visual Direction (approved): [`product-design/visual-direction.md`](womens-beauty-salon-booking/product-design/visual-direction.md)
+- Design System (draft): [`product-design/design-system.md`](womens-beauty-salon-booking/product-design/design-system.md)
 - PRD: pending
 - Base44 prompts: pending
 - Prototype/handoff: pending
@@ -61,7 +62,7 @@ Stage 08 — Information Architecture — is approved and complete on 2026-10-03
 
 ## Next action
 
-Start Stage 12 — Design System from the approved visual direction and UX states. Define semantic colors, typography, spacing/layout, radius/elevation, core and booking-specific components, required variants, RTL and accessibility/interaction rules. Persist and review `product-design/design-system.md` before marking Stage 12 complete.
+Review the persisted Stage 12 draft in `product-design/design-system.md`. After user approval, mark Stage 12 complete and proceed to Stage 13 — Responsive & Content Direction.
 
 ## Blockers / notes
 

@@ -21,7 +21,7 @@ Do not merge the package into one mega-prompt. Execute prompts in order and revi
 | 02 | [`02-app-shell-navigation.md`](02-app-shell-navigation.md) | Build public, customer and staff/manager shells and navigation boundaries | ready |
 | 03 | [`03-public-discovery.md`](03-public-discovery.md) | Build home, services, specialists and salon/contact discovery surfaces | ready |
 | 04 | [`04-booking-payment-flow.md`](04-booking-payment-flow.md) | Build the primary booking, identity, hold, payment and result journey | ready |
-| 05 | `05-customer-area.md` | Build appointments/attempts, detail, permitted changes and account information | pending |
+| 05 | [`05-customer-area.md`](05-customer-area.md) | Build appointments/attempts, detail, permitted changes and account information | ready |
 | 06 | `06-salon-operations.md` | Build staff sign-in, calendar, appointment operations and follow-up | pending |
 | 07 | `07-manager-controls.md` | Build manager-only services, specialists, schedules, settings and staff/support controls | pending |
 | 08 | `08-states-recovery.md` | Add critical loading, empty, failure, conflict, unknown-outcome and recovery behavior | pending |

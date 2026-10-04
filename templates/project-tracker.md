@@ -6,51 +6,71 @@
 - Selected model / variant: <specific model>
 - Target market / geography: <if relevant>
 - Documentation root: <projects/<project-slug>/>
-- Implementation repository: <URL / pending / not yet needed>
-- Product type: <short description>
-- Current phase: <01–05>
+- PRD: <projects/<project-slug>/prd.md>
+- Implementation repository: <URL / pending>
+- Current playbook phase: <01–03>
 - Current status: <not started / in progress / complete / blocked>
 
-## Model boundary
+## Product boundary
 
-- Selected: <what model this project is>
-- Explicitly not: <adjacent variants that are not this project>
+- Selected: <what product/model this is>
+- Explicitly not: <adjacent variants excluded from this project>
 
-Do not silently change the selected model during later phases. A deliberate model change must update the Selected Opportunity Brief, tracker, and any affected approved artifacts.
+## Playbook workflow
 
-## Workflow
-
-| Phase | Status | Main artifact / result |
+| Phase | Status | Main result |
 | --- | --- | --- |
-| 01 — Product Discovery & Product Design |  | PRD + Base44 Prompt Package |
-| 02 — Base44 Prototype |  | Base44 prototype + React baseline/handoff |
-| 03 — React Frontend Completion |  | Completed engineered React frontend |
-| 04 — React → Next.js Refactor |  | Behaviorally equivalent Next.js frontend |
-| 05 — Full-Stack Next.js Completion |  | Completed server-backed full-stack product |
+| 01 — Product Discovery & Delivery Plan |  | Authoritative phased PRD + active-phase module map |
+| 02 — Module-by-Module Engineering |  | Reviewed working modules / completed product delivery phases |
+| 03 — Visual Redesign & UI Polish |  | Final polished UI when redesign is needed |
 
-## Current activity
+## Product Delivery Roadmap
 
-<What is happening now?>
+Summarize the product-specific delivery phases from the PRD.
 
-## Important artifacts
+| Product Delivery Phase | Status | Goal |
+| --- | --- | --- |
+| 1 — <name> | <planned/in progress/complete> | <goal> |
+| 2 — <name> | <planned/in progress/complete> | <goal> |
 
-- Selected opportunity brief: <path/link>
-- Current stage artifact: <path/link>
-- PRD: <path/link>
-- Base44 prompts: <path/link>
-- Prototype/handoff: <path/link>
-- Current spec/tickets: <path/link if applicable>
+Add/remove rows as the product requires.
+
+## Active Product Delivery Phase
+
+- Phase: <number + name>
+- Goal: <short goal>
+- Status: <planned / in progress / complete>
+
+## Modules
+
+Track only the detailed modules for the active product delivery phase.
+
+| Module | Status | Depends on | Current engineering artifact |
+| --- | --- | --- | --- |
+| <M01 — name> | <planned/ready/in progress/complete/blocked> | <module/none> | <spec/tickets/evidence or —> |
+
+## Current module / activity
+
+- Current module: <module or none>
+- Current activity: <grill-with-docs / to-spec / to-tickets / implement / code-review / acceptance / UI redesign / etc.>
+- Relevant artifact: <link/path>
 
 ## Next action
 
-<One clear next action>
+<One clear next action.>
 
 ## Blockers / notes
 
-<Only meaningful blockers or continuation notes. Do not duplicate artifact contents or implementation history.>
+<Only meaningful blockers, migration notes, or continuation context. Do not duplicate PRD/spec contents.>
 
 ## Guide entrypoint
 
-Read [`MASTER.md`](../MASTER.md), this tracker, the active phase guide, and the relevant files under the project's documentation root before making status claims or continuing the workflow.
+Read:
 
-A stage is not complete until its required artifact is persisted under the project documentation root and linked here.
+1. [`MASTER.md`](../MASTER.md)
+2. this tracker
+3. the active phase guide
+4. the PRD
+5. the current module's engineering artifacts / implementation output
+
+Continue from the current module/decision without restarting product discovery.

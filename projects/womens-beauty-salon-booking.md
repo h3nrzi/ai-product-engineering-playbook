@@ -6,71 +6,106 @@
 - Selected model / variant: **Women’s single-salon**
 - Target market / geography: Persian-language product for the Iranian market
 - Documentation root: [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/)
-- Implementation repository: not yet needed
-- Product type: Single-location women’s beauty service discovery, booking, and appointment-management product
-- Current phase: 01
-- Current status: in progress
+- Current PRD source: [`product-design/prd.md`](womens-beauty-salon-booking/product-design/prd.md)
+- New authoritative PRD target: `projects/womens-beauty-salon-booking/prd.md`
+- Implementation repository: pending
+- Current playbook phase: 01 — Product Discovery & Delivery Plan
+- Current status: in progress (workflow migration)
 
-## Model boundary
+## Product boundary
 
 - **Selected:** one physical women’s beauty salon, multiple services, multiple specialists, salon-controlled schedules and appointment operations.
 - **Explicitly not:** men’s barbershop, unisex salon, independent-specialist marketplace, multi-salon marketplace, multi-branch salon network, or beauty-at-home/mobile workforce product.
 
-A deliberate future model change must update the Selected Opportunity Brief, this tracker, and any affected approved artifacts before the workflow continues.
+The approved product behavior from the existing discovery artifacts remains valid unless deliberately changed. The workflow migration must not reopen settled product decisions without a real contradiction.
 
-## Workflow
+## Playbook workflow
 
-| Phase | Status | Main artifact / result |
+| Phase | Status | Main result |
 | --- | --- | --- |
-| 01 — Product Discovery & Product Design | in progress | PRD + Base44 Prompt Package |
-| 02 — Base44 Prototype | not started | Base44 prototype + React baseline/handoff |
-| 03 — React Frontend Completion | not started | Completed engineered React frontend |
-| 04 — React → Next.js Refactor | not started | Behaviorally equivalent Next.js frontend |
-| 05 — Full-Stack Next.js Completion | not started | Completed server-backed full-stack product |
+| 01 — Product Discovery & Delivery Plan | in progress | Authoritative phased PRD + active-phase module map |
+| 02 — Module-by-Module Engineering | not started | Reviewed working modules / completed product delivery phases |
+| 03 — Visual Redesign & UI Polish | not started | Stitch-driven visual redesign if needed |
+
+## Existing discovery status
+
+The previous workflow completed substantial product discovery and produced an approved consolidated PRD plus supporting product-design artifacts.
+
+Those decisions remain useful source material, including:
+
+- product scope and model boundaries;
+- customer/reception/manager actors;
+- booking, availability, deposit, payment, refund, rescheduling, ownership, and salon-change rules;
+- user journeys/flows;
+- information architecture and page inventory;
+- UX states;
+- visual/design-system/content direction.
+
+The old Base44 Prompt Package is no longer part of the authoritative workflow and should not be continued.
+
+## Product Delivery Roadmap
+
+Not yet migrated into the new PRD format.
+
+The next discovery step is to decide the product-specific delivery phases, including what the first implementation phase must achieve.
+
+Do not invent the phase count without that discussion.
+
+## Active Product Delivery Phase
+
+Not yet defined under the new workflow.
+
+## Modules
+
+Not yet defined under the new workflow.
+
+The approved product behavior should be decomposed into implementation-oriented product modules only after the Product Delivery Phase 1 boundary is agreed.
+
+Examples such as authentication, booking, customer account, staff operations, management controls, payments, or communication may emerge, but the final module map must be derived from the chosen delivery-phase scope rather than copied from a generic template.
 
 ## Current activity
 
-Phase 01 remains in progress. Stages 01–14 are approved and persisted. Stage 14 — PRD — was approved by the user and completed on 2026-10-03. The consolidated PRD is now the authoritative product definition for the current approved scope, while supporting artifacts remain the source of deeper design detail.
+Migrate the approved discovery work into the new Phase 01 output format:
 
-The approved journeys preserve one service/specialist per appointment, named/any-eligible choices for customer and reception, management priority, customer acceptance of confirmed specialist changes, account ownership with SMS-verified contacts, deposit and shared calendar constraints, rescheduling/deposit transfer, and salon-originated full refunds. Initial defaults are 20% deposit, a 24-hour cancellation/rescheduling window, and a 10-minute hold with up to 5 additional minutes for a started payment with an unknown result. Final prices are accepted before variable-price service begins.
+1. preserve settled product decisions;
+2. define Product Delivery Phases;
+3. define the goal/boundary of Product Delivery Phase 1;
+4. decompose that active phase into coherent modules;
+5. synthesize the new authoritative `projects/womens-beauty-salon-booking/prd.md`;
+6. identify the first ready module for Phase 02.
 
-Remaining decisions approved before PRD consolidation include: management-only late exceptions with reasons; SMS booking links and change/cancellation notices; reception holds starting at finalized initial booking/link-send request; staff SMS login with management-assigned access; salon-coordinated login-number change/recovery; name/contact minimum intake; manager-configured service/volume information and consultation contact paths; resolution of schedule conflicts before saving. Volume mismatches do not change booked time/duration; if no solution fits, cancel with a full refund and leave any new booking to the customer.
-
-Stage 07 — User Flows — is approved and complete on 2026-10-03 under the user's explicit delegation to finalize remaining recommendations. Customer/reception booking, payment results, account status retrieval, cancellation/rescheduling, salon replacements, manager exceptions, in-salon settlement, number correction/recovery, management edits, refund progress, and SMS failure recovery are defined. Appointment/payment/refund states remain distinct; identity transfer requires verified ownership, and failed operations preserve existing bookings/entitlements. Provider-specific operations, concrete manual identity-evidence procedures, security controls, and real service configuration are engineering/configuration handoff work.
-
-Stage 08 — Information Architecture — is approved and complete on 2026-10-03. Public discovery/booking, the private customer account, calendar-first salon operations, appointment-linked follow-up, and manager-only controls are approved, with their hierarchy, navigation, cross-links and access boundaries. Stage 09 — Page Inventory — is approved and complete on 2026-10-03. Required public/customer/salon page templates, conditional booking steps, and contextual operation surfaces are approved; state variants remain within these surfaces. Stage 10 — UX States & Edge Cases — is approved and complete on 2026-10-03. State presentation and recovery cover critical discovery/availability, identity/access, payment/hold, customer changes, salon operations, management/refund and responsive/content states while preserving approved business rules. Stage 11 — Brand & Visual Direction — is approved and complete on 2026-10-03. The user confirmed no existing brand identity, authorized Dribbble inspiration, and accepted a calm, professional and warm direction: ivory/white surfaces, deep-plum primary, pale-rose accents, Vazirmatn typography, honest salon photography, moderately rounded shapes and restrained shadow/motion. No salon name or final logo is invented. Stage 12 — Design System — is approved and complete on 2026-10-03. Semantic colors, typography, spacing/layout, component variants, booking/calendar presentation, RTL, interaction and accessibility rules are approved. Stage 13 — Responsive & Content Direction — is approved and complete on 2026-10-03. Mobile-first customer tasks, desktop/tablet salon operations with usable mobile alternatives, navigation/layout adaptations, sticky-action rules, Persian terminology, consequential messages, localization and honest demo content are approved. Stage 14 — PRD — is approved and complete on 2026-10-03. It consolidates scope, actors, observable requirements, accepted booking/payment/refund/identity rules, required surfaces, design/content direction, prototype demonstrations and production handoff boundaries.
-
-Stage 15 — Base44 Prompt Package — is now in progress. The goal is to convert the approved PRD into an incremental, self-contained set of Base44 prompts that can be executed without relying on prior conversation context. No application implementation has started. Phase 01 remains in progress until Stage 16 review and handoff are complete.
-
-## Important artifacts
+## Important existing source artifacts
 
 - Selected Opportunity Brief: [`selected-opportunity-brief.md`](womens-beauty-salon-booking/selected-opportunity-brief.md)
-- Problem Definition: [`product-design/problem-definition.md`](womens-beauty-salon-booking/product-design/problem-definition.md)
-- Solution Definition: [`product-design/solution-definition.md`](womens-beauty-salon-booking/product-design/solution-definition.md)
-- Product Strategy & Scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
-- User & Actor Definition: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
-- UX / Competitive Research: [`product-design/ux-research.md`](womens-beauty-salon-booking/product-design/ux-research.md)
-- Jobs & User Journeys (approved): [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
-- User Flows (approved): [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
-- Information Architecture (approved): [`product-design/information-architecture.md`](womens-beauty-salon-booking/product-design/information-architecture.md)
-- Page & Surface Inventory (approved): [`product-design/page-inventory.md`](womens-beauty-salon-booking/product-design/page-inventory.md)
-- UX States & Edge Cases (approved): [`product-design/ux-states.md`](womens-beauty-salon-booking/product-design/ux-states.md)
-- Brand & Visual Direction (approved): [`product-design/visual-direction.md`](womens-beauty-salon-booking/product-design/visual-direction.md)
-- Design System (approved): [`product-design/design-system.md`](womens-beauty-salon-booking/product-design/design-system.md)
-- Responsive & Content Direction (approved): [`product-design/responsive-content-direction.md`](womens-beauty-salon-booking/product-design/responsive-content-direction.md)
-- PRD (approved): [`product-design/prd.md`](womens-beauty-salon-booking/product-design/prd.md)
-- Base44 prompts: in progress
-- Prototype/handoff: pending
-- Current spec/tickets: not applicable yet
+- Existing approved PRD: [`product-design/prd.md`](womens-beauty-salon-booking/product-design/prd.md)
+- Product scope: [`product-design/product-scope.md`](womens-beauty-salon-booking/product-design/product-scope.md)
+- Users/actors: [`product-design/user-actors.md`](womens-beauty-salon-booking/product-design/user-actors.md)
+- Jobs/journeys: [`product-design/jobs-and-journeys.md`](womens-beauty-salon-booking/product-design/jobs-and-journeys.md)
+- User flows: [`product-design/user-flows.md`](womens-beauty-salon-booking/product-design/user-flows.md)
+- Information architecture: [`product-design/information-architecture.md`](womens-beauty-salon-booking/product-design/information-architecture.md)
+- Page inventory: [`product-design/page-inventory.md`](womens-beauty-salon-booking/product-design/page-inventory.md)
+- UX states: [`product-design/ux-states.md`](womens-beauty-salon-booking/product-design/ux-states.md)
+- Visual direction: [`product-design/visual-direction.md`](womens-beauty-salon-booking/product-design/visual-direction.md)
+- Design system: [`product-design/design-system.md`](womens-beauty-salon-booking/product-design/design-system.md)
+- Responsive/content direction: [`product-design/responsive-content-direction.md`](womens-beauty-salon-booking/product-design/responsive-content-direction.md)
+
+Legacy Base44 prompt artifacts may remain as historical files but are not authoritative for the new workflow.
 
 ## Next action
 
-Build Stage 15 — Base44 Prompt Package from the approved PRD. The package should be incremental, self-contained, preserve approved product rules, and prepare Phase 02 without asking Base44 to rediscover the product. After the prompt package is approved, proceed to Stage 16 — Phase Review & Handoff.
+Define the product's **Product Delivery Phases** and the exact boundary of **Product Delivery Phase 1**. Then derive the module map and rewrite the approved product intent into the new authoritative PRD format.
 
 ## Blockers / notes
 
-No current blocker. Project documentation is stored in this playbook repository under the project documentation root. Application implementation code may live elsewhere later, but product documentation remains authoritative here.
+No product blocker. The only blocker to Phase 02 is the workflow migration: delivery phases and active-phase module boundaries have not yet been agreed in the new PRD format.
 
 ## Guide entrypoint
 
-Read [`MASTER.md`](../MASTER.md), this tracker, confirm the selected Product Family + Model, read the active phase guide, and then inspect the project artifacts under [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/) before making status claims or continuing the workflow.
+Read:
+
+1. [`MASTER.md`](../MASTER.md)
+2. this tracker
+3. [`phases/01-product-discovery.md`](../phases/01-product-discovery.md)
+4. the existing approved PRD and only the supporting artifacts needed for the current migration decision
+
+Do not continue the obsolete Base44 prompt workflow.

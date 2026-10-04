@@ -1,8 +1,8 @@
 # Project Trackers
 
-Each product using this playbook gets one lightweight tracker here plus a project documentation directory under `projects/<project-slug>/`.
+Each product using this playbook gets one lightweight tracker here plus a small project workspace under `projects/<project-slug>/`.
 
-Projects now follow three authoritative playbook phases:
+Projects follow three authoritative playbook phases:
 
 1. Product Discovery & Delivery Plan
 2. Module-by-Module Engineering
@@ -12,7 +12,7 @@ The tracker is navigation/context for Guide LLMs. The PRD is the product authori
 
 ## Current projects
 
-- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — existing discovery work must be migrated to the new phased-PRD/module format before module engineering begins.
+- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — Phase 01 in progress; Delivery Phase roadmap and module map not yet defined.
 
 ## Preferred project structure
 
@@ -20,18 +20,18 @@ The tracker is navigation/context for Guide LLMs. The PRD is the product authori
 projects/
 ├── <project-slug>.md
 └── <project-slug>/
+    ├── README.md
     └── prd.md
 ```
 
-Additional files/folders are optional and should exist only when they provide durable value.
-
-Legacy project artifacts from older workflow versions may remain for historical/reference purposes, but the tracker must identify which PRD/module artifacts are currently authoritative.
+Keep project documentation intentionally small. Add another file or folder only when it provides durable value beyond the PRD.
 
 ## Add a project
 
 1. Start Phase 01 and choose the Product Family + Model from [`../opportunities/service-products.md`](../opportunities/service-products.md).
-2. Create `projects/<project-slug>/`.
-3. Create/update `projects/<project-slug>/prd.md` as discovery progresses.
-4. Copy [`../templates/project-tracker.md`](../templates/project-tracker.md) to `projects/<project-slug>.md`.
-5. Add the tracker under Current projects.
-6. When Phase 01 is complete, create/link the implementation repository and begin engineering the first ready PRD module.
+2. Create `projects/<project-slug>/README.md` as the lightweight workspace entrypoint.
+3. Copy [`../templates/project-tracker.md`](../templates/project-tracker.md) to `projects/<project-slug>.md`.
+4. Add the tracker under Current projects.
+5. Discuss the product, define its Product Delivery Phases, and decompose the active phase into modules.
+6. Create `projects/<project-slug>/prd.md` when Phase 01 is ready to synthesize into the authoritative PRD.
+7. When Phase 01 is complete, create/link the implementation repository and begin engineering the first ready PRD module.

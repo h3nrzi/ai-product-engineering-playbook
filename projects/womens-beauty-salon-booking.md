@@ -1,80 +1,121 @@
 # Project Tracker — Women’s Beauty Salon Booking
 
-## Project
+> Operational control panel for the project. Product behavior belongs in the PRD; this tracker only shows where the project is, what is authoritative, and what should happen next.
 
-- Product family: Barbershop / Beauty Salon Booking ([catalog](../opportunities/service-products.md))
-- Selected model / variant: **Women’s single-salon**
-- Target market / geography: Persian-language product for the Iranian market
-- Documentation root: [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/)
-- PRD: pending
-- Implementation repository: pending
-- Current playbook phase: **01 — Product Discovery & Delivery Plan**
-- Current status: **in progress**
+## 1. Project Snapshot
 
-## Product boundary
+| Field | Value |
+| --- | --- |
+| Product family | Barbershop / Beauty Salon Booking ([catalog](../opportunities/service-products.md)) |
+| Selected model / variant | **Women’s single-salon** |
+| Target market / geography | Persian-language product for the Iranian market |
+| Current playbook phase | **01 — Product Discovery & Delivery Plan** |
+| Current product delivery phase | Not defined yet |
+| Current module | None |
+| Overall status | **active** |
+| PRD | Pending — [`womens-beauty-salon-booking/prd.md`](womens-beauty-salon-booking/prd.md) |
+| Implementation repository | Pending |
+| Documentation root | [`projects/womens-beauty-salon-booking/`](womens-beauty-salon-booking/) |
+
+### Product boundary
 
 - **Selected:** one physical women’s beauty salon.
 - **Explicitly not:** men’s barbershop, unisex salon, independent-specialist marketplace, multi-salon marketplace, multi-branch salon network, or beauty-at-home/mobile workforce product.
 
-Do not silently change the selected model during discovery or implementation.
+A deliberate model change must update the PRD and this tracker before work continues.
 
-## Playbook workflow
+---
 
-| Phase | Status | Main result |
+## 2. Playbook Progress
+
+| Playbook Phase | Status | Exit Result |
 | --- | --- | --- |
-| 01 — Product Discovery & Delivery Plan | in progress | Authoritative phased PRD + active-phase module map |
+| 01 — Product Discovery & Delivery Plan | **active** | Authoritative phased PRD + active-phase module map |
 | 02 — Module-by-Module Engineering | not started | Reviewed working modules / completed product delivery phases |
-| 03 — Visual Redesign & UI Polish | not started | Stitch-driven visual redesign if needed |
+| 03 — Visual Redesign & UI Polish | not started | Final Stitch-driven visual redesign/polish when needed |
 
-## Product Delivery Roadmap
+---
 
-Not defined yet.
-
-The number and purpose of Product Delivery Phases must come from the product discussion rather than a fixed template.
-
-## Active Product Delivery Phase
+## 3. Product Delivery Roadmap
 
 Not defined yet.
 
-## Modules
+The product discussion must determine how many delivery phases the product needs and what each phase is meant to achieve. Future phases should remain high-level; only the active delivery phase will be decomposed into detailed modules.
 
-Not defined yet.
+### Active delivery phase
 
-Modules will be derived only after the active Product Delivery Phase boundary is agreed.
+- **Phase:** Not defined
+- **Objective:** Pending product roadmap decision
+- **Exit condition:** Pending product roadmap decision
 
-## Current activity
+---
 
-Continue Phase 01 from a clean project workspace:
+## 4. Module Board
 
-1. discuss what product we are actually building;
-2. define the Product Delivery Phases;
-3. define the exact goal and boundary of Delivery Phase 1;
-4. break Delivery Phase 1 into coherent product modules;
-5. write the authoritative `projects/womens-beauty-salon-booking/prd.md`;
-6. identify the first ready module for Phase 02.
+No modules are defined yet.
 
-## Important artifacts
+Module decomposition starts only after Product Delivery Phase 1 has a clear goal and boundary.
 
-- Project workspace: [`womens-beauty-salon-booking/README.md`](womens-beauty-salon-booking/README.md)
-- PRD: pending (`womens-beauty-salon-booking/prd.md`)
-- Implementation repository: pending
-- Current module engineering artifacts: not applicable yet
+---
 
-## Next action
+## 5. Current Focus
 
-Define the product’s **Product Delivery Phases** and the exact boundary of **Product Delivery Phase 1**.
+- **Current module:** None
+- **Current activity:** Product delivery planning
+- **Immediate objective:** Define the product delivery roadmap and the exact boundary of Product Delivery Phase 1
+- **Working artifact:** This tracker until `prd.md` is created
 
-## Blockers / notes
+### Open decisions
 
-No blocker.
+| Decision | Owner | Needed For | Status |
+| --- | --- | --- | --- |
+| How many Product Delivery Phases should this product have? | User + Guide | Product roadmap | open |
+| What must Product Delivery Phase 1 make usable? | User + Guide | Phase 1 boundary and module map | open |
 
-## Guide entrypoint
+---
 
-Read:
+## 6. Risks & Blockers
+
+None.
+
+The project is intentionally paused before module decomposition until the delivery roadmap is agreed.
+
+---
+
+## 7. Authority & Artifacts
+
+| Artifact | Role | Location |
+| --- | --- | --- |
+| PRD | Product authority | Pending — `projects/womens-beauty-salon-booking/prd.md` |
+| Active module artifact | Current engineering authority | Not applicable yet |
+| Implementation repository | Source code and engineering evidence | Pending |
+| Visual redesign artifact | UI authority if Phase 03 is used | Pending |
+| Project workspace | Minimal project context | [`womens-beauty-salon-booking/README.md`](womens-beauty-salon-booking/README.md) |
+
+---
+
+## 8. Next Action
+
+> **Define the Product Delivery Phases and agree the exact goal/boundary of Product Delivery Phase 1.**
+
+After that, decompose Phase 1 into coherent product modules and write the authoritative PRD.
+
+---
+
+## 9. Session Handoff
+
+- **Where we are:** Playbook Phase 01, before Product Delivery Roadmap definition.
+- **What is settled:** Product family/model is Women’s single-salon for the Iranian/Persian market; adjacent salon models are excluded.
+- **What is happening now:** Deciding how the product should be delivered in product-specific phases.
+- **What happens next:** Define the Product Delivery Phases and Phase 1 boundary, then derive the module map.
+
+### Guide entrypoint
+
+Read in this order:
 
 1. [`MASTER.md`](../MASTER.md)
 2. this tracker
 3. [`phases/01-product-discovery.md`](../phases/01-product-discovery.md)
 4. [`womens-beauty-salon-booking/README.md`](womens-beauty-salon-booking/README.md)
 
-Then continue the product discussion from the current Phase 01 decision point.
+Continue from the Product Delivery Roadmap decision. Do not restart project selection or invent module boundaries before Phase 1 is defined.

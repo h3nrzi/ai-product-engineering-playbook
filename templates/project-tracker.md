@@ -1,76 +1,149 @@
 # Project Tracker — <Project Name>
 
-## Project
+> Operational control panel for this project. Keep this file current, concise, and navigational. Product behavior belongs in the PRD; architecture belongs in module engineering artifacts.
 
-- Product family: <service name + link to ../opportunities/service-products.md>
-- Selected model / variant: <specific model>
-- Target market / geography: <if relevant>
-- Documentation root: <projects/<project-slug>/>
-- PRD: <projects/<project-slug>/prd.md>
-- Implementation repository: <URL / pending>
-- Current playbook phase: <01–03>
-- Current status: <not started / in progress / complete / blocked>
+## 1. Project Snapshot
 
-## Product boundary
+| Field | Value |
+| --- | --- |
+| Product family | <service name + link to ../opportunities/service-products.md> |
+| Selected model / variant | <specific model> |
+| Target market / geography | <if relevant> |
+| Current playbook phase | <01–03> |
+| Current product delivery phase | <phase number + name / not defined> |
+| Current module | <module / none> |
+| Overall status | <not started / active / blocked / complete> |
+| PRD | <projects/<project-slug>/prd.md / pending> |
+| Implementation repository | <URL / pending> |
+| Documentation root | <projects/<project-slug>/> |
 
-- Selected: <what product/model this is>
-- Explicitly not: <adjacent variants excluded from this project>
+### Product boundary
 
-## Playbook workflow
+- **Selected:** <what this product/model is>
+- **Explicitly not:** <adjacent variants excluded from this project>
 
-| Phase | Status | Main result |
+A deliberate model change must update the PRD and this tracker before work continues.
+
+---
+
+## 2. Playbook Progress
+
+| Playbook Phase | Status | Exit Result |
 | --- | --- | --- |
-| 01 — Product Discovery & Delivery Plan |  | Authoritative phased PRD + active-phase module map |
-| 02 — Module-by-Module Engineering |  | Reviewed working modules / completed product delivery phases |
-| 03 — Visual Redesign & UI Polish |  | Final polished UI when redesign is needed |
+| 01 — Product Discovery & Delivery Plan | <status> | Authoritative phased PRD + active-phase module map |
+| 02 — Module-by-Module Engineering | <status> | Reviewed working modules / completed product delivery phases |
+| 03 — Visual Redesign & UI Polish | <status> | Final visual redesign/polish when needed |
 
-## Product Delivery Roadmap
+Use only these phase statuses: `not started`, `active`, `blocked`, `complete`, `skipped`.
 
-Summarize the product-specific delivery phases from the PRD.
+---
 
-| Product Delivery Phase | Status | Goal |
-| --- | --- | --- |
-| 1 — <name> | <planned/in progress/complete> | <goal> |
-| 2 — <name> | <planned/in progress/complete> | <goal> |
+## 3. Product Delivery Roadmap
 
-Add/remove rows as the product requires.
+Summarize the product-specific delivery phases defined by the PRD. Keep future phases high-level until they become active.
 
-## Active Product Delivery Phase
-
-- Phase: <number + name>
-- Goal: <short goal>
-- Status: <planned / in progress / complete>
-
-## Modules
-
-Track only the detailed modules for the active product delivery phase.
-
-| Module | Status | Depends on | Current engineering artifact |
+| Delivery Phase | Status | Outcome | Scope Summary |
 | --- | --- | --- | --- |
-| <M01 — name> | <planned/ready/in progress/complete/blocked> | <module/none> | <spec/tickets/evidence or —> |
+| 1 — <name> | <planned/active/complete> | <what becomes usable> | <short scope> |
+| 2 — <name> | <planned/active/complete> | <what becomes usable> | <short scope> |
 
-## Current module / activity
+Add or remove rows as the product requires.
 
-- Current module: <module or none>
-- Current activity: <grill-with-docs / to-spec / to-tickets / implement / code-review / acceptance / UI redesign / etc.>
-- Relevant artifact: <link/path>
+### Active delivery phase
 
-## Next action
+- **Phase:** <number + name>
+- **Objective:** <one sentence>
+- **Exit condition:** <observable condition that completes this phase>
 
-<One clear next action.>
+---
 
-## Blockers / notes
+## 4. Module Board
 
-<Only meaningful blockers, migration notes, or continuation context. Do not duplicate PRD/spec contents.>
+Track detailed modules only for the active Product Delivery Phase.
 
-## Guide entrypoint
+| ID | Module | Status | Depends On | Engineering Stage | Primary Artifact |
+| --- | --- | --- | --- | --- | --- |
+| M01 | <name> | <planned/ready/active/blocked/complete> | <IDs / none> | <grill / spec / tickets / implement / review / accepted / —> | <link/path / —> |
 
-Read:
+### Status rules
+
+- `planned` — belongs to the active delivery phase but is not ready yet.
+- `ready` — product boundary is clear enough to enter Phase 02.
+- `active` — currently being engineered.
+- `blocked` — cannot continue until a named dependency/decision is resolved.
+- `complete` — implementation and acceptance are complete.
+
+Only one module should normally be `active` unless parallel work is intentional.
+
+---
+
+## 5. Current Focus
+
+- **Current module:** <module / none>
+- **Current activity:** <product discussion / delivery planning / grill-with-docs / to-spec / to-tickets / implement / code-review / acceptance / Stitch redesign / etc.>
+- **Immediate objective:** <what this activity must accomplish>
+- **Working artifact:** <link/path / none>
+
+### Open decisions
+
+Track only decisions that genuinely block or materially change current work.
+
+| Decision | Owner | Needed For | Status |
+| --- | --- | --- | --- |
+| <decision> | <user / engineering / design> | <phase/module> | <open / resolved> |
+
+Remove resolved decisions once their outcome is persisted in the authoritative artifact.
+
+---
+
+## 6. Risks & Blockers
+
+| Type | Item | Impact | Resolution / Next Check |
+| --- | --- | --- | --- |
+| <blocker/risk> | <item> | <what it prevents or threatens> | <action / none> |
+
+If there are none, write `None` rather than keeping empty placeholder rows.
+
+---
+
+## 7. Authority & Artifacts
+
+| Artifact | Role | Location |
+| --- | --- | --- |
+| PRD | Product authority | <path / pending> |
+| Active module artifact | Current engineering authority | <spec/tickets/decision doc / pending> |
+| Implementation repository | Source code and engineering evidence | <URL / pending> |
+| Visual redesign artifact | UI authority when Phase 03 is used | <DESIGN.md / Stitch output / pending> |
+
+Do not duplicate PRD/spec contents in the tracker. Link to them.
+
+---
+
+## 8. Next Action
+
+> **<Exactly one concrete next action.>**
+
+The next action should be executable without rediscovering project context.
+
+---
+
+## 9. Session Handoff
+
+Use this section as the minimum context needed to resume work in a later session.
+
+- **Where we are:** <phase / delivery phase / module>
+- **What is settled:** <only the few decisions needed to avoid reopening work>
+- **What is happening now:** <current activity>
+- **What happens next:** <same action as above>
+
+### Guide entrypoint
+
+Read in this order:
 
 1. [`MASTER.md`](../MASTER.md)
 2. this tracker
-3. the active phase guide
+3. the active playbook phase guide
 4. the PRD
-5. the current module's engineering artifacts / implementation output
+5. the active module artifact / latest engineering output, if applicable
 
-Continue from the current module/decision without restarting product discovery.
+Continue from the current decision/module. Do not restart discovery or reopen settled decisions without a real contradiction.

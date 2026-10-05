@@ -10,7 +10,7 @@ Project workspace for the current three-phase playbook.
 - Product Delivery Phase: **1 — Core Scheduling MVP**
 - Current module: **M01 — Identity & Access**
 - PRD: [`prd.md`](prd.md)
-- Implementation repository: not linked yet
+- Implementation repository: https://github.com/h3nrzi/beauty-salon
 
 ## Authority
 
@@ -35,13 +35,20 @@ The first ready module is:
 
 **M01 — Identity & Access**
 
+Implementation repository:
+
+`https://github.com/h3nrzi/beauty-salon`
+
+The repository intentionally starts empty. The engineering methodology will be executed locally with Codex and the Matt/AI Hero skills.
+
 Next:
 
-1. create or link the implementation repository;
-2. inspect its starting state;
-3. run M01 through the Phase 02 engineering interview (`grill-with-docs`);
-4. decide whether M01 needs a durable spec/tickets or can move directly to implementation;
-5. implement and review before advancing the module board.
+1. clone/open `h3nrzi/beauty-salon` locally;
+2. make the PRD/module brief available to the local engineering agent;
+3. run M01 through `grill-with-docs`;
+4. resolve architecture questions with the user/guide when needed;
+5. let the local agent decide whether M01 can move directly to `implement` or needs `to-spec` / `to-tickets` first;
+6. implement and review before advancing the module board.
 
 ## Durable project files
 
@@ -51,4 +58,4 @@ projects/womens-beauty-salon-booking/
 └── prd.md
 ```
 
-Keep this documentation root intentionally small. Add another artifact only when it has durable value beyond the PRD and engineering repository.
+Keep this documentation root intentionally small. Engineering artifacts belong primarily with the implementation repository/local AI Hero workflow when that is where they are produced.

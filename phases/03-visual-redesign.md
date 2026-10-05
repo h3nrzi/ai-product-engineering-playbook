@@ -49,6 +49,8 @@ If a proposed redesign implies a product change, treat that as a separate explic
 
 ---
 
+The approved PRD remains read-only throughout this phase under [AGENTS.md](../AGENTS.md). Visual work cannot authorize a product revision.
+
 # Step 01 — Audit the current UI
 
 Review the implemented product on representative devices.

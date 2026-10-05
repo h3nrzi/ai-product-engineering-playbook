@@ -98,7 +98,9 @@ If the agent asks something it can learn from the repository, prefer inspecting 
 
 ## Durable documentation
 
-Let `grill-with-docs` maintain durable vocabulary/ADRs when a decision genuinely qualifies.
+Read the approved PRD as a product baseline; never use it as an engineering notebook. Keep a copied PRD pinned to its canonical repository and commit, and carry the read-only rule into the implementation repository's agent instructions.
+
+Let `grill-with-docs` maintain durable vocabulary/ADRs when a decision genuinely qualifies. Put module engineering and testing decisions in the spec, domain terms in the glossary, significant architecture rationale in ADRs, and progress/evidence links in the tracker.
 
 Do not create ADRs for ordinary implementation choices.
 
@@ -132,7 +134,9 @@ grill-with-docs
 → code-review
 ```
 
-`to-spec` preserves settled decisions across context boundaries.
+`to-spec` preserves settled decisions across context boundaries. If grilling already produced a spec, refine that same document instead of restarting the interview or creating a competing spec. Preserve accepted decisions and ADRs. Confirm the public behavioral test boundary as required by the installed skill.
+
+Keep the interview context through `to-spec` and `to-tickets` when it is the primary source for planning. Use `ask-matt` at phase boundaries for context decisions. After ticket approval, use `implement` per ticket with fresh context, or `implement-spec` for an explicitly chosen orchestration of the dependency graph. Follow the installed skills for their exact workflow; this playbook is not a replacement for them.
 
 `to-tickets` should split the work into small vertical/tracer-bullet slices that can be demonstrated independently.
 
@@ -176,7 +180,7 @@ Do not repeat unrelated product context.
 
 Do not silently change the PRD.
 
-If engineering discovers a product contradiction, return that exact issue to the user and update the PRD deliberately before implementation proceeds.
+If engineering discovers a product contradiction, propose the specific revision outside the PRD and request explicit product authorization before changing it or implementing conflicting behavior. Continue independent work. Engineering decisions becoming settled never require a PRD update, even when its original handoff described them as deferred.
 
 ---
 
@@ -192,7 +196,7 @@ Each ticket should:
 - preserve relevant module invariants;
 - avoid assuming hidden conversation context.
 
-Prefer vertical slices through the required layers.
+Prefer vertical slices through the required layers. Present the breakdown and blocking edges for user approval before publishing, as required by `to-tickets`. Publish one ticket per slice to the configured tracker; do not invent dependencies merely to serialize work.
 
 Avoid creating tickets solely for documents, folders, or architecture layers unless they independently unlock real work.
 
@@ -279,13 +283,13 @@ When every required module in the active Product Delivery Phase is complete:
 1. run integrated verification across the phase;
 2. compare the result with the PRD phase exit condition;
 3. close genuine gaps;
-4. mark that Product Delivery Phase complete.
+4. mark that Product Delivery Phase complete in the tracker, without editing the PRD.
 
 If another Product Delivery Phase is next:
 
-- return to the PRD;
-- expand that next phase into detailed modules;
-- update dependencies/status;
+- propose a product planning revision for the next phase;
+- expand the PRD into detailed product modules only after explicit user authorization;
+- maintain live dependencies/status in the tracker;
 - continue Phase 02 module by module.
 
 Do not fully redesign the entire product roadmap each time unless product learning requires it.

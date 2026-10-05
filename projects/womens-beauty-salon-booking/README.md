@@ -39,16 +39,11 @@ Implementation repository:
 
 `https://github.com/h3nrzi/beauty-salon`
 
-The repository intentionally starts empty. The engineering methodology will be executed locally with Codex and the Matt/AI Hero skills.
+The engineering interview and M01 specification are published in implementation commit `d074f8a21649cb50c6bd9fa2084e484cb1862919`.
 
-Next:
+Next: run `to-tickets` on the [M01 spec](https://github.com/h3nrzi/beauty-salon/blob/d074f8a21649cb50c6bd9fa2084e484cb1862919/.scratch/m01-identity-access/spec.md), review the vertical slices and dependencies, then implement and review. M01 is not yet accepted; live SMS verification remains required.
 
-1. clone/open `h3nrzi/beauty-salon` locally;
-2. make the PRD/module brief available to the local engineering agent;
-3. run M01 through `grill-with-docs`;
-4. resolve architecture questions with the user/guide when needed;
-5. let the local agent decide whether M01 can move directly to `implement` or needs `to-spec` / `to-tickets` first;
-6. implement and review before advancing the module board.
+The approved PRD is read-only during this work. Its original handoff describes the starting context, not current engineering status. See [the tracker](../womens-beauty-salon-booking.md) for current progress and [agent rules](../../AGENTS.md) for product revisions.
 
 ## Durable project files
 

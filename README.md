@@ -28,6 +28,8 @@ Phase 02 uses the current Matt Pocock / AI Hero methodology from <https://www.ai
 - [`opportunities/service-products.md`](opportunities/service-products.md) — service products and their models, ordered roughly by demand in Iran
 - [`projects/`](projects/README.md) — project trackers and durable project artifacts
 - [`templates/project-tracker.md`](templates/project-tracker.md) — tracker template
+- [`templates/prd.md`](templates/prd.md) — standard product-only PRD template
+- [`AGENTS.md`](AGENTS.md) — approved PRD protection and artifact ownership
 
 ## Start a project
 
@@ -36,7 +38,7 @@ Phase 02 uses the current Matt Pocock / AI Hero methodology from <https://www.ai
 3. Start [Phase 01](phases/01-product-discovery.md).
 4. Select a **Product Family** and one specific **Product Model / Variant**.
 5. Discuss the product until its problem, actors, scope, important behavior, delivery roadmap, and active-phase modules are clear.
-6. Persist the final authoritative PRD under `projects/<project-slug>/prd.md` (or migrate an existing project PRD to the same structure).
+6. Draft the PRD from [`templates/prd.md`](templates/prd.md), persist it under `projects/<project-slug>/prd.md`, and obtain explicit product approval. Do not automatically migrate approved PRDs.
 7. Create/update `projects/<project-slug>.md` from the tracker template.
 8. Create the implementation repository when Phase 02 is ready to begin.
 9. Engineer one ready PRD module at a time using [Phase 02](phases/02-module-engineering.md).
@@ -44,7 +46,7 @@ Phase 02 uses the current Matt Pocock / AI Hero methodology from <https://www.ai
 
 ## PRD principle
 
-The PRD must show the product's own delivery roadmap.
+The PRD must show the product's own delivery roadmap. Once approved, it is read-only during engineering and redesign. Only an explicit user-authorized product revision may change it. Technical decisions go in module specs/ADRs; progress goes in trackers. An old engineering handoff is historical context, not a reason to edit the PRD.
 
 Example:
 

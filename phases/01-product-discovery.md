@@ -8,7 +8,7 @@ This phase is about **product decisions**.
 
 Do not design technical architecture here.
 
-Do not choose database schemas, API style, framework structure, deployment topology, state libraries, authentication implementation, queueing strategy, or other engineering details unless a product decision genuinely depends on them.
+Do not choose database schemas, API style, framework structure, deployment topology, state libraries, authentication implementation, queueing strategy, or other engineering details even when they constrain delivery. Record the required product outcome here and route the technical decision to the module spec/ADR during engineering.
 
 Architecture belongs to Phase 02, when the relevant module is being engineered.
 
@@ -160,7 +160,7 @@ Avoid splitting purely by technical layer such as “database module”, “API 
 - upstream/downstream dependencies;
 - important cross-module interactions;
 - acceptance outcome;
-- status: planned / ready / in progress / complete / blocked.
+- initial product prerequisites; keep planned / ready / active / complete / blocked execution status in the tracker.
 
 Do not decide internal architecture here.
 
@@ -184,119 +184,15 @@ The PRD is the product authority for implementation.
 
 It should be concise enough to remain usable and detailed enough to prevent product rediscovery during engineering.
 
-## Required PRD structure
+## Standard PRD template
 
-### 1. Product identity
+Use [templates/prd.md](../templates/prd.md) as the canonical structure. Fill its product sections from the conversation; derive modules and delivery phases from the actual product. Do not create a second competing template here.
 
-- Product Family
-- Selected Model / Variant
-- Target market/geography when relevant
-- One-paragraph product summary
+Keep technical decisions, technical-question backlogs, live module status, and test implementation strategies out of the PRD. Business constraints may describe required outcomes, but their technical realization belongs in module specs/ADRs.
 
-### 2. Problem and desired outcome
+Before approval, check that the PRD has product identity, actors, scope, journeys, delivery roadmap, module briefs, product invariants, and observable acceptance outcomes. Resolve product questions blocking the first module. Obtain explicit approval and record its reference.
 
-- problem;
-- who has it;
-- current friction;
-- intended outcome;
-- assumptions that are not yet validated.
-
-### 3. Users and actors
-
-For each important actor:
-
-- goal;
-- capabilities;
-- access/ownership boundary.
-
-### 4. Product boundary
-
-- in scope;
-- explicitly out of scope;
-- adjacent product models excluded.
-
-### 5. Core product behavior
-
-Capture the important journeys and business rules that implementation must preserve.
-
-Do not turn this into technical architecture.
-
-### 6. Product Delivery Roadmap
-
-Use a table similar to:
-
-| Product Delivery Phase | Objective | Main capabilities | Exit condition |
-| --- | --- | --- | --- |
-| 1 — ... | ... | ... | ... |
-| 2 — ... | ... | ... | ... |
-
-The number of phases is product-specific.
-
-### 7. Active Delivery Phase
-
-State which Product Delivery Phase is currently being built and what success for that phase means.
-
-### 8. Active-Phase Module Map
-
-Use a table similar to:
-
-| Module | Purpose | Depends on | Status |
-| --- | --- | --- | --- |
-| M01 — ... | ... | ... | ready |
-| M02 — ... | ... | ... | planned |
-
-Module IDs are optional but useful for tracking.
-
-### 9. Module Briefs
-
-For every module in the active product phase include:
-
-- purpose;
-- actors;
-- owned capabilities;
-- important product rules;
-- boundaries/non-responsibilities;
-- dependencies/interactions;
-- acceptance outcome.
-
-Keep architecture open unless a technical constraint is already an unavoidable product requirement.
-
-### 10. Cross-module invariants
-
-Record product rules that multiple modules must preserve, such as:
-
-- ownership;
-- permissions;
-- money semantics;
-- appointment/order state semantics;
-- time-zone rules;
-- audit expectations;
-- consistency requirements.
-
-Only include what actually applies.
-
-### 11. UX / surface summary
-
-List the important user-facing and operational surfaces needed for the active product phase at a level sufficient to understand module responsibilities.
-
-Do not fully design every screen unless the product requires that decision before engineering.
-
-### 12. Open questions and assumptions
-
-Distinguish:
-
-- product questions that block engineering;
-- assumptions that can be tested later;
-- technical questions intentionally deferred to the relevant module's Phase 02 interview.
-
-### 13. Phase 02 handoff
-
-Identify:
-
-- the first ready module;
-- why it is ready;
-- relevant PRD sections;
-- any dependencies the engineering agent must inspect first.
+After approval, the PRD is read-only. Do not automatically migrate existing approved PRDs to this template. Follow [AGENTS.md](../AGENTS.md) for any later product revision.
 
 ---
 
@@ -311,8 +207,8 @@ Phase 01 is complete when:
 - each active-phase module has a useful product brief;
 - module dependencies are clear enough to choose the next ready module;
 - no unresolved product question blocks the first engineering module;
-- technical architecture questions are deliberately left for Phase 02 unless already constrained by the product;
-- the PRD is persisted and linked from the project tracker.
+- technical decisions are excluded and owned by Phase 02 module artifacts;
+- the PRD is explicitly approved, persisted, and linked from the project tracker.
 
 Then proceed to [`02-module-engineering.md`](02-module-engineering.md).
 

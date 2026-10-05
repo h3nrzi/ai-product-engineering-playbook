@@ -22,7 +22,7 @@
 - **Selected:** one physical women’s beauty salon where customers discover services/specialists and book appointments against salon-controlled availability, while salon staff manage the same operational schedule.
 - **Explicitly not:** men’s barbershop, unisex salon, independent-specialist marketplace, multi-salon marketplace, multi-branch salon network, or beauty-at-home/mobile workforce product.
 
-A deliberate model change must update the PRD and this tracker before work continues.
+A model change requires explicit user authorization for a product revision. The approved PRD remains read-only during engineering; live progress belongs here.
 
 ---
 
@@ -58,7 +58,7 @@ Future phases stay high-level until they become active.
 
 | ID | Module | Status | Depends On | Engineering Stage | Primary Artifact |
 | --- | --- | --- | --- | --- | --- |
-| **M01** | Identity & Access | **ready** | none | local `grill-with-docs` | pending local engineering output |
+| **M01** | Identity & Access | **active** | none | spec published; `to-tickets` next | [M01 spec](https://github.com/h3nrzi/beauty-salon/blob/d074f8a21649cb50c6bd9fa2084e484cb1862919/.scratch/m01-identity-access/spec.md) |
 | **M02** | Salon Catalog & Specialists | planned | M01 | — | pending |
 | **M03** | Scheduling & Availability | planned | M02 | — | pending |
 | **M04** | Public Discovery | planned | M02 | — | pending |
@@ -73,18 +73,13 @@ Module boundaries describe product responsibility, not folders or technical laye
 ## 5. Current Focus
 
 - **Current module:** M01 — Identity & Access
-- **Current activity:** Local Codex / Matt methodology handoff
-- **Immediate objective:** Clone/open the empty implementation repository locally and run M01 through `grill-with-docs` using the PRD as product authority.
-- **Working artifact:** [`womens-beauty-salon-booking/prd.md`](womens-beauty-salon-booking/prd.md), especially M01 and identity/access sections
+- **Current activity:** Ticket decomposition after the completed interview and published spec
+- **Immediate objective:** Run `to-tickets` against the existing spec, preserve accepted decisions, and review the vertical slices and blocking edges.
+- **Working artifact:** [M01 spec](https://github.com/h3nrzi/beauty-salon/blob/d074f8a21649cb50c6bd9fa2084e484cb1862919/.scratch/m01-identity-access/spec.md)
 
 ### Open decisions
 
-| Decision | Owner | Needed For | Status |
-| --- | --- | --- | --- |
-| M01 technical architecture (auth/session/provider/authorization design) | Local Codex engineering interview + User | M01 implementation | open |
-| M01 execution depth (`implement` directly vs `to-spec`/`to-tickets`) | Local Codex after grilling | M01 execution | open |
-
-These are engineering decisions, not missing product-discovery decisions.
+No open M01 design decisions are recorded in the published spec. Ticket granularity and dependencies still need review. Hosting and live SMS credentials/template remain operational prerequisites, not a reason to reopen product discovery.
 
 ---
 
@@ -95,7 +90,7 @@ These are engineering decisions, not missing product-discovery decisions.
 | risk | Phase 1 could expand into payment/refund complexity | Would delay proving the core scheduling loop | Keep payment/refund in Delivery Phase 2 unless a real product contradiction appears |
 | risk | Module boundaries may expose hidden coupling during engineering | Could require a small boundary adjustment | Refine internal architecture in Phase 02 without silently changing product ownership |
 
-No current blocker. The implementation repository is linked and intentionally starts empty.
+Automated implementation can proceed using the controlled test delivery substitute. Hosting selection and live SMS credentials/template remain operational prerequisites; M01 acceptance requires the live Kavenegar verification described in the spec. No implementation or acceptance is claimed.
 
 ---
 
@@ -104,7 +99,7 @@ No current blocker. The implementation repository is linked and intentionally st
 | Artifact | Role | Location |
 | --- | --- | --- |
 | PRD | **Product authority** | [`womens-beauty-salon-booking/prd.md`](womens-beauty-salon-booking/prd.md) |
-| Active module artifact | Current engineering authority | Pending local M01 engineering output |
+| Active module artifact | Current engineering authority | [M01 spec](https://github.com/h3nrzi/beauty-salon/blob/d074f8a21649cb50c6bd9fa2084e484cb1862919/.scratch/m01-identity-access/spec.md) |
 | Implementation repository | Source code and engineering evidence | https://github.com/h3nrzi/beauty-salon |
 | Visual redesign artifact | UI authority if Phase 03 is used | Pending |
 | Project workspace | Lightweight project context | [`womens-beauty-salon-booking/README.md`](womens-beauty-salon-booking/README.md) |
@@ -115,18 +110,15 @@ Do not duplicate PRD/module specs in this tracker.
 
 ## 8. Next Action
 
-> **Run M01 — Identity & Access locally in `h3nrzi/beauty-salon` with Codex using `grill-with-docs`, and bring the architecture questions/decisions back for review when needed.**
-
-The local engineering agent should inspect the repository and use the PRD as product authority. It should decide implementation architecture rather than rediscover the product.
-
----
+> **Run `to-tickets` on the existing M01 spec in `h3nrzi/beauty-salon`, then review the proposed vertical slices and dependencies before publishing tickets.**
 
 ## 9. Session Handoff
 
-- **Where we are:** Playbook Phase 02; Delivery Phase 1 — Core Scheduling MVP; M01 — Identity & Access is the first ready module.
-- **What is settled:** The product model, three-phase delivery roadmap, complete Phase 1 boundary, seven-module Phase 1 map, M01 product responsibility, and implementation repository are settled.
-- **What is happening now:** M01 is ready for the local Codex/Matt methodology engineering interview in `h3nrzi/beauty-salon`.
-- **What happens next:** Run `grill-with-docs` locally; resolve its architecture questions; then choose direct implementation or spec/tickets based on module size.
+- **Where we are:** Playbook Phase 02; Delivery Phase 1; M01 specification published.
+- **What is settled:** Product baseline, completed engineering interview, accepted ADRs, and behavioral test boundary are recorded in the implementation repository.
+- **What is happening now:** Ticket decomposition is next; no ticket files or implementation were present in the reviewed commit.
+- **What happens next:** Approve and publish the ticket graph, then implement and review. Keep acceptance open until all required evidence, including live SMS verification, exists.
+- **Evidence reviewed:** Implementation repository commit `d074f8a21649cb50c6bd9fa2084e484cb1862919` on 2026-10-05. These are tracker updates, not changes to the approved PRD.
 
 ### Guide entrypoint
 

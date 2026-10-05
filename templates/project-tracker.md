@@ -22,7 +22,7 @@
 - **Selected:** <what this product/model is>
 - **Explicitly not:** <adjacent variants excluded from this project>
 
-A deliberate model change must update the PRD and this tracker before work continues.
+A deliberate model change requires explicit user authorization for a product revision before the approved PRD can be edited. Record live progress here, never in the PRD.
 
 ---
 
@@ -110,7 +110,7 @@ If there are none, write `None` rather than keeping empty placeholder rows.
 
 | Artifact | Role | Location |
 | --- | --- | --- |
-| PRD | Product authority | <path / pending> |
+| PRD | Read-only approved product baseline | <canonical path + approved commit / pending> |
 | Active module artifact | Current engineering authority | <spec/tickets/decision doc / pending> |
 | Implementation repository | Source code and engineering evidence | <URL / pending> |
 | Visual redesign artifact | UI authority when Phase 03 is used | <DESIGN.md / Stitch output / pending> |

@@ -12,7 +12,7 @@ The tracker is navigation/context for Guide LLMs. The PRD is the product authori
 
 ## Current projects
 
-- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — Phase 01 in progress; Delivery Phase roadmap and module map not yet defined.
+- [`Women’s Beauty Salon Booking`](womens-beauty-salon-booking.md) — Barbershop / Beauty Salon Booking → **Women’s single-salon** — Phase 02; M01 specification published, ticket decomposition next.
 
 ## Preferred project structure
 
@@ -33,5 +33,5 @@ Keep project documentation intentionally small. Add another file or folder only 
 3. Copy [`../templates/project-tracker.md`](../templates/project-tracker.md) to `projects/<project-slug>.md`.
 4. Add the tracker under Current projects.
 5. Discuss the product, define its Product Delivery Phases, and decompose the active phase into modules.
-6. Create `projects/<project-slug>/prd.md` when Phase 01 is ready to synthesize into the authoritative PRD.
+6. Create `projects/<project-slug>/prd.md` from [the standard PRD template](../templates/prd.md), obtain explicit product approval, and treat the approved baseline as read-only.
 7. When Phase 01 is complete, create/link the implementation repository and begin engineering the first ready PRD module.

@@ -72,7 +72,7 @@ Clarify:
 
 Do **not** decide detailed technical architecture, framework structure, database design, API shape, or implementation details here. Those decisions belong to the relevant module during Phase 02.
 
-The final authoritative artifact is a **PRD**.
+The final authoritative artifact is a **PRD**, drafted from [the standard template](templates/prd.md). After explicit user approval, it is read-only under [the repository rules](AGENTS.md). Product constraints describe required outcomes; all technical choices, including user-preferred stacks, belong in module specs/ADRs.
 
 The PRD must include:
 
@@ -135,7 +135,7 @@ When the engineering agent asks architecture questions:
 5. give the user a concise answer to send back;
 6. persist only durable decisions that genuinely need to survive future sessions.
 
-Do not reopen settled product scope merely because another implementation would be easier. If engineering reveals a real product contradiction, return that specific issue to the user and update the PRD deliberately.
+Do not reopen settled product scope merely because another implementation would be easier. If engineering reveals a real product contradiction, propose that specific product revision outside the PRD. Change the approved PRD only after explicit user authorization for that revision; continue independent engineering work meanwhile.
 
 ### Module ordering
 
@@ -151,7 +151,7 @@ The tracker should show:
 - current module;
 - relevant spec/tickets/evidence.
 
-When all modules for the active Product Delivery Phase meet their acceptance criteria, that product phase is complete. If another Product Delivery Phase is next, return to the PRD, expand that next phase into modules, and continue Phase 02.
+When all modules for the active Product Delivery Phase meet their acceptance criteria, that product phase is complete. If another Product Delivery Phase is next, request a product planning revision to expand that next phase into modules. Update the PRD only when the user explicitly authorizes that revision, then continue Phase 02. Record completion and live status in the tracker, not the PRD.
 
 ## Phase 03 — Visual Redesign & UI Polish
 

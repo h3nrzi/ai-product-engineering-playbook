@@ -124,6 +124,14 @@ Use the methodology based on actual size:
 - `code-review` checks the implemented diff against repo standards and the originating spec/ticket.
 - Optional `prototype` or `research` work may be used when a real unanswered design/technical question needs evidence before committing.
 
+### Pre-Implementation Skill Gate
+
+Before the first line of implementation code, the engineering agent must review and install/load relevant skills based on the stack and architecture already decided for the work. Skill installation must not determine architecture: examples and prerequisites in a skill do not authorize choosing a framework version, library, provider, or tool. If a skill is incompatible with the settled architecture, leave it inactive rather than changing architecture to satisfy it.
+
+If a ticket needs a new technology whose selection is still undecided, stop implementation, surface the specific choice to the user, and resolve it as a separate engineering decision before resuming. Persist the outcome in the implementation repository's spec or appropriate ADR, then review the relevant skills for that choice.
+
+This is a lightweight readiness check, not an additional planning phase. Reuse settled decisions and reviewed skills; do not require a new `grill-with-docs` interview or other ceremony for every ticket unless significant ambiguity warrants it. The guide helps review readiness and resolve raised decisions; the engineering agent performs the check and implements the work. See [Phase 02 implementation](phases/02-module-engineering.md#pre-implementation-skill-gate) for the procedure.
+
 ### Guide behavior during module engineering
 
 When the engineering agent asks architecture questions:

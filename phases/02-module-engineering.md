@@ -136,7 +136,7 @@ grill-with-docs
 
 `to-spec` preserves settled decisions across context boundaries. If grilling already produced a spec, refine that same document instead of restarting the interview or creating a competing spec. Preserve accepted decisions and ADRs. Confirm the public behavioral test boundary as required by the installed skill.
 
-Keep the interview context through `to-spec` and `to-tickets` when it is the primary source for planning. Use `ask-matt` at phase boundaries for context decisions. After ticket approval, use `implement` per ticket with fresh context, or `implement-spec` for an explicitly chosen orchestration of the dependency graph. Follow the installed skills for their exact workflow; this playbook is not a replacement for them.
+Keep the interview context through `to-spec` and `to-tickets` when it is the primary source for planning. Use `ask-matt` at phase boundaries for context decisions. After ticket approval, use `implement` per ticket with fresh context, or `implement-spec` for an explicitly chosen orchestration of the dependency graph. A fresh context does not require another `grill-with-docs` interview for each ticket; reuse settled decisions unless significant ambiguity warrants further planning. Follow applicable installed skills for their exact workflow, subject to the Pre-Implementation Skill Gate below; this playbook is not a replacement for them.
 
 `to-tickets` should split the work into small vertical/tracer-bullet slices that can be demonstrated independently.
 
@@ -207,6 +207,21 @@ Avoid creating tickets solely for documents, folders, or architecture layers unl
 Use `implement` for settled work.
 
 Implementation should follow the module spec/ticket and repository standards.
+
+## Pre-Implementation Skill Gate
+
+Before writing the first line of implementation code:
+
+1. Read the stack and architecture decisions already settled for the module/ticket in the implementation repository. Do not select technologies merely to prepare a skill list.
+2. Review the relevant skills, including their instructions, prerequisites, and compatibility with those decisions. Install missing relevant skills and load applicable instructions before coding. Reuse skills already installed and reviewed when their scope and prerequisites still apply.
+3. Treat skill examples and prerequisites as guidance for applying a skill, not as authority to choose architecture. A skill must not implicitly select a framework version, ORM/query layer, test runner, validation library, provider, deployment platform, or UI library. Leave an incompatible skill inactive; do not change the settled architecture to activate it.
+4. Keep the relevant skill guidance and this gate discoverable in the implementation repository's agent instructions. Record significant engineering decisions in the spec or appropriate ADR, never in the approved PRD. No separate gate document or ticket is required.
+
+If implementation reveals that the ticket requires a new technology and its selection is still undecided, stop implementation and raise that specific decision with the user. Resolve it separately from coding, persist the outcome in the spec or appropriate ADR, review/install/load the skills relevant to that decision, and then resume. Do not silently choose the technology through a skill installation or an ordinary code-level choice.
+
+The gate does not require deciding all future architecture up front. Check only what the current work needs. Once decisions and relevant skills are ready, proceed directly to `implement`; do not add a mandatory `grill-with-docs` interview or other ceremony to every ticket. Further planning is warranted only when significant ambiguity remains.
+
+## Implementation and verification
 
 The implementation agent owns ordinary code-level choices that were not elevated into product/architecture decisions.
 

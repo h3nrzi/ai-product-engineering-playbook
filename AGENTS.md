@@ -12,13 +12,13 @@ Read [MASTER.md](MASTER.md), the relevant phase guide, and the project tracker b
 - Start new PRDs from [templates/prd.md](templates/prd.md). Do not migrate approved PRDs merely to match a new template.
 - Implementation-repository copies are read-only references to a pinned approved PRD revision, never independent product authorities. Include this rule in the implementation repository's agent instructions when setting it up.
 
-## Pre-implementation skill gate
+## Pre-Implementation Skill Gate
 
-- Before the engineering agent writes application code, inspect the stack and architecture decisions already settled for the current module/ticket and ensure the relevant repository-level skills are installed, reviewed, and available.
+- Before the engineering agent writes the first line of implementation code, inspect the stack and architecture decisions already settled for the current module/ticket and ensure the relevant repository-level skills are installed, reviewed, and applicable instructions loaded. Apply the [Phase 02 procedure](phases/02-module-engineering.md#pre-implementation-skill-gate) and carry this rule into the implementation repository's agent instructions.
 - Skill installation follows confirmed architecture decisions; skills must never create, force, or silently change architecture decisions, framework/library choices, or version requirements.
 - If a skill has prerequisites that conflict with the settled architecture or would introduce a new unresolved choice, do not change the product or architecture merely to satisfy the skill. Keep that skill inactive until the relevant engineering decision is actually made.
-- If implementation genuinely requires a new major framework, library, provider, persistence layer, test tool, or other technology that has not been decided yet, stop before adopting it, resolve that decision through the existing module engineering process, then install/review the matching skill before implementation continues.
-- Do not add planning ceremony merely because a skill or tool exists. A separate `grill-with-docs` pass is not required for every ticket; use it only when a real material ambiguity needs user-level engineering/architecture resolution.
+- If a ticket requires a new framework, library, provider, persistence layer, test tool, or other technology whose selection is undecided, stop implementation and raise the specific choice with the user. Resolve it as a separate engineering decision through the existing module process, persist it in the spec or appropriate ADR, then review/install/load the relevant skills before resuming.
+- Reuse settled decisions and skills already reviewed when their scope and prerequisites still apply. Do not add planning ceremony merely because a skill or tool exists. A separate `grill-with-docs` pass is not required for every ticket; use it only when a real material ambiguity needs user-level engineering/architecture resolution.
 - Global documentation/research skills may supplement repository-pinned skills but do not replace this repository-level gate.
 - Review third-party skill instructions before trusting them and keep their repository lock/pin metadata current when the skill system supports it.
 

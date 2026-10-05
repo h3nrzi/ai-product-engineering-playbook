@@ -1,14 +1,22 @@
 # PRD — Women’s Beauty Salon Booking
 
-## Status
+## Document control
 
+- **Product revision:** 1.0 — Final product baseline
+- **Approval:** Approved baseline; this structural revision is explicitly user-authorized.
+- **Authorization evidence:** User request on 2026-10-05: “prd سالن رو با این تصمیم اخیری ک گرفتیم ورژن نهایش رو بساز”. Authorization covers applying the product-only template and revision policy, not new product scope.
 - **Product Family:** Barbershop / Beauty Salon Booking
 - **Selected Model / Variant:** Women’s single-salon
 - **Target Market:** Persian-language product for the Iranian market
-- **Current Product Delivery Phase:** 1 — Core Scheduling MVP
-- **Status:** Ready for module-by-module engineering
+- **Delivery phase detailed in this revision:** 1 — Core Scheduling MVP
+- **Canonical repository:** https://github.com/h3nrzi/ai-product-engineering-playbook
+- **Canonical path:** `projects/womens-beauty-salon-booking/prd.md`
 
-This document is the authoritative product definition for implementation. It defines **what the product must do**. Technical architecture, frameworks, data models, API design, infrastructure, and provider choices are intentionally deferred to module engineering.
+This document defines required product behavior, business boundaries, delivery scope, and observable acceptance outcomes. It is read-only during engineering, review, acceptance, and visual redesign. Only an explicitly user-authorized product revision may change it.
+
+Technical decisions belong in module specs and appropriate ADRs in the implementation repository. Current module status, execution plans, operational prerequisites, and acceptance evidence belong in the project tracker and engineering artifacts. They are not maintained in this PRD.
+
+The publishing Git commit identifies this baseline. Copies must reference that canonical commit and must not evolve independently.
 
 ---
 
@@ -265,9 +273,9 @@ The customer view must show enough information to identify the appointment, incl
 
 Phase 1 does not need to implement the full future financial cancellation/rescheduling policy.
 
-If a basic customer cancellation is included during module engineering, it must release the appointment’s availability and must not imply refund/payment behavior that does not yet exist.
+If a basic customer cancellation is explicitly selected by the user during module planning, it must release the appointment’s availability and must not imply refund/payment behavior that does not yet exist.
 
-Customer rescheduling may remain deferred to Delivery Phase 2 unless it can be introduced without creating premature policy semantics.
+Customer rescheduling may remain deferred to Delivery Phase 2. Selecting it for Phase 1 requires an explicit user product decision and must not introduce premature policy semantics.
 
 ---
 
@@ -301,7 +309,7 @@ At minimum the product must distinguish:
 - completed;
 - no-show.
 
-Additional transient technical states may be introduced during engineering when needed, but they must not redefine the product lifecycle without a product reason.
+The user-visible appointment lifecycle must preserve these distinctions. Changes to that product lifecycle require an explicitly authorized product revision.
 
 ---
 
@@ -311,7 +319,7 @@ Customers and salon staff have different access contexts.
 
 ### Customer identity
 
-The product should use a stable customer identity suitable for the Iranian market, centered on a mobile number/contact flow. The exact authentication provider and implementation mechanism are Phase 02 decisions.
+The product should use a stable customer identity suitable for the Iranian market, centered on a mobile number/contact flow.
 
 A customer account owns its appointments.
 
@@ -344,7 +352,7 @@ Later delivery phases remain intentionally high-level until they become active.
 
 ---
 
-# 7. Active Delivery Phase — Core Scheduling MVP
+# 7. Delivery Phase Detailed in This Revision — Core Scheduling MVP
 
 ## Objective
 
@@ -381,19 +389,19 @@ Delivery Phase 1 is complete when a configured salon can operate a coherent end-
 
 ---
 
-# 8. Active-Phase Module Map
+# 8. Module Map — Delivery Phase 1
 
-| ID | Module | Purpose | Depends On | Status |
-| --- | --- | --- | --- | --- |
-| **M01** | Identity & Access | Establish customer identity, staff identity, sessions, and role/ownership boundaries. | none | **ready** |
-| **M02** | Salon Catalog & Specialists | Define the salon’s services, specialists, eligibility, and publishable offering. | M01 | planned |
-| **M03** | Scheduling & Availability | Define specialist schedules and compute valid shared availability. | M02 | planned |
-| **M04** | Public Discovery | Present salon/services/specialists publicly and provide booking entry points. | M02 | planned |
-| **M05** | Booking Lifecycle | Create conflict-safe appointments from valid service/specialist/time selections. | M01, M02, M03 | planned |
-| **M06** | Customer Appointments | Let customers retrieve and understand appointments they own. | M01, M05 | planned |
-| **M07** | Salon Appointment Operations | Let authorized staff view and operate the shared appointment schedule. | M01, M03, M05 | planned |
+| ID | Module | Purpose | Product Dependencies |
+| --- | --- | --- | --- |
+| **M01** | Identity & Access | Establish customer identity, staff identity, sessions, and role/ownership boundaries. | none |
+| **M02** | Salon Catalog & Specialists | Define the salon’s services, specialists, eligibility, and publishable offering. | M01 |
+| **M03** | Scheduling & Availability | Define specialist schedules and compute valid shared availability. | M02 |
+| **M04** | Public Discovery | Present salon/services/specialists publicly and provide booking entry points. | M02 |
+| **M05** | Booking Lifecycle | Create conflict-safe appointments from valid service/specialist/time selections. | M01, M02, M03 |
+| **M06** | Customer Appointments | Let customers retrieve and understand appointments they own. | M01, M05 |
+| **M07** | Salon Appointment Operations | Let authorized staff view and operate the shared appointment schedule. | M01, M03, M05 |
 
-Module dependencies express product sequencing, not required code/package structure.
+Module dependencies express product sequencing. Live readiness, engineering stage, and completion are maintained in the project tracker; this map records the approved product scope.
 
 ---
 
@@ -430,8 +438,7 @@ Customer, reception staff, manager.
 - schedules/availability;
 - service configuration;
 - payment;
-- notification delivery system;
-- authentication-provider/infrastructure decisions.
+- operational notification delivery system.
 
 ### Interactions
 Provides actor identity and authorization context to M02, M05, M06, and M07.
@@ -719,8 +726,7 @@ These rules must remain true across module boundaries.
 ## Localization
 
 - customer-facing and salon-facing product UI is Persian/RTL;
-- dates/times/phone presentation must be appropriate for Iranian users;
-- exact formatting libraries/implementation remain engineering decisions.
+- dates/times/phone presentation must be appropriate for Iranian users.
 
 ---
 
@@ -751,7 +757,7 @@ This is a responsibility map, not a finished visual specification.
 - Specialist schedule management
 - Staff access management required for Phase 1
 
-Exact route structure and visual composition are implementation/design decisions unless they affect product behavior.
+The surfaces must preserve the journeys, information, actions, and access boundaries defined above.
 
 ---
 
@@ -770,53 +776,44 @@ If later module interviews reveal a true product contradiction, escalate it befo
 - the seven Phase 1 module boundaries are sufficiently independent for incremental engineering;
 - deposit/payment integration can be deferred without preventing validation of the core scheduling product.
 
-## Technical questions intentionally deferred
-
-Examples include:
-
-- application/framework architecture;
-- database/data model;
-- API shape;
-- authentication provider/session mechanism;
-- OTP/SMS provider if used;
-- authorization implementation;
-- concurrency/transaction strategy for booking conflicts;
-- calendar/date libraries;
-- deployment/infrastructure;
-- testing approach.
-
-These belong to the relevant module’s Phase 02 engineering interview.
-
 ---
 
-# 13. Phase 02 Handoff
+# 13. Product Handoff
 
-## First ready module
+## Initial engineering candidate
 
-**M01 — Identity & Access**
+**M01 — Identity & Access** is the initial candidate because the remaining private customer and staff capabilities depend on trustworthy identity, ownership, and permissions. It has no upstream product module dependency.
 
-## Why it is ready
+## Product context to preserve
 
-The product-level identity model is sufficiently clear to begin technical architecture discussion:
-
-- customer identity and customer-owned appointments are distinct from staff operations;
+- customer-owned appointments and staff operations have distinct access boundaries;
 - salon staff require an assigned role;
 - Phase 1 roles are reception and manager;
-- reception/manager authorization differs;
-- the product targets mobile-first Persian users, with customer identity centered on mobile/contact;
-- exact auth/session/provider architecture remains intentionally open for engineering.
+- reception has no manager-only authority;
+- the product serves Persian-speaking mobile users in Iran, with customer identity centered on mobile/contact;
+- booking rules remain owned by the booking modules.
 
 ## Relevant PRD sections
 
 - Section 3 — Users and Actors
 - Section 5.9 — Identity and Access
-- Section 8 — Active-Phase Module Map
+- Section 8 — Module Map
 - Section 9 — M01 Module Brief
 - Section 10 — Cross-Module Invariants
 
-## Engineering entry condition
+This handoff records the product starting point. Read the current project tracker and module artifacts to resume engineering; do not treat this section as a live engineering backlog or reopen settled technical decisions from it.
 
-Start Phase 02 with M01 using the repository’s module-engineering guide. Inspect the implementation repository if/when it exists, ask only architecture/implementation questions that materially affect M01, and do not reopen settled product scope without a genuine contradiction.
+---
+
+# Product Revision Policy
+
+This final baseline is read-only for agents during engineering, implementation, review, acceptance, and visual redesign. Permission to perform those activities or update documentation does not authorize editing the PRD.
+
+If work reveals a genuine product contradiction, describe the proposed product change outside this document, identify affected behavior and modules, and obtain explicit user authorization for that revision. Continue independent work without implementing the conflicting behavior.
+
+For an authorized revision, record its product reason and approval evidence, increment the product revision, and synchronize reference copies to the new canonical commit. Expanding a later delivery phase into detailed modules also requires an authorized product revision. Technical decisions and progress never justify a PRD edit on their own.
+
+Revision 1.0 applies the product-only structure and read-only policy to the existing product definition. The product model, three delivery phases, seven Phase 1 modules, existing optional/deferred capabilities, and acceptance outcomes are preserved.
 
 ---
 

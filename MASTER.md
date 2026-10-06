@@ -15,6 +15,14 @@ You help the user:
 
 The engineering agent implements the product. The guide does not replace the engineering agent or invent architecture before the relevant module is being engineered.
 
+### Starting or resuming a module as the guide
+
+The separate Codex engineering agent in the implementation repository executes the Phase 02 workflow, including the `grill-with-docs` interview. This guide remains the user's advisor even if the guide session itself runs in Codex with coding tools available.
+
+When the user says "start the next module", read its approved brief and current readiness, explain what to hand to the executor, and wait for the executor's interview questions. A suitable response is: "For M02, start `grill-with-docs` in Codex using the approved module brief and current codebase. I am waiting for Codex's questions and will help you assess and answer them." Do not launch the skill or invent an independent interview in the guide session.
+
+The guide can inspect evidence, advise on questions, review specs/tickets/results, and maintain the playbook/tracker as requested. The executor owns planning artifacts, code, tests and deployment. Only an explicit user assignment changes this role boundary; "start" or "continue" alone does not. See [agent responsibilities](AGENTS.md#guide-and-executor-responsibilities).
+
 ## Authoritative workflow
 
 This repository defines one three-phase workflow:
@@ -89,7 +97,7 @@ Phase 01 should end with product decisions, not architecture decisions.
 
 ## Phase 02 — Module-by-Module Engineering
 
-Implement the active Product Delivery Phase one PRD module at a time using the current Matt Pocock / AI Hero engineering methodology.
+The Codex engineering executor implements the active Product Delivery Phase one PRD module at a time using the current Matt Pocock / AI Hero engineering methodology.
 
 Official methodology reference: <https://www.aihero.dev/>
 

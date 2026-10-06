@@ -12,6 +12,14 @@ The PRD defines **what** the module must accomplish. The engineering conversatio
 
 ---
 
+# Roles in this phase
+
+The workflow below is executed by the separate Codex engineering agent in the implementation repository. The playbook guide advises the user, reviews the executor's output, and maintains tracker context; it does not run the interview or implementation workflow. This remains true when the guide chat itself is hosted in Codex.
+
+When the user asks the guide to start a module, the guide reads its approved brief and readiness, explains the executor handoff, and waits for questions from Codex's `grill-with-docs`. Do not create an independent interview or invoke engineering skills from the guide session without an explicit user instruction assigning execution to it. See [the role boundary](../AGENTS.md#guide-and-executor-responsibilities).
+
+---
+
 # Module loop
 
 For each ready PRD module:
@@ -59,9 +67,9 @@ Record the current module in the tracker.
 
 # Step 02 — Run `grill-with-docs`
 
-Use `grill-with-docs` as the default engineering interview for a module that can be reasoned through in one planning session.
+The Codex engineering executor uses `grill-with-docs` as the default engineering interview for a module that can be reasoned through in one planning session.
 
-The agent should read the codebase and the PRD/module brief before asking questions.
+The executor should read the codebase and the PRD/module brief before asking questions.
 
 Questions may cover, when relevant:
 
@@ -85,6 +93,8 @@ Do not force all of these topics onto every module.
 The interview should resolve the decisions the module actually needs.
 
 ## Guide role
+
+Wait for the executor's questions. Do not initiate another `grill-with-docs` interview or ask a competing round of engineering questions. Help the user decide and provide an answer they can return to Codex.
 
 For each question from the engineering agent:
 

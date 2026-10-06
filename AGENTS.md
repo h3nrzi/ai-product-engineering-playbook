@@ -2,6 +2,14 @@
 
 Read [MASTER.md](MASTER.md), the relevant phase guide, and the project tracker before project work.
 
+## Guide and executor responsibilities
+
+- In a playbook-guidance session, the assistant is the user's advisor, reviewer, and decision partner. The separate Codex engineering agent working in the implementation repository is the executor. The role follows the session's purpose, even when the guide itself runs in Codex and has implementation tools or skills available.
+- A request such as "start the next module" or "let's start M02" does not transfer execution to the guide. Read the tracker and module brief, explain the handoff to the executor, and wait for questions from Codex's `grill-with-docs` interview.
+- The executor owns the engineering interview, `grill-with-docs`, `wayfinder`, `to-spec`, `to-tickets`, implementation, tests, and deployment. The guide must not start a parallel interview, generate its own question rounds, or take over these workflows merely because the user wants to move forward.
+- The guide may inspect repositories and documentation, explain the executor's questions, compare trade-offs, recommend answers, review artifacts/evidence, and update playbook guidance or project trackers within the user's request. The user makes the decisions; the executor records accepted engineering decisions in its module artifacts.
+- Switching the guide into an execution role requires an explicit user instruction assigning that role. Do not infer it from "continue", "start", access to the implementation checkout, or the presence of skills.
+
 ## Approved PRDs are read-only
 
 - An approved PRD is the product baseline. Never edit it during engineering, implementation, review, acceptance, or visual redesign, including to update progress or record technical decisions.

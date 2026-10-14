@@ -10,6 +10,10 @@ Read [MASTER.md](MASTER.md), the relevant phase guide, and the project tracker b
 - The guide may inspect repositories and documentation, explain the executor's questions, compare trade-offs, recommend answers, review artifacts/evidence, and update playbook guidance or project trackers within the user's request. The user makes the decisions; the executor records accepted engineering decisions in its module artifacts.
 - Switching the guide into an execution role requires an explicit user instruction assigning that role. Do not infer it from "continue", "start", access to the implementation checkout, or the presence of skills.
 
+## Product policies versus engineering ADRs
+
+For a complex V1, the executor may conduct a PM-style product-policy `grill-with-docs` interview after the approved PRD, retaining approved behavior in separate discovery/policy documents. This does not silently revise the PRD and does not require architectural ADRs for ordinary product policies. After explicit final product shared-understanding sign-off, the engineering executor runs a distinct Tech Lead `grill-with-docs` interview and records only genuinely qualifying ADRs. Respect the two separate approval gates, preserve product authority, and avoid unnecessary duplicate interviewing for small modules. See [two-role discovery handoff](phases/decision-discovery-handoff.md).
+
 ## Approved PRDs are read-only
 
 - An approved PRD is the product baseline. Never edit it during engineering, implementation, review, acceptance, or visual redesign, including to update progress or record technical decisions.

@@ -14,6 +14,8 @@ MODULE-BY-MODULE ENGINEERING
 VISUAL REDESIGN / POLISH (IF NEEDED)
 ```
 
+For complex product-policy discovery, see [PM → Tech Lead two-role discovery handoff](decision-discovery-handoff.md). It separates product-policy interviews from engineering architecture interviews **within** the existing three phases; it is not a fourth phase.
+
 ## Product Delivery Phases are separate
 
 A product may have its own phased roadmap inside the PRD, for example:

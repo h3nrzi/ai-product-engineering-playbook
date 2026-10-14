@@ -1,5 +1,7 @@
 # Phase 02 — Module-by-Module Engineering
 
+When a preceding PM-style V1 policy interview exists, the executor must first read the consolidated approved Product Policies and final closure decision, then start a **separate Tech Lead architecture/engineering `grill-with-docs`** interview. Record only qualifying ADRs, preserve product guarantees, and proceed to `to-spec`/`to-tickets` only when technically settled and warranted. See [two-role discovery handoff](decision-discovery-handoff.md). Existing module-by-module execution remains the default.
+
 ## Objective
 
 Build the active Product Delivery Phase one PRD module at a time using the Matt Pocock / AI Hero engineering methodology.

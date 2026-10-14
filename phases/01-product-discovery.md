@@ -1,5 +1,7 @@
 # Phase 01 — Product Discovery & Delivery Plan
 
+For products requiring a detailed V1 policy interview after PRD approval, follow the optional [PM → Tech Lead two-role discovery handoff](decision-discovery-handoff.md). Its product-level `grill-with-docs` documents approved operational/product behavior separately from the immutable PRD and requires an explicit final product-owner closure before engineering discovery. It does **not** introduce architecture into Phase 01.
+
 ## Objective
 
 Choose a product, understand what should actually be built, define a sensible product delivery roadmap, and finish with one authoritative PRD that can feed module-by-module engineering.

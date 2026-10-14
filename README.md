@@ -24,6 +24,7 @@ Phase 02 uses the current Matt Pocock / AI Hero methodology from <https://www.ai
 
 - [`MASTER.md`](MASTER.md) — role and authoritative workflow for Guide LLMs
 - [`phases/`](phases/README.md) — phase-by-phase procedure
+- [Two-role discovery handoff](phases/decision-discovery-handoff.md) — PM product-policy decisions followed by Tech Lead engineering/ADR decisions using separate `grill-with-docs` interviews
 - [`opportunities/`](opportunities/README.md) — service-product opportunity library
 - [`opportunities/service-products.md`](opportunities/service-products.md) — service products and their models, ordered roughly by demand in Iran
 - [`projects/`](projects/README.md) — project trackers and durable project artifacts

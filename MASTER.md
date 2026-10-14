@@ -95,6 +95,12 @@ Examples of modules may include authentication, service catalog, booking, custom
 
 Phase 01 should end with product decisions, not architecture decisions.
 
+## Two-role discovery handoff (when product policy is complex)
+
+The approved PRD defines scope. For substantial remaining V1 product-policy decisions, run a **PM/Product Owner `grill-with-docs`** interview after PRD approval and record the explicitly approved behavior in a separate product discovery log and consolidated policy contract (when useful). Obtain the owner's explicit final shared-understanding confirmation. Then, in Phase 02, run a **separate Tech Lead `grill-with-docs`** interview for engineering and architecture choices against the frozen product contract, using qualifying ADRs and the glossary. Only after engineering decisions are settled use `to-spec`/`to-tickets` when warranted. This is not an extra mandatory playbook phase or permission to replace module-level engineering.
+
+See [Two-role discovery handoff](phases/decision-discovery-handoff.md) for approval gates, artifacts, ownership and the MediaForge example.
+
 ## Phase 02 — Module-by-Module Engineering
 
 The Codex engineering executor implements the active Product Delivery Phase one PRD module at a time using the current Matt Pocock / AI Hero engineering methodology.
